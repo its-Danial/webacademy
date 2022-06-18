@@ -1,0 +1,18 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: first-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: '*'
