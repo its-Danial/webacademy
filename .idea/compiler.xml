@@ -8,10 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="course-service" />
         <module name="student-service" />
+        <module name="course-material-service" />
         <module name="teacher-service" />
-        <module name="course-material-servce" />
         <module name="gateway-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="first-service" target="1.8" />
+      <module name="sentinel-service" target="18" />
+    </bytecodeTargetLevel>
   </component>
 </project>
