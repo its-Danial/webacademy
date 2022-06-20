@@ -12,7 +12,7 @@
         <module>student-service</module>
         <module>teacher-service</module>
         <module>course-service</module>
-        <module>course-material-servce</module>
+        <module>course-material-service</module>
         <module>gateway-service</module>
     </modules>
 
