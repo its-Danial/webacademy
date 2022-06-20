@@ -31,5 +31,5 @@ spring:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/web_academyDB
     username: root
 #   Might need to change this depending on your SQL settings
-    password: mysqlroot123
+    password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
