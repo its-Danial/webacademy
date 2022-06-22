@@ -5,7 +5,7 @@ server:
     include-message: always
 spring:
   application:
-    name: course-material-service
+    name: course-lecture-service
   cloud:
     nacos:
       discovery:

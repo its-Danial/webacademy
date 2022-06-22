@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 @Entity
 public class Course {
 
@@ -26,22 +26,29 @@ public class Course {
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "course_sequence")
     private Long courseId;
-    private String title;
-    // This will be 255 var, I can set it as type TEXT if needed
-    private String description;
-    private double price;
 
-    private String coverPictureUrl;
-    private String previewVideoUrl;
+    private String title;
+
+    // TODO:
+    //  -   add constraint for 0-5 start
     private double courseRating;
 
+    private LocalDateTime createdAt; // maybe different kind of date, I used this before.
+
+    private double completedProgress = 0; // When the user watched a lecture this should be updated
+    // get all completed lectures and divide by total lectures and set this to that value.
+
+    @Embedded
+    private CourseInformation courseInformation;
+
+//   ----------------------------------------Table Relationship Mapping-----------------------------------------
 
     //  Without this it is one-to-one "uni-directional mapping" which means when we fetch data for Courses we don't
-    //  get Course Material data. With "mappedBy = "course"" we will also get course material data
+    //  get Course Lecture data. With "mappedBy = "course"" we will also get course lecture data
     @OneToOne(
             mappedBy = "course"
     )
-    private CourseMaterial courseMaterial;
+    private CourseLecture courseLecture;
 
     // One Teacher can Teach Many Courses. P.S. It is recommended to user ManyToOne mapping instead of
     // OneToMany, that is why it is in this entity class.
@@ -68,6 +75,7 @@ public class Course {
             )
     )
     private List<Student> students;
+
     // At first the list can be empty.
     public void addStudent(Student student) {
         if (students == null) {
@@ -75,7 +83,5 @@ public class Course {
             students.add(student);
         }
     }
-
-
 
 }

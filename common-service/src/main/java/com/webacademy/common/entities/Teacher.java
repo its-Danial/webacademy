@@ -12,7 +12,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 @Entity
 public class Teacher {
 
@@ -31,4 +30,5 @@ public class Teacher {
     private String lastName;
 
     private String bioText;
+    private String avatarPictureUrl;;
 }
