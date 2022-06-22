@@ -10,6 +10,7 @@
         <module name="student-service" />
         <module name="course-material-service" />
         <module name="teacher-service" />
+        <module name="common-service" />
         <module name="gateway-service" />
       </profile>
     </annotationProcessing>

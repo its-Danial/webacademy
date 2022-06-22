@@ -1,11 +1,11 @@
 server:
-  port: 8081
+  port: 8888
 # This will return the error message in the response body when we throw it
   error:
     include-message: always
 spring:
   application:
-    name: student-service
+    name: common-service
   cloud:
     nacos:
       discovery:
@@ -22,7 +22,7 @@ spring:
 # For Spring Data JPA Connection
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
 #   This will print Hibernate generated queries on the console for us to see.
     show-sql: true
   datasource:

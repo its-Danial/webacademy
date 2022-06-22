@@ -1,6 +1,6 @@
 package com.webacademy.student.services;
 
-import com.webacademy.student.entity.Student;
+import com.webacademy.common.entities.Student;
 import com.webacademy.student.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
