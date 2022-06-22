@@ -1,6 +1,6 @@
 package com.webacademy.student.services;
 
-import com.webacademy.student.entity.Student;
+import com.webacademy.common.entities.Student;
 
 import java.util.List;
 

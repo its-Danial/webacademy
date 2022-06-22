@@ -1,6 +1,5 @@
-package com.webacademy.datamodel;
+package com.webacademy.common.entities;
 
-import com.webacademy.course_material.entity.CourseMaterial;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,6 +1,6 @@
 package com.webacademy.student.config;
 
-import com.webacademy.student.entity.Student;
+import com.webacademy.common.entities.Student;
 import com.webacademy.student.repository.StudentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;

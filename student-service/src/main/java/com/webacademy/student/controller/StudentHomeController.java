@@ -1,6 +1,6 @@
 package com.webacademy.student.controller;
 
-import com.webacademy.student.entity.Student;
+import com.webacademy.common.entities.Student;
 import com.webacademy.student.services.StudentServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

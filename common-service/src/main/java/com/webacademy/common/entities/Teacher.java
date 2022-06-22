@@ -1,4 +1,4 @@
-package com.webacademy.teacher.entity;
+package com.webacademy.common.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

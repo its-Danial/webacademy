@@ -1,8 +1,8 @@
 package com.webacademy.course_material.config;
 
-import com.webacademy.course_material.entity.CourseMaterial;
+import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.CourseMaterial;
 import com.webacademy.course_material.repository.CourseMaterialRepository;
-import com.webacademy.datamodel.Course;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

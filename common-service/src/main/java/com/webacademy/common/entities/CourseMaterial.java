@@ -1,6 +1,5 @@
-package com.webacademy.course_material.entity;
+package com.webacademy.common.entities;
 
-import com.webacademy.datamodel.Course;
 import lombok.*;
 
 import javax.persistence.*;

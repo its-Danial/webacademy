@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>course-material-service</artifactId>
+    <artifactId>common-service</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -35,13 +35,7 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-
-        <!-- Common Services Provider -->
-        <dependency>
-            <groupId>com.webacademy</groupId>
-            <artifactId>common-service</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
+
 
 </project>

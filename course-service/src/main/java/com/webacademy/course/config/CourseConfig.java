@@ -1,6 +1,6 @@
 package com.webacademy.course.config;
 
-import com.webacademy.course.entity.Course;
+import com.webacademy.common.entities.Course;
 import com.webacademy.course.repository.CourseRepository;
 
 import org.springframework.boot.CommandLineRunner;

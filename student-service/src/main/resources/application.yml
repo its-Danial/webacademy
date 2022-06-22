@@ -22,7 +22,7 @@ spring:
 # For Spring Data JPA Connection
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
 #   This will print Hibernate generated queries on the console for us to see.
     show-sql: true
   datasource:
