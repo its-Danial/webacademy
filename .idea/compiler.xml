@@ -14,6 +14,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="course-material-servce" target="8" />
       <module name="first-service" target="1.8" />
       <module name="sentinel-service" target="18" />
     </bytecodeTargetLevel>
