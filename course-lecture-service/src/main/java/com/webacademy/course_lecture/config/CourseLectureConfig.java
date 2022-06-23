@@ -2,14 +2,13 @@ package com.webacademy.course_lecture.config;
 
 import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseLecture;
-import com.webacademy.course_lecture.repository.CourseLectureRepository;
-import com.webacademy.course_lecture.repository.CourseRepo;
+import com.webacademy.common.repositories.CourseLectureRepository;
+import com.webacademy.common.repositories.CourseRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 
 
@@ -20,7 +19,7 @@ public class CourseLectureConfig {
 
 
     @Bean
-    CommandLineRunner commandLineRunner(CourseLectureRepository courseLectureRepository, CourseRepo courseRepo) {
+    CommandLineRunner commandLineRunner(CourseLectureRepository courseLectureRepository, CourseRepository courseRepo) {
         return args -> {
 
 
