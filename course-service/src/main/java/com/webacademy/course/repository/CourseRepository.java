@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CourseRepository extends JpaRepository<Course,Long> {
 
-    List<Course>findByTopic(String topic);
+
 
 //    todo : find teacher name for the course
 

@@ -1,9 +1,6 @@
 package com.webacademy.common.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -43,15 +40,11 @@ public class Course {
 
 //   ----------------------------------------Table Relationship Mapping-----------------------------------------
 
-    //  Without this it is one-to-one "uni-directional mapping" which means when we fetch data for Courses we don't
-    //  get Course Lecture data. With "mappedBy = "course"" we will also get course lecture data
-    @OneToOne(
-            mappedBy = "course"
-    )
-    private CourseLecture courseLecture;
+//   ---------------------------------------- Course Lecture Mapping-----------------------------------------
 
-    // One Teacher can Teach Many Courses. P.S. It is recommended to user ManyToOne mapping instead of
-    // OneToMany, that is why it is in this entity class.
+
+
+//   ---------------------------------------- Teacher Mapping-----------------------------------------
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(
             name = "teacher_id",
@@ -59,9 +52,11 @@ public class Course {
     )
     private Teacher teacher;
 
-    // Many Courses can be taken my one student and A course can be taken by Many student.
+//  ---------------------------------------- Student Mapping-----------------------------------------
     @ManyToMany(
-            cascade = CascadeType.ALL
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+
     )
     @JoinTable(
             name = "student_course_mapping",
@@ -74,9 +69,10 @@ public class Course {
                     referencedColumnName = "studentId"
             )
     )
+    @ToString.Exclude
     private List<Student> students;
 
-    // At first the list can be empty.
+    //  At first the list can be empty.
     public void addStudent(Student student) {
         if (students == null) {
             students = new ArrayList<>();

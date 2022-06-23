@@ -11,7 +11,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 @Entity
 @Table(name = "student_table", uniqueConstraints = {
         @UniqueConstraint(name = "uc_student_email_address", columnNames = {"email_address"})
@@ -31,5 +30,7 @@ public class Student {
     private String emailId;
     private String username;
     private String password;
+
+
 
 }
