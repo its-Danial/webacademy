@@ -40,11 +40,11 @@ public class Course {
 
 //   ----------------------------------------Table Relationship Mapping-----------------------------------------
 
-//       ---------------------------------------- Course Lecture Mapping-----------------------------------------
+//   ---------------------------------------- Course Lecture Mapping-----------------------------------------
 
 
 
-//       ---------------------------------------- Teacher Mapping-----------------------------------------
+//   ---------------------------------------- Teacher Mapping-----------------------------------------
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(
             name = "teacher_id",
@@ -52,7 +52,7 @@ public class Course {
     )
     private Teacher teacher;
 
-//       ---------------------------------------- Student Mapping-----------------------------------------
+//  ---------------------------------------- Student Mapping-----------------------------------------
     @ManyToMany(
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY

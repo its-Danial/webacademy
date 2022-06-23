@@ -3,9 +3,9 @@ package com.webacademy.common.entities;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
-//@ToString(exclude = "course")    <--------------------------------
 @Builder
 @Entity
 @NoArgsConstructor
@@ -24,9 +24,10 @@ public class CourseLecture {
     )
     private Long courseLectureId;
     private String title; // e.g introduction to html
+
     private String courseLectureDescription; // e.g you will learn how to write html and good practices
     private String lectureUrl; // this will be a video link
-    private double lectureDuration; // this will be how long the course/video is. NOTE this should be date type
+    private LocalDateTime lectureDuration; // this will be how long the course/video is. NOTE this should be date type
 
     private boolean isCompleted = false; // when student clicks the lecture, it should be marked as watched
 
@@ -34,6 +35,13 @@ public class CourseLecture {
 
 //     cascade = CascadeType.ALL will allow us to save new data with parent data
 //     FetchType.LAZY will only return values of course lecture when we search
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "course_id", referencedColumnName = "courseId")
+    @ToString.Exclude
+    public Course course;
+
 
 
 }
