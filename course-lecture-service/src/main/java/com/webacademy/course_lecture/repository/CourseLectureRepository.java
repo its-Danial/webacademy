@@ -8,4 +8,6 @@ public interface CourseLectureRepository extends JpaRepository<CourseLecture, Lo
 //    String find
 
     // todo : CourseLecture by video
+
+
 }

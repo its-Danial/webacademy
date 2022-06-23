@@ -5,7 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Data
-@ToString(exclude = "course")
+//@ToString(exclude = "course")    <--------------------------------
 @Builder
 @Entity
 @NoArgsConstructor
@@ -32,19 +32,8 @@ public class CourseLecture {
 
 //  ----------------------------------------Table Relationship Mapping-----------------------------------------
 
-    // cascade = CascadeType.ALL will allow us to save new data with parent data
-    // FetchType.LAZY will only return values of course lecture when we search
-    @OneToOne(
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            optional = false
-    )
-    // Joining Course table with course lecture
-    @JoinColumn(
-            name = "course_id",
-            referencedColumnName = "courseId"
-    )
-    private Course course;
+//     cascade = CascadeType.ALL will allow us to save new data with parent data
+//     FetchType.LAZY will only return values of course lecture when we search
 
 
 }
