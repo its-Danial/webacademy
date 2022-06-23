@@ -44,7 +44,9 @@ public class Course {
 
 
 
-//   ---------------------------------------- Teacher Mapping-----------------------------------------
+
+
+    //   ---------------------------------------- Teacher Mapping-----------------------------------------
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(
             name = "teacher_id",
@@ -52,7 +54,7 @@ public class Course {
     )
     private Teacher teacher;
 
-//  ---------------------------------------- Student Mapping-----------------------------------------
+    //  ---------------------------------------- Student Mapping-----------------------------------------
     @ManyToMany(
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
@@ -76,8 +78,8 @@ public class Course {
     public void addStudent(Student student) {
         if (students == null) {
             students = new ArrayList<>();
-            students.add(student);
         }
+        students.add(student);
     }
 
 }
