@@ -14,7 +14,7 @@ public class StudentConfig {
         return args -> {
 
             Student danial = Student.builder()
-                    .emailId("Danial@email.com")
+                    .email("Danial@email.com")
                     .firstName("firstName")
                     .lastName("LastName")
                     .password("Strong Password")

@@ -22,11 +22,21 @@ public class TeacherConfig {
 //                    .title("Course One")
 //                    .build();
 
-            Teacher teacher = Teacher.builder()
-                    .bioText("good teacher")
-                    .firstName("first name")
-                    .lastName("last name")
-                    .build();
+//            Teacher teacher = Teacher.builder()
+//                    .bioText("good teacher")
+//                    .firstName("first name")
+//                    .lastName("last name")
+//                    .build();
+            Teacher teacher = new Teacher(
+                    null,
+                    "firstname",
+                    "lastnamee",
+                    "teacher@email.com",
+                    "username",
+                    "password",
+                    "bio",
+                    "avatarUrl"
+            );
 
             teacherRepository.save(teacher);
 
