@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Arrays;
 
-public class ShoppingCartServiceImpl implements ShoppingCartService{
 
+public class ShoppingCartServiceImpl implements ShoppingCartService{
     @Autowired
     ShoppingCartRepository shoppingCartRepository;
 

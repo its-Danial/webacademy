@@ -47,7 +47,7 @@ public class Course {
 
 
     //   ---------------------------------------- Teacher Mapping-----------------------------------------
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE) //I just changed ALl to MERGE
     @JoinColumn(
             name = "teacher_id",
             referencedColumnName = "teacherId"
@@ -56,9 +56,8 @@ public class Course {
 
     //  ---------------------------------------- Student Mapping-----------------------------------------
     @ManyToMany(
-            cascade = CascadeType.ALL,
+            cascade = CascadeType.MERGE, //I just changed ALl to MERGE
             fetch = FetchType.LAZY
-
     )
     @JoinTable(
             name = "student_course_mapping",
