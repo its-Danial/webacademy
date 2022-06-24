@@ -1,13 +1,12 @@
 package com.webacademy.student.services;
 
 import com.webacademy.common.entities.Student;
-import com.webacademy.student.repository.StudentRepository;
+import com.webacademy.common.repositories.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 @Service
 @Slf4j

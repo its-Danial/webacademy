@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 @Data
 @Builder
@@ -41,7 +42,4 @@ public class CourseLecture {
     @JoinColumn(name = "course_id", referencedColumnName = "courseId")
     @ToString.Exclude
     public Course course;
-
-
-
 }

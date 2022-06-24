@@ -1,9 +1,7 @@
-package com.webacademy.course_lecture.repository;
+package com.webacademy.common.repositories;
 
 import com.webacademy.common.entities.CourseLecture;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
 
 public interface CourseLectureRepository extends JpaRepository<CourseLecture, Long> {
 

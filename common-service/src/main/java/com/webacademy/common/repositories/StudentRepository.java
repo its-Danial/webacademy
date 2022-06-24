@@ -1,8 +1,6 @@
-package com.webacademy.student.repository;
+package com.webacademy.common.repositories;
 
 import com.webacademy.common.entities.Student;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 @Repository

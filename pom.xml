@@ -15,6 +15,7 @@
         <module>course-lecture-service</module>
         <module>gateway-service</module>
         <module>common-service</module>
+        <module>shopping-cart-service</module>
     </modules>
 
     <properties>

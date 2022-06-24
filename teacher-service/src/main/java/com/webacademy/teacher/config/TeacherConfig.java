@@ -1,6 +1,6 @@
 package com.webacademy.teacher.config;
 import com.webacademy.common.entities.Teacher;
-import com.webacademy.teacher.repository.TeacherRepository;
+import com.webacademy.common.repositories.TeacherRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
