@@ -39,8 +39,11 @@ public class CourseConfig {
                     null,
                     "firstname",
                     "lastnamee",
+                    "teacher2@email.com",
+                    "username",
+                    "password",
                     "bio",
-                    "avatarpic"
+                    "avatarUrl"
             );
 
             Course course = new Course(

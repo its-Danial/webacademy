@@ -1,4 +1,4 @@
-package com.webacademy.student.services;
+package com.webacademy.student.service;
 
 import com.webacademy.common.entities.Student;
 
@@ -8,9 +8,11 @@ public interface StudentService {
 
     List<Student> getAllStudent();
 
-    Student findStudentByEmailId(String email);
+    Student findStudentByEmail(String email);
 
-    void addNewStudent(Student student);
+    void addStudent(Student student);
+
+    void updateStudent(Student student);
 
     void deleteStudentByEmailId(String email);
 

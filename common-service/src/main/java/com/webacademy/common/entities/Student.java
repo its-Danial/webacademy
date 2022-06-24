@@ -27,7 +27,7 @@ public class Student {
     private String firstName;
     private String lastName;
     @Column(name = "email_address", nullable = false)
-    private String emailId;
+    private String email;
     private String username;
     private String password;
 
