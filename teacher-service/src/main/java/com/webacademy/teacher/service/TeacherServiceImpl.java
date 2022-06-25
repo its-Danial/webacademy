@@ -17,7 +17,7 @@ public class TeacherServiceImpl implements TeacherService{
     TeacherRepository teacherRepository;
 
     @Override
-    public List<Teacher> getAllTeacher() {
+    public List<Teacher> findAllTeacher() {
         log.info("Fetch all teachers");
         return teacherRepository.findAll();
     }

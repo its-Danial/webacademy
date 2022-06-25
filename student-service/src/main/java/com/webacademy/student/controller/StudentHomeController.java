@@ -16,10 +16,10 @@ public class StudentHomeController {
 
     @GetMapping("/get-all")
     public List<Student> getAllStudent(){
-        return studentService.getAllStudent();
+        return studentService.findAllStudent();
     }
 
-    @GetMapping("/getStudentByEmail/{email}")
+    @GetMapping("/getByEmail/{email}")
     public Student getStudentByEmail(@PathVariable("email") String email){
         return studentService.findStudentByEmail(email);
     }

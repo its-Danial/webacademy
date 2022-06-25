@@ -5,7 +5,7 @@ import com.webacademy.common.entities.Teacher;
 import java.util.List;
 
 public interface TeacherService {
-    List<Teacher> getAllTeacher();
+    List<Teacher> findAllTeacher();
 
     Teacher findTeacherByEmail(String email);
 

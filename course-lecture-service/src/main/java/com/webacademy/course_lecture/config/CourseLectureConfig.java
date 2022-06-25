@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 
@@ -16,6 +17,11 @@ import java.time.LocalDateTime;
 @Slf4j
 public class CourseLectureConfig {
 
+    public String timeFormat(long minutes){
+        Duration duration = Duration.ofMinutes(minutes);
+        long seconds = duration.getSeconds();
+        return String.format("%d:%02d:%02d", seconds / 3600, (seconds % 3600) / 60, (seconds % 60));
+    }
     @Bean
     CommandLineRunner commandLineRunner(CourseLectureRepository courseLectureRepository, CourseRepository courseRepo) {
         return args -> {
@@ -29,14 +35,14 @@ public class CourseLectureConfig {
                     .course(course1)
                     .title("Overview")
                     .courseLectureDescription("Spring Boot overview")
-                    .lectureDuration(LocalDateTime.now())
+                    .lectureDuration(timeFormat(50))
                     .lectureUrl("https://www.youtube.com/watch?ad71dah871")
                     .build();
             CourseLecture courseLecture2 = CourseLecture.builder()
                     .course(course1)
                     .title("Initializing a Spring boot project")
                     .courseLectureDescription("We are initializing it with Spring Initializr")
-                    .lectureDuration(LocalDateTime.now())
+                    .lectureDuration(timeFormat(72))
                     .lectureUrl("https://www.youtube.com/watch?a423asdfa71")
                     .build();
 
@@ -44,7 +50,7 @@ public class CourseLectureConfig {
                     .course(course2)
                     .title("Overview")
                     .courseLectureDescription("React overview")
-                    .lectureDuration(LocalDateTime.now())
+                    .lectureDuration(timeFormat(32))
                     .lectureUrl("https://www.youtube.com/watch?v=hQAHSlTtcmY")
                     .build();
 
@@ -52,7 +58,7 @@ public class CourseLectureConfig {
                     .course(course2)
                     .title("Starting a react project")
                     .courseLectureDescription("To start a react project, we use npx create-react-app your-project")
-                    .lectureDuration(LocalDateTime.now())
+                    .lectureDuration(timeFormat(3))
                     .lectureUrl("https://www.youtube.com/watch?v=d61g&Asdh3")
                     .build();
 

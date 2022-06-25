@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface CourseService {
 
-    List<Course> getAllCourse();
+    List<Course> findAllCourse();
 
     List<Course>findCoursesByTeacherId(Long id);
 

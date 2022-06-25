@@ -17,7 +17,7 @@ public class CourseServiceImpl implements CourseService {
     CourseRepository courseRepository;
 
     @Override
-    public List<Course> getAllCourse() {
+    public List<Course> findAllCourse() {
         log.info("Fetch all courses");
         return courseRepository.findAll();
     }
