@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Configuration;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 
 
 @Configuration
@@ -62,10 +64,9 @@ public class CourseLectureConfig {
                     .lectureUrl("https://www.youtube.com/watch?v=d61g&Asdh3")
                     .build();
 
-            courseLectureRepository.save(courseLecture1);
-            courseLectureRepository.save(courseLecture2);
-            courseLectureRepository.save(courseLecture3);
-            courseLectureRepository.save(courseLecture4);
+            List<CourseLecture> lectures = Arrays.asList(courseLecture1, courseLecture2, courseLecture3, courseLecture4);
+
+            courseLectureRepository.saveAll(lectures);
 
             System.out.println(courseLectureRepository.findAll());
 

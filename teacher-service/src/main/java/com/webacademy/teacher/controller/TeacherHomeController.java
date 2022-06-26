@@ -22,7 +22,7 @@ public class TeacherHomeController {
         return teacherService.findAllTeacher();
     }
 
-    @GetMapping("/getTeacherByEmail/{email}")
+    @GetMapping("/getByEmail/{email}")
     public Teacher getTeacherByEmail(@PathVariable("email") String email) {
         return teacherService.findTeacherByEmail(email);
     }

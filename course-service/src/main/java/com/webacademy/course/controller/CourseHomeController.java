@@ -23,13 +23,13 @@ public class CourseHomeController {
         return courseService.findAllCourse();
     }
 
-    @GetMapping("/getById/{id}")
-    public Optional<Course> getCourseByCourseId(@PathVariable("id") Long id){
+    @GetMapping("/getById/{courseId}")
+    public Optional<Course> getCourseByCourseId(@PathVariable("courseId") Long id){
         return courseService.findCourseByCourseId(id);
     }
 
-    @GetMapping("/getByTeacherId/{id}")
-    public List<Course> getCoursesByTeacherId(@PathVariable("id") Long id){
+    @GetMapping("/getByTeacherId/{teacherId}")
+    public List<Course> getCoursesByTeacherId(@PathVariable("teacherId") Long id){
         return courseService.findCoursesByTeacherId(id);
     }
 
