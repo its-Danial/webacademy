@@ -1,6 +1,5 @@
 package com.webacademy.teacher.controller;
 
-import com.webacademy.common.entities.Student;
 import com.webacademy.common.entities.Teacher;
 import com.webacademy.teacher.service.TeacherServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class TeacherHomeController {
 
     @GetMapping("/get-all")
     public List<Teacher> getAllTeacher(){
-        return teacherService.getAllTeacher();
+        return teacherService.findAllTeacher();
     }
 
     @GetMapping("/getTeacherByEmail/{email}")

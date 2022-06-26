@@ -1,7 +1,7 @@
 package com.webacademy.student.service;
 
 import com.webacademy.common.entities.Student;
-import com.webacademy.student.repository.StudentRepository;
+import com.webacademy.common.repositories.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,14 +16,14 @@ public class StudentServiceImpl implements StudentService {
     StudentRepository studentRepository;
 
     @Override
-    public List<Student> getAllStudent() {
+    public List<Student> findAllStudent() {
         log.info("Fetch all students");
         return studentRepository.findAll();
     }
 
     @Override
     public Student findStudentByEmail(String email) {
-        log.info("Student with email:{} found", email);
+        log.info("Student with email: {} found", email);
         return studentRepository.findStudentByEmail(email);
     }
 
@@ -46,7 +46,5 @@ public class StudentServiceImpl implements StudentService {
         Student student = studentRepository.findStudentByEmail(email);
         log.info("Deleted student {}", student.getUsername());
         studentRepository.deleteById(student.getStudentId());
-
-
     }
 }

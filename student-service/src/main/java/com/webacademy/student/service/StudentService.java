@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface StudentService {
 
-    List<Student> getAllStudent();
+    List<Student> findAllStudent();
 
     Student findStudentByEmail(String email);
 
