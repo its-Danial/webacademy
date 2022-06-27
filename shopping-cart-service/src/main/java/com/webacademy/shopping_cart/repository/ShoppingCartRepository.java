@@ -1,4 +1,4 @@
-package com.webacademy.common.repositories;
+package com.webacademy.shopping_cart.repository;
 
 import com.webacademy.common.entities.ShoppingCart;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.Embeddable;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -11,7 +12,9 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class CourseInformation {
 
-    private String categoryTopic;
+    private List<String> categories;
+    private List<String> topics;
+
 
     private double price;
 

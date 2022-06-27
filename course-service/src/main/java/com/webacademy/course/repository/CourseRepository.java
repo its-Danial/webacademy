@@ -1,4 +1,4 @@
-package com.webacademy.common.repositories;
+package com.webacademy.course.repository;
 
 import com.webacademy.common.entities.Course;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -4,9 +4,9 @@
 //import com.webacademy.common.entities.CourseInformation;
 //import com.webacademy.common.entities.Student;
 //import com.webacademy.common.entities.Teacher;
-//import com.webacademy.common.repositories.CourseRepository;
-//import com.webacademy.common.repositories.StudentRepository;
-//import com.webacademy.common.repositories.TeacherRepository;
+//import com.webacademy.course.repository.CourseRepository;
+//import com.webacademy.student.repository.StudentRepository;
+//import com.webacademy.teacher.repository.TeacherRepository;
 //import org.springframework.boot.CommandLineRunner;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
