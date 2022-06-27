@@ -35,6 +35,7 @@ public class Course {
     private double completedProgress = 0; // When the user watched a lecture this should be updated
     // get all completed lectures and divide by total lectures and set this to that value.
 
+
     @Embedded
     private CourseInformation courseInformation;
 
@@ -47,7 +48,7 @@ public class Course {
 
 
     //   ---------------------------------------- Teacher Mapping-----------------------------------------
-    @ManyToOne(cascade = CascadeType.MERGE) //I just changed ALl to MERGE
+    @ManyToOne(cascade = CascadeType.ALL) //I just changed ALl to MERGE
     @JoinColumn(
             name = "teacher_id",
             referencedColumnName = "teacherId"
@@ -56,7 +57,7 @@ public class Course {
 
     //  ---------------------------------------- Student Mapping-----------------------------------------
     @ManyToMany(
-            cascade = CascadeType.MERGE, //I just changed ALl to MERGE
+            cascade = CascadeType.ALL, //I just changed ALl to MERGE
             fetch = FetchType.LAZY
     )
     @JoinTable(
