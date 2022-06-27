@@ -11,5 +11,5 @@ public interface ShoppingCartService {
 //    @PostMapping("/{courseId}")
 //    void addCourseToCart(@PathVariable("courseId") Long courseId, Long studentId);
 
-    void deleteCourseFromCart(Long courseId);
+//    void deleteCourseFromCart(Long courseId);
 }

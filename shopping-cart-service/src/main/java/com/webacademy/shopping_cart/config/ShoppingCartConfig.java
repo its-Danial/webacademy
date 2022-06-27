@@ -1,23 +1,9 @@
-package com.webacademy.shopping_cart.config;
-
-import com.webacademy.common.entities.Course;
-import com.webacademy.common.entities.ShoppingCart;
-import com.webacademy.common.entities.Student;
-import com.webacademy.common.repositories.CourseRepository;
-import com.webacademy.common.repositories.ShoppingCartRepository;
-import com.webacademy.common.repositories.StudentRepository;
-import com.webacademy.shopping_cart.feign.CartFeignClient;
-import com.webacademy.shopping_cart.feign.HomeFeignClient;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-import java.util.Arrays;
-import java.util.List;
-
-@Configuration
-public class ShoppingCartConfig {
+//package com.webacademy.shopping_cart.config;
+//
+//import org.springframework.context.annotation.Configuration;
+//
+//@Configuration
+//public class ShoppingCartConfig {
 
 
 
@@ -53,4 +39,4 @@ public class ShoppingCartConfig {
 //            System.out.println(homeFeignClient.getAllTodos());
 //        };
 //    }
-}
+//}

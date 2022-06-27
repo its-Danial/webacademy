@@ -3,10 +3,7 @@ package com.webacademy.course.controller;
 import com.webacademy.common.entities.Course;
 import com.webacademy.course.service.CourseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +18,12 @@ public class CourseHomeController {
     @GetMapping("/get-all")
     public List<Course> getAllCourse() {
         return courseService.findAllCourse();
+    }
+
+    @GetMapping("/hello")
+    @ResponseBody
+    public String hello() {
+        return "Hello";
     }
 
     @GetMapping("/getById/{courseId}")
