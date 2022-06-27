@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service("teacherService")
 @Slf4j
@@ -19,6 +20,11 @@ public class TeacherServiceImpl implements TeacherService{
     public List<Teacher> findAllTeacher() {
         log.info("Fetch all teachers");
         return teacherRepository.findAll();
+    }
+
+    @Override
+    public Optional<Teacher> findTeacherById(Long id) {
+        return teacherRepository.findById(id);
     }
 
     @Override

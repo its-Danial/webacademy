@@ -2,7 +2,10 @@ package com.webacademy.course.config;
 
 import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseInformation;
+import com.webacademy.common.entities.Teacher;
+import com.webacademy.course.feign.TeacherFeignClient;
 import com.webacademy.course.repository.CourseRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,10 +17,14 @@ import java.util.Arrays;
 @Configuration
 @Transactional
 public class CourseConfig {
+    @Autowired
+    TeacherFeignClient teacherFeignClient;
 
     @Bean
     CommandLineRunner commandLineRunner(CourseRepository courseRepository) {
         return args -> {
+
+
 
 //            Teacher teacher1 = teacherRepository.findById(Long.valueOf(1)).get();
 //            Teacher teacher2 = teacherRepository.findById(Long.valueOf(2)).get();
@@ -26,6 +33,9 @@ public class CourseConfig {
 //            for (int i = 0; i<=students.size()-1; i++) {
 //                students.get(i);
 //            }
+
+            Teacher teacher1 = teacherFeignClient.getTeacherById(1L).get();
+            Teacher teacher2 = teacherFeignClient.getTeacherById(2L).get();
 
 //
             CourseInformation course1Info = new CourseInformation(
@@ -51,7 +61,7 @@ public class CourseConfig {
                     .courseInformation(course1Info)
                     .courseRating(4.2)
                     .createdAt(LocalDateTime.now())
-//                    .teacher(teacher1)
+                    .teacher(teacher1)
 //                    .students(students)
                     .build();
 
@@ -60,7 +70,7 @@ public class CourseConfig {
                     .courseInformation(course2Info)
                     .courseRating(4.8)
                     .createdAt(LocalDateTime.now())
-//                    .teacher(teacher2)
+                    .teacher(teacher2)
                     .build();
 
             courseRepository.save(course1);
