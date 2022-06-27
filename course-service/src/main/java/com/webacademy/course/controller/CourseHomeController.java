@@ -35,10 +35,10 @@ public class CourseHomeController {
         return courseService.findCoursesByTeacherId(id);
     }
 
-    @GetMapping("/getByCategory/{category}")
-    public List<Course> getCoursesByCategory(@PathVariable("category") String category){
-        return  courseService.findCoursesByCategory(category);
-    }
+//    @GetMapping("/getByCategory/{category}")
+//    public List<Course> getCoursesByCategory(@PathVariable("category") String category){
+//        return  courseService.findCoursesByCategory(category);
+//    }
 
 
 }

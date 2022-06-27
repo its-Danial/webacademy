@@ -1,6 +1,5 @@
 package com.webacademy.shopping_cart.service;
 
-import com.webacademy.common.repositories.CourseRepository;
 import com.webacademy.shopping_cart.repository.ShoppingCartRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

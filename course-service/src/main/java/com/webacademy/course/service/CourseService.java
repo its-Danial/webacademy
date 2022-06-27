@@ -14,7 +14,7 @@ public interface CourseService {
 
     List<Course>findCoursesByTeacherId(Long id);
 
-    List<Course>findCoursesByCategory(String category);
+//    List<Course>findCoursesByCategory(String category);
 
     Optional<Course> findCourseByCourseId(Long id);
 }

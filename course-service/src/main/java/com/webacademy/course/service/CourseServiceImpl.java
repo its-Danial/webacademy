@@ -33,11 +33,11 @@ public class CourseServiceImpl implements CourseService {
         return courseRepository.findCoursesByTeacherId(id);
     }
 
-    @Override
-    public List<Course> findCoursesByCategory(String category) {
-        log.info("Fetch courses by category: {}", category);
-        return courseRepository.findCoursesByCategory(category);
-    }
+//    @Override
+//    public List<Course> findCoursesByCategory(String category) {
+//        log.info("Fetch courses by category: {}", category);
+//        return courseRepository.findCoursesByCategory(category);
+//    }
 
     @Override
     public Optional<Course> findCourseByCourseId(Long id) {
