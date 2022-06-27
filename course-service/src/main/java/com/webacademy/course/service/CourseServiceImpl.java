@@ -40,6 +40,12 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    public List<Course> findCoursesByTopic(String topic) {
+        log.info("Fetch courses by topic: {}", topic);
+        return courseRepository.findCoursesByTopic(topic);
+    }
+
+    @Override
     public Optional<Course> findCourseByCourseId(Long id) {
         log.info("Fetch course {}", id);
         return courseRepository.findById(id);

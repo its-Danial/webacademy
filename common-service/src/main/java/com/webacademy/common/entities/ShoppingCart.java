@@ -30,7 +30,6 @@ public class ShoppingCart {
     )
     private Student student;
 
-
     @OneToMany(cascade = CascadeType.MERGE) //Changed from ALL to MERGE
     @JoinTable(
             name = "cart_course_mapping",

@@ -35,14 +35,20 @@ public class Course {
     private double completedProgress = 0; // When the user watched a lecture this should be updated
     // get all completed lectures and divide by total lectures and set this to that value.
 
-
     @Embedded
     private CourseInformation courseInformation;
 
 //   ----------------------------------------Table Relationship Mapping-----------------------------------------
 
-//   ---------------------------------------- Course Lecture Mapping-----------------------------------------
+//    @CollectionTable(name = "category", joinColumns = @JoinColumn(name = "course_id"),
+//            foreignKey = @ForeignKey(name = "category_course_fk"))
+//    private List<Category> categories;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="course")
+    @ToString.Exclude
+    private List<Category> categories = new ArrayList<>();
+
+//   ---------------------------------------- Course Lecture Mapping-----------------------------------------
 
 
 

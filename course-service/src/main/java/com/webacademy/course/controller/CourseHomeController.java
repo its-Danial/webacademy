@@ -40,5 +40,10 @@ public class CourseHomeController {
         return courseService.findCoursesByCategory(category);
     }
 
+    @GetMapping("/getByTopic/{topic}")
+    public List<Course> getCoursesByTopic(@PathVariable("topic") String topic){
+        return courseService.findCoursesByTopic(topic);
+    }
+
 
 }

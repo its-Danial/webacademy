@@ -17,13 +17,10 @@ import java.util.List;
 @Embeddable
 public class CourseInformation {
 
-    @ElementCollection
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private List<String> topics;
+//    @ElementCollection
+//    @LazyCollection(LazyCollectionOption.FALSE) // without this it can't lazily load
+//    private List<String> categories;
 
-    @ElementCollection
-    @LazyCollection(LazyCollectionOption.FALSE) // without this it can't lazily load
-    private List<String> categories;
 
     private double price;
 
