@@ -8,6 +8,8 @@ import java.util.Optional;
 
 public interface CourseService {
 
+    String hello();
+
     List<Course> findAllCourse();
 
     List<Course>findCoursesByTeacherId(Long id);

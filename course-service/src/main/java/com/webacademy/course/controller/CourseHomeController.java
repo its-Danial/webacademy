@@ -15,15 +15,14 @@ public class CourseHomeController {
     @Autowired
     CourseServiceImpl courseService;
 
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hellooooooo";
+    }
+
     @GetMapping("/get-all")
     public List<Course> getAllCourse() {
         return courseService.findAllCourse();
-    }
-
-    @GetMapping("/hello")
-    @ResponseBody
-    public String hello() {
-        return "Hello";
     }
 
     @GetMapping("/getById/{courseId}")

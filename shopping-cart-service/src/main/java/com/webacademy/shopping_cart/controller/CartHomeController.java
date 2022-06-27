@@ -1,7 +1,6 @@
 package com.webacademy.shopping_cart.controller;
 
 import com.webacademy.shopping_cart.feign.JSONFeign;
-import com.webacademy.shopping_cart.feign.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,9 +23,9 @@ public class CartHomeController {
     @Autowired
     JSONFeign jsonFeign;
 
-    @GetMapping("/myposts")
-    public List<Post> getAllPosts(){
-      return jsonFeign.getAllPosts();
+    @GetMapping("/all")
+    public String getAll(){
+      return jsonFeign.hello();
     };
 
 

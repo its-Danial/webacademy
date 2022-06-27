@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@FeignClient(name = "postFeignClient", url = "${client.post.baseUrl}")
+@FeignClient(name="course-service", path = "/course")
 public interface JSONFeign {
 
-    @GetMapping("/posts")
-    List<Post> getAllPosts();
+    @GetMapping("/hello")
+    String hello();
 }
