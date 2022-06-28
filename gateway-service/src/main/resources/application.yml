@@ -1,0 +1,36 @@
+server:
+  port: 6969
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: student-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/student/**
+        - id: teacher-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/teacher/**
+        - id: course-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/course/**
+        - id: course-lecture-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/lecture/**
+        - id: shopping-cart-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/cart/**
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719

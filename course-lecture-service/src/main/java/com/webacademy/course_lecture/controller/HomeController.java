@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/course-lecture")
+@RequestMapping("/lecture")
 public class HomeController {
 
 //    @GetMapping("/getall")
