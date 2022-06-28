@@ -44,7 +44,7 @@ public class Course {
 //            foreignKey = @ForeignKey(name = "category_course_fk"))
 //    private List<Category> categories;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="course")
+    @OneToMany(cascade = CascadeType.ALL)
     @ToString.Exclude
     private List<Category> categories = new ArrayList<>();
 
