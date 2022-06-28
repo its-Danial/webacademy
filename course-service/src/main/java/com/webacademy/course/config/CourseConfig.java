@@ -1,9 +1,7 @@
 package com.webacademy.course.config;
 
-import com.webacademy.common.entities.Category;
-import com.webacademy.common.entities.Course;
-import com.webacademy.common.entities.CourseInformation;
-import com.webacademy.common.entities.Teacher;
+import com.webacademy.common.entities.*;
+import com.webacademy.course.feign.StudentFeignClient;
 import com.webacademy.course.feign.TeacherFeignClient;
 import com.webacademy.course.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,16 +20,17 @@ import java.util.List;
 public class CourseConfig {
     @Autowired
     TeacherFeignClient teacherFeignClient;
+    @Autowired
+    StudentFeignClient studentFeignClient;
 
     @Bean
     CommandLineRunner commandLineRunner(CourseRepository courseRepository) {
         return args -> {
 
-//
-//            List<Student> students = studentRepository.findAll();
-//            for (int i = 0; i<=students.size()-1; i++) {
-//                students.get(i);
-//            }
+            List<Student> students = studentFeignClient.getAllStudent();
+            for (int i = 0; i<=students.size()-1; i++) {
+                students.get(i);
+            }
 
             Teacher teacher1 = teacherFeignClient.getTeacherById(1L).get();
             Teacher teacher2 = teacherFeignClient.getTeacherById(2L).get();
@@ -70,7 +69,7 @@ public class CourseConfig {
                     .createdAt(LocalDateTime.now())
                     .teacher(teacher1)
                     .categories(categoryList1)
-//                    .students(students)
+                    .students(students)
                     .build();
 
             Course course2 = Course.builder()

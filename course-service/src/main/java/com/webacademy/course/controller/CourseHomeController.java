@@ -15,11 +15,6 @@ public class CourseHomeController {
     @Autowired
     CourseServiceImpl courseService;
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hellooooooo";
-    }
-
     @GetMapping("/get-all")
     public List<Course> getAllCourse() {
         return courseService.findAllCourse();
