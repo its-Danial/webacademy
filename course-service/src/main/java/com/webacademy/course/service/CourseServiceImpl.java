@@ -1,7 +1,7 @@
 package com.webacademy.course.service;
 
 import com.webacademy.common.entities.Course;
-import com.webacademy.common.repositories.CourseRepository;
+import com.webacademy.course.repository.CourseRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,9 +17,15 @@ public class CourseServiceImpl implements CourseService {
     CourseRepository courseRepository;
 
     @Override
+    public String hello() {
+        return "hello";
+    }
+
+    @Override
     public List<Course> findAllCourse() {
         log.info("Fetch all courses");
         return courseRepository.findAll();
+        // todo : filter
     }
 
     @Override
@@ -32,6 +38,12 @@ public class CourseServiceImpl implements CourseService {
     public List<Course> findCoursesByCategory(String category) {
         log.info("Fetch courses by category: {}", category);
         return courseRepository.findCoursesByCategory(category);
+    }
+
+    @Override
+    public List<Course> findCoursesByTopic(String topic) {
+        log.info("Fetch courses by topic: {}", topic);
+        return courseRepository.findCoursesByTopic(topic);
     }
 
     @Override

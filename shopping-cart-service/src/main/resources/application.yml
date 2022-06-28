@@ -1,3 +1,9 @@
+feign:
+  httpclient:
+    enabled: true
+  sentinel:
+    enabled: true
+
 server:
   port: 8085
 # This will return the error message in the response body when we throw it
@@ -10,10 +16,10 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-    sentinel:
-      transport:
-        dashboard: localhost:8080
-        port: 8719
+#    sentinel:
+#      transport:
+#        dashboard: localhost:8080
+#        port: 8719
   management:
     endpoints:
       web:
@@ -32,3 +38,7 @@ spring:
 #   Might need to change this depending on your SQL settings
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+client:
+  post:
+    baseUrl: https://jsonplaceholder.typicode.com

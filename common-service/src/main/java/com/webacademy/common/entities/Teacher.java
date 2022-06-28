@@ -30,8 +30,7 @@ public class Teacher {
             generator = "teacher_sequence"
     )
     private Long teacherId;
-    private String firstName;
-    private String lastName;
+    private String fullName;
     @Column(name = "email_address", nullable = false)
     private String email;
     private String username;

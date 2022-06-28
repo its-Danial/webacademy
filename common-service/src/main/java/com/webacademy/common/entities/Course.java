@@ -40,8 +40,15 @@ public class Course {
 
 //   ----------------------------------------Table Relationship Mapping-----------------------------------------
 
-//   ---------------------------------------- Course Lecture Mapping-----------------------------------------
+//    @CollectionTable(name = "category", joinColumns = @JoinColumn(name = "course_id"),
+//            foreignKey = @ForeignKey(name = "category_course_fk"))
+//    private List<Category> categories;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @ToString.Exclude
+    private List<Category> categories = new ArrayList<>();
+
+//   ---------------------------------------- Course Lecture Mapping-----------------------------------------
 
 
 

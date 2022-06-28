@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/student")
@@ -17,6 +18,11 @@ public class StudentHomeController {
     @GetMapping("/get-all")
     public List<Student> getAllStudent(){
         return studentService.findAllStudent();
+    }
+
+    @GetMapping("/getById/{studentId}")
+    public Optional<Student> getStudentById(@PathVariable("studentId") Long id){
+        return studentService.findStudentById(id);
     }
 
     @GetMapping("/getByEmail/{email}")

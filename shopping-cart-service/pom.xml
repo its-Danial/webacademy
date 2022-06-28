@@ -38,17 +38,24 @@
         </dependency>
 
         <!-- Common Services Provider -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.webacademy</groupId>-->
-        <!--            <artifactId>common-service</artifactId>-->
-        <!--        </dependency>-->
-
-        <!-- Common Services Provider -->
         <dependency>
             <groupId>com.webacademy</groupId>
             <artifactId>common-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <!-- Open Feign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-loadbalancer</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
     </dependencies>
 
 

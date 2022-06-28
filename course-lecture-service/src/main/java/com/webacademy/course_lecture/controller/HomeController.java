@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/course-lecture")
@@ -17,8 +18,13 @@ public class HomeController {
     CourseLectureServiceImpl courseLectureService;
 
     // todo: find Course lecture by course
-    @GetMapping("/getLectureByCourse/{courseId}")
-    public List<CourseLecture> getLectureByCourse(@PathVariable("courseId") Long id){
+    @GetMapping("/getByCourseId/{courseId}")
+    public List<CourseLecture> getLecturesByCourse(@PathVariable("courseId") Long id){
         return courseLectureService.findLecturesByCourseId(id);
+    }
+
+    @GetMapping("/getById/{lectureId}")
+    public Optional<CourseLecture> getLectureById(@PathVariable("lectureId") Long id){
+        return courseLectureService.findLectureById(id);
     }
 }

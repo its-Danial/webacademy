@@ -1,13 +1,13 @@
 package com.webacademy.teacher.service;
 
-import com.webacademy.common.entities.Student;
 import com.webacademy.common.entities.Teacher;
-import com.webacademy.common.repositories.TeacherRepository;
+import com.webacademy.teacher.repository.TeacherRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service("teacherService")
 @Slf4j
@@ -20,6 +20,11 @@ public class TeacherServiceImpl implements TeacherService{
     public List<Teacher> findAllTeacher() {
         log.info("Fetch all teachers");
         return teacherRepository.findAll();
+    }
+
+    @Override
+    public Optional<Teacher> findTeacherById(Long id) {
+        return teacherRepository.findById(id);
     }
 
     @Override

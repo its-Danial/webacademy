@@ -2,11 +2,9 @@ package com.webacademy.common.entities;
 
 
 import lombok.*;
-import org.hibernate.mapping.Array;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Data
@@ -32,8 +30,7 @@ public class ShoppingCart {
     )
     private Student student;
 
-
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.MERGE) //Changed from ALL to MERGE
     @JoinTable(
             name = "cart_course_mapping",
             joinColumns = @JoinColumn(

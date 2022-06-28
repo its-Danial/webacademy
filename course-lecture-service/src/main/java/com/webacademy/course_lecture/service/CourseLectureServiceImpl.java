@@ -2,7 +2,7 @@ package com.webacademy.course_lecture.service;
 
 
 import com.webacademy.common.entities.CourseLecture;
-import com.webacademy.common.repositories.CourseLectureRepository;
+import com.webacademy.course_lecture.repository.CourseLectureRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

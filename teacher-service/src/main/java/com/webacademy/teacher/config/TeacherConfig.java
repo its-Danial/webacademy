@@ -1,7 +1,7 @@
 package com.webacademy.teacher.config;
 
 import com.webacademy.common.entities.Teacher;
-import com.webacademy.common.repositories.TeacherRepository;
+import com.webacademy.teacher.repository.TeacherRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,8 +16,7 @@ public class TeacherConfig {
 
             Teacher teacher1 = Teacher.builder()
                     .email("profben@email.com")
-                    .firstName("Ben")
-                    .lastName("Dover")
+                    .fullName("Ben Dover")
                     .password("1234")
                     .username("bendover123")
                     .bioText("I teach how to bend over")
@@ -26,8 +25,7 @@ public class TeacherConfig {
 
             Teacher teacher2 = Teacher.builder()
                     .email("profkanye@email.com")
-                    .firstName("Kanye")
-                    .lastName("Northeast")
+                    .fullName("Kanye Northeast")
                     .password("1234")
                     .username("kanyene123")
                     .bioText("I teach in NEU because I was born to do it")

@@ -61,7 +61,9 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <version>2.2.5.RELEASE</version>
         </dependency>
+
         <!-- Nacos Discovery for service registration/discovery  -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -74,13 +76,6 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-        <!--Spring Boot Testing -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-test</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-
 
 
     </dependencies>

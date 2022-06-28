@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/teacher")
@@ -22,7 +23,12 @@ public class TeacherHomeController {
         return teacherService.findAllTeacher();
     }
 
-    @GetMapping("/getTeacherByEmail/{email}")
+    @GetMapping("/getById/{teacherId}")
+    public Optional<Teacher> getTeacherById(@PathVariable("teacherId") Long id){
+        return teacherService.findTeacherById(id);
+    }
+
+    @GetMapping("/getByEmail/{email}")
     public Teacher getTeacherByEmail(@PathVariable("email") String email) {
         return teacherService.findTeacherByEmail(email);
     }
