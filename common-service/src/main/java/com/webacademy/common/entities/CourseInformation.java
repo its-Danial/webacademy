@@ -17,11 +17,6 @@ import java.util.List;
 @Embeddable
 public class CourseInformation {
 
-//    @ElementCollection
-//    @LazyCollection(LazyCollectionOption.FALSE) // without this it can't lazily load
-//    private List<String> categories;
-
-
     private double price;
 
     private String summary; // small

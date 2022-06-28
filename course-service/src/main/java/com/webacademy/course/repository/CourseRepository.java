@@ -13,10 +13,10 @@ public interface CourseRepository extends JpaRepository<Course,Long> {
     List<Course> findCoursesByTeacherId(Long id);
 
 //    @Query("SELECT c FROM Course c, Category ca WHERE ca.categoryName = ?1 ") //shows all courses instead
-    @Query("SELECT c FROM Course c, Category ca WHERE ca.categoryName = ?1 ")
-    List<Course> findCoursesByCategory(String category);
+    @Query("SELECT c FROM Course c join fetch c.categories ca where ca.categoryName = :category")
+    List<Course> findCoursesByCategory(@Param("category") String category);
 
-    @Query("SELECT c FROM Course c, Category ca WHERE :topic MEMBER OF ca.topics ")
+    @Query("SELECT c FROM Course c join fetch c.categories ca where :topic MEMBER OF ca.topics ")
     List<Course> findCoursesByTopic(@Param("topic") String topic);
 
 }
