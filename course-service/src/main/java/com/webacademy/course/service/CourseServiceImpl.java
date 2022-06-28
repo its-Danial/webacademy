@@ -25,6 +25,7 @@ public class CourseServiceImpl implements CourseService {
     public List<Course> findAllCourse() {
         log.info("Fetch all courses");
         return courseRepository.findAll();
+        // todo : filter
     }
 
     @Override

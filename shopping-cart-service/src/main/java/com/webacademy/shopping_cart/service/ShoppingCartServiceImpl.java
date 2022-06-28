@@ -16,12 +16,12 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Autowired
     ShoppingCartRepository shoppingCartRepository;
 
+//    @Override
+//    public void addCourseToCart(Course course, Student student) {
+//        shoppingCartRepository.save(course);
+//        log.info("Added course {} to cart", course);
+//    }
 
-    @Override
-    public void addCourseToCart(Optional<Course> course, Optional<Student> student) {
-        shoppingCartRepository.addCourseToCart(course, student);
-        log.info("Added course {} to cart", course);
-    }
 
 //    @Override
 //    public void deleteCourseFromCart(Long courseId) {

@@ -27,9 +27,9 @@ public class CartHomeController {
 
     @PostMapping("/addCourseToCart")
     public void addCourseToCart(Long courseId, Long studentId){
-        Optional<Course> c = courseFeignClient.getCourseByCourseId(courseId);
-        Optional<Student> s = studentFeignClient.getStudentById(studentId);
-        shoppingCartService.addCourseToCart(c,s);
+        Course c = courseFeignClient.getCourseByCourseId(courseId).get();
+        Student s = studentFeignClient.getStudentById(studentId).get();
+
     }
 
 }

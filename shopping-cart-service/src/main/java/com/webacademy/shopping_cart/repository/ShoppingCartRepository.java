@@ -10,6 +10,6 @@ import java.util.Optional;
 
 public interface ShoppingCartRepository extends JpaRepository<ShoppingCart,Long> {
 
-    @Query("SELECT c, s FROM Course c, Student s WHERE c.courseId = ?1 and s.studentId = ?2")
-    void addCourseToCart(Optional<Course> course, Optional<Student> student);
+//    @Query("SELECT c, s FROM Course c, Student s WHERE c.courseId = ?1 and s.studentId = ?2")
+//    void addCourseToCart(Optional<Course> course, Optional<Student> student);
 }

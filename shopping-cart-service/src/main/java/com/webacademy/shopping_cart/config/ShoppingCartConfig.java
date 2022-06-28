@@ -1,42 +1,42 @@
-//package com.webacademy.shopping_cart.config;
-//
-//import org.springframework.context.annotation.Configuration;
-//
-//@Configuration
-//public class ShoppingCartConfig {
+package com.webacademy.shopping_cart.config;
+
+import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.ShoppingCart;
+import com.webacademy.common.entities.Student;
+import com.webacademy.shopping_cart.feign.CourseFeignClient;
+import com.webacademy.shopping_cart.feign.StudentFeignClient;
+import com.webacademy.shopping_cart.repository.ShoppingCartRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.Arrays;
+import java.util.Optional;
+
+@Configuration
+public class ShoppingCartConfig {
+
+    @Autowired
+    CourseFeignClient courseFeignClient;
+    @Autowired
+    StudentFeignClient studentFeignClient;
+    @Bean
+    CommandLineRunner commandLineRunner(ShoppingCartRepository shoppingCartRepository) {
+        return args -> {
 
 
+            Course course1 = courseFeignClient.getCourseByCourseId(1L).get();
+            Course course2 = courseFeignClient.getCourseByCourseId(2L).get();
 
-//    @Bean
-//    CommandLineRunner commandLineRunner( CartFeignClient cartFeignClient,ShoppingCartRepository shoppingCartRepository,
-//                                        CourseRepository courseRepository,
-//                                        StudentRepository studentRepository
-//                                        ) {
-//        return args -> {
-//
-//
-//
-//
-//            System.out.println( cartFeignClient.getAllCourses());
-//
-//            Course course1 = courseRepository.findById(Long.valueOf(1)).get();
-//            Course course2 = courseRepository.findById(Long.valueOf(2)).get();
-//
-//            Student danial = studentRepository.findStudentByEmail("danial@email.com");
-//
-//            ShoppingCart shoppingCart = ShoppingCart.builder()
-//                    .course(Arrays.asList(course1, course2))
-//                    .student(danial)
-//                    .build();
-//
-//            shoppingCartRepository.save(shoppingCart);
-//        };
-//    }
+            Student danial = studentFeignClient.getStudentById(1L).get();
 
-//    @Bean CommandLineRunner commandLineRunner (HomeFeignClient homeFeignClient){
-//        return args ->{
-//
-//            System.out.println(homeFeignClient.getAllTodos());
-//        };
-//    }
-//}
+            ShoppingCart shoppingCart = ShoppingCart.builder()
+                    .course(Arrays.asList(course1, course2))
+                    .student(danial)
+                    .build();
+
+            shoppingCartRepository.save(shoppingCart);
+        };
+    }
+}
