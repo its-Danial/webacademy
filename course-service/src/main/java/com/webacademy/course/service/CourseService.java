@@ -12,7 +12,7 @@ public interface CourseService {
 
     List<Course> findAllCourse();
 
-
+    List<Object> findAllCourseWithoutStudent();
     List<Course> findCoursesByPage(int page, int size);
 
     List<Course>findCoursesByTeacherId(Long id);

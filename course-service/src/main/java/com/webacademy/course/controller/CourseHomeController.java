@@ -1,7 +1,9 @@
 package com.webacademy.course.controller;
 
 import com.webacademy.common.entities.Course;
+import com.webacademy.course.repository.CourseRepository;
 import com.webacademy.course.service.CourseServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,13 +18,14 @@ public class CourseHomeController {
 
     @Autowired
     CourseServiceImpl courseService;
-
-
     @GetMapping("/get-all")
-    public List<Course> getAllCourse() {
-        List<Course> courses = courseService.findAllCourse();
-        System.out.println("=====" +courses);
-        return courses;
+    public List<Course> getAllCourse(){
+        return courseService.findAllCourse();
+    }
+
+    @GetMapping("/getAll")
+    public List<Object> getAllCourseWithoutStudent() {
+        return courseService.findAllCourseWithoutStudent();
     }
 
     @GetMapping("/filter")

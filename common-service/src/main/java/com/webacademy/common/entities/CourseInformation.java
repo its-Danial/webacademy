@@ -17,6 +17,7 @@ public class CourseInformation {
     private String summary; // small
     private String description; // big
 
+    private String coverImageUrl;
     private String previewVideoUrl;
 
 

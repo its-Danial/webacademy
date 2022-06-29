@@ -40,12 +40,14 @@ public class CourseConfig {
                     5.0,
                     "summary",
                     "description",
+                    "coverImageUrl",
                     "previewVideoUrl");
 
             CourseInformation course2Info = new CourseInformation(
                     6.0,
                     "summary2",
                     "description2",
+                    "coverImageUrl2",
                     "previewVideoUrl2");
 
             List<String> topics1 = Arrays.asList("a", "b", "c");
@@ -85,6 +87,7 @@ public class CourseConfig {
 
 
             System.out.println(courseRepository.findAll());
+            System.out.println();
         };
     }
 }
