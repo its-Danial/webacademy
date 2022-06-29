@@ -33,8 +33,6 @@ public class CourseHomeController {
         return courseService.findCoursesByPage(page, size);
     }
 
-
-
     @GetMapping("/getById/{courseId}")
     public Optional<Course> getCourseByCourseId(@PathVariable("courseId") Long id){
         return courseService.findCourseByCourseId(id);
@@ -55,5 +53,8 @@ public class CourseHomeController {
         return courseService.findCoursesByTopic(topic);
     }
 
-
+    @GetMapping("/getByRating")
+    public List<Course> getCoursesByRating(@RequestParam double minRating, @RequestParam double maxRating){
+        return courseService.findCourseByRating(minRating, maxRating);
+    }
 }

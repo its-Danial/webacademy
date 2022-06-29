@@ -21,6 +21,8 @@ public interface CourseService {
 
     List<Course> findCoursesByTopic(String topic);
 
+    List<Course> findCourseByRating(double minRating, double maxRating);
+
     Optional<Course> findCourseByCourseId(Long id);
 
     void updateProgress(Course course);

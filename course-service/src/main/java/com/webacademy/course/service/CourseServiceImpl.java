@@ -61,6 +61,12 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    public List<Course> findCourseByRating(double minRating, double maxRating) {
+        log.info("Fetch course by rating between min:{} and max:{}", minRating, maxRating);
+        return courseRepository.findCourseByRating(minRating, maxRating);
+    }
+
+    @Override
     public Optional<Course> findCourseByCourseId(Long id) {
         log.info("Fetch course {}", id);
         return courseRepository.findById(id);
@@ -71,6 +77,5 @@ public class CourseServiceImpl implements CourseService {
     public void updateProgress(Course course) {
 //        course.setCompletedProgress();
     }
-
 
 }

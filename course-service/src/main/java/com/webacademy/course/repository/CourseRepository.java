@@ -22,8 +22,11 @@ public interface CourseRepository extends JpaRepository<Course,Long> {
     @Query("SELECT c FROM Course c join fetch c.categories ca where ca.categoryName = :category")
     List<Course> findCoursesByCategory(@Param("category") String category);
 
-    @Query("SELECT c FROM Course c join fetch c.categories ca where :topic MEMBER OF ca.topics ")
+    @Query("SELECT c FROM Course c join fetch c.categories ca where :topic MEMBER OF ca.topics")
     List<Course> findCoursesByTopic(@Param("topic") String topic);
+
+    @Query("SELECT c FROM Course c WHERE c.courseRating BETWEEN :minRating AND :maxRating")
+    List<Course> findCourseByRating(@Param("minRating") double minRating, @Param("maxRating") double maxRating);
 
     @Override
     Page<Course> findAll(Pageable pageable);

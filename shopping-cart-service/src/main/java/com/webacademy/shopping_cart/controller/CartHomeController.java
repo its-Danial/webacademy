@@ -1,6 +1,7 @@
 package com.webacademy.shopping_cart.controller;
 
 import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.ShoppingCart;
 import com.webacademy.common.entities.Student;
 import com.webacademy.shopping_cart.feign.CourseFeignClient;
 import com.webacademy.shopping_cart.feign.StudentFeignClient;
@@ -33,11 +34,15 @@ public class CartHomeController {
     }
 
     // TODO: add course to cart in repo and service
-    @PostMapping("/add")
-    public String addCourseToCart(@RequestBody Long courseId, Long studentId){
-        Course c = courseFeignClient.getCourseByCourseId(courseId).get();
-        Student s = studentFeignClient.getStudentById(studentId).get();
-        return "OK";
+//    @PostMapping("/add")
+//    public String addCourseToCart(@RequestBody Long courseId, Long studentId){
+//        shoppingCartService.addCourseToCart(courseId, studentId);
+//        return "OK";
+//    }
+
+    @GetMapping("/add/{courseId}/{studentId}")
+    public void addCourseToCart(@PathVariable("courseId") Long courseId, @PathVariable("studentId") Long studentId){
+        shoppingCartService.findShoppingCarts(courseId, studentId);
     }
 
 }
