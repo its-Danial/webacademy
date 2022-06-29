@@ -12,7 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "student_table", uniqueConstraints = {
+@Table(name = "student", uniqueConstraints = {
         @UniqueConstraint(name = "uc_student_email_address", columnNames = {"email_address"})
 }) // We need all email to be unique, so I added unique constraint for the table.
 public class Student {

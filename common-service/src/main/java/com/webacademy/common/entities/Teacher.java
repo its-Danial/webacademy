@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Builder
 
 @Entity
-@Table(name = "teacher_table", uniqueConstraints = {
+@Table(name = "teacher", uniqueConstraints = {
         @UniqueConstraint(name = "uc_teacher_email_address", columnNames = {"email_address"})
 })
 public class Teacher {
