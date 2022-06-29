@@ -5,17 +5,16 @@ import com.webacademy.common.entities.Student;
 import com.webacademy.shopping_cart.feign.CourseFeignClient;
 import com.webacademy.shopping_cart.feign.StudentFeignClient;
 import com.webacademy.shopping_cart.service.ShoppingCartServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/cart")
+@Slf4j
 public class CartHomeController {
 
     @Autowired
@@ -25,11 +24,20 @@ public class CartHomeController {
     @Autowired
     StudentFeignClient studentFeignClient;
 
-    @PostMapping("/addCourseToCart")
-    public void addCourseToCart(Long courseId, Long studentId){
+    // Shows which student is accessing the cart.
+    // e.g. /cart/123123
+    @GetMapping("/{studentId}")
+    public void getStudentId(@PathVariable("studentId") Long id){
+        studentFeignClient.getStudentById(id);
+        log.info("Get student {} in cart", id);
+    }
+
+    // TODO: add course to cart in repo and service
+    @PostMapping("/add")
+    public String addCourseToCart(@RequestBody Long courseId, Long studentId){
         Course c = courseFeignClient.getCourseByCourseId(courseId).get();
         Student s = studentFeignClient.getStudentById(studentId).get();
-
+        return "OK";
     }
 
 }

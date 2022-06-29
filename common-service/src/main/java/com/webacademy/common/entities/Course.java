@@ -45,12 +45,21 @@ public class Course {
 //    private List<Category> categories;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "course_category_mapping",
+            joinColumns = @JoinColumn(
+                    name = "course_id",
+                    referencedColumnName = "courseId"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "category_id",
+                    referencedColumnName = "categoryId"
+            )
+    )
     @ToString.Exclude
     private List<Category> categories = new ArrayList<>();
 
 //   ---------------------------------------- Course Lecture Mapping-----------------------------------------
-
-
 
 
     //   ---------------------------------------- Teacher Mapping-----------------------------------------

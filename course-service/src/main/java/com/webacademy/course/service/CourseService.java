@@ -12,6 +12,9 @@ public interface CourseService {
 
     List<Course> findAllCourse();
 
+
+    List<Course> findCoursesByPage(int page, int size);
+
     List<Course>findCoursesByTeacherId(Long id);
 
     List<Course> findCoursesByCategory(String category);
@@ -19,4 +22,6 @@ public interface CourseService {
     List<Course> findCoursesByTopic(String topic);
 
     Optional<Course> findCourseByCourseId(Long id);
+
+    void updateProgress(Course course);
 }

@@ -32,6 +32,7 @@ public class CourseConfig {
                 students.get(i);
             }
 
+
             Teacher teacher1 = teacherFeignClient.getTeacherById(1L).get();
             Teacher teacher2 = teacherFeignClient.getTeacherById(2L).get();
 
@@ -39,14 +40,12 @@ public class CourseConfig {
                     5.0,
                     "summary",
                     "description",
-                    "coverUrl",
                     "previewVideoUrl");
 
             CourseInformation course2Info = new CourseInformation(
                     6.0,
                     "summary2",
                     "description2",
-                    "coverUrl2",
                     "previewVideoUrl2");
 
             List<String> topics1 = Arrays.asList("a", "b", "c");

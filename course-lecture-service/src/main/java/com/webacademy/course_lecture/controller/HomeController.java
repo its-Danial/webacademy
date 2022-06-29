@@ -13,11 +13,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/lecture")
 public class HomeController {
-
-//    @GetMapping("/getall")
     CourseLectureServiceImpl courseLectureService;
 
-    // todo: find Course lecture by course
     @GetMapping("/getByCourseId/{courseId}")
     public List<CourseLecture> getLecturesByCourse(@PathVariable("courseId") Long id){
         return courseLectureService.findLecturesByCourseId(id);
@@ -27,4 +24,5 @@ public class HomeController {
     public Optional<CourseLecture> getLectureById(@PathVariable("lectureId") Long id){
         return courseLectureService.findLectureById(id);
     }
+
 }
