@@ -30,4 +30,9 @@ public class StudentHomeController {
         return studentService.findStudentByEmail(email);
     }
 
+    @GetMapping("/getStudentsByCourseId/{courseId}")
+    public List<Student> getStudentsByCourseId(@PathVariable("courseId") Long id){
+        return studentService.findStudentsByCourseId(id);
+    }
+
 }

@@ -18,4 +18,6 @@ public interface StudentService {
     void deleteStudentByEmailId(String email);
 
     Optional<Student> findStudentById(Long id);
+
+    List<Student> findStudentsByCourseId(Long id);
 }
