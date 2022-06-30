@@ -20,6 +20,7 @@ public class CartHomeController {
 
     @Autowired
     ShoppingCartServiceImpl shoppingCartService;
+
     @Autowired
     CourseFeignClient courseFeignClient;
     @Autowired
@@ -40,9 +41,9 @@ public class CartHomeController {
 //        return "OK";
 //    }
 
-    @GetMapping("/add/{courseId}/{studentId}")
-    public void addCourseToCart(@PathVariable("courseId") Long courseId, @PathVariable("studentId") Long studentId){
-        shoppingCartService.findShoppingCarts(courseId, studentId);
-    }
+//    @GetMapping("/add/{courseId}/{studentId}")
+//    public void addCourseToCart(@PathVariable("courseId") Long courseId, @PathVariable("studentId") Long studentId){
+//        shoppingCartService.findShoppingCarts(courseId, studentId);
+//    }
 
 }

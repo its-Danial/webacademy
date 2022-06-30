@@ -45,13 +45,13 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 //        log.info("Student {} added Course {} to cart", c, s);
 //    }
 
-    @Override
-    public List<Object> findShoppingCarts(Long courseId, Long studentId) {
-        Course c = courseFeignClient.getCourseByCourseId(courseId).get();
-        Student s = studentFeignClient.getStudentById(studentId).get();
-        log.info("Student {} added Course {} to cart", c, s);
-        return shoppingCartRepository.findShoppingCarts(c, s);
-    }
+//    @Override
+//    public List<Object> findShoppingCarts(Long courseId, Long studentId) {
+//        Course c = courseFeignClient.getCourseByCourseId(courseId).get();
+//        Student s = studentFeignClient.getStudentById(studentId).get();
+//        log.info("Student {} added Course {} to cart", c, s);
+//        return shoppingCartRepository.findShoppingCarts(c, s);
+//    }
 
     @Override
     public void removeCourseFromCart(Long courseId) {

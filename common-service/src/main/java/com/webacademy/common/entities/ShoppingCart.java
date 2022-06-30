@@ -30,7 +30,7 @@ public class ShoppingCart {
     )
     private Student student;
 
-    @OneToMany(cascade = CascadeType.MERGE) //Changed from ALL to MERGE
+    @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(
             name = "cart_course_mapping",
             joinColumns = @JoinColumn(
@@ -42,21 +42,15 @@ public class ShoppingCart {
                     referencedColumnName = "courseId"
             )
     )
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(
-//            name = "course_id",
-//            referencedColumnName = "courseId"
-//    )
-    @ToString.Exclude
-    private List<Course> course;
+    private List<Course> courses = new ArrayList<>();
 
 
     //  At first the list can be empty.
     public void addCourseToCart(Course c) {
-        if (course == null) {
-            course = new ArrayList<>();
+        if (courses == null) {
+            courses = new ArrayList<>();
         }
-        course.add(c);
+        courses.add(c);
     }
 
 

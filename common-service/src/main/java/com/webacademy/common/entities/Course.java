@@ -1,5 +1,6 @@
 package com.webacademy.common.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
+@JsonIgnoreProperties({"students"})
 public class Course {
 
     @Id
@@ -40,11 +42,7 @@ public class Course {
 
 //   ----------------------------------------Table Relationship Mapping-----------------------------------------
 
-//    @CollectionTable(name = "category", joinColumns = @JoinColumn(name = "course_id"),
-//            foreignKey = @ForeignKey(name = "category_course_fk"))
-//    private List<Category> categories;
-
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "course_category_mapping",
             joinColumns = @JoinColumn(

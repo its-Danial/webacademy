@@ -13,7 +13,7 @@ public interface ShoppingCartService {
 
 //    void addCourseToCart(Long courseId, Long studentId);
 
-    List<Object> findShoppingCarts(Long courseId, Long studentId);
+//    List<Object> findShoppingCarts(Long courseId, Long studentId);
 
     void removeCourseFromCart(Long courseId);
 }

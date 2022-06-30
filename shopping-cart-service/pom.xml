@@ -50,6 +50,9 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <version>3.0.0</version>
         </dependency>
+
+        <!--    TODO: test without load balancer    -->
+        <!-- Load Balancer (probably not necessary)-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-loadbalancer</artifactId>
