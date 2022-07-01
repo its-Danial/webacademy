@@ -35,6 +35,7 @@ public class Teacher {
     private String email;
     private String username;
     private String password;
+    @Lob
     private String bioText;
     private String avatarPictureUrl;
 }

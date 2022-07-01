@@ -19,7 +19,6 @@ public class CourseInformation {
 
     private String summary; // small
 
-    //TODO : @LOB thing to make it save big paragraphs
     @Lob
     private String description; // big
 

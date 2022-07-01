@@ -37,7 +37,6 @@
 //
 //            shoppingCartRepository.save(shoppingCart);
 //
-//            //TODO : try with .orElse(null)
 //
 ////            Course course2 = courseFeignClient.getCourseByCourseId(2L).orElse(null);
 ////
