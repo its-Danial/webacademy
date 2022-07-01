@@ -15,19 +15,17 @@ import java.util.List;
 public class ShoppingCart {
 
     @Id
-    @SequenceGenerator(
-            name = "shopping_cart_sequence",
-            sequenceName = "shopping_cart_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopping_cart_sequence")
+//    @SequenceGenerator(
+//            name = "shopping_cart_sequence",
+//            sequenceName = "shopping_cart_sequence",
+//            allocationSize = 1
+//    )
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopping_cart_sequence")
     private Long cartId;
 
     @OneToOne
-    @JoinColumn(
-            name = "student_id",
-            referencedColumnName = "studentId"
-    )
+    @MapsId
+    @JoinColumn(name = "cart_id", referencedColumnName = "studentId")
     private Student student;
 
     @ManyToMany(cascade = CascadeType.MERGE)
@@ -35,7 +33,7 @@ public class ShoppingCart {
             name = "cart_course_mapping",
             joinColumns = @JoinColumn(
                     name = "cart_id",
-                    referencedColumnName = "cartId"
+                    referencedColumnName = "cart_id"
             ),
             inverseJoinColumns = @JoinColumn(
                     name = "course_id",

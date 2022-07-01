@@ -12,7 +12,7 @@
 //import org.springframework.context.annotation.Configuration;
 //
 //import java.util.Arrays;
-//import java.util.Optional;
+//
 //
 //@Configuration
 //public class ShoppingCartConfig {
@@ -25,18 +25,37 @@
 //    CommandLineRunner commandLineRunner(ShoppingCartRepository shoppingCartRepository) {
 //        return args -> {
 //
+//            Student student = new Student(null, "bla", "email", "username", "password");
 //
-//            Course course1 = courseFeignClient.getCourseByCourseId(1L).get();
-//            Course course2 = courseFeignClient.getCourseByCourseId(2L).get();
+//            // Gives me "detached entity passed to persist" error when using feign to get student
+////            Student student = studentFeignClient.getStudentById(2L).orElse(null);
+//            System.out.println("==== " + student);
 //
-//            Student danial = studentFeignClient.getStudentById(1L).get();
+//            Course course1 = courseFeignClient.getCourseByCourseId(1L).orElse(null);
 //
-//            ShoppingCart shoppingCart = ShoppingCart.builder()
-//                    .courses(Arrays.asList(course1, course2))
-//                    .student(danial)
-//                    .build();
+//            ShoppingCart shoppingCart = new ShoppingCart( null, student, Arrays.asList(course1));
 //
 //            shoppingCartRepository.save(shoppingCart);
+//
+//            //TODO : try with .orElse(null)
+//
+////            Course course2 = courseFeignClient.getCourseByCourseId(2L).orElse(null);
+////
+////
+////            Student melvern = studentFeignClient.getStudentById(Long.valueOf(2)).orElse(null);
+////
+////            ShoppingCart shoppingCart1 = ShoppingCart.builder()
+////                    .courses(Arrays.asList(course1, course2))
+////                    .student(danial)
+////                    .build();
+////
+////            ShoppingCart shoppingCart2 = ShoppingCart.builder()
+////                    .courses(Arrays.asList(course1))
+////                    .student(melvern)
+////                    .build();
+////
+////            shoppingCartRepository.save(shoppingCart1);
+////            shoppingCartRepository.save(shoppingCart2);
 //        };
 //    }
 //}

@@ -11,9 +11,9 @@ import java.util.Optional;
 public interface ShoppingCartService {
 
 
-//    void addCourseToCart(Long courseId, Long studentId);
+    void addCourseToCart(Long cartId, Long courseId);
 
 //    List<Object> findShoppingCarts(Long courseId, Long studentId);
 
-    void removeCourseFromCart(Long courseId);
+    void removeCourseFromCart(Long cartId, Long courseId);
 }

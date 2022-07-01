@@ -41,9 +41,14 @@ public class CartHomeController {
 //        return "OK";
 //    }
 
-//    @GetMapping("/add/{courseId}/{studentId}")
-//    public void addCourseToCart(@PathVariable("courseId") Long courseId, @PathVariable("studentId") Long studentId){
-//        shoppingCartService.findShoppingCarts(courseId, studentId);
-//    }
+    @PostMapping("/add/{cartId}/{courseId}")
+    public void addCourseToCart(@PathVariable("cartId") Long cartId, @PathVariable("courseId") Long courseId){
+        shoppingCartService.addCourseToCart(cartId, courseId);
+    }
+
+    @DeleteMapping("/delete/{cartId}/{courseId}")
+    public void removeCourseFromCart(@PathVariable("cartId") Long cartId, @PathVariable("courseId") Long courseId){
+        shoppingCartService.removeCourseFromCart(cartId, courseId);
+    }
 
 }

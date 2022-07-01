@@ -10,10 +10,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Transactional
 @Service("shoppingCartService")
 @Slf4j
 public class ShoppingCartServiceImpl implements ShoppingCartService {
@@ -36,14 +37,13 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 //        log.info("Added course {} to student {} cart", c.getTitle(), s.getUsername());
 //    }
 
-//    @Override
-//    public void addCourseToCart(Long courseId, Long studentId) {
-//        Course c = courseFeignClient.getCourseByCourseId(courseId).get();
-//        Student s = studentFeignClient.getStudentById(studentId).get();
-//        ShoppingCart sc = shoppingCartRepository.addCourseToCart(c, s);
-//        shoppingCartRepository.save(sc);
-//        log.info("Student {} added Course {} to cart", c, s);
-//    }
+    @Override
+    public void addCourseToCart(Long cartId, Long courseId) {
+        Course c = courseFeignClient.getCourseByCourseId(courseId).orElse(null);
+        ShoppingCart sc = shoppingCartRepository.findById(cartId).orElse(null);
+        shoppingCartRepository.addCourseToCart(sc.getCartId(), c.getCourseId());
+        log.info("Cart id:{} added Course {} to cart", sc, c.getTitle());
+    }
 
 //    @Override
 //    public List<Object> findShoppingCarts(Long courseId, Long studentId) {
@@ -54,8 +54,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 //    }
 
     @Override
-    public void removeCourseFromCart(Long courseId) {
-        shoppingCartRepository.deleteById(courseId);
-        log.info("Removed course no:{} to cart", courseId);
+    public void removeCourseFromCart(Long cartId, Long courseId) {
+        shoppingCartRepository.removeCourseFromCart(cartId, courseId);
+        log.info("Removed course no:{} from cart no:{}", courseId, cartId);
     }
 }

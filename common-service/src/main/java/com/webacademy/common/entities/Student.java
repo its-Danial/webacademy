@@ -30,4 +30,20 @@ public class Student {
     private String username;
     private String password;
 
+//    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+//    @PrimaryKeyJoinColumn
+//    private ShoppingCart shoppingCart;
+//
+//    public void addCart(ShoppingCart shoppingCart) {
+//        this.shoppingCart = shoppingCart;
+//        shoppingCart.setStudent(this);
+//    }
+//
+//    public void removeCart(ShoppingCart shoppingCart) {
+//        if (shoppingCart != null) {
+//            shoppingCart.setStudent(null);
+//        }
+//        this.shoppingCart = null;
+//    }
+
 }
