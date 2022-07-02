@@ -36,6 +36,24 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- Open Feign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <!--
+        Load Balancer
+        we need this because otherwise we get
+        "No Feign Client for loadBalancing define"
+        -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-loadbalancer</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
         <!-- Common Services Provider -->
         <dependency>
             <groupId>com.webacademy</groupId>

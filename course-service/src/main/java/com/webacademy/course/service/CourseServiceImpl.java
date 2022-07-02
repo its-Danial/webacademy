@@ -29,11 +29,11 @@ public class CourseServiceImpl implements CourseService {
         return courseRepository.findAll();
     }
 
-    @Override
-    public List<Object> findAllCourseWithoutStudent() {
-        log.info("Fetch all courses without students");
-        return courseRepository.findAllCourseWithoutStudent();
-    }
+//    @Override
+//    public List<Object> findAllCourseWithoutStudent() {
+//        log.info("Fetch all courses without students");
+//        return courseRepository.findAllCourseWithoutStudent();
+//    }
 
     //Handles Pagination
     @Override

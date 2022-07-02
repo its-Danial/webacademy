@@ -16,11 +16,11 @@ public class ShoppingCart {
 
     @Id
 //    @SequenceGenerator(
-//            name = "shopping_cart_sequence",
-//            sequenceName = "shopping_cart_sequence",
+//                name = "student_sequence",
+//            sequenceName = "student_sequence",
 //            allocationSize = 1
 //    )
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopping_cart_sequence")
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
     private Long cartId;
 
     @OneToOne

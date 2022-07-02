@@ -11,10 +11,10 @@ import java.util.List;
 
 public interface CourseRepository extends JpaRepository<Course,Long> {
 
-    @Query(value = "SELECT course_id, title, course_rating, price, " +
-            "description, summary, cover_image_url, preview_video_url, created_at, " +
-            "completed_progress, teacher_id FROM course", nativeQuery = true)
-    List<Object> findAllCourseWithoutStudent();
+//    @Query(value = "SELECT course_id, title, course_rating, price, " +
+//            "description, summary, cover_image_url, preview_video_url, created_at, " +
+//            "completed_progress, teacher_id FROM course", nativeQuery = true)
+//    List<Object> findAllCourseWithoutStudent();
 
     @Query("SELECT c FROM Course c WHERE c.teacher.teacherId = ?1")
     List<Course> findCoursesByTeacherId(Long id);

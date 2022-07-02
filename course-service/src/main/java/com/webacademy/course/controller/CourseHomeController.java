@@ -23,10 +23,10 @@ public class CourseHomeController {
         return courseService.findAllCourse();
     }
 
-    @GetMapping("/getAll")
-    public List<Object> getAllCourseWithoutStudent() {
-        return courseService.findAllCourseWithoutStudent();
-    }
+//    @GetMapping("/getAll")
+//    public List<Object> getAllCourseWithoutStudent() {
+//        return courseService.findAllCourseWithoutStudent();
+//    }
 
     @GetMapping("/filter")
     public List<Course> getCoursesByPage(@RequestParam int page, @RequestParam int size){

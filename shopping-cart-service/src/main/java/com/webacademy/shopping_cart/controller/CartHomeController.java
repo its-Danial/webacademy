@@ -31,15 +31,8 @@ public class CartHomeController {
     @GetMapping("/{studentId}")
     public void getStudentId(@PathVariable("studentId") Long id){
         studentFeignClient.getStudentById(id);
-        log.info("Get student {} in cart", id);
+        log.info("Current cart is student {}", id);
     }
-
-    // TODO: add course to cart in repo and service
-//    @PostMapping("/add")
-//    public String addCourseToCart(@RequestBody Long courseId, Long studentId){
-//        shoppingCartService.addCourseToCart(courseId, studentId);
-//        return "OK";
-//    }
 
     @PostMapping("/add/{cartId}/{courseId}")
     public void addCourseToCart(@PathVariable("cartId") Long cartId, @PathVariable("courseId") Long courseId){

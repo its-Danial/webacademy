@@ -13,7 +13,5 @@ public interface ShoppingCartService {
 
     void addCourseToCart(Long cartId, Long courseId);
 
-//    List<Object> findShoppingCarts(Long courseId, Long studentId);
-
     void removeCourseFromCart(Long cartId, Long courseId);
 }

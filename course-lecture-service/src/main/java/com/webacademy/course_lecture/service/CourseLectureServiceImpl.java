@@ -23,8 +23,11 @@ public class CourseLectureServiceImpl implements CourseLectureService {
         return courseLectureRepository.findLecturesByCourseId(id);
     }
 
+    @Override
     public Optional<CourseLecture> findLectureById(Long id) {
         log.info("Fetch lecture {}", id);
-        return courseLectureRepository.findById(id);
+        return courseLectureRepository.findCourseLectureById(id);
     }
+
+
 }

@@ -44,6 +44,7 @@ public class CourseConfig {
 
             CourseInformation course1Info = new CourseInformation(
                     5.0,
+                    "what, you, learn",
                     "summary",
                     "description",
                     "coverImageUrl",
@@ -51,6 +52,7 @@ public class CourseConfig {
 
             CourseInformation course2Info = new CourseInformation(
                     6.0,
+                    "what, you, learn",
                     "summary2",
                     "description2",
                     "coverImageUrl2",

@@ -24,18 +24,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     CourseFeignClient courseFeignClient;
     @Autowired
     StudentFeignClient studentFeignClient;
-//    @Override
-//    public void addCourseToCart(Long courseId, Long studentId) {
-//        Student s = studentFeignClient.getStudentById(studentId).orElse(null);
-//        Course c = courseFeignClient.getCourseByCourseId(courseId).orElse(null);
-//        List<Course> courses = new ArrayList<>();
-//        courses.add(c);
-//        ShoppingCart cart = null;
-//
-//        shoppingCartRepository.save(cart.setCourse(courses));
-//
-//        log.info("Added course {} to student {} cart", c.getTitle(), s.getUsername());
-//    }
 
     @Override
     public void addCourseToCart(Long cartId, Long courseId) {
@@ -44,14 +32,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         shoppingCartRepository.addCourseToCart(sc.getCartId(), c.getCourseId());
         log.info("Cart id:{} added Course {} to cart", sc, c.getTitle());
     }
-
-//    @Override
-//    public List<Object> findShoppingCarts(Long courseId, Long studentId) {
-//        Course c = courseFeignClient.getCourseByCourseId(courseId).get();
-//        Student s = studentFeignClient.getStudentById(studentId).get();
-//        log.info("Student {} added Course {} to cart", c, s);
-//        return shoppingCartRepository.findShoppingCarts(c, s);
-//    }
 
     @Override
     public void removeCourseFromCart(Long cartId, Long courseId) {

@@ -30,9 +30,11 @@ public class Student {
     private String username;
     private String password;
 
-//    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
-//    @PrimaryKeyJoinColumn
+
+//    @OneToOne(cascade = CascadeType.PERSIST)
+//    @JoinColumn(name = "cart_id", referencedColumnName = "cartId")
 //    private ShoppingCart shoppingCart;
+
 //
 //    public void addCart(ShoppingCart shoppingCart) {
 //        this.shoppingCart = shoppingCart;

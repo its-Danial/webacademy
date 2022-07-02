@@ -2,6 +2,7 @@ package com.webacademy.course_lecture.controller;
 
 import com.webacademy.common.entities.CourseLecture;
 import com.webacademy.course_lecture.service.CourseLectureServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/lecture")
 public class HomeController {
+
+    @Autowired
     CourseLectureServiceImpl courseLectureService;
 
     @GetMapping("/getByCourseId/{courseId}")
@@ -20,8 +23,8 @@ public class HomeController {
         return courseLectureService.findLecturesByCourseId(id);
     }
 
-    @GetMapping("/getById/{lectureId}")
-    public Optional<CourseLecture> getLectureById(@PathVariable("lectureId") Long id){
+    @GetMapping("/getById/{courseLectureId}")
+    public Optional<CourseLecture> getLectureById(@PathVariable("courseLectureId") Long id){
         return courseLectureService.findLectureById(id);
     }
 
