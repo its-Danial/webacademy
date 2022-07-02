@@ -41,6 +41,7 @@ public class CourseLectureConfig {
             CourseLecture courseLecture1 = CourseLecture.builder()
                     .course(course1)
                     .title("Overview")
+                    .courseLectureDescription("Just assume this is a very long lecture description 1")
                     .lectureDuration(timeFormat(50))
                     .lectureUrl("https://www.youtube.com/watch?ad71dah871")
                     .build();
@@ -48,6 +49,7 @@ public class CourseLectureConfig {
             CourseLecture courseLecture2 = CourseLecture.builder()
                     .course(course1)
                     .title("Initializing a Spring boot project")
+                    .courseLectureDescription("Just assume this is a very long lecture description 2")
                     .lectureDuration(timeFormat(72))
                     .lectureUrl("https://www.youtube.com/watch?a423asdfa71")
                     .build();
@@ -55,6 +57,7 @@ public class CourseLectureConfig {
             CourseLecture courseLecture3 = CourseLecture.builder()
                     .course(course2)
                     .title("Overview")
+                    .courseLectureDescription("Just assume this is a very long lecture description 3")
                     .lectureDuration(timeFormat(32))
                     .lectureUrl("https://www.youtube.com/watch?v=hQAHSlTtcmY")
                     .build();
@@ -62,6 +65,7 @@ public class CourseLectureConfig {
             CourseLecture courseLecture4 = CourseLecture.builder()
                     .course(course2)
                     .title("Starting a react project")
+                    .courseLectureDescription("Just assume this is a very long lecture description 4")
                     .lectureDuration(timeFormat(3))
                     .lectureUrl("https://www.youtube.com/watch?v=d61g&Asdh3")
                     .build();
