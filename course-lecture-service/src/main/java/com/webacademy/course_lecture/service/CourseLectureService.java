@@ -1,5 +1,6 @@
 package com.webacademy.course_lecture.service;
 
+import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseLecture;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface CourseLectureService {
     Optional<CourseLecture> findLectureById(Long id);
 
     void setCompletedProgress(CourseLecture courseLecture);
+
+    void addLecture(Long teacherId, Long courseId, CourseLecture courseLecture);
 }

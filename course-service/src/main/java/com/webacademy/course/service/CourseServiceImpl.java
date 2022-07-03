@@ -113,10 +113,11 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public void addCourse(Long teacherId, Course course) {
+    public void createCourse(Long teacherId, Course course) {
         Teacher teacher = teacherFeignClient.getTeacherById(teacherId).orElse(null);
         course.setTeacher(teacher);
         courseRepository.save(course);
+        log.info("Teacher {} added course {}", teacher.getFullName(), course.getTitle());
     }
 
     @Override

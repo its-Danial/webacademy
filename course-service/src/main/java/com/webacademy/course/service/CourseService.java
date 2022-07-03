@@ -33,7 +33,7 @@ public interface CourseService {
 
     void updateProgress(Course course);
 
-    void addCourse(Long teacherId, Course course);
+    void createCourse(Long teacherId, Course course);
 
     void deleteCourse(Long courseId);
 }

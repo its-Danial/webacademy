@@ -3,10 +3,8 @@ package com.webacademy.teacher.controller;
 import com.webacademy.common.entities.Teacher;
 import com.webacademy.teacher.service.TeacherServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,16 +17,19 @@ public class TeacherHomeController {
     TeacherServiceImpl teacherService;
 
     @GetMapping("/get-all")
+    @ResponseStatus(HttpStatus.OK)
     public List<Teacher> getAllTeacher(){
         return teacherService.findAllTeacher();
     }
 
     @GetMapping("/getById/{teacherId}")
+    @ResponseStatus(HttpStatus.OK)
     public Optional<Teacher> getTeacherById(@PathVariable("teacherId") Long id){
         return teacherService.findTeacherById(id);
     }
 
     @GetMapping("/getByEmail/{email}")
+    @ResponseStatus(HttpStatus.OK)
     public Teacher getTeacherByEmail(@PathVariable("email") String email) {
         return teacherService.findTeacherByEmail(email);
     }

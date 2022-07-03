@@ -21,5 +21,9 @@ public interface ShoppingCartRepository extends JpaRepository<ShoppingCart,Long>
     @Modifying
     @Query(value = "DELETE FROM cart_course_mapping WHERE cart_id = :cartId AND course_id = :courseId", nativeQuery = true)
     void removeCourseFromCart(@Param("cartId") Long cartId, @Param("courseId") Long courseId);
+
+    @Modifying
+    @Query(value = "INSERT INTO student_course_mapping(course_id, student_id) VALUES (:courseId, :studentId)", nativeQuery = true)
+    void buyCourseFromCart(@Param("studentId") Long studentId, @Param("courseId") Long courseId);
 }
 

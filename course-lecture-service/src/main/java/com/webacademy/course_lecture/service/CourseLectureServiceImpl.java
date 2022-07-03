@@ -1,9 +1,13 @@
 package com.webacademy.course_lecture.service;
 
 
+import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseLecture;
 import com.webacademy.common.entities.Student;
+import com.webacademy.common.entities.Teacher;
+import com.webacademy.course_lecture.feign.CourseFeignClient;
 import com.webacademy.course_lecture.feign.StudentFeignClient;
+import com.webacademy.course_lecture.feign.TeacherFeignClient;
 import com.webacademy.course_lecture.repository.CourseLectureRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +26,13 @@ public class CourseLectureServiceImpl implements CourseLectureService {
     CourseLectureRepository courseLectureRepository;
 
     @Autowired
+    CourseFeignClient courseFeignClient;
+
+    @Autowired
     StudentFeignClient studentFeignClient;
+
+    @Autowired
+    TeacherFeignClient teacherFeignClient;
 
     @Override
     public List<CourseLecture> findLecturesByCourseId(Long id) {
@@ -40,11 +50,24 @@ public class CourseLectureServiceImpl implements CourseLectureService {
 
     /* Find ONE student by courseid,
      *
-    */
+     */
     @Override
     public void setCompletedProgress(CourseLecture courseLecture) {
         courseLecture.setCompleted(true);
         log.info("Lecture {} is completed", courseLecture.getTitle());
+    }
+
+    //TODO: add Lecture needs testing
+    @Override
+    public void addLecture(Long teacherId, Long courseId, CourseLecture courseLecture) {
+        Course course = courseFeignClient.getCourseByCourseId(courseId).orElse(null);
+        if(!teacherId.equals(course.getTeacher().getTeacherId())){
+            log.error("The teacher doesn't own the course");
+        } else{
+            courseLectureRepository.save(courseLecture);
+        }
+
+
     }
 
 }
