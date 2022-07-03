@@ -30,11 +30,9 @@ public class Course {
 
     // TODO:
     //  -   add constraint for 0-5 start
-    private double courseRating;
+    private double courseRating = 0;
 
-    private LocalDateTime createdAt; // maybe different kind of date, I used this before.
-
-    // TODO: implement completed progress when lecture video's isCompleted is true.
+    private LocalDateTime createdAt = LocalDateTime.now(); // maybe different kind of date, I used this before.
 
     private double completedProgress = 0; // When the user watched a lecture this should be updated
     // get all completed lectures and divide by total lectures and set this to that value.

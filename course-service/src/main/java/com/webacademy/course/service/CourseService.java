@@ -1,8 +1,12 @@
 package com.webacademy.course.service;
 
+import com.webacademy.common.entities.Category;
 import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.CourseInformation;
+import com.webacademy.common.entities.Teacher;
 
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,5 +29,11 @@ public interface CourseService {
 
     Optional<Course> findCourseByCourseId(Long id);
 
+    List<Course> findCoursesByStudentId(Long id);
+
     void updateProgress(Course course);
+
+    void addCourse(Long teacherId, Course course);
+
+    void deleteCourse(Long courseId);
 }

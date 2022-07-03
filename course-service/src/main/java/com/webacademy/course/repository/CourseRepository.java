@@ -28,6 +28,9 @@ public interface CourseRepository extends JpaRepository<Course,Long> {
     @Query("SELECT c FROM Course c WHERE c.courseRating BETWEEN :minRating AND :maxRating")
     List<Course> findCourseByRating(@Param("minRating") double minRating, @Param("maxRating") double maxRating);
 
+    @Query("SELECT c FROM Course c join fetch c.students s WHERE s.studentId = :studentId")
+    List<Course> findCoursesByStudentId(@Param("studentId") Long id);
+
     @Override
     Page<Course> findAll(Pageable pageable);
 }

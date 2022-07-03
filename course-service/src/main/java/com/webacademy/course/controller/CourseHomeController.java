@@ -1,11 +1,13 @@
 package com.webacademy.course.controller;
 
 import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.Teacher;
 import com.webacademy.course.repository.CourseRepository;
 import com.webacademy.course.service.CourseServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -43,6 +45,11 @@ public class CourseHomeController {
         return courseService.findCoursesByTeacherId(id);
     }
 
+    @GetMapping("/getByStudentId/{studentId}")
+    public List<Course> getCoursesByStudentId(@PathVariable("studentId") Long id){
+        return courseService.findCoursesByStudentId(id);
+    }
+
     @GetMapping("/getByCategory/{category}")
     public List<Course> getCoursesByCategory(@PathVariable("category") String category){
         return courseService.findCoursesByCategory(category);
@@ -62,5 +69,15 @@ public class CourseHomeController {
     public void updateProgress(@PathVariable("courseId") Long id){
         Course course = courseService.findCourseByCourseId(id).orElse(null);
         courseService.updateProgress(course);
+    }
+
+    @PostMapping("/add/{teacherId}")
+    public void addCourse(@PathVariable("teacherId") Long teacherId, @RequestBody Course course){
+        courseService.addCourse(teacherId, course);
+    }
+
+    @DeleteMapping("/delete/{courseId}")
+    public void deleteCourse(@PathVariable("courseId")Long courseId){
+        courseService.deleteCourse(courseId);
     }
 }

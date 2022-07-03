@@ -2,6 +2,8 @@ package com.webacademy.course_lecture.service;
 
 
 import com.webacademy.common.entities.CourseLecture;
+import com.webacademy.common.entities.Student;
+import com.webacademy.course_lecture.feign.StudentFeignClient;
 import com.webacademy.course_lecture.repository.CourseLectureRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ public class CourseLectureServiceImpl implements CourseLectureService {
     @Autowired
     CourseLectureRepository courseLectureRepository;
 
+    @Autowired
+    StudentFeignClient studentFeignClient;
+
     @Override
     public List<CourseLecture> findLecturesByCourseId(Long id) {
         log.info("Fetch lectures in course {}", id);
@@ -31,6 +36,11 @@ public class CourseLectureServiceImpl implements CourseLectureService {
         return courseLectureRepository.findCourseLectureById(id);
     }
 
+    //TODO: set completed progress only for a specific student
+
+    /* Find ONE student by courseid,
+     *
+    */
     @Override
     public void setCompletedProgress(CourseLecture courseLecture) {
         courseLecture.setCompleted(true);
