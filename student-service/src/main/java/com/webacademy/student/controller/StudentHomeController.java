@@ -40,4 +40,10 @@ public class StudentHomeController {
         return studentService.findStudentsByCourseId(id);
     }
 
+    @GetMapping("/getStudentByCourseIdAndStudentId/{courseId}/{studentId}")
+    public Student getStudentByCourseIdAndStudentId(@PathVariable("courseId") Long courseId,
+                                                    @PathVariable("studentId") Long studentId){
+        return studentService.findStudentByCourseIdAndStudentId(courseId, studentId);
+    }
+
 }

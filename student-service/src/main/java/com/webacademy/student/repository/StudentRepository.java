@@ -20,5 +20,10 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
            "WHERE sc.course_id = :courseId", nativeQuery = true)
    List<Student> findStudentsByCourseId(@Param("courseId") Long courseId);
 
-
+   @Query(value = "SELECT s.* FROM student s LEFT OUTER JOIN " +
+           "student_course_mapping sc ON s.student_id = sc.student_id " +
+           "LEFT OUTER JOIN course c ON sc.course_id = c.course_id " +
+           "WHERE sc.course_id = :courseId AND sc.student_id = :studentId", nativeQuery = true)
+   Student findStudentByCourseIdAndStudentId(@Param("courseId") Long courseId,
+                                             @Param("studentId") Long studentId);
 }

@@ -35,6 +35,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public Student findStudentByCourseIdAndStudentId(Long courseId, Long studentId) {
+        log.info("Fetch student id: {} in course id: {}", studentId, courseId);
+        return studentRepository.findStudentByCourseIdAndStudentId(courseId, studentId);
+    }
+
+    @Override
     public Student findStudentByEmail(String email) {
         log.info("Fetch student with email: {}", email);
         return studentRepository.findStudentByEmail(email);

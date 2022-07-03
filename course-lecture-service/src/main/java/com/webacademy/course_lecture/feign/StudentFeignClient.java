@@ -12,4 +12,8 @@ public interface StudentFeignClient {
 
     @GetMapping("/getStudentsByCourseId/{courseId}")
     List<Student> getStudentsByCourseId(@PathVariable("courseId") Long id);
+
+    @GetMapping("/getStudentByCourseIdAndStudentId/{courseId}/{studentId}")
+    Student getStudentByCourseIdAndStudentId(@PathVariable("courseId") Long courseId,
+                                                    @PathVariable("studentId") Long studentId);
 }
