@@ -1,6 +1,8 @@
 package com.webacademy.course.service;
 
 import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.CourseLecture;
+import com.webacademy.course.feign.LectureFeignClient;
 import com.webacademy.course.repository.CourseRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,15 +10,19 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service("courseService")
+@Transactional
 @Slf4j
 public class CourseServiceImpl implements CourseService {
 
     @Autowired
     CourseRepository courseRepository;
+    @Autowired
+    LectureFeignClient lectureFeignClient;
 
     @Override
     public String hello() {
@@ -72,10 +78,23 @@ public class CourseServiceImpl implements CourseService {
         return courseRepository.findById(id);
     }
 
-    // TODO: implement update completed progress
+    // TODO: make update progress only work for a student
     @Override
     public void updateProgress(Course course) {
-//        course.setCompletedProgress();
+        //Gets all lecture in the course
+        List<CourseLecture> lectures = lectureFeignClient.getLecturesByCourse(course.getCourseId());
+        //Gets size of lecture
+        int totalLectures = lectures.size();
+
+        //get number of completed lectures
+        double count = 0;
+        for (CourseLecture lecture: lectures) {
+            if(lecture.isCompleted()){
+                count += 1;
+            }
+        }
+        double progress = (count / totalLectures) * 100;
+        course.setCompletedProgress(progress);
     }
 
 }

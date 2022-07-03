@@ -57,4 +57,10 @@ public class CourseHomeController {
     public List<Course> getCoursesByRating(@RequestParam double minRating, @RequestParam double maxRating){
         return courseService.findCourseByRating(minRating, maxRating);
     }
+
+    @PutMapping("/updateProgress/{courseId}")
+    public void updateProgress(@PathVariable("courseId") Long id){
+        Course course = courseService.findCourseByCourseId(id).orElse(null);
+        courseService.updateProgress(course);
+    }
 }
