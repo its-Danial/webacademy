@@ -31,6 +31,7 @@ public class CourseLecture {
     private String lectureUrl; // this will be a video link
     private String lectureDuration; // this will be how long the course/video is. NOTE this should be date type
 
+    //TODO: implement completed true when a video is clicked (PUT Method)
     private boolean isCompleted = false; // when student clicks the lecture, it should be marked as watched
 
 //  ----------------------------------------Table Relationship Mapping-----------------------------------------

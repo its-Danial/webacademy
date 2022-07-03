@@ -38,4 +38,7 @@ public class Teacher {
     @Lob
     private String bioText;
     private String avatarPictureUrl;
+
+
+    //TODO: When a teacher add a lecture, does it show in students
 }

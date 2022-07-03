@@ -30,6 +30,8 @@ public class Student {
     private String username;
     private String password;
 
+    // TODO: check whether completed state is shared by all student or just 1
+
 
 //    @OneToOne(cascade = CascadeType.PERSIST)
 //    @JoinColumn(name = "cart_id", referencedColumnName = "cartId")

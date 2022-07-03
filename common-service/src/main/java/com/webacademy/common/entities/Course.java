@@ -34,6 +34,8 @@ public class Course {
 
     private LocalDateTime createdAt; // maybe different kind of date, I used this before.
 
+    // TODO: implement completed progress when lecture video's isCompleted is true.
+
     private double completedProgress = 0; // When the user watched a lecture this should be updated
     // get all completed lectures and divide by total lectures and set this to that value.
 

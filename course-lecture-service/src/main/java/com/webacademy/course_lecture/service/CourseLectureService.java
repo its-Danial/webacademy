@@ -10,4 +10,6 @@ public interface CourseLectureService {
     List<CourseLecture> findLecturesByCourseId(Long id);
 
     Optional<CourseLecture> findLectureById(Long id);
+
+    void setCompletedProgress(CourseLecture courseLecture);
 }

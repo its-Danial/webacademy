@@ -7,10 +7,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service("courseLectureService")
+@Transactional
 @Slf4j
 public class CourseLectureServiceImpl implements CourseLectureService {
 
@@ -29,5 +31,10 @@ public class CourseLectureServiceImpl implements CourseLectureService {
         return courseLectureRepository.findCourseLectureById(id);
     }
 
+    @Override
+    public void setCompletedProgress(CourseLecture courseLecture) {
+        courseLecture.setCompleted(true);
+        log.info("Lecture {} is completed", courseLecture.getTitle());
+    }
 
 }
