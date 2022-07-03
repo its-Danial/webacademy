@@ -28,11 +28,11 @@ public class LectureHomeController {
     public Optional<CourseLecture> getLectureById(@PathVariable("courseLectureId") Long id){
         return courseLectureService.findLectureById(id);
     }
-
-    @PutMapping("/setCompleteProgress/{studentId}/{courseLectureId}")
+    //When we call a course, return a lecture
+    @PutMapping("/setCompleteProgress/{courseLectureId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void setCompletedProgress(@PathVariable("studentId") Long studentId, @PathVariable("courseLectureId") Long lectureId){
-        CourseLecture courseLecture = courseLectureService.findLectureById(lectureId).orElse(null);
+    public void setCompletedProgress(@PathVariable("courseLectureId") Long lectureId){
+        CourseLecture courseLecture = courseLectureService.findLectureById(lectureId).get();
         courseLectureService.setCompletedProgress(courseLecture);
     }
 

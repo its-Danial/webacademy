@@ -12,7 +12,7 @@ public interface CourseLectureService {
 
     Optional<CourseLecture> findLectureById(Long id);
 
-    void setCompletedProgress(CourseLecture courseLecture, Long studentId);
+    void setCompletedProgress(CourseLecture courseLecture);
 
     void addLecture(Long teacherId, Long courseId, CourseLecture courseLecture);
 }

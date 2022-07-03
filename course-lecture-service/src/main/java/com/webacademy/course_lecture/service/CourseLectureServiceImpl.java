@@ -52,10 +52,10 @@ public class CourseLectureServiceImpl implements CourseLectureService {
      *
      */
     @Override
-    public void setCompletedProgress(CourseLecture courseLecture, Long studentId) {
+    public void setCompletedProgress(CourseLecture courseLecture) {
         //Gets the course id from the course lecture
-        Long courseId = courseLecture.course.getCourseId();
-        Student student = studentFeignClient.getStudentByCourseIdAndStudentId(courseId, studentId);
+//        Long courseId = courseLecture.course.getCourseId();
+//        Student student = studentFeignClient.getStudentByCourseIdAndStudentId(courseId, studentId);
         courseLecture.setCompleted(true);
         log.info("Lecture {} is completed", courseLecture.getTitle());
     }
