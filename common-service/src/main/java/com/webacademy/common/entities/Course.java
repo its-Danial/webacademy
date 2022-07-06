@@ -40,7 +40,14 @@ public class Course {
     @Embedded
     private CourseInformation courseInformation;
 
-//   ----------------------------------------Table Relationship Mapping-----------------------------------------
+//   ----------------------------------------Student Progress Relationship Mapping-----------------------------------------
+
+//    @OneToMany(mappedBy = "course")
+//    @ToString.Exclude
+//    private List<StudentProgress> progresses;
+
+
+//   ----------------------------------------Categories Relationship Mapping-----------------------------------------
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -94,5 +101,11 @@ public class Course {
         }
         students.add(student);
     }
+//    public void addProgresses(StudentProgress progress) {
+//        if (progresses == null) {
+//            progresses = new ArrayList<>();
+//        }
+//        progresses.add(progress);
+//    }
 
 }

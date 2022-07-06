@@ -1,11 +1,10 @@
 package com.webacademy.common.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -31,21 +30,14 @@ public class Student {
     private String password;
 
 
-//    @OneToOne(cascade = CascadeType.PERSIST)
-//    @JoinColumn(name = "cart_id", referencedColumnName = "cartId")
-//    private ShoppingCart shoppingCart;
-
+//    @OneToMany(mappedBy = "student")
+//    @ToString.Exclude
+//    private List<StudentProgress> progresses;
 //
-//    public void addCart(ShoppingCart shoppingCart) {
-//        this.shoppingCart = shoppingCart;
-//        shoppingCart.setStudent(this);
-//    }
-//
-//    public void removeCart(ShoppingCart shoppingCart) {
-//        if (shoppingCart != null) {
-//            shoppingCart.setStudent(null);
+//    public void addProgresses(StudentProgress progress) {
+//        if (progresses == null) {
+//            progresses = new ArrayList<>();
 //        }
-//        this.shoppingCart = null;
+//        progresses.add(progress);
 //    }
-
 }
