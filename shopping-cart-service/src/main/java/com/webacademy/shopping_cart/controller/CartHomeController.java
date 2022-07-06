@@ -6,6 +6,7 @@ import com.webacademy.shopping_cart.service.ShoppingCartServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -32,24 +33,27 @@ public class CartHomeController {
     }
 
     @PostMapping("/add/{cartId}/{courseId}")
-    public HttpStatus addCourseToCart(@PathVariable("cartId") Long cartId,
-                                @PathVariable("courseId") Long courseId){
+    public ResponseEntity<String> addCourseToCart(@PathVariable("cartId") Long cartId,
+                                          @PathVariable("courseId") Long courseId){
         shoppingCartService.addCourseToCart(cartId, courseId);
-        return HttpStatus.CREATED;
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Successfully added course to cart");
     }
 
     @DeleteMapping("/delete/{cartId}/{courseId}")
-    public HttpStatus removeCourseFromCart(@PathVariable("cartId") Long cartId,
+    public ResponseEntity<String> removeCourseFromCart(@PathVariable("cartId") Long cartId,
                                                   @PathVariable("courseId") Long courseId){
         shoppingCartService.removeCourseFromCart(cartId, courseId);
-        return HttpStatus.NO_CONTENT;
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Successfully removed course from cart");
     }
 
     @PostMapping("/buy/{studentId}/{courseId}")
-    public HttpStatus buyCourseFromCart(@PathVariable("studentId")Long studentId,
+    public ResponseEntity<String> buyCourseFromCart(@PathVariable("studentId")Long studentId,
                                   @PathVariable("courseId") Long courseId){
         shoppingCartService.buyCourseFromCart(studentId, courseId);
-        return HttpStatus.CREATED;
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Successfully removed course from cart");
     }
 
 }

@@ -5,6 +5,7 @@ import com.webacademy.common.entities.CourseLecture;
 import com.webacademy.course_lecture.service.CourseLectureServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,11 +31,32 @@ public class LectureHomeController {
     }
 
     @PostMapping("/add/{teacherId}/{courseId}")
-    @ResponseStatus(HttpStatus.CREATED)
-    public HttpStatus addLecture(@PathVariable("teacherId") Long teacherId,
-                           @PathVariable("courseId") Long courseId,
-                           @RequestBody CourseLecture courseLecture){
+    public ResponseEntity<String> addLecture(@PathVariable("teacherId") Long teacherId,
+                                             @PathVariable("courseId") Long courseId,
+                                             @RequestBody CourseLecture courseLecture){
         courseLectureService.addLecture(teacherId, courseId, courseLecture);
-        return HttpStatus.CREATED;
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Teacher " + teacherId + " has successfully added lecture "
+                        + courseLecture.getCourseLectureId() + " to course " + courseId);
+    }
+
+    @PostMapping("/add-multiple/{teacherId}/{courseId}")
+    public ResponseEntity<String> addLectures(@PathVariable("teacherId") Long teacherId,
+                                              @PathVariable("courseId") Long courseId,
+                                              @RequestBody List<CourseLecture> courseLectures){
+        courseLectureService.addMultipleLectures(teacherId, courseId, courseLectures);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Teacher " + teacherId + " has successfully added " +
+                        "multiple lectures to course " + courseId);
+    }
+
+    @DeleteMapping("/delete/{teacherId}/{courseId}/{lectureId}")
+    public ResponseEntity<String> deleteLecture(@PathVariable("teacherId") Long teacherId,
+                                                @PathVariable("courseId") Long courseId,
+                                                @PathVariable("lectureId") Long lectureId){
+        courseLectureService.deleteLecture(teacherId, courseId, lectureId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Teacher " + teacherId + " has successfully deleted lecture "
+                        + lectureId + " from course " + courseId);
     }
 }

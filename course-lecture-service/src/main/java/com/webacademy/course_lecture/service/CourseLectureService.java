@@ -13,4 +13,8 @@ public interface CourseLectureService {
     Optional<CourseLecture> findLectureById(Long id);
 
     void addLecture(Long teacherId, Long courseId, CourseLecture courseLecture);
+
+    void addMultipleLectures(Long teacherId, Long courseId, List<CourseLecture> courseLectures);
+
+    void deleteLecture(Long teacherId, Long courseId, Long lectureId);
 }

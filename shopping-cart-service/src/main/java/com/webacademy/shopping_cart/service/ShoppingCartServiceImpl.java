@@ -43,6 +43,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     public void buyCourseFromCart(Long studentId, Long courseId) {
         Student student = studentFeignClient.getStudentById(studentId).orElse(null);
         Course course = courseFeignClient.getCourseByCourseId(courseId).orElse(null);
+        //TODO: check if cart has course
+        //if(shoppingCartRepository.exists())
+
         shoppingCartRepository.buyCourseFromCart(studentId, courseId);
         shoppingCartRepository.removeCourseFromCart(studentId, courseId);
         log.info("Student {} has owned course {}",student.getFullName(), course.getTitle());

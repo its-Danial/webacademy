@@ -9,6 +9,7 @@ import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -70,14 +71,16 @@ public class CourseHomeController {
     }
 
     @PostMapping("/create/{teacherId}")
-    public HttpStatus createCourse(@PathVariable("teacherId") Long teacherId, @RequestBody Course course){
+    public ResponseEntity<String> createCourse(@PathVariable("teacherId") Long teacherId, @RequestBody Course course){
         courseService.createCourse(teacherId, course);
-        return HttpStatus.CREATED;
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Successfully created course");
     }
 
     @DeleteMapping("/delete/{courseId}")
-    public HttpStatus deleteCourse(@PathVariable("courseId")Long courseId){
+    public ResponseEntity<String> deleteCourse(@PathVariable("courseId")Long courseId){
         courseService.deleteCourse(courseId);
-        return HttpStatus.NO_CONTENT;
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Successfully deleted course");
     }
 }
