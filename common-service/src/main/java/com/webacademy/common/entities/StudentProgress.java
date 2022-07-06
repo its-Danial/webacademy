@@ -23,23 +23,19 @@ public class StudentProgress {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "progress_sequence")
     private Long studentProgressId;
 
+    @ManyToOne
+    @JoinColumn(name = "student_id", referencedColumnName = "studentId")
+    @JsonIgnore
+    private Student student;
 
     @ManyToOne
-    @JoinColumn(name = "student_id")
+    @JoinColumn(name = "course_id", referencedColumnName = "courseId")
     @JsonIgnore
-   private Student student;
+    private Course course;
 
-    @ManyToOne
-    @JoinColumn(name = "course_id")
-    @JsonIgnore
-   private Course course;
+    private int totalLectures;
 
-   private int totalLectures;
+    private int completedLectures;
 
-   private int completedLectures;
-
-   private boolean liked = false;
-
-
-
+    private boolean liked = false;
 }

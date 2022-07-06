@@ -32,22 +32,14 @@ public class Course {
     //  -   add constraint for 0-5 start
     private double courseRating = 0;
 
-    private LocalDateTime createdAt = LocalDateTime.now(); // maybe different kind of date, I used this before.
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-    private double completedProgress = 0; // When the user watched a lecture this should be updated
-    // get all completed lectures and divide by total lectures and set this to that value.
+    private double completedProgress = 0;
 
     @Embedded
     private CourseInformation courseInformation;
 
-//   ----------------------------------------Student Progress Relationship Mapping-----------------------------------------
-
-//    @OneToMany(mappedBy = "course")
-//    @ToString.Exclude
-//    private List<StudentProgress> progresses;
-
-
-//   ----------------------------------------Categories Relationship Mapping-----------------------------------------
+/*----------------------------Categories Mapping----------------------------*/
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -64,20 +56,18 @@ public class Course {
     @ToString.Exclude
     private List<Category> categories = new ArrayList<>();
 
-//   ---------------------------------------- Course Lecture Mapping-----------------------------------------
+    /*----------------------------Teacher Mapping----------------------------*/
 
-
-    //   ---------------------------------------- Teacher Mapping-----------------------------------------
-    @ManyToOne(cascade = CascadeType.MERGE) //I just changed ALl to MERGE
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(
             name = "teacher_id",
             referencedColumnName = "teacherId"
     )
     private Teacher teacher;
 
-    //  ---------------------------------------- Student Mapping-----------------------------------------
+    /*----------------------------Student Mapping----------------------------*/
     @ManyToMany(
-            cascade = CascadeType.MERGE, //I just changed ALl to MERGE
+            cascade = CascadeType.MERGE,
             fetch = FetchType.LAZY
     )
     @JoinTable(
@@ -94,18 +84,11 @@ public class Course {
     @ToString.Exclude
     private List<Student> students;
 
-    //  At first the list can be empty.
     public void addStudent(Student student) {
         if (students == null) {
             students = new ArrayList<>();
         }
         students.add(student);
     }
-//    public void addProgresses(StudentProgress progress) {
-//        if (progresses == null) {
-//            progresses = new ArrayList<>();
-//        }
-//        progresses.add(progress);
-//    }
 
 }

@@ -17,13 +17,12 @@ public class CourseInformation {
 
     private String whatYouLearn;
 
-    private String summary; // small
+    private String summary;
 
     @Lob
-    private String description; // big
+    private String description;
 
     private String coverImageUrl;
+
     private String previewVideoUrl;
-
-
 }

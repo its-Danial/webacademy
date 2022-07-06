@@ -8,9 +8,15 @@ import java.util.List;
 
 public interface StudentProgressService {
 
-    List<StudentProgress> getAllStudentProgress();
+    List<StudentProgress> findAllStudentProgress();
 
-    HttpStatus updateCompletedByOne(Long studentId, Long courseId);
+    List<StudentProgress> findProgressesByStudentId(Long studentId);
 
-    StudentProgress getOneByStudentIdAndCourseId(Long studentId, Long courseId);
+    void updateCompletedByOne(Long studentId, Long courseId);
+
+    StudentProgress findProgressByStudentIdAndCourseId(Long studentId, Long courseId);
+
+    void likeCourse(Long studentId, Long courseId);
+
+    void unlikeCourse(Long studentId, Long courseId);
 }

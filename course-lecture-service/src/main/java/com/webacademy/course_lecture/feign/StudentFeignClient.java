@@ -10,10 +10,10 @@ import java.util.List;
 @FeignClient(name="student-service", path = "/student")
 public interface StudentFeignClient {
 
-    @GetMapping("/getStudentsByCourseId/{courseId}")
+    @GetMapping("/get-all-by-course-id/{courseId}")
     List<Student> getStudentsByCourseId(@PathVariable("courseId") Long id);
 
-    @GetMapping("/getStudentByCourseIdAndStudentId/{courseId}/{studentId}")
+    @GetMapping("/get-by-course-id-and-student-id/{courseId}/{studentId}")
     Student getStudentByCourseIdAndStudentId(@PathVariable("courseId") Long courseId,
                                                     @PathVariable("studentId") Long studentId);
 }

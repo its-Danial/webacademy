@@ -30,15 +30,19 @@ public class Teacher {
             generator = "teacher_sequence"
     )
     private Long teacherId;
+
     private String fullName;
+
     @Column(name = "email_address", nullable = false)
     private String email;
+
     private String username;
+
     private String password;
+
     @Lob
     private String bioText;
+
     private String avatarPictureUrl;
-
-
     //TODO: When a teacher add a lecture, does it show in students
 }

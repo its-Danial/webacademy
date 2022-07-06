@@ -22,13 +22,13 @@ public class TeacherHomeController {
         return teacherService.findAllTeacher();
     }
 
-    @GetMapping("/getById/{teacherId}")
+    @GetMapping("/get-by-id/{teacherId}")
     @ResponseStatus(HttpStatus.OK)
     public Optional<Teacher> getTeacherById(@PathVariable("teacherId") Long id){
         return teacherService.findTeacherById(id);
     }
 
-    @GetMapping("/getByEmail/{email}")
+    @GetMapping("/get-by-email/{email}")
     @ResponseStatus(HttpStatus.OK)
     public Teacher getTeacherByEmail(@PathVariable("email") String email) {
         return teacherService.findTeacherByEmail(email);

@@ -46,20 +46,6 @@ public class CourseLectureServiceImpl implements CourseLectureService {
         return courseLectureRepository.findCourseLectureById(id);
     }
 
-    //TODO: set completed progress only for a specific student
-
-    /* Find ONE student by courseid,
-     *
-     */
-    @Override
-    public void setCompletedProgress(CourseLecture courseLecture) {
-        //Gets the course id from the course lecture
-//        Long courseId = courseLecture.course.getCourseId();
-//        Student student = studentFeignClient.getStudentByCourseIdAndStudentId(courseId, studentId);
-        courseLecture.setCompleted(true);
-        log.info("Lecture {} is completed", courseLecture.getTitle());
-    }
-
     //TODO: add Lecture needs testing
     @Override
     public void addLecture(Long teacherId, Long courseId, CourseLecture courseLecture) {

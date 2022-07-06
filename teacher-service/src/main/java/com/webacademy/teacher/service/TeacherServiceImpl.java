@@ -30,6 +30,7 @@ public class TeacherServiceImpl implements TeacherService{
 
     @Override
     public Optional<Teacher> findTeacherById(Long id) {
+        log.info("Fetch teacher {}", id);
         return teacherRepository.findById(id);
     }
 

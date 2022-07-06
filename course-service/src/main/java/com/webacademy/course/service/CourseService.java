@@ -31,8 +31,6 @@ public interface CourseService {
 
     List<Course> findCoursesByStudentId(Long id);
 
-    void updateProgress(Course course);
-
     void createCourse(Long teacherId, Course course);
 
     void deleteCourse(Long courseId);

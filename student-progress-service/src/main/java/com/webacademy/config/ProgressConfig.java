@@ -33,37 +33,34 @@ public class ProgressConfig {
         return args -> {
 
 
-            Student student = studentFeignClient.getStudentById(1L)
-                    .get();
-
-//            Course course = courseFeignClient.getCourseByCourseId(1L)
+//            Student student1 = studentFeignClient.getStudentById(1L)
 //                    .get();
-
-
-            Course course2 = courseFeignClient.getCourseByCourseId(2L)
-                    .get();
-
-
-            List<CourseLecture> lectures = lectureFeignClient.getLecturesByCourse(course2.getCourseId());
-
-
-//            StudentProgress studentProgress = StudentProgress.builder()
-//                    .student(student)
+//            Student student2 = studentFeignClient.getStudentById(2L)
+//                    .get();
+//
+//            Course course1 = courseFeignClient.getCourseByCourseId(1L)
+//                    .get();
+//            Course course2 = courseFeignClient.getCourseByCourseId(2L)
+//                    .get();
+//
+//            List<CourseLecture> lectures = lectureFeignClient.getLecturesByCourse(course2.getCourseId());
+//
+//            StudentProgress studentProgress1 = StudentProgress.builder()
+//                    .student(student2)
 //                    .totalLectures(lectures.size())
 //                    .completedLectures(0)
-//                    .course(course)
+//                    .course(course1)
 //                    .build();
-
-
-            StudentProgress studentProgress2 = StudentProgress.builder()
-                    .student(student)
-                    .totalLectures(lectures.size())
-                    .completedLectures(0)
-                    .course(course2)
-                    .build();
-
-
-            studentProgressRepository.save(studentProgress2);
+//
+//            StudentProgress studentProgress2 = StudentProgress.builder()
+//                    .student(student2)
+//                    .totalLectures(lectures.size())
+//                    .completedLectures(0)
+//                    .course(course2)
+//                    .build();
+//
+//            studentProgressRepository.save(studentProgress1);
+//            studentProgressRepository.save(studentProgress2);
 
         };
 

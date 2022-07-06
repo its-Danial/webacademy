@@ -27,6 +27,10 @@ spring:
           uri: lb://shopping-cart-service
           predicates:
             - Path=/cart/**
+        - id: student-progress-service
+          uri: lb://student-progress-service
+          predicates:
+            - Path=/progress/**
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848

@@ -22,25 +22,25 @@ public class StudentHomeController {
         return studentService.findAllStudent();
     }
 
-    @GetMapping("/getById/{studentId}")
+    @GetMapping("/get-by-id/{studentId}")
     @ResponseStatus(HttpStatus.OK)
     public Optional<Student> getStudentById(@PathVariable("studentId") Long id){
         return studentService.findStudentById(id);
     }
 
-    @GetMapping("/getByEmail/{email}")
+    @GetMapping("/get-by-email/{email}")
     @ResponseStatus(HttpStatus.OK)
     public Student getStudentByEmail(@PathVariable("email") String email){
         return studentService.findStudentByEmail(email);
     }
 
-    @GetMapping("/getStudentsByCourseId/{courseId}")
+    @GetMapping("/get-all-by-course-id/{courseId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Student> getStudentsByCourseId(@PathVariable("courseId") Long id){
         return studentService.findStudentsByCourseId(id);
     }
 
-    @GetMapping("/getStudentByCourseIdAndStudentId/{courseId}/{studentId}")
+    @GetMapping("/get-by-course-id-and-student-id/{courseId}/{studentId}")
     public Student getStudentByCourseIdAndStudentId(@PathVariable("courseId") Long courseId,
                                                     @PathVariable("studentId") Long studentId){
         return studentService.findStudentByCourseIdAndStudentId(courseId, studentId);

@@ -25,6 +25,9 @@ public class GatewayConfig {
                 .route("shopping-cart-service",
                         r -> r.path("/cart/**")
                                 .uri("http://localhost:8085"))
+                .route("student-progress-service",
+                        r -> r.path("/progress/**")
+                                .uri("http://localhost:8086"))
                 .build();
     }
 }

@@ -1,8 +1,5 @@
 package com.webacademy.shopping_cart.controller;
 
-import com.webacademy.common.entities.Course;
-import com.webacademy.common.entities.ShoppingCart;
-import com.webacademy.common.entities.Student;
 import com.webacademy.shopping_cart.feign.CourseFeignClient;
 import com.webacademy.shopping_cart.feign.StudentFeignClient;
 import com.webacademy.shopping_cart.service.ShoppingCartServiceImpl;
@@ -10,9 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/cart")
@@ -29,6 +23,7 @@ public class CartHomeController {
 
     // Shows which student is accessing the cart.
     // e.g. /cart/123123
+    //TODO: Make sure if this cart thing is needed
     @GetMapping("/{studentId}")
     @ResponseStatus(HttpStatus.OK)
     public void getStudentId(@PathVariable("studentId") Long id){
@@ -37,24 +32,24 @@ public class CartHomeController {
     }
 
     @PostMapping("/add/{cartId}/{courseId}")
-    @ResponseStatus(HttpStatus.CREATED)
-    public void addCourseToCart(@PathVariable("cartId") Long cartId,
+    public HttpStatus addCourseToCart(@PathVariable("cartId") Long cartId,
                                 @PathVariable("courseId") Long courseId){
         shoppingCartService.addCourseToCart(cartId, courseId);
+        return HttpStatus.CREATED;
     }
 
     @DeleteMapping("/delete/{cartId}/{courseId}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void removeCourseFromCart(@PathVariable("cartId") Long cartId,
-                                     @PathVariable("courseId") Long courseId){
+    public HttpStatus removeCourseFromCart(@PathVariable("cartId") Long cartId,
+                                                  @PathVariable("courseId") Long courseId){
         shoppingCartService.removeCourseFromCart(cartId, courseId);
+        return HttpStatus.NO_CONTENT;
     }
 
     @PostMapping("/buy/{studentId}/{courseId}")
-    @ResponseStatus(HttpStatus.CREATED)
-    public void buyCourseFromCart(@PathVariable("studentId")Long studentId,
+    public HttpStatus buyCourseFromCart(@PathVariable("studentId")Long studentId,
                                   @PathVariable("courseId") Long courseId){
         shoppingCartService.buyCourseFromCart(studentId, courseId);
+        return HttpStatus.CREATED;
     }
 
 }

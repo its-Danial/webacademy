@@ -88,30 +88,6 @@ public class CourseServiceImpl implements CourseService {
         return courseRepository.findCoursesByStudentId(id);
     }
 
-    // TODO: make update progress only work for a student
-    /* When updateProgress gets called, it updates the course
-     * only for a SPECIFIC student. So it should take in a
-     * student id as well
-    */
-    @Override
-    public void updateProgress(Course course) {
-        //Gets all lecture in the course
-        List<CourseLecture> lectures = lectureFeignClient.getLecturesByCourse(course.getCourseId());
-        //Gets size of lecture
-        int totalLectures = lectures.size();
-
-        //get number of completed lectures
-        double count = 0;
-        for (CourseLecture lecture: lectures) {
-            if(lecture.isCompleted()){
-                count += 1;
-            }
-        }
-        double progress = (count / totalLectures) * 100;
-        course.setCompletedProgress(progress);
-        log.info("Course {} progress updated to {}%", course.getTitle(), progress);
-    }
-
     @Override
     public void createCourse(Long teacherId, Course course) {
         Teacher teacher = teacherFeignClient.getTeacherById(teacherId).orElse(null);
@@ -123,6 +99,7 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public void deleteCourse(Long courseId) {
         courseRepository.deleteById(courseId);
+        log.info("Course {} is deleted", courseId);
     }
 
 }
