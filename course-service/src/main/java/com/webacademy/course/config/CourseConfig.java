@@ -27,10 +27,10 @@ public class CourseConfig {
     CommandLineRunner commandLineRunner(CourseRepository courseRepository) {
         return args -> {
 
-//            List<Student> students = studentFeignClient.getAllStudent();
-//            for (int i = 0; i<=students.size()-1; i++) {
-//                students.get(i);
-//            }
+            List<Student> students = studentFeignClient.getAllStudent();
+            for (int i = 0; i<=students.size()-1; i++) {
+                students.get(i);
+            }
             Student student1 = studentFeignClient.getStudentById(1L).get();
             Student student2 = studentFeignClient.getStudentById(2L).get();
             Student student3 = studentFeignClient.getStudentById(3L).get();

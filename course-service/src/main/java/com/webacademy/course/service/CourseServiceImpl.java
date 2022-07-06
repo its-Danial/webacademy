@@ -90,16 +90,24 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public void createCourse(Long teacherId, Course course) {
-        Teacher teacher = teacherFeignClient.getTeacherById(teacherId).orElse(null);
+        Teacher teacher = teacherFeignClient.getTeacherById(teacherId).
+                orElseThrow(()-> new IllegalArgumentException("Teacher not found"));
+
         course.setTeacher(teacher);
         courseRepository.save(course);
         log.info("Teacher {} added course {}", teacher.getFullName(), course.getTitle());
     }
 
     @Override
-    public void deleteCourse(Long courseId) {
-        courseRepository.deleteById(courseId);
-        log.info("Course {} is deleted", courseId);
-    }
+    public void deleteCourse(Long teacherId, Long courseId) {
+        Course course = courseRepository.findById(courseId).
+                orElseThrow(()-> new IllegalArgumentException("Course not found"));
 
+        if (!teacherId.equals(course.getTeacher().getTeacherId())) {
+            log.error("The teacher doesn't own the course");
+            throw new IllegalStateException("The teacher doesn't own the course");
+        }
+        courseRepository.deleteById(courseId);
+        log.info("Teacher {} has deleted course {}", teacherId, courseId);
+    }
 }

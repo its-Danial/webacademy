@@ -66,21 +66,26 @@ public class CourseHomeController {
 
     @GetMapping("/get-by-rating")
     @ResponseStatus(HttpStatus.OK)
-    public List<Course> getCoursesByRating(@RequestParam double minRating, @RequestParam double maxRating){
+    public List<Course> getCoursesByRating(@RequestParam double minRating,
+                                           @RequestParam double maxRating){
         return courseService.findCourseByRating(minRating, maxRating);
     }
 
     @PostMapping("/create/{teacherId}")
-    public ResponseEntity<String> createCourse(@PathVariable("teacherId") Long teacherId, @RequestBody Course course){
+    public ResponseEntity<String> createCourse(@PathVariable("teacherId") Long teacherId,
+                                               @RequestBody Course course){
         courseService.createCourse(teacherId, course);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body("Successfully created course");
+                .body("Teacher " + teacherId + " has successfully created course "
+                        + course.getCourseId());
     }
 
-    @DeleteMapping("/delete/{courseId}")
-    public ResponseEntity<String> deleteCourse(@PathVariable("courseId")Long courseId){
-        courseService.deleteCourse(courseId);
+    @DeleteMapping("/delete/{teacherId}/{courseId}")
+    public ResponseEntity<String> deleteCourse(@PathVariable("teacherId") Long teacherId,
+                                               @PathVariable("courseId")Long courseId){
+        courseService.deleteCourse(teacherId, courseId);
         return ResponseEntity.status(HttpStatus.OK)
-                .body("Successfully deleted course");
+                .body("Teacher " + teacherId + " has successfully deleted course "
+                        + courseId);
     }
 }

@@ -34,8 +34,6 @@ public class Course {
 
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    private double completedProgress = 0;
-
     @Embedded
     private CourseInformation courseInformation;
 
