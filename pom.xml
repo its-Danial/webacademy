@@ -16,6 +16,7 @@
         <module>gateway-service</module>
         <module>common-service</module>
         <module>shopping-cart-service</module>
+        <module>student-progress-service</module>
     </modules>
 
     <properties>

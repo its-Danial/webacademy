@@ -24,13 +24,25 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Optional<Student> findStudentById(Long id) {
-        log.info("Student with id: {} found", id);
+        log.info("Fetch student with id: {}", id);
         return studentRepository.findById(id);
     }
 
     @Override
+    public List<Student> findStudentsByCourseId(Long id) {
+        log.info("Fetch students in course id: {}", id);
+        return studentRepository.findStudentsByCourseId(id);
+    }
+
+    @Override
+    public Student findStudentByCourseIdAndStudentId(Long courseId, Long studentId) {
+        log.info("Fetch student id: {} in course id: {}", studentId, courseId);
+        return studentRepository.findStudentByCourseIdAndStudentId(courseId, studentId);
+    }
+
+    @Override
     public Student findStudentByEmail(String email) {
-        log.info("Student with email: {} found", email);
+        log.info("Fetch student with email: {}", email);
         return studentRepository.findStudentByEmail(email);
     }
 

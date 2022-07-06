@@ -15,48 +15,40 @@ import java.util.List;
 public class ShoppingCart {
 
     @Id
-    @SequenceGenerator(
-            name = "shopping_cart_sequence",
-            sequenceName = "shopping_cart_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shopping_cart_sequence")
+//    @SequenceGenerator(
+//                name = "student_sequence",
+//            sequenceName = "student_sequence",
+//            allocationSize = 1
+//    )
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
     private Long cartId;
 
     @OneToOne
-    @JoinColumn(
-            name = "student_id",
-            referencedColumnName = "studentId"
-    )
+    @MapsId
+    @JoinColumn(name = "cart_id", referencedColumnName = "studentId")
     private Student student;
 
-    @OneToMany(cascade = CascadeType.MERGE) //Changed from ALL to MERGE
+    @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(
             name = "cart_course_mapping",
             joinColumns = @JoinColumn(
                     name = "cart_id",
-                    referencedColumnName = "cartId"
+                    referencedColumnName = "cart_id"
             ),
             inverseJoinColumns = @JoinColumn(
                     name = "course_id",
                     referencedColumnName = "courseId"
             )
     )
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(
-//            name = "course_id",
-//            referencedColumnName = "courseId"
-//    )
-    @ToString.Exclude
-    private List<Course> course;
+    private List<Course> courses = new ArrayList<>();
 
 
     //  At first the list can be empty.
     public void addCourseToCart(Course c) {
-        if (course == null) {
-            course = new ArrayList<>();
+        if (courses == null) {
+            courses = new ArrayList<>();
         }
-        course.add(c);
+        courses.add(c);
     }
 
 

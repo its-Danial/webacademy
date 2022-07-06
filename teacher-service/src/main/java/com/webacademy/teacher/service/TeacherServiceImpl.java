@@ -1,15 +1,21 @@
 package com.webacademy.teacher.service;
 
+import com.webacademy.common.entities.Category;
+import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.CourseInformation;
 import com.webacademy.common.entities.Teacher;
 import com.webacademy.teacher.repository.TeacherRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
 @Service("teacherService")
+@Transactional
 @Slf4j
 public class TeacherServiceImpl implements TeacherService{
 
@@ -32,7 +38,6 @@ public class TeacherServiceImpl implements TeacherService{
         log.info("Teacher with email:{} found", email);
         return teacherRepository.findTeacherByEmail(email);
     }
-
 
     @Override
     public void addTeacher(Teacher teacher) {

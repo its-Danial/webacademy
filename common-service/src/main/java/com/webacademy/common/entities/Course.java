@@ -1,5 +1,6 @@
 package com.webacademy.common.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
+@JsonIgnoreProperties({"students"})
 public class Course {
 
     @Id
@@ -28,9 +30,9 @@ public class Course {
 
     // TODO:
     //  -   add constraint for 0-5 start
-    private double courseRating;
+    private double courseRating = 0;
 
-    private LocalDateTime createdAt; // maybe different kind of date, I used this before.
+    private LocalDateTime createdAt = LocalDateTime.now(); // maybe different kind of date, I used this before.
 
     private double completedProgress = 0; // When the user watched a lecture this should be updated
     // get all completed lectures and divide by total lectures and set this to that value.
@@ -38,19 +40,31 @@ public class Course {
     @Embedded
     private CourseInformation courseInformation;
 
-//   ----------------------------------------Table Relationship Mapping-----------------------------------------
+//   ----------------------------------------Student Progress Relationship Mapping-----------------------------------------
 
-//    @CollectionTable(name = "category", joinColumns = @JoinColumn(name = "course_id"),
-//            foreignKey = @ForeignKey(name = "category_course_fk"))
-//    private List<Category> categories;
+//    @OneToMany(mappedBy = "course")
+//    @ToString.Exclude
+//    private List<StudentProgress> progresses;
 
-    @OneToMany(cascade = CascadeType.ALL)
+
+//   ----------------------------------------Categories Relationship Mapping-----------------------------------------
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "course_category_mapping",
+            joinColumns = @JoinColumn(
+                    name = "course_id",
+                    referencedColumnName = "courseId"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "category_id",
+                    referencedColumnName = "categoryId"
+            )
+    )
     @ToString.Exclude
     private List<Category> categories = new ArrayList<>();
 
 //   ---------------------------------------- Course Lecture Mapping-----------------------------------------
-
-
 
 
     //   ---------------------------------------- Teacher Mapping-----------------------------------------
@@ -87,5 +101,11 @@ public class Course {
         }
         students.add(student);
     }
+//    public void addProgresses(StudentProgress progress) {
+//        if (progresses == null) {
+//            progresses = new ArrayList<>();
+//        }
+//        progresses.add(progress);
+//    }
 
 }

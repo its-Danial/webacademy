@@ -38,7 +38,3 @@ spring:
 #   Might need to change this depending on your SQL settings
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-client:
-  post:
-    baseUrl: https://jsonplaceholder.typicode.com

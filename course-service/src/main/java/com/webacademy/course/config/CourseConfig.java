@@ -27,26 +27,35 @@ public class CourseConfig {
     CommandLineRunner commandLineRunner(CourseRepository courseRepository) {
         return args -> {
 
-            List<Student> students = studentFeignClient.getAllStudent();
-            for (int i = 0; i<=students.size()-1; i++) {
-                students.get(i);
-            }
+//            List<Student> students = studentFeignClient.getAllStudent();
+//            for (int i = 0; i<=students.size()-1; i++) {
+//                students.get(i);
+//            }
+            Student student1 = studentFeignClient.getStudentById(1L).get();
+            Student student2 = studentFeignClient.getStudentById(2L).get();
+            Student student3 = studentFeignClient.getStudentById(3L).get();
+            Student student4 = studentFeignClient.getStudentById(4L).get();
+
+            List<Student> studentList1 = Arrays.asList(student1, student2);
+            List<Student> studentList2 = Arrays.asList(student3, student4);
 
             Teacher teacher1 = teacherFeignClient.getTeacherById(1L).get();
             Teacher teacher2 = teacherFeignClient.getTeacherById(2L).get();
 
             CourseInformation course1Info = new CourseInformation(
                     5.0,
+                    "what, you, learn",
                     "summary",
                     "description",
-                    "coverUrl",
+                    "coverImageUrl",
                     "previewVideoUrl");
 
             CourseInformation course2Info = new CourseInformation(
                     6.0,
+                    "what, you, learn",
                     "summary2",
                     "description2",
-                    "coverUrl2",
+                    "coverImageUrl2",
                     "previewVideoUrl2");
 
             List<String> topics1 = Arrays.asList("a", "b", "c");
@@ -69,7 +78,7 @@ public class CourseConfig {
                     .createdAt(LocalDateTime.now())
                     .teacher(teacher1)
                     .categories(categoryList1)
-                    .students(students)
+                    .students(studentList1)
                     .build();
 
             Course course2 = Course.builder()
@@ -79,6 +88,7 @@ public class CourseConfig {
                     .createdAt(LocalDateTime.now())
                     .teacher(teacher2)
                     .categories(categoryList2)
+                    .students(studentList2)
                     .build();
 
             courseRepository.save(course1);
@@ -86,6 +96,7 @@ public class CourseConfig {
 
 
             System.out.println(courseRepository.findAll());
+            System.out.println();
         };
     }
 }

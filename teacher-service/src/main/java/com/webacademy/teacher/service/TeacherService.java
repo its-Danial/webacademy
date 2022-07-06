@@ -1,7 +1,10 @@
 package com.webacademy.teacher.service;
 
+import com.webacademy.common.entities.Category;
+import com.webacademy.common.entities.CourseInformation;
 import com.webacademy.common.entities.Teacher;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 

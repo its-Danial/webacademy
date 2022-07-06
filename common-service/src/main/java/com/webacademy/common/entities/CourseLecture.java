@@ -26,8 +26,8 @@ public class CourseLecture {
     )
     private Long courseLectureId;
     private String title; // e.g introduction to html
-
-    private String courseLectureDescription; // e.g you will learn how to write html and good practices
+    @Lob
+    private String courseLectureDescription;
     private String lectureUrl; // this will be a video link
     private String lectureDuration; // this will be how long the course/video is. NOTE this should be date type
 

@@ -1,15 +1,19 @@
 package com.webacademy.shopping_cart.service;
 
 import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.ShoppingCart;
 import com.webacademy.common.entities.Student;
 
+import java.util.List;
 import java.util.Optional;
 
 
 public interface ShoppingCartService {
 
 
-//    void addCourseToCart(Optional<Course> course, Optional<Student> student);
+    void addCourseToCart(Long cartId, Long courseId);
 
-//    void deleteCourseFromCart(Long courseId);
+    void removeCourseFromCart(Long cartId, Long courseId);
+
+    void buyCourseFromCart(Long studentId, Long courseId);
 }

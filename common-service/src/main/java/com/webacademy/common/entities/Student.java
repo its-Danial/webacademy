@@ -1,18 +1,17 @@
 package com.webacademy.common.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "student_table", uniqueConstraints = {
+@Table(name = "student", uniqueConstraints = {
         @UniqueConstraint(name = "uc_student_email_address", columnNames = {"email_address"})
 }) // We need all email to be unique, so I added unique constraint for the table.
 public class Student {
@@ -30,4 +29,15 @@ public class Student {
     private String username;
     private String password;
 
+
+//    @OneToMany(mappedBy = "student")
+//    @ToString.Exclude
+//    private List<StudentProgress> progresses;
+//
+//    public void addProgresses(StudentProgress progress) {
+//        if (progresses == null) {
+//            progresses = new ArrayList<>();
+//        }
+//        progresses.add(progress);
+//    }
 }
