@@ -1,5 +1,6 @@
 package com.webacademy.common.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +16,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "teacher", uniqueConstraints = {
-        @UniqueConstraint(name = "uc_teacher_email_address", columnNames = {"email_address"})
+        @UniqueConstraint(name = "uc_teacher_email_address", columnNames = {"email_address"}),
+        @UniqueConstraint(name="uc_teacher_username", columnNames = {"username"})
 })
 public class Teacher {
 
@@ -38,6 +40,7 @@ public class Teacher {
 
     private String username;
 
+    @JsonIgnore
     private String password;
 
     @Lob

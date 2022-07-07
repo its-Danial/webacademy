@@ -11,6 +11,8 @@ spring:
           uri: lb://student-service
           predicates:
             - Path=/student/**
+#          filters:
+#            - name: LoginFilter
         - id: teacher-service
           uri: lb://teacher-service
           predicates:
