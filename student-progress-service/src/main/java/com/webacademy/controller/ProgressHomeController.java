@@ -69,4 +69,12 @@ public class ProgressHomeController {
                 .body("Successfully unliked the course");
     }
 
+    @PostMapping("/insert-progress/{studentId}/{courseId}")
+    public ResponseEntity<String> insertProgressByStudentIdAndCourseId(@PathVariable("studentId") Long studentId,
+                                                                       @PathVariable("courseId") Long courseId){
+        studentProgressService.insertProgressByStudentIdAndCourseId(studentId, courseId);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Created progress for student " + studentId + " on course " + courseId);
+    }
+
 }

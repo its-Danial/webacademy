@@ -33,4 +33,7 @@ public interface CourseRepository extends JpaRepository<Course,Long> {
 
     @Override
     Page<Course> findAll(Pageable pageable);
+
+    @Query(value = "SELECT c.* FROM course c JOIN cart_course_mapping cc ON c.course_id = cc.course_id WHERE cc.cart_id = :studentId", nativeQuery = true)
+    List<Course> findCoursesInCartByStudentId(@Param("studentId") Long id);
 }

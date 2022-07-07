@@ -1,6 +1,7 @@
 package com.webacademy.service;
 
 import com.webacademy.common.entities.StudentProgress;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -19,4 +20,6 @@ public interface StudentProgressService {
     void likeCourse(Long studentId, Long courseId);
 
     void unlikeCourse(Long studentId, Long courseId);
+
+    void insertProgressByStudentIdAndCourseId(Long studentId, Long courseId);
 }

@@ -1,6 +1,12 @@
 package com.webacademy.service;
 
+import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.CourseLecture;
+import com.webacademy.common.entities.Student;
 import com.webacademy.common.entities.StudentProgress;
+import com.webacademy.feign.CourseFeignClient;
+import com.webacademy.feign.LectureFeignClient;
+import com.webacademy.feign.StudentFeignClient;
 import com.webacademy.repository.StudentProgressRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +22,13 @@ public class StudentProgressServiceImpl implements StudentProgressService {
 
     @Autowired
     StudentProgressRepository studentProgressRepository;
+
+    @Autowired
+    StudentFeignClient studentFeignClient;
+    @Autowired
+    CourseFeignClient courseFeignClient;
+    @Autowired
+    LectureFeignClient lectureFeignClient;
 
     @Override
     public List<StudentProgress> findAllStudentProgress() {
@@ -58,7 +71,9 @@ public class StudentProgressServiceImpl implements StudentProgressService {
     public void likeCourse(Long studentId, Long courseId) {
         StudentProgress studentProgress = studentProgressRepository
                 .findProgressByStudentIdAndCourseId(studentId, courseId);
-
+        if(studentProgress.isLiked()){
+            throw new IllegalStateException("Student " + studentId + " already liked the course");
+        }
         studentProgress.setLiked(true);
         log.info("Student {} liked course {}", studentId, courseId);
     }
@@ -68,9 +83,32 @@ public class StudentProgressServiceImpl implements StudentProgressService {
     public void unlikeCourse(Long studentId, Long courseId) {
         StudentProgress studentProgress = studentProgressRepository
                 .findProgressByStudentIdAndCourseId(studentId, courseId);
+        if(!studentProgress.isLiked()){
+            throw new IllegalStateException("Student " + studentId +
+                    " hasn't liked the course. You can't unlike it");
+        }
 
         studentProgress.setLiked(false);
         log.info("Student {} unliked course {}", studentId, courseId);
+    }
+
+    @Override
+    @Transactional
+    public void insertProgressByStudentIdAndCourseId(Long studentId, Long courseId) {
+        Student student = studentFeignClient.getStudentById(studentId).
+                orElseThrow(()-> new IllegalArgumentException("Student not found"));
+        Course course = courseFeignClient.getCourseByCourseId(courseId).
+        orElseThrow(()-> new IllegalArgumentException("Course not found"));
+
+        //progress insertion
+        StudentProgress studentProgress = new StudentProgress();
+        studentProgress.setStudent(student);
+        studentProgress.setCourse(course);
+        List<CourseLecture> lectures = lectureFeignClient.getLecturesByCourse(course.getCourseId());
+        studentProgress.setTotalLectures(lectures.size());
+        studentProgressRepository.save(studentProgress);
+
+        log.info("Inserted student {}'s progress to course {}", studentId, courseId);
     }
 
 

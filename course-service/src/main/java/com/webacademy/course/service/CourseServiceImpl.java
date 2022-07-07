@@ -110,4 +110,10 @@ public class CourseServiceImpl implements CourseService {
         courseRepository.deleteById(courseId);
         log.info("Teacher {} has deleted course {}", teacherId, courseId);
     }
+
+    @Override
+    public List<Course> findCoursesInCartByStudentId(Long studentId) {
+        log.info("Fetch courses in cart by student {}", studentId);
+        return courseRepository.findCoursesInCartByStudentId(studentId);
+    }
 }

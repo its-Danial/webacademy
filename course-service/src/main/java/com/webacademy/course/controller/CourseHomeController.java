@@ -88,4 +88,9 @@ public class CourseHomeController {
                 .body("Teacher " + teacherId + " has successfully deleted course "
                         + courseId);
     }
+
+    @GetMapping("/get-course-in-cart/{studentId}")
+    public List<Course> getCoursesInCartByStudentId(@PathVariable("studentId") Long studentId){
+        return courseService.findCoursesInCartByStudentId(studentId);
+    }
 }

@@ -2,6 +2,7 @@ package com.webacademy.repository;
 
 import com.webacademy.common.entities.StudentProgress;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -13,8 +14,14 @@ public interface StudentProgressRepository extends JpaRepository<StudentProgress
     @Query(value = "Select * from student_progress " +
             "where student_id = :studentId and course_id = :courseId", nativeQuery = true)
     StudentProgress findProgressByStudentIdAndCourseId(@Param("studentId") Long studentId,
-                                                              @Param("courseId") Long courseId);
+                                                       @Param("courseId") Long courseId);
 
     @Query(value = "SELECT * FROM student_progress WHERE student_id = :studentId", nativeQuery = true)
     List<StudentProgress> findProgressesByStudentId(@Param("studentId") Long studentId);
+
+//    @Modifying
+//    @Query(value = "INSERT INTO student_progress(student_id, course_id)" +
+//            "VALUES (:studentId, :courseId)", nativeQuery = true)
+//    void insertProgressByStudentIdAndCourseId(@Param("studentId") Long studentId,
+//                                              @Param("courseId") Long courseId);
 }

@@ -35,7 +35,7 @@ public class StudentProgress {
 
     private int totalLectures;
 
-    private int completedLectures;
+    private int completedLectures = 0;
 
     private boolean liked = false;
 }

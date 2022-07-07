@@ -14,4 +14,7 @@ public interface CourseFeignClient {
     @GetMapping("/get-by-id/{courseId}")
     Optional<Course> getCourseByCourseId(@PathVariable("courseId") Long id);
 
+    @GetMapping("/get-course-in-cart/{studentId}")
+    List<Course> getCoursesInCartByStudentId(@PathVariable("studentId") Long studentId);
+
 }

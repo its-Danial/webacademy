@@ -34,7 +34,7 @@ public class ShoppingCart {
                     referencedColumnName = "courseId"
             )
     )
-    private List<Course> courses = new ArrayList<>();
+    private List<Course> courses;
 
     public void addCourseToCart(Course c) {
         if (courses == null) {

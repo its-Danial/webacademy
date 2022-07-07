@@ -34,4 +34,6 @@ public interface CourseService {
     void createCourse(Long teacherId, Course course);
 
     void deleteCourse(Long teacherId, Long courseId);
+
+    List<Course> findCoursesInCartByStudentId(Long studentId);
 }

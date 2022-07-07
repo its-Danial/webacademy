@@ -40,13 +40,11 @@ public class ProgressConfig {
 //
 //            Course course1 = courseFeignClient.getCourseByCourseId(1L)
 //                    .get();
-//            Course course2 = courseFeignClient.getCourseByCourseId(2L)
-//                    .get();
 //
-//            List<CourseLecture> lectures = lectureFeignClient.getLecturesByCourse(course2.getCourseId());
+//            List<CourseLecture> lectures = lectureFeignClient.getLecturesByCourse(course1.getCourseId());
 //
 //            StudentProgress studentProgress1 = StudentProgress.builder()
-//                    .student(student2)
+//                    .student(student1)
 //                    .totalLectures(lectures.size())
 //                    .completedLectures(0)
 //                    .course(course1)
@@ -56,7 +54,7 @@ public class ProgressConfig {
 //                    .student(student2)
 //                    .totalLectures(lectures.size())
 //                    .completedLectures(0)
-//                    .course(course2)
+//                    .course(course1)
 //                    .build();
 //
 //            studentProgressRepository.save(studentProgress1);
