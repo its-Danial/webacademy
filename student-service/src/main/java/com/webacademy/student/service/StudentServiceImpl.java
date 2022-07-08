@@ -45,12 +45,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student login(String username, String password) {
+    public Student login(String email, String password) {
 
-        if(studentRepository.existsByUsernameAndPassword(username, password)){
-            return studentRepository.findStudentByUsername(username);
+        if(studentRepository.existsByEmailAndPassword(email, password)){
+            return studentRepository.findStudentByEmail(email);
         } else{
-            throw new IllegalStateException("Invalid username or password");
+            throw new IllegalStateException("Invalid email or password");
         }
     }
 

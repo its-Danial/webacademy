@@ -54,11 +54,11 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    public Teacher login(String username, String password) {
-        if(teacherRepository.existsByUsernameAndPassword(username, password)){
-            return teacherRepository.findTeacherByUsername(username);
+    public Teacher login(String email, String password) {
+        if(teacherRepository.existsByEmailAndPassword(email, password)){
+            return teacherRepository.findTeacherByEmail(email);
         } else{
-            throw new IllegalStateException("Invalid username or password");
+            throw new IllegalStateException("Invalid email or password");
         }
     }
 

@@ -56,15 +56,15 @@ public class TeacherHomeController {
 
     @PostMapping("/login")
     public ResponseEntity<Teacher> login(@RequestBody JSONObject credentials) {
-        String username = credentials.getObject("username", String.class);
+        String email = credentials.getObject("email", String.class);
         String password = credentials.getObject("password", String.class);
 
         try {
             return ResponseEntity.status(HttpStatus.OK)
-                    .body(teacherService.login(username, password));
+                    .body(teacherService.login(email, password));
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,
-                    "Invalid username or password", e);
+                    "Invalid email or password", e);
         }
     }
 

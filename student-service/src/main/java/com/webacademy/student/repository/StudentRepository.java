@@ -36,5 +36,5 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
    boolean existsByStudentId(Long studentId);
 
-   boolean existsByUsernameAndPassword(String username, String password);
+   boolean existsByEmailAndPassword(String email, String password);
 }
