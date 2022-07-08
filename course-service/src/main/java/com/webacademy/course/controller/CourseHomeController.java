@@ -9,6 +9,7 @@ import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -21,15 +22,11 @@ public class CourseHomeController {
 
     @Autowired
     CourseServiceImpl courseService;
+
     @GetMapping("/get-all")
     public List<Course> getAllCourse(){
         return courseService.findAllCourse();
     }
-
-//    @GetMapping("/getAll")
-//    public List<Object> getAllCourseWithoutStudent() {
-//        return courseService.findAllCourseWithoutStudent();
-//    }
 
     @GetMapping("/filter")
     @ResponseStatus(HttpStatus.OK)
@@ -37,58 +34,70 @@ public class CourseHomeController {
         return courseService.findCoursesByPage(page, size);
     }
 
-    @GetMapping("/getById/{courseId}")
+    @GetMapping("/get-by-id/{courseId}")
     @ResponseStatus(HttpStatus.OK)
     public Optional<Course> getCourseByCourseId(@PathVariable("courseId") Long id){
         return courseService.findCourseByCourseId(id);
     }
 
-    @GetMapping("/getByTeacherId/{teacherId}")
+    @GetMapping("/get-by-teacher-id/{teacherId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Course> getCoursesByTeacherId(@PathVariable("teacherId") Long id){
         return courseService.findCoursesByTeacherId(id);
     }
 
-    @GetMapping("/getByStudentId/{studentId}")
+    @GetMapping("/get-by-student-id/{studentId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Course> getCoursesByStudentId(@PathVariable("studentId") Long id){
         return courseService.findCoursesByStudentId(id);
     }
 
-    @GetMapping("/getByCategory/{category}")
+    @GetMapping("/get-by-category/{category}")
     @ResponseStatus(HttpStatus.OK)
     public List<Course> getCoursesByCategory(@PathVariable("category") String category){
         return courseService.findCoursesByCategory(category);
     }
 
-    @GetMapping("/getByTopic/{topic}")
+    @GetMapping("/get-by-topic/{topic}")
     @ResponseStatus(HttpStatus.OK)
     public List<Course> getCoursesByTopic(@PathVariable("topic") String topic){
         return courseService.findCoursesByTopic(topic);
     }
 
-    @GetMapping("/getByRating")
+    @GetMapping("/get-by-rating")
     @ResponseStatus(HttpStatus.OK)
-    public List<Course> getCoursesByRating(@RequestParam double minRating, @RequestParam double maxRating){
+    public List<Course> getCoursesByRating(@RequestParam double minRating,
+                                           @RequestParam double maxRating){
         return courseService.findCourseByRating(minRating, maxRating);
     }
 
-    @PutMapping("/updateProgress/{courseId}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateProgress(@PathVariable("courseId") Long id){
-        Course course = courseService.findCourseByCourseId(id).orElse(null);
-        courseService.updateProgress(course);
-    }
-
     @PostMapping("/create/{teacherId}")
-    @ResponseStatus(HttpStatus.CREATED)
-    public void createCourse(@PathVariable("teacherId") Long teacherId, @RequestBody Course course){
+    public ResponseEntity<String> createCourse(@PathVariable("teacherId") Long teacherId,
+                                               @RequestBody Course course){
         courseService.createCourse(teacherId, course);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Teacher " + teacherId + " has successfully created course "
+                        + course.getCourseId());
     }
 
-    @DeleteMapping("/delete/{courseId}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteCourse(@PathVariable("courseId")Long courseId){
-        courseService.deleteCourse(courseId);
+    @DeleteMapping("/delete/{teacherId}/{courseId}")
+    public ResponseEntity<String> deleteCourse(@PathVariable("teacherId") Long teacherId,
+                                               @PathVariable("courseId")Long courseId){
+        courseService.deleteCourse(teacherId, courseId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Teacher " + teacherId + " has successfully deleted course "
+                        + courseId);
+    }
+
+    @GetMapping("/get-course-in-cart/{studentId}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Course> getCoursesInCartByStudentId(@PathVariable("studentId") Long studentId){
+        return courseService.findCoursesInCartByStudentId(studentId);
+    }
+
+    @GetMapping("/get-total-price-earned/{teacherId}")
+    @ResponseStatus(HttpStatus.OK)
+    public double getTotalPriceEarned(@PathVariable("teacherId") Long teacherId){
+        return courseService.findTotalPriceEarned(teacherId);
     }
 }

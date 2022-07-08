@@ -15,11 +15,15 @@ public interface TeacherService {
 
     Teacher findTeacherByEmail(String email);
 
+    Teacher findTeacherByUsername(String username);
+
+    Teacher login(String username, String password);
+
     void addTeacher(Teacher teacher);
 
     void updateTeacher(Teacher teacher);
 
     void deleteTeacherByEmail(String email);
 
-
+    Teacher register(String email, String username, String fullname, String password);
 }

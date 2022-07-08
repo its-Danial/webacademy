@@ -10,10 +10,13 @@ import java.util.Optional;
 
 public interface ShoppingCartService {
 
+    void createCart(Long studentId);
+
+    ShoppingCart findCartById(Long cartId);
 
     void addCourseToCart(Long cartId, Long courseId);
 
     void removeCourseFromCart(Long cartId, Long courseId);
 
-    void buyCourseFromCart(Long studentId, Long courseId);
+    void buyAllCourseFromCart(Long studentId);
 }

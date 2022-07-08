@@ -1,9 +1,6 @@
 package com.webacademy.teacher.service;
 
-import com.webacademy.common.entities.Category;
-import com.webacademy.common.entities.Course;
-import com.webacademy.common.entities.CourseInformation;
-import com.webacademy.common.entities.Teacher;
+import com.webacademy.common.entities.*;
 import com.webacademy.teacher.repository.TeacherRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,13 +27,50 @@ public class TeacherServiceImpl implements TeacherService{
 
     @Override
     public Optional<Teacher> findTeacherById(Long id) {
+        if(!teacherRepository.existsByTeacherId(id)){
+            throw new IllegalStateException("No teacher found by id: " + id);
+        }
+        log.info("Fetch teacher {}", id);
         return teacherRepository.findById(id);
     }
 
     @Override
+    public Teacher findTeacherByUsername(String username) {
+        if(!teacherRepository.existsByUsername(username)){
+            throw new IllegalStateException("No teacher found by username: " + username);
+        }
+
+        log.info("Fetch teacher with username: {}", username);
+        return teacherRepository.findTeacherByUsername(username);
+    }
+
+    @Override
     public Teacher findTeacherByEmail(String email) {
+        if(!teacherRepository.existsByEmail(email)){
+            throw new IllegalStateException("No teacher found by email: " + email);
+        }
         log.info("Teacher with email:{} found", email);
         return teacherRepository.findTeacherByEmail(email);
+    }
+
+    @Override
+    public Teacher login(String username, String password) {
+        if(teacherRepository.existsByUsernameAndPassword(username, password)){
+            return teacherRepository.findTeacherByUsername(username);
+        } else{
+            throw new IllegalStateException("Invalid username or password");
+        }
+    }
+
+    @Override
+    public Teacher register(String email, String username, String fullname, String password) {
+        Teacher teacher = new Teacher();
+        teacher.setEmail(email);
+        teacher.setUsername(username);
+        teacher.setFullName(fullname);
+        teacher.setPassword(password);
+        teacherRepository.save(teacher);
+        return teacherRepository.findTeacherByUsername(username);
     }
 
     @Override

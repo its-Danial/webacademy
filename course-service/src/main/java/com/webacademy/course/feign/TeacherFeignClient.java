@@ -10,6 +10,6 @@ import java.util.Optional;
 @FeignClient(name="teacher-service", path = "/teacher")
 public interface TeacherFeignClient {
 
-    @GetMapping("/getById/{teacherId}")
+    @GetMapping("/get-by-id/{teacherId}")
     public Optional<Teacher> getTeacherById(@PathVariable("teacherId") Long id);
 }

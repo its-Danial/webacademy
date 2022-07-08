@@ -11,7 +11,10 @@ import java.util.Optional;
 @FeignClient(name="course-service", path = "/course")
 public interface CourseFeignClient {
 
-    @GetMapping("/getById/{courseId}")
+    @GetMapping("/get-by-id/{courseId}")
     Optional<Course> getCourseByCourseId(@PathVariable("courseId") Long id);
+
+    @GetMapping("/get-course-in-cart/{studentId}")
+    List<Course> getCoursesInCartByStudentId(@PathVariable("studentId") Long studentId);
 
 }

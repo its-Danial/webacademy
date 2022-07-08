@@ -88,41 +88,46 @@ public class CourseServiceImpl implements CourseService {
         return courseRepository.findCoursesByStudentId(id);
     }
 
-    // TODO: make update progress only work for a student
-    /* When updateProgress gets called, it updates the course
-     * only for a SPECIFIC student. So it should take in a
-     * student id as well
-    */
-    @Override
-    public void updateProgress(Course course) {
-        //Gets all lecture in the course
-        List<CourseLecture> lectures = lectureFeignClient.getLecturesByCourse(course.getCourseId());
-        //Gets size of lecture
-        int totalLectures = lectures.size();
-
-        //get number of completed lectures
-        double count = 0;
-        for (CourseLecture lecture: lectures) {
-            if(lecture.isCompleted()){
-                count += 1;
-            }
-        }
-        double progress = (count / totalLectures) * 100;
-        course.setCompletedProgress(progress);
-        log.info("Course {} progress updated to {}%", course.getTitle(), progress);
-    }
-
     @Override
     public void createCourse(Long teacherId, Course course) {
-        Teacher teacher = teacherFeignClient.getTeacherById(teacherId).orElse(null);
+        Teacher teacher = teacherFeignClient.getTeacherById(teacherId).
+                orElseThrow(()-> new IllegalArgumentException("Teacher not found"));
+
         course.setTeacher(teacher);
         courseRepository.save(course);
         log.info("Teacher {} added course {}", teacher.getFullName(), course.getTitle());
     }
 
     @Override
-    public void deleteCourse(Long courseId) {
+    public void deleteCourse(Long teacherId, Long courseId) {
+        Course course = courseRepository.findById(courseId).
+                orElseThrow(()-> new IllegalArgumentException("Course not found"));
+
+        if (!teacherId.equals(course.getTeacher().getTeacherId())) {
+            log.error("The teacher doesn't own the course");
+            throw new IllegalStateException("The teacher doesn't own the course");
+        }
         courseRepository.deleteById(courseId);
+        log.info("Teacher {} has deleted course {}", teacherId, courseId);
     }
 
+    @Override
+    public List<Course> findCoursesInCartByStudentId(Long studentId) {
+        log.info("Fetch courses in cart by student {}", studentId);
+        return courseRepository.findCoursesInCartByStudentId(studentId);
+    }
+
+    @Override
+    public double findTotalPriceEarned(Long teacherId) {
+        List<Course> courses = courseRepository.findCoursesByTeacherId(teacherId);
+        double totalPrice = 0;
+        for (Course course : courses) {
+            int count = courseRepository.countBoughtCourseByCourseId(course.getCourseId());
+            log.info("Course {} has been bought {} times", course.getCourseId(), count);
+            double price = course.getCourseInformation().getPrice();
+            totalPrice = price * count;
+        }
+        log.info("Total amount teacher {} has earned: ${}", teacherId, totalPrice);
+        return totalPrice;
+    }
 }

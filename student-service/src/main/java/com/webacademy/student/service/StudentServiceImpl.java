@@ -24,12 +24,16 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Optional<Student> findStudentById(Long id) {
+        if(!studentRepository.existsByStudentId(id)){
+            throw new IllegalStateException("No student found by id: " + id);
+        }
         log.info("Fetch student with id: {}", id);
         return studentRepository.findById(id);
     }
 
     @Override
     public List<Student> findStudentsByCourseId(Long id) {
+
         log.info("Fetch students in course id: {}", id);
         return studentRepository.findStudentsByCourseId(id);
     }
@@ -41,9 +45,44 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public Student login(String username, String password) {
+
+        if(studentRepository.existsByUsernameAndPassword(username, password)){
+            return studentRepository.findStudentByUsername(username);
+        } else{
+            throw new IllegalStateException("Invalid username or password");
+        }
+    }
+
+    @Override
+    public Student register(String email, String username, String fullname, String password) {
+        Student student = new Student();
+        student.setEmail(email);
+        student.setUsername(username);
+        student.setFullName(fullname);
+        student.setPassword(password);
+        studentRepository.save(student);
+        return studentRepository.findStudentByUsername(username);
+    }
+
+    @Override
     public Student findStudentByEmail(String email) {
+        if(!studentRepository.existsByEmail(email)){
+            throw new IllegalStateException("No student found by email: " + email);
+        }
+
         log.info("Fetch student with email: {}", email);
         return studentRepository.findStudentByEmail(email);
+    }
+
+    @Override
+    public Student findStudentByUsername(String username) {
+        if(!studentRepository.existsByUsername(username)){
+            throw new IllegalStateException("No student found by username: " + username);
+        }
+
+        log.info("Fetch student with username: {}", username);
+        return studentRepository.findStudentByUsername(username);
     }
 
     @Override

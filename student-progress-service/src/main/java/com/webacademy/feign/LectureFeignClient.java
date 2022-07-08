@@ -10,6 +10,6 @@ import java.util.List;
 @FeignClient(name="course-lecture-service", path = "/lecture")
 public interface LectureFeignClient {
 
-    @GetMapping("/getByCourseId/{courseId}")
+    @GetMapping("/get-by-course-id/{courseId}")
     List<CourseLecture> getLecturesByCourse(@PathVariable("courseId") Long id);
 }

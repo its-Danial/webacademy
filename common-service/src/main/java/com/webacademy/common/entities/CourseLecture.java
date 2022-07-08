@@ -25,19 +25,15 @@ public class CourseLecture {
             generator = "course_lecture_sequence"
     )
     private Long courseLectureId;
-    private String title; // e.g introduction to html
+
+    private String title;
+
     @Lob
     private String courseLectureDescription;
-    private String lectureUrl; // this will be a video link
-    private String lectureDuration; // this will be how long the course/video is. NOTE this should be date type
 
-    private boolean isCompleted = false; // when student clicks the lecture, it should be marked as watched
+    private String lectureUrl;
 
-//  ----------------------------------------Table Relationship Mapping-----------------------------------------
-
-//     cascade = CascadeType.ALL will allow us to save new data with parent data
-//     FetchType.LAZY will only return values of course lecture when we search
-
+    private String lectureDuration;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "course_id", referencedColumnName = "courseId")

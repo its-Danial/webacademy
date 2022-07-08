@@ -15,12 +15,6 @@ import java.util.List;
 public class ShoppingCart {
 
     @Id
-//    @SequenceGenerator(
-//                name = "student_sequence",
-//            sequenceName = "student_sequence",
-//            allocationSize = 1
-//    )
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
     private Long cartId;
 
     @OneToOne
@@ -40,10 +34,8 @@ public class ShoppingCart {
                     referencedColumnName = "courseId"
             )
     )
-    private List<Course> courses = new ArrayList<>();
+    private List<Course> courses;
 
-
-    //  At first the list can be empty.
     public void addCourseToCart(Course c) {
         if (courses == null) {
             courses = new ArrayList<>();

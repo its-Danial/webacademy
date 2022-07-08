@@ -11,6 +11,8 @@ public interface StudentService {
 
     Student findStudentByEmail(String email);
 
+    Student findStudentByUsername(String username);
+
     void addStudent(Student student);
 
     void updateStudent(Student student);
@@ -22,4 +24,8 @@ public interface StudentService {
     List<Student> findStudentsByCourseId(Long id);
 
     Student findStudentByCourseIdAndStudentId(Long courseId, Long studentId);
+
+    Student login(String username, String password);
+
+    Student register(String email, String username, String fullname, String password);
 }

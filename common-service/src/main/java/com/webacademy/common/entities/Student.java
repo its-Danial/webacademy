@@ -1,10 +1,10 @@
 package com.webacademy.common.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -12,9 +12,11 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "student", uniqueConstraints = {
-        @UniqueConstraint(name = "uc_student_email_address", columnNames = {"email_address"})
-}) // We need all email to be unique, so I added unique constraint for the table.
+        @UniqueConstraint(name = "uc_student_email_address", columnNames = {"email_address"}),
+        @UniqueConstraint(name="uc_student_username", columnNames = {"username"})
+})
 public class Student {
+
     @Id
     @SequenceGenerator(
             name = "student_sequence",
@@ -23,21 +25,15 @@ public class Student {
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequence")
     private Long studentId;
+
     private String fullName;
+
     @Column(name = "email_address", nullable = false)
     private String email;
+
+
     private String username;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
-
-
-//    @OneToMany(mappedBy = "student")
-//    @ToString.Exclude
-//    private List<StudentProgress> progresses;
-//
-//    public void addProgresses(StudentProgress progress) {
-//        if (progresses == null) {
-//            progresses = new ArrayList<>();
-//        }
-//        progresses.add(progress);
-//    }
 }
