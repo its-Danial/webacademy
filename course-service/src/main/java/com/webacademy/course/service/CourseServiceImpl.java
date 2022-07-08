@@ -118,9 +118,16 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public int countBoughtCourseByCourseId(Long courseId) {
-        int count = courseRepository.countBoughtCourseByCourseId(courseId);
-        log.info("Course {} has been bought {} times", courseId, count);
-        return count;
+    public double findTotalPriceEarned(Long teacherId) {
+        List<Course> courses = courseRepository.findCoursesByTeacherId(teacherId);
+        double totalPrice = 0;
+        for (Course course : courses) {
+            int count = courseRepository.countBoughtCourseByCourseId(course.getCourseId());
+            log.info("Course {} has been bought {} times", course.getCourseId(), count);
+            double price = course.getCourseInformation().getPrice();
+            totalPrice = price * count;
+        }
+        log.info("Total amount teacher {} has earned: ${}", teacherId, totalPrice);
+        return totalPrice;
     }
 }

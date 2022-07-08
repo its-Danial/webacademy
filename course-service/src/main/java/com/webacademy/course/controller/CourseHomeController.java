@@ -90,7 +90,14 @@ public class CourseHomeController {
     }
 
     @GetMapping("/get-course-in-cart/{studentId}")
+    @ResponseStatus(HttpStatus.OK)
     public List<Course> getCoursesInCartByStudentId(@PathVariable("studentId") Long studentId){
         return courseService.findCoursesInCartByStudentId(studentId);
+    }
+
+    @GetMapping("/get-total-price-earned/{teacherId}")
+    @ResponseStatus(HttpStatus.OK)
+    public double getTotalPriceEarned(@PathVariable("teacherId") Long teacherId){
+        return courseService.findTotalPriceEarned(teacherId);
     }
 }

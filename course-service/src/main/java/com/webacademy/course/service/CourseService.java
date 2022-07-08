@@ -37,5 +37,5 @@ public interface CourseService {
 
     List<Course> findCoursesInCartByStudentId(Long studentId);
 
-    int countBoughtCourseByCourseId(Long courseId);
+    double findTotalPriceEarned(Long teacherId);
 }
