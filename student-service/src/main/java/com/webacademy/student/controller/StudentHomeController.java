@@ -1,5 +1,6 @@
 package com.webacademy.student.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.nacos.api.naming.pojo.healthcheck.impl.Http;
 import com.webacademy.common.entities.Student;
 import com.webacademy.student.service.StudentServiceImpl;
@@ -51,9 +52,11 @@ public class StudentHomeController {
                     "No student found by username: " + username, e);
         }
     }
-    @PostMapping("/login/{username}/{password}")
-    public ResponseEntity<Student> login(@PathVariable("username") String username,
-                                         @PathVariable("password") String password){
+    @PostMapping("/login")
+    public ResponseEntity<Student> login(@RequestBody JSONObject credentials){
+        String username = credentials.getObject("username", String.class);
+        String password = credentials.getObject("password", String.class);
+
         try {
             return ResponseEntity.status(HttpStatus.OK)
                     .body(studentService.login(username, password));
@@ -90,5 +93,7 @@ public class StudentHomeController {
         return studentService.findStudentByCourseIdAndStudentId(courseId, studentId);
     }
 
-
+    public static <T> T parseObjectFromString(String s, Class<T> clazz) throws Exception {
+        return clazz.getConstructor(new Class[] {String.class }).newInstance(s);
+    }
 }

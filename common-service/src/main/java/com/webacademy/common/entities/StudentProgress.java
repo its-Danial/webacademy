@@ -33,6 +33,9 @@ public class StudentProgress {
     @JsonIgnore
     private Course course;
 
+    @Column(name="course_id", updatable=false, insertable=false)
+    private Long courseId;
+
     private int totalLectures;
 
     private int completedLectures = 0;
