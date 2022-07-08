@@ -63,6 +63,17 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
+    public Teacher register(String email, String username, String fullname, String password) {
+        Teacher teacher = new Teacher();
+        teacher.setEmail(email);
+        teacher.setUsername(username);
+        teacher.setFullName(fullname);
+        teacher.setPassword(password);
+        teacherRepository.save(teacher);
+        return teacherRepository.findTeacherByUsername(username);
+    }
+
+    @Override
     public void addTeacher(Teacher teacher) {
         teacherRepository.save(teacher);
         log.info("Added teacher {}", teacher.getUsername());

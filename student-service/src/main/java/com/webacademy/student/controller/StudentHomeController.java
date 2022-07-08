@@ -63,6 +63,21 @@ public class StudentHomeController {
         }
     }
 
+    @PostMapping("/register")
+    public ResponseEntity<Student> register(@RequestBody Student student){
+        try {
+            String email = student.getEmail();
+            String username = student.getUsername();
+            String fullname = student.getFullName();
+            String password = student.getPassword();
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(studentService.register(email, username, fullname, password));
+        }catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.CONFLICT,
+                    "Email or username already exist", e);
+        }
+    }
+
     @GetMapping("/get-all-by-course-id/{courseId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Student> getStudentsByCourseId(@PathVariable("courseId") Long id){

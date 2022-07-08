@@ -55,6 +55,17 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public Student register(String email, String username, String fullname, String password) {
+        Student student = new Student();
+        student.setEmail(email);
+        student.setUsername(username);
+        student.setFullName(fullname);
+        student.setPassword(password);
+        studentRepository.save(student);
+        return studentRepository.findStudentByUsername(username);
+    }
+
+    @Override
     public Student findStudentByEmail(String email) {
         if(!studentRepository.existsByEmail(email)){
             throw new IllegalStateException("No student found by email: " + email);

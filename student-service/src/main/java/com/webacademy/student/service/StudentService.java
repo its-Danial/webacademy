@@ -26,4 +26,6 @@ public interface StudentService {
     Student findStudentByCourseIdAndStudentId(Long courseId, Long studentId);
 
     Student login(String username, String password);
+
+    Student register(String email, String username, String fullname, String password);
 }

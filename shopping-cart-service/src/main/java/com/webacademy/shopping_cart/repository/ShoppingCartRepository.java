@@ -12,6 +12,10 @@ import java.util.List;
 public interface ShoppingCartRepository extends JpaRepository<ShoppingCart,Long> {
 
     @Modifying
+    @Query(value = "INSERT INTO shopping_cart VALUES(:studentId)", nativeQuery = true)
+    void createCart(@Param("studentId") Long studentId);
+
+    @Modifying
     @Query(value = "INSERT INTO cart_course_mapping(cart_id, course_id) VALUES (:cartId, :courseId)", nativeQuery = true)
     void addCourseToCart(@Param("cartId") Long cartId, @Param("courseId") Long courseId);
 

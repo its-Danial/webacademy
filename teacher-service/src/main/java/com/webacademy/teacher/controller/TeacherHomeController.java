@@ -64,4 +64,19 @@ public class TeacherHomeController {
                     "Invalid username or password", e);
         }
     }
+
+    @PostMapping("/register")
+    public ResponseEntity<Teacher> register(@RequestBody Teacher teacher){
+        try {
+            String email = teacher.getEmail();
+            String username = teacher.getUsername();
+            String fullname = teacher.getFullName();
+            String password = teacher.getPassword();
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(teacherService.register(email, username, fullname, password));
+        }catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.CONFLICT,
+                    "Email or username already exist", e);
+        }
+    }
 }
