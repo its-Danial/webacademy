@@ -70,7 +70,7 @@ public class StudentServiceImpl implements StudentService {
             throw new IllegalStateException("No student found by username: " + username);
         }
 
-        log.info("Fetch student with email: {}", username);
+        log.info("Fetch student with username: {}", username);
         return studentRepository.findStudentByUsername(username);
     }
 

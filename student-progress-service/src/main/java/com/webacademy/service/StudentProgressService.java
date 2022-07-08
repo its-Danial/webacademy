@@ -13,6 +13,8 @@ public interface StudentProgressService {
 
     List<StudentProgress> findProgressesByStudentId(Long studentId);
 
+    List<StudentProgress> findProgressesByCourseId(Long courseId);
+
     void updateCompletedByOne(Long studentId, Long courseId);
 
     StudentProgress findProgressByStudentIdAndCourseId(Long studentId, Long courseId);
@@ -22,4 +24,6 @@ public interface StudentProgressService {
     void unlikeCourse(Long studentId, Long courseId);
 
     void insertProgressByStudentIdAndCourseId(Long studentId, Long courseId);
+
+    void updateTotalLectures(Long courseId);
 }

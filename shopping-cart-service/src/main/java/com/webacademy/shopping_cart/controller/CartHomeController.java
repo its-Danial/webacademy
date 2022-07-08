@@ -23,22 +23,8 @@ public class CartHomeController {
     ShoppingCartServiceImpl shoppingCartService;
 
     @Autowired
-    CourseFeignClient courseFeignClient;
-    @Autowired
-    StudentFeignClient studentFeignClient;
-
-    @Autowired
     ShoppingCartRepository shoppingCartRepository;
 
-    // Shows which student is accessing the cart.
-    // e.g. /cart/123
-    //TODO: Make sure if this cart thing is needed
-    @GetMapping("/{studentId}")
-    @ResponseStatus(HttpStatus.OK)
-    public void getStudentId(@PathVariable("studentId") Long id){
-        studentFeignClient.getStudentById(id);
-        log.info("Current cart is student {}", id);
-    }
 
     @PostMapping("/add/{cartId}/{courseId}")
     public ResponseEntity<String> addCourseToCart(@PathVariable("cartId") Long cartId,

@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface TeacherFeignClient {
 
     @GetMapping("/getById/{teacherId}")
-    public Optional<Teacher> getTeacherById(@PathVariable("teacherId") Long id);
+    Optional<Teacher> getTeacherById(@PathVariable("teacherId") Long id);
 }

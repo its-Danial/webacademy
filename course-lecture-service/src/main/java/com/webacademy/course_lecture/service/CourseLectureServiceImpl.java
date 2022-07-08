@@ -6,6 +6,7 @@ import com.webacademy.common.entities.CourseLecture;
 import com.webacademy.common.entities.Student;
 import com.webacademy.common.entities.Teacher;
 import com.webacademy.course_lecture.feign.CourseFeignClient;
+import com.webacademy.course_lecture.feign.ProgressFeignClient;
 import com.webacademy.course_lecture.feign.StudentFeignClient;
 import com.webacademy.course_lecture.feign.TeacherFeignClient;
 import com.webacademy.course_lecture.repository.CourseLectureRepository;
@@ -34,6 +35,9 @@ public class CourseLectureServiceImpl implements CourseLectureService {
     @Autowired
     TeacherFeignClient teacherFeignClient;
 
+    @Autowired
+    ProgressFeignClient progressFeignClient;
+
     @Override
     public List<CourseLecture> findLecturesByCourseId(Long id) {
         log.info("Fetch lectures in course {}", id);
@@ -59,6 +63,7 @@ public class CourseLectureServiceImpl implements CourseLectureService {
             courseLectureRepository.save(courseLecture);
             log.info("Teacher {} has added a lecture in course {}",teacherId, courseId);
         }
+
     }
 
     @Override
@@ -73,10 +78,13 @@ public class CourseLectureServiceImpl implements CourseLectureService {
             for (CourseLecture lecture:courseLectures) {
                 lecture.setCourse(course);
                 courseLectureRepository.save(lecture);
+
                 log.info("Teacher {} has added a lecture {} in course {}",
                         teacherId, lecture.getCourseLectureId(), courseId);
+
             }
         }
+
     }
 
     @Override
@@ -85,6 +93,7 @@ public class CourseLectureServiceImpl implements CourseLectureService {
                 orElseThrow(() -> new IllegalStateException("Course not found"));
         CourseLecture lecture = courseLectureRepository.findCourseLectureById(lectureId).
                 orElseThrow(() -> new IllegalStateException("Lecture not found"));
+
 
         if (!teacherId.equals(course.getTeacher().getTeacherId())) {
             log.error("The teacher doesn't own the course");
@@ -98,7 +107,6 @@ public class CourseLectureServiceImpl implements CourseLectureService {
 
         courseLectureRepository.deleteById(lectureId);
         log.info("Teacher {} has deleted lecture {}", teacherId, lectureId);
-
     }
 
 }

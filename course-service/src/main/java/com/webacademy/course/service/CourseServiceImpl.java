@@ -116,4 +116,11 @@ public class CourseServiceImpl implements CourseService {
         log.info("Fetch courses in cart by student {}", studentId);
         return courseRepository.findCoursesInCartByStudentId(studentId);
     }
+
+    @Override
+    public int countBoughtCourseByCourseId(Long courseId) {
+        int count = courseRepository.countBoughtCourseByCourseId(courseId);
+        log.info("Course {} has been bought {} times", courseId, count);
+        return count;
+    }
 }

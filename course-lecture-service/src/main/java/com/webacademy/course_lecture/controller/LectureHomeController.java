@@ -2,6 +2,7 @@ package com.webacademy.course_lecture.controller;
 
 import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseLecture;
+import com.webacademy.course_lecture.feign.ProgressFeignClient;
 import com.webacademy.course_lecture.service.CourseLectureServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,9 @@ public class LectureHomeController {
 
     @Autowired
     CourseLectureServiceImpl courseLectureService;
+
+    @Autowired
+    ProgressFeignClient progressFeignClient;
 
     @GetMapping("/get-by-course-id/{courseId}")
     @ResponseStatus(HttpStatus.OK)
@@ -35,6 +39,7 @@ public class LectureHomeController {
                                              @PathVariable("courseId") Long courseId,
                                              @RequestBody CourseLecture courseLecture){
         courseLectureService.addLecture(teacherId, courseId, courseLecture);
+        progressFeignClient.updateTotalLectures(courseId);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body("Teacher " + teacherId + " has successfully added lecture "
                         + courseLecture.getCourseLectureId() + " to course " + courseId);
@@ -45,6 +50,8 @@ public class LectureHomeController {
                                               @PathVariable("courseId") Long courseId,
                                               @RequestBody List<CourseLecture> courseLectures){
         courseLectureService.addMultipleLectures(teacherId, courseId, courseLectures);
+
+        progressFeignClient.updateTotalLectures(courseId);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body("Teacher " + teacherId + " has successfully added " +
                         "multiple lectures to course " + courseId);
@@ -55,6 +62,7 @@ public class LectureHomeController {
                                                 @PathVariable("courseId") Long courseId,
                                                 @PathVariable("lectureId") Long lectureId){
         courseLectureService.deleteLecture(teacherId, courseId, lectureId);
+        progressFeignClient.updateTotalLectures(courseId);
         return ResponseEntity.status(HttpStatus.OK)
                 .body("Teacher " + teacherId + " has successfully deleted lecture "
                         + lectureId + " from course " + courseId);

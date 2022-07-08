@@ -15,6 +15,10 @@ public interface TeacherService {
 
     Teacher findTeacherByEmail(String email);
 
+    Teacher findTeacherByUsername(String username);
+
+    Teacher login(String username, String password);
+
     void addTeacher(Teacher teacher);
 
     void updateTeacher(Teacher teacher);

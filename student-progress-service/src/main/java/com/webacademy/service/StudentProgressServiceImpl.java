@@ -38,8 +38,14 @@ public class StudentProgressServiceImpl implements StudentProgressService {
 
     @Override
     public List<StudentProgress> findProgressesByStudentId(Long studentId) {
-        log.info("Fetch student {}'s progresses", studentId);
+        log.info("Fetch progresses by student {}", studentId);
         return studentProgressRepository.findProgressesByStudentId(studentId);
+    }
+
+    @Override
+    public List<StudentProgress> findProgressesByCourseId(Long courseId) {
+        log.info("Fetch progresses by course {}", courseId);
+        return studentProgressRepository.findProgressesByCourseId(courseId);
     }
 
     @Override
@@ -109,6 +115,19 @@ public class StudentProgressServiceImpl implements StudentProgressService {
         studentProgressRepository.save(studentProgress);
 
         log.info("Inserted student {}'s progress to course {}", studentId, courseId);
+    }
+
+    @Override
+    @Transactional
+    public void updateTotalLectures(Long courseId) {
+        List<StudentProgress> progresses = studentProgressRepository.findProgressesByCourseId(courseId);
+        List<CourseLecture> lectures = lectureFeignClient.getLecturesByCourse(courseId);
+        log.info("Lecture size = {}", lectures.size());
+        for (StudentProgress progress : progresses) {
+            progress.setTotalLectures(lectures.size());
+            studentProgressRepository.save(progress);
+            log.info("Total Lecture in progress = {}", progress.getTotalLectures());
+        }
     }
 
 

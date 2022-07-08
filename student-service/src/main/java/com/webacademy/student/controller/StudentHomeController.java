@@ -38,7 +38,7 @@ public class StudentHomeController {
             return ResponseEntity.status(HttpStatus.OK).body(studentService.findStudentByEmail(email));
         } catch (Exception e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-                    "No username found by email: " + email, e);
+                    "No student found by email: " + email, e);
         }
     }
 
@@ -48,7 +48,7 @@ public class StudentHomeController {
             return ResponseEntity.status(HttpStatus.OK).body(studentService.findStudentByUsername(username));
         } catch (Exception e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-                    "No username found by username: " + username, e);
+                    "No student found by username: " + username, e);
         }
     }
     @PostMapping("/login/{username}/{password}")

@@ -1,10 +1,13 @@
 package com.webacademy.teacher.controller;
 
+import com.webacademy.common.entities.Student;
 import com.webacademy.common.entities.Teacher;
 import com.webacademy.teacher.service.TeacherServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,7 +33,35 @@ public class TeacherHomeController {
 
     @GetMapping("/get-by-email/{email}")
     @ResponseStatus(HttpStatus.OK)
-    public Teacher getTeacherByEmail(@PathVariable("email") String email) {
-        return teacherService.findTeacherByEmail(email);
+    public ResponseEntity<Teacher> getTeacherByEmail(@PathVariable("email") String email) {
+        try {
+
+            return ResponseEntity.status(HttpStatus.OK).body(teacherService.findTeacherByEmail(email));
+        } catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+                    "No teacher found by email: " + email, e);
+        }
+    }
+
+    @GetMapping("/get-by-username/{username}")
+    public ResponseEntity<Teacher> getTeacherByUsername(@PathVariable("username") String username){
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(teacherService.findTeacherByUsername(username));
+        } catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+                    "No teacher found by username: " + username, e);
+        }
+    }
+
+    @PostMapping("/login/{username}/{password}")
+    public ResponseEntity<Teacher> login(@PathVariable("username") String username,
+                                         @PathVariable("password") String password){
+        try {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(teacherService.login(username, password));
+        }catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,
+                    "Invalid username or password", e);
+        }
     }
 }

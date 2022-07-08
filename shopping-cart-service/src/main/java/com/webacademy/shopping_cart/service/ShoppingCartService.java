@@ -10,6 +10,7 @@ import java.util.Optional;
 
 public interface ShoppingCartService {
 
+    ShoppingCart findCartById(Long cartId);
 
     void addCourseToCart(Long cartId, Long courseId);
 

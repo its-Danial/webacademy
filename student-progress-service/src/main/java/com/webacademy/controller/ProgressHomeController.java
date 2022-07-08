@@ -33,10 +33,17 @@ public class ProgressHomeController {
         return studentProgressService.findProgressesByStudentId(studentId);
     }
 
+    @GetMapping("/get-all-by-course-id/{courseId}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<StudentProgress> getProgressesByCourseId(@PathVariable("courseId") Long courseId){
+        return studentProgressService.findProgressesByCourseId(courseId);
+    }
+
+
     @GetMapping("/get-one/{studentId}/{courseId}")
     @ResponseStatus(HttpStatus.OK)
     public StudentProgress getProgressByStudentIdAndCourseId(@PathVariable("studentId") Long studentId,
-                                                        @PathVariable("courseId") Long courseId) {
+                                                            @PathVariable("courseId") Long courseId) {
 
         return studentProgressService.findProgressByStudentIdAndCourseId(studentId, courseId);
     }
@@ -75,6 +82,13 @@ public class ProgressHomeController {
         studentProgressService.insertProgressByStudentIdAndCourseId(studentId, courseId);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body("Created progress for student " + studentId + " on course " + courseId);
+    }
+    @PutMapping("/update-total-lectures/{courseId}")
+    public ResponseEntity<String> updateTotalLectures(@PathVariable("courseId") Long courseId){
+
+        studentProgressService.updateTotalLectures(courseId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Updated total lectures for course " + courseId);
     }
 
 }

@@ -32,6 +32,12 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     LectureFeignClient lectureFeignClient;
 
     @Override
+    public ShoppingCart findCartById(Long cartId) {
+        return shoppingCartRepository.findById(cartId).
+                orElseThrow(()-> new IllegalArgumentException("Cart not found"));
+    }
+
+    @Override
     public void addCourseToCart(Long cartId, Long courseId) {
         Course c = courseFeignClient.getCourseByCourseId(courseId).
                 orElseThrow(()-> new IllegalArgumentException("Course not found"));
