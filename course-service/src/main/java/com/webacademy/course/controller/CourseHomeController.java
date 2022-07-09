@@ -1,18 +1,12 @@
 package com.webacademy.course.controller;
 
 import com.webacademy.common.entities.Course;
-import com.webacademy.common.entities.Teacher;
-import com.webacademy.course.repository.CourseRepository;
 import com.webacademy.course.service.CourseServiceImpl;
-import lombok.extern.slf4j.Slf4j;
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,6 +1,5 @@
 package com.webacademy.course_lecture.service;
 
-import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseLecture;
 
 import java.util.List;

@@ -1,6 +1,5 @@
 package com.webacademy.course_lecture.controller;
 
-import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseLecture;
 import com.webacademy.course_lecture.feign.ProgressFeignClient;
 import com.webacademy.course_lecture.service.CourseLectureServiceImpl;

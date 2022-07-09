@@ -1,13 +1,12 @@
 package com.webacademy.teacher.service;
 
-import com.webacademy.common.entities.*;
+import com.webacademy.common.entities.Teacher;
 import com.webacademy.teacher.repository.TeacherRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 

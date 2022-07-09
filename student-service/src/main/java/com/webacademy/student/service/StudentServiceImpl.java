@@ -1,6 +1,7 @@
 package com.webacademy.student.service;
 
 import com.webacademy.common.entities.Student;
+import com.webacademy.student.feign.CartFeignClient;
 import com.webacademy.student.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Autowired
     StudentRepository studentRepository;
+    @Autowired
+    CartFeignClient cartFeignClient;
 
     @Override
     public List<Student> findAllStudent() {
@@ -48,7 +51,9 @@ public class StudentServiceImpl implements StudentService {
     public Student login(String email, String password) {
 
         if(studentRepository.existsByEmailAndPassword(email, password)){
-            return studentRepository.findStudentByEmail(email);
+            Student student = studentRepository.findStudentByEmail(email);
+            log.info("Student {} logged in", student.getStudentId());
+            return student;
         } else{
             throw new IllegalStateException("Invalid email or password");
         }
@@ -62,7 +67,12 @@ public class StudentServiceImpl implements StudentService {
         student.setFullName(fullname);
         student.setPassword(password);
         studentRepository.save(student);
-        return studentRepository.findStudentByUsername(username);
+        log.info("Student {} has successfully registered", student.getStudentId());
+
+        //Create cart after student logs in
+        cartFeignClient.createCart(student.getStudentId());
+        log.info("Cart {} created", student.getStudentId());
+        return studentRepository.findStudentByEmail(email);
     }
 
     @Override
