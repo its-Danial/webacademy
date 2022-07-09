@@ -29,11 +29,6 @@ public class CourseServiceImpl implements CourseService {
     TeacherFeignClient teacherFeignClient;
 
     @Override
-    public String hello() {
-        return "hello";
-    }
-
-    @Override
     public List<Course> findAllCourse() {
         log.info("Fetch all courses");
         return courseRepository.findAll();
@@ -51,6 +46,17 @@ public class CourseServiceImpl implements CourseService {
         Page<Course> pages = courseRepository.findAll(PageRequest.of(page, size));
         return pages.getContent();
     }
+
+    @Override
+    public List<Course> paginationByCategory(String categoryName, int page) {
+        return courseRepository.paginationByCategory(categoryName, PageRequest.of(page, 5));
+    }
+
+    @Override
+    public List<Course> paginationByTopic(String topic, int page) {
+        return courseRepository.paginationByTopic(topic, PageRequest.of(page, 5));
+    }
+
 
     @Override
     public List<Course> findCoursesByTeacherId(Long id) {

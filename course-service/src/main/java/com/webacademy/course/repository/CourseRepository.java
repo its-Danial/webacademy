@@ -29,6 +29,12 @@ public interface CourseRepository extends JpaRepository<Course,Long> {
     @Override
     Page<Course> findAll(Pageable pageable);
 
+    @Query("SELECT c FROM Course c join fetch c.categories ca where ca.categoryName = :category")
+    List<Course> paginationByCategory(@Param("category")String categoryName, Pageable pageable);
+
+    @Query("SELECT c FROM Course c join fetch c.categories ca where :topic MEMBER OF ca.topics")
+    List<Course> paginationByTopic(@Param("topic")String topic, Pageable pageable);
+
     @Query(value = "SELECT c.* FROM course c JOIN cart_course_mapping cc ON c.course_id = cc.course_id WHERE cc.cart_id = :studentId", nativeQuery = true)
     List<Course> findCoursesInCartByStudentId(@Param("studentId") Long id);
 

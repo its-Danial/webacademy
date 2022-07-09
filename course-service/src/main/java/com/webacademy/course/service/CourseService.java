@@ -7,12 +7,13 @@ import java.util.Optional;
 
 public interface CourseService {
 
-    String hello();
-
     List<Course> findAllCourse();
 
-//    List<Object> findAllCourseWithoutStudent();
     List<Course> findCoursesByPage(int page, int size);
+
+    List<Course> paginationByCategory(String categoryName, int page);
+
+    List<Course> paginationByTopic(String topic, int page);
 
     List<Course>findCoursesByTeacherId(Long id);
 
