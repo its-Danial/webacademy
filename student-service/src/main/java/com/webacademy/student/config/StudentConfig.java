@@ -1,18 +1,18 @@
-package com.webacademy.student.config;
-
-import com.webacademy.common.entities.Student;
-import com.webacademy.student.repository.StudentRepository;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-@Configuration
-public class StudentConfig {
-
-    @Bean
-    CommandLineRunner commandLineRunner(StudentRepository studentRepository){
-        return args -> {
-
+//package com.webacademy.student.config;
+//
+//import com.webacademy.common.entities.Student;
+//import com.webacademy.student.repository.StudentRepository;
+//import org.springframework.boot.CommandLineRunner;
+//import org.springframework.context.annotation.Bean;
+//import org.springframework.context.annotation.Configuration;
+//
+//@Configuration
+//public class StudentConfig {
+//
+//    @Bean
+//    CommandLineRunner commandLineRunner(StudentRepository studentRepository){
+//        return args -> {
+//
 //            Student danial = Student.builder()
 //                    .email("danial@email.com")
 //                    .fullName("Danial Azhar")
@@ -45,6 +45,6 @@ public class StudentConfig {
 //            studentRepository.save(melvern);
 //            studentRepository.save(hardy);
 //            studentRepository.save(ferdy);
-        };
-    }
-}
+//        };
+//    }
+//}
