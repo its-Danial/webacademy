@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/teacher")
+@CrossOrigin
 public class TeacherHomeController {
 
     @Autowired

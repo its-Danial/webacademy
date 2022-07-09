@@ -1,6 +1,5 @@
 package com.webacademy.shopping_cart.service;
 
-import com.sun.javaws.progress.Progress;
 import com.webacademy.common.entities.*;
 import com.webacademy.shopping_cart.feign.CourseFeignClient;
 import com.webacademy.shopping_cart.feign.LectureFeignClient;

@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/progress")
+@CrossOrigin
 public class ProgressHomeController {
 
     @Autowired

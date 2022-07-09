@@ -6,6 +6,14 @@ spring:
     name: gateway-service
   cloud:
     gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedHeaders: "*"
+            allowedMethods: "*"
       routes:
         - id: student-service
           uri: lb://student-service
@@ -40,3 +48,4 @@ spring:
       transport:
         dashboard: localhost:8080
         port: 8719
+

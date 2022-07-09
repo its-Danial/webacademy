@@ -19,6 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/cart")
 @Slf4j
+@CrossOrigin
 public class CartHomeController {
 
     @Autowired

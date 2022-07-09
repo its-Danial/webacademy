@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/lecture")
+@CrossOrigin
 public class LectureHomeController {
 
     @Autowired
