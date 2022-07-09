@@ -1,9 +1,6 @@
 package com.webacademy.service;
 
 import com.webacademy.common.entities.StudentProgress;
-import org.springframework.data.repository.query.Param;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

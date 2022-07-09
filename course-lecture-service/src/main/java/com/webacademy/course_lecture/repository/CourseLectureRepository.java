@@ -1,6 +1,5 @@
 package com.webacademy.course_lecture.repository;
 
-import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseLecture;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

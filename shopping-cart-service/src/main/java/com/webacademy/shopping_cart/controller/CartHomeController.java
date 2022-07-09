@@ -1,20 +1,12 @@
 package com.webacademy.shopping_cart.controller;
 
-import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.ShoppingCart;
-import com.webacademy.common.entities.Student;
-import com.webacademy.shopping_cart.feign.CourseFeignClient;
-import com.webacademy.shopping_cart.feign.StudentFeignClient;
-import com.webacademy.shopping_cart.repository.ShoppingCartRepository;
 import com.webacademy.shopping_cart.service.ShoppingCartServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/cart")

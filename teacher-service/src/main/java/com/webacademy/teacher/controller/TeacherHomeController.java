@@ -1,7 +1,6 @@
 package com.webacademy.teacher.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.webacademy.common.entities.Student;
 import com.webacademy.common.entities.Teacher;
 import com.webacademy.teacher.service.TeacherServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

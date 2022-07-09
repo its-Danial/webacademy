@@ -4,15 +4,11 @@ import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseLecture;
 import com.webacademy.course_lecture.feign.CourseFeignClient;
 import com.webacademy.course_lecture.repository.CourseLectureRepository;
-
-import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.annotation.After;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.transaction.Transactional;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;

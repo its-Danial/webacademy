@@ -1,6 +1,8 @@
 package com.webacademy.shopping_cart.service;
 
-import com.webacademy.common.entities.*;
+import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.ShoppingCart;
+import com.webacademy.common.entities.Student;
 import com.webacademy.shopping_cart.feign.CourseFeignClient;
 import com.webacademy.shopping_cart.feign.LectureFeignClient;
 import com.webacademy.shopping_cart.feign.ProgressFeignClient;
@@ -8,11 +10,9 @@ import com.webacademy.shopping_cart.feign.StudentFeignClient;
 import com.webacademy.shopping_cart.repository.ShoppingCartRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 @Transactional

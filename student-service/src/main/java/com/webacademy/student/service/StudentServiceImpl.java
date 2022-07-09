@@ -1,6 +1,5 @@
 package com.webacademy.student.service;
 
-import com.webacademy.common.entities.ShoppingCart;
 import com.webacademy.common.entities.Student;
 import com.webacademy.student.feign.CartFeignClient;
 import com.webacademy.student.repository.StudentRepository;

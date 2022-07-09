@@ -3,11 +3,8 @@ package com.webacademy.course_lecture.service;
 
 import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseLecture;
-import com.webacademy.common.entities.Student;
-import com.webacademy.common.entities.Teacher;
 import com.webacademy.course_lecture.feign.CourseFeignClient;
 import com.webacademy.course_lecture.feign.ProgressFeignClient;
-import com.webacademy.course_lecture.feign.StudentFeignClient;
 import com.webacademy.course_lecture.feign.TeacherFeignClient;
 import com.webacademy.course_lecture.repository.CourseLectureRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -28,9 +25,6 @@ public class CourseLectureServiceImpl implements CourseLectureService {
 
     @Autowired
     CourseFeignClient courseFeignClient;
-
-    @Autowired
-    StudentFeignClient studentFeignClient;
 
     @Autowired
     TeacherFeignClient teacherFeignClient;

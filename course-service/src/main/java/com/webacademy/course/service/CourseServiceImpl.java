@@ -1,6 +1,7 @@
 package com.webacademy.course.service;
 
-import com.webacademy.common.entities.*;
+import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.Teacher;
 import com.webacademy.course.feign.LectureFeignClient;
 import com.webacademy.course.feign.TeacherFeignClient;
 import com.webacademy.course.repository.CourseRepository;
@@ -11,7 +12,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 

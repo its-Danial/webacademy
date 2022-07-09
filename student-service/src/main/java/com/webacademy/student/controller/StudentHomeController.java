@@ -1,7 +1,6 @@
 package com.webacademy.student.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.alibaba.nacos.api.naming.pojo.healthcheck.impl.Http;
 import com.webacademy.common.entities.Student;
 import com.webacademy.student.service.StudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +46,8 @@ public class StudentHomeController {
     @GetMapping("/get-by-username/{username}")
     public ResponseEntity<Student> getStudentByUsername(@PathVariable("username") String username){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(studentService.findStudentByUsername(username));
+            return ResponseEntity.status(HttpStatus.OK).
+                    body(studentService.findStudentByUsername(username));
         } catch (Exception e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "No student found by username: " + username, e);
@@ -83,18 +83,20 @@ public class StudentHomeController {
     }
 
     @GetMapping("/get-all-by-course-id/{courseId}")
-    @ResponseStatus(HttpStatus.OK)
-    public List<Student> getStudentsByCourseId(@PathVariable("courseId") Long id){
-        return studentService.findStudentsByCourseId(id);
+    public ResponseEntity<List<Student>> getStudentsByCourseId(@PathVariable("courseId") Long id){
+        try {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(studentService.findStudentsByCourseId(id));
+        }catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+                    "Course " + id + " doesn't exist", e);
+        }
+
     }
 
     @GetMapping("/get-by-course-id-and-student-id/{courseId}/{studentId}")
     public Student getStudentByCourseIdAndStudentId(@PathVariable("courseId") Long courseId,
                                                     @PathVariable("studentId") Long studentId){
         return studentService.findStudentByCourseIdAndStudentId(courseId, studentId);
-    }
-
-    public static <T> T parseObjectFromString(String s, Class<T> clazz) throws Exception {
-        return clazz.getConstructor(new Class[] {String.class }).newInstance(s);
     }
 }
