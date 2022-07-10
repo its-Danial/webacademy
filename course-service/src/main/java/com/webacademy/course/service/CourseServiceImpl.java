@@ -44,17 +44,42 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public List<Course> findCoursesByPage(int page, int size) {
         Page<Course> pages = courseRepository.findAll(PageRequest.of(page, size));
+        log.info("Fetch courses in page {} with size of {}",page, size);
         return pages.getContent();
     }
 
     @Override
     public List<Course> paginationByCategory(String categoryName, int page) {
+        log.info("Fetch courses in page {} by category \"{}\"", page, categoryName);
         return courseRepository.paginationByCategory(categoryName, PageRequest.of(page, 5));
     }
 
     @Override
     public List<Course> paginationByTopic(String topic, int page) {
+        log.info("Fetch courses in page {} by topic \"{}\"", page, topic);
         return courseRepository.paginationByTopic(topic, PageRequest.of(page, 5));
+    }
+
+    @Override
+    public List<Course> paginationByCategoryAndRating(String categoryName,
+                                                      double minRating,
+                                                      double maxRating,
+                                                      int page) {
+        log.info("Fetch courses in page {} by category \"{}\" and rating between {} and {}"
+                , page, categoryName, minRating, maxRating);
+        return courseRepository.paginationByCategoryAndRating
+                (categoryName, minRating, maxRating, PageRequest.of(page, 5));
+    }
+
+    @Override
+    public List<Course> paginationByTopicAndRating(String topic,
+                                                   double minRating,
+                                                   double maxRating,
+                                                   int page) {
+        log.info("Fetch courses in page {} by topic \"{}\" and rating between {} and {}"
+                , page, topic, minRating, maxRating);
+        return courseRepository.paginationByTopicAndRating
+                (topic, minRating, maxRating, PageRequest.of(page, 5));
     }
 
 

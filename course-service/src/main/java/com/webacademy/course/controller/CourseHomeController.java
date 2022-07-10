@@ -27,10 +27,18 @@ public class CourseHomeController {
     @GetMapping("/filter")
     public ResponseEntity<List<Course>> getCoursesByCategoryOrTopicPagination(@RequestParam(required = false) String categoryName,
                                                                               @RequestParam(required = false) String topic,
+                                                                              @RequestParam(required = false) Double minRating,
+                                                                              @RequestParam(required = false) Double maxRating,
                                                                               @RequestParam(defaultValue = "0") int page,
                                                                               @RequestParam(defaultValue = "5", required = false) int size) {
         try {
-            if (categoryName != null) {
+            if(categoryName != null && minRating != null && maxRating != null){
+                return ResponseEntity.status(HttpStatus.OK)
+                        .body(courseService.paginationByCategoryAndRating(categoryName,minRating,maxRating,page));
+            } else if(topic != null && minRating != null && maxRating != null){
+                return ResponseEntity.status(HttpStatus.OK)
+                        .body(courseService.paginationByTopicAndRating(topic, minRating, maxRating, page));
+            } else if (categoryName != null) {
                 return ResponseEntity.status(HttpStatus.OK)
                         .body(courseService.paginationByCategory(categoryName, page));
             } else if (topic != null) {

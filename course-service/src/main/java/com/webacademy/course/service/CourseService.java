@@ -15,6 +15,10 @@ public interface CourseService {
 
     List<Course> paginationByTopic(String topic, int page);
 
+    List<Course> paginationByCategoryAndRating(String categoryName,double minRating, double maxRating, int page);
+
+    List<Course> paginationByTopicAndRating(String topic,double minRating, double maxRating, int page);
+
     List<Course>findCoursesByTeacherId(Long id);
 
     List<Course> findCoursesByCategory(String category);

@@ -35,7 +35,22 @@ public interface CourseRepository extends JpaRepository<Course,Long> {
     @Query("SELECT c FROM Course c join fetch c.categories ca where :topic MEMBER OF ca.topics")
     List<Course> paginationByTopic(@Param("topic")String topic, Pageable pageable);
 
-    @Query(value = "SELECT c.* FROM course c JOIN cart_course_mapping cc ON c.course_id = cc.course_id WHERE cc.cart_id = :studentId", nativeQuery = true)
+    @Query("SELECT c FROM Course c join fetch c.categories ca where ca.categoryName = :category " +
+            "AND c.courseRating BETWEEN :minRating AND :maxRating")
+    List<Course> paginationByCategoryAndRating(@Param("category") String categoryName,
+                                               @Param("minRating") double minRating,
+                                               @Param("maxRating") double maxRating,
+                                               Pageable pageable);
+
+    @Query("SELECT c FROM Course c join fetch c.categories ca where :topic MEMBER OF ca.topics " +
+            "AND c.courseRating BETWEEN :minRating AND :maxRating")
+    List<Course> paginationByTopicAndRating(@Param("topic") String topic,
+                                            @Param("minRating") double minRating,
+                                            @Param("maxRating") double maxRating,
+                                            Pageable pageable);
+
+    @Query(value = "SELECT c.* FROM course c JOIN cart_course_mapping cc ON c.course_id = cc.course_id " +
+            "WHERE cc.cart_id = :studentId", nativeQuery = true)
     List<Course> findCoursesInCartByStudentId(@Param("studentId") Long id);
 
     @Query(value = "SELECT count(*) FROM student_course_mapping WHERE course_id = :courseId", nativeQuery = true)
