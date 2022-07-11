@@ -7,6 +7,7 @@ import com.webacademy.course.feign.TeacherFeignClient;
 import com.webacademy.course.repository.CourseRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -34,17 +35,12 @@ public class CourseServiceImpl implements CourseService {
         return courseRepository.findAll();
     }
 
-//    @Override
-//    public List<Object> findAllCourseWithoutStudent() {
-//        log.info("Fetch all courses without students");
-//        return courseRepository.findAllCourseWithoutStudent();
-//    }
-
     //Handles Pagination
     @Override
+    @Cacheable(value = "courses", key = "{#page, #size}")
     public List<Course> findCoursesByPage(int page, int size) {
         Page<Course> pages = courseRepository.findAll(PageRequest.of(page, size));
-        log.info("Fetch courses in page {} with size of {}",page, size);
+        log.info("Fetch courses in page {} with size of {}", page, size);
         return pages.getContent();
     }
 
@@ -122,7 +118,7 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public void createCourse(Long teacherId, Course course) {
         Teacher teacher = teacherFeignClient.getTeacherById(teacherId).
-                orElseThrow(()-> new IllegalArgumentException("Teacher not found"));
+                orElseThrow(() -> new IllegalArgumentException("Teacher not found"));
 
         course.setTeacher(teacher);
         courseRepository.save(course);
@@ -132,7 +128,7 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public void deleteCourse(Long teacherId, Long courseId) {
         Course course = courseRepository.findById(courseId).
-                orElseThrow(()-> new IllegalArgumentException("Course not found"));
+                orElseThrow(() -> new IllegalArgumentException("Course not found"));
 
         if (!teacherId.equals(course.getTeacher().getTeacherId())) {
             log.error("The teacher doesn't own the course");

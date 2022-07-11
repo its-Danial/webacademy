@@ -4,6 +4,8 @@ import com.webacademy.common.entities.Teacher;
 import com.webacademy.teacher.repository.TeacherRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -19,12 +21,14 @@ public class TeacherServiceImpl implements TeacherService{
     TeacherRepository teacherRepository;
 
     @Override
+    @CachePut(value = "teachers")
     public List<Teacher> findAllTeacher() {
         log.info("Fetch all teachers");
         return teacherRepository.findAll();
     }
 
     @Override
+    @Cacheable(value = "teachers", key = "@teacherRepository.findById(#id).get().email")
     public Optional<Teacher> findTeacherById(Long id) {
         if(!teacherRepository.existsByTeacherId(id)){
             throw new IllegalStateException("No teacher found by id: " + id);
@@ -34,6 +38,7 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
+    @Cacheable(value = "teachers", key = "#username")
     public Teacher findTeacherByUsername(String username) {
         if(!teacherRepository.existsByUsername(username)){
             throw new IllegalStateException("No teacher found by username: " + username);
@@ -44,6 +49,7 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
+    @Cacheable(value = "teachers", key = "#email")
     public Teacher findTeacherByEmail(String email) {
         if(!teacherRepository.existsByEmail(email)){
             throw new IllegalStateException("No teacher found by email: " + email);
@@ -53,6 +59,7 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
+    @Cacheable(value = "teachers", key = "#email")
     public Teacher login(String email, String password) {
         if(teacherRepository.existsByEmailAndPassword(email, password)){
             return teacherRepository.findTeacherByEmail(email);
@@ -62,6 +69,7 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
+    @CachePut(value = "students", key = "#email")
     public Teacher register(String email, String username, String fullname, String password) {
         Teacher teacher = new Teacher();
         teacher.setEmail(email);
