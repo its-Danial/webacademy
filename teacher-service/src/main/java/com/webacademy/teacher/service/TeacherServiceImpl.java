@@ -69,7 +69,7 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    @CachePut(value = "students", key = "#email")
+    @CachePut(value = "teachers", key = "#email")
     public Teacher register(String email, String username, String fullname, String password) {
         Teacher teacher = new Teacher();
         teacher.setEmail(email);
