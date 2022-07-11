@@ -18,6 +18,7 @@ SELECT * FROM shopping_cart;
 SELECT * FROM cart_course_mapping;
 SELECT * FROM student_progress;
 
+
 INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (1, "hardyhenritgb@gmail.com", "Hardy Henri", "ejTkOtKi", "Kaito");
 INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (2, "kenny1212@gmail.com", "Kenny Soeharto", "ed5jbc3K", "Kairi");
 INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (3, "marco.zhang@gmail.com", "Marco Zhang", "0ZH0PY86", "Marky");
@@ -116,7 +117,7 @@ As such, you want to learn the version of Java that your future employer will us
 The next LTS version of Java is Java 17, scheduled for release in September 2021.   The course will be updated, and the updates made available to you free once Java 17 is live.  The course will also be updated in the future as new LTS versions are announced by Oracle.
 BOTTOM LINE: You will learn the RIGHT VERSION of JAVA in this course!  Right meaning the right version to maximize your future Java potential with clients or Employers. ", "https://www.youtube.com/watch?v=nVOhOGBYHo0",
 20, "Learn OOP, SOLID principles with Java examples. Implement backend part for online store by the end of the course",
-"Setting up Java and Maven, Maven Fundamentals, and Maven Lifecycles", "3.5", "2022-06-29 12:49:47.216000", "Java Programming OOP Course", "3");
+"Setting up Java and Maven, Maven Fundamentals, and Maven Lifecycles", "3.5", "2019-12-11 14:59:07.216000", "Java Programming OOP Course", "3");
  
  INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
 VALUES(2, "https://i3.ytimg.com/vi/YYXdXT2l-Gg/maxresdefault.jpg",
@@ -135,7 +136,7 @@ Python is growing faster and faster everyday and it has surpassed many other lan
  "https://www.youtube.com/watch?v=YYXdXT2l-Gg", 20, 
  "How to become a Python 3 Developer and get hired! Build 12+ projects, learn Web Development, Machine Learning + more!", 
  "Core skill to understand any programming language, and phyton language.", 4.8, 
- "2022-06-29 12:49:47.216000", "Python for Beginners: Learn Programming from Scratch", "2");
+ "2020-04-11 01:00:12.216000", "Python for Beginners: Learn Programming from Scratch", "2");
  
  INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
 VALUES(3, "https://i3.ytimg.com/vi/CD6MJ9pEn2k/maxresdefault.jpg",
@@ -148,7 +149,7 @@ Once you have completed this computer based training course, you will be fully c
  "https://www.youtube.com/watch?v=CD6MJ9pEn2k", 39, 
  "Master the fundamentals of Python while working on various usecases in easy steps ", 
  "Design OOP with python, Apply OOP concepts to handle complexity, Handling errors", 3.9, 
- "2022-06-29 12:49:47.216000", "Python Programming: Object-Oriented Programming Python", "3");
+ "2017-10-01 16:07:03.216000", "Python Programming: Object-Oriented Programming Python", "3");
  
  INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
 VALUES(4, "https://i3.ytimg.com/vi/Z4D3M-NSN58/maxresdefault.jpg",
@@ -181,7 +182,7 @@ Always keep learning!",
  "https://www.youtube.com/watch?v=Z4D3M-NSN58", 99, 
  "Learn to build websites with HTML , CSS , Bootstrap , Javascript , jQuery , Python 3 , and Django!", 
  "Create a website using Django, Learn HTML, Learn CSS, Understand basic Internet", 4.8, 
- "2022-06-29 12:49:47.216000", "Phyton and Django Web Development Course", "4");
+ "2018-12-21 15:04:56.216000", "Phyton and Django Web Development Course", "4");
  
  INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
 VALUES(5, "https://i3.ytimg.com/vi/UmljXZIypDc/maxresdefault.jpg",
@@ -233,7 +234,7 @@ Don't waste your time scouring the internet and trying to piece together how to 
  "https://www.youtube.com/watch?v=UmljXZIypDc", 20, 
  "Learn the entire technology stack to create beautiful and responsive websites with Python and Django!", 
  "Understand Django framework, Build fully functional websites, Understand Django basics.", 4.2, 
- "2022-06-29 12:49:47.216000", "Django and Python Full-Stack Developer", "5");
+ "2021-02-14 00:15:46.216000", "Django and Python Full-Stack Developer", "5");
  
  INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
 VALUES(6, "https://i3.ytimg.com/vi/TKYsuU86-DQ/maxresdefault.jpg",
@@ -253,7 +254,7 @@ Does this sound like fun? Then join me and 200,000+ other developers and start b
  "https://www.youtube.com/watch?v=TKYsuU86-DQ", 79, 
  "Learn modern HTML5, CSS3 and web design by building a stunning website for your portfolio! Includes flexbox and CSS Grid", 
  "Become a modern HTML and CSS developer, Design and build a real world project, A web design framework that easy to use and understand ", 4.5, 
- "2022-06-29 12:49:47.216000", "HTML and CSS for Beginner Course", "6");
+ "2022-01-30 03:22:18.216000", "HTML and CSS for Beginner Course", "6");
  
  INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
 VALUES(7, "https://i3.ytimg.com/vi/QXeEoD0pB3E/maxresdefault.jpg",
@@ -286,7 +287,7 @@ This course is obviously packed with content - I therefore strongly recommend th
  "https://www.youtube.com/watch?v=hEgO047GxaQ", 49, 
  "The modern JavaScript course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!", 
  "Learn JavaScript from Scratch, All core JavaScript features and concepts, Object-Oriented Programming", 4.0, 
- "2022-06-29 12:49:47.216000", "Comple Java Script Course : From Zero to Hero !", "7");
+ "2021-07-26 04:56:29.216000", "Comple Java Script Course : From Zero to Hero !", "7");
  
  INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
 VALUES(8, "https://i3.ytimg.com/vi/gq4S-ovWVlM/maxresdefault.jpg",
@@ -305,7 +306,7 @@ You will learn about
  "https://www.youtube.com/watch?v=gq4S-ovWVlM", 119, 
  "Learn the magic of Java Spring Framework with Spring Boot, Spring JDBC, and Spring AOP!", 
  "Learn spring framework the modern way, Become a complete Spring Developer, Learn basic Spring Boot, Spring AOP, Spring JDBC, and JPA", 3.9, 
- "2022-06-29 12:49:47.216000", "Spring Framework Class", "8");
+ "2017-05-15 12:30:17.216000", "Spring Framework Class", "8");
  
  INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
 VALUES(9, "https://i3.ytimg.com/vi/QFaFIcGhPoM/maxresdefault.jpg",
@@ -337,12 +338,15 @@ This is the course I wanted to take when I first learned React: complete, up-to-
  "https://www.youtube.com/watch?v=QFaFIcGhPoM", 99, 
  "Updated! Become a Senior React Developer. Build a massive E-commerce app!", 
  "Create dynamic web apps using React, Master the fundamental behind React, Programming skill needed for a software engineering job", 4.7, 
- "2022-06-29 12:49:47.216000", "Modern React Course", "9");
+ "2018-08-27 11:16:08.216000", "Modern React Course", "9");
+UPDATE course_sequence SET next_val = 11;
+ 
 -- nama category kalau perlu inspirasi liat website udemy, trus ke categories
 -- ambil nama bagian kedua, yang ada web development, data science, mobile development, dst
 INSERT INTO category (category_id, category_name) VALUES (1, "Data Science");
 INSERT INTO category (category_id, category_name) VALUES (2, "Programming Language");
 INSERT INTO category (category_id, category_name) VALUES (3, "Web Development");
+UPDATE category_sequence SET next_val = 4;
 
 -- satu category terdiri atas beberapa topic
 -- topics juga liat dari udemy, contohnya kategori game development, topicnya ada unity, c#, dll
@@ -381,8 +385,6 @@ INSERT INTO course_category_mapping(course_id, category_id) VALUES (7, 3);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (8, 2);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (8, 3);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (9, 3);
-
-
 
 -- buat cocokin student mana masuk course mana, agak logika aja deh,
 -- mungkin ad course yg ga ad student, beberapa ada student,
@@ -427,49 +429,14 @@ INSERT INTO student_progress (student_progress_id, completed_lectures, course_id
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (18,0,8,0,5,9);
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (19,0,1,0,5,10);
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (20,0,7,0,5,10);
+UPDATE progress_sequence SET next_val = 21;
 
 -- Buat 5 course lecture untuk masing" course. Jadi total ada 50
 -- Course lecture itu kyk video ttg satu topik coursenya
 -- misalnya Coursenya Java, lecture pertama, introduction, kedua, data types, dst..
 -- is completed selalu false, duration sesuai video dan formatnya HH:MM:SS, urlnya harus video youtube asli dan masuk akal
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(101, "In this video we will see :
-- What is python
-- Why to learn it
-- Why it is so useful", "00:04:13", "https://www.youtube.com/watch?v=hEgO047GxaQ", "Introduction to Python", 10);
-INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(102, "In this video we will see :
-- Download and install Python interpreter
-- Download and install PyCharm IDE
-- Simple code in command prompt
-- Create project in PyCharm", "00:08:32", "https://www.youtube.com/watch?v=mbryl4MZJms", "Python Installation | PyCharm", 10);
-INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(103, "In this video we will see :
-- Why do we code
-- Arithmetic operations
-- Printing raw string", "00:14:48", "https://www.youtube.com/watch?v=DWgzHbglNIo&t=5s", "Getting Started with Python", 10);
-INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(104, "In this video we will see :
-- What is variable
-- Why do we need them
-- How to assign value to variable
-- Fetching value 
-- String value to variable
-- Finding length of string", "00:10:21", "https://www.youtube.com/watch?v=TqPzwenhMj0", "Variables in Python", 10);
-INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(105, "
-In this video we will see :
-- Working with List
-- What is list
-- How to use list
-- append, insert, remove, pop, delete, function
-- Inbuilt functions of List : min, max, sum
-- sort function", "00:10:41", "https://www.youtube.com/watch?v=6rHySk9Kcuo", "List in Python", 10);
-
-
-
-INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(11, "Java Programming: Introduction to Java Programming
+VALUES(1, "Java Programming: Introduction to Java Programming
 Topics discussed:
 1. About Java.
 2. Java Language Specification.
@@ -477,7 +444,7 @@ Topics discussed:
 4. Editions of Java.
 5. IDE.", "00:06:03", "https://www.youtube.com/watch?v=mG4NLNZ37y4", "Introduction to Java Programming", 1);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(12, "Java Programming: The Anatomy of Java Program
+VALUES(2, "Java Programming: The Anatomy of Java Program
 Topics discussed:
 1. Classes & Objects.
 2. Methods.
@@ -485,19 +452,19 @@ Topics discussed:
 4. Java Program Structure.
 5. Packages.", "00:12:39", "https://www.youtube.com/watch?v=vsxYucdzimA", "Anatomy of Java Program", 1);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(13, "Java Programming: Displaying Messages in Java
+VALUES(3, "Java Programming: Displaying Messages in Java
 Topics discussed:
 1. Strings in Java.
 2. println() & print() methods in Java.
 3. System Class in Java.", "00:08:37", "https://www.youtube.com/watch?v=ifirpBZLeCk", "Displaying Messages in Java", 1);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(14, "Java Programming: Displaying Numbers in Java
+VALUES(4, "Java Programming: Displaying Numbers in Java
 Topics discussed:
 1. Numbers in Java.
 2. Some Arithmetic Operators.
 3. Printing some values.", "00:02:50", "https://www.youtube.com/watch?v=UFMqdnUh4nI", "Displaying Numbers in Java", 1);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(15, "Java Programming: Creating, Compiling, and Executing a Java Program
+VALUES(5, "Java Programming: Creating, Compiling, and Executing a Java Program
 Topics discussed:
 1. Creating a Java program using a simple text editor.
 2. Compiling the Java program using the Command Window.
@@ -507,156 +474,191 @@ Topics discussed:
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(21, "In this Python Beginner Tutorial, we will begin learning about the string data type. 
+VALUES(6, "In this Python Beginner Tutorial, we will begin learning about the string data type. 
 Strings allow us to work with textual data in Python.
  We will be going over different ways to format strings, 
  and also a lot of useful string methods. Let's get started.", "00:21:11", "https://www.youtube.com/watch?v=k9TUPpGqYTo", "Strings-Working with Textual Data", 2);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(22, "In this Python Beginner Tutorial, we will begin learning about integers and floats. 
+VALUES(7, "In this Python Beginner Tutorial, we will begin learning about integers and floats. 
 Integers and Floats allow us to work with numeric data in Python. 
 We will be learning how to perform basic arithmetic, as well as how to compare numeric values. 
 Let's get started.", "00:11:54", "https://www.youtube.com/watch?v=khKv-8q7YmY", "Integers and Floats-Working with Numeric Data", 2);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(23, "In this Python Beginner Tutorial, we will begin learning about Lists, Tuples, and Sets in Python. 
+VALUES(8, "In this Python Beginner Tutorial, we will begin learning about Lists, Tuples, and Sets in Python. 
 Lists and Tuples allow us to work with sequential data, and Sets allow us to work with unordered unique values. 
 We will go over most of the methods, learn when to use which data type, and also the performance benefits of each type as well. Let's get started.", "00:29:04", "https://www.youtube.com/watch?v=W8KRzm-HUcc", "Lists, Tuples, and Sets", 2);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(24, "In this Python Beginner Tutorial, we will begin learning about dictionaries. Dictionaries allow us to work with key-value pairs in Python.
+VALUES(9, "In this Python Beginner Tutorial, we will begin learning about dictionaries. Dictionaries allow us to work with key-value pairs in Python.
  We will go over dictionary methods, how to add and remove values, and also how to loop through the key-value pairs. Let's get started.", "00:09:58", "https://www.youtube.com/watch?v=daefaLgNkw0", "Dictionaries-Working with Key-Value Pairs", 2);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(25, "In this Python Beginner Tutorial, we will begin learning about if, elif, and else conditionals in Python. 
+VALUES(10, "In this Python Beginner Tutorial, we will begin learning about if, elif, and else conditionals in Python. 
 We will also be learning about Booleans and what evaluates to True and False. Let's get started.", "00:09:24", "https://www.youtube.com/watch?v=DZwmZ8Usvnk", "Conditionals and Booleans - If, Else, and Elif Statements", 2);
 
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(31, "This is the lesson number 0 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
+VALUES(11, "This is the lesson number 0 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
 In this lesson we will create our fist class. We will study about the constructor in a class and will see the use of special method __init__. 
 We will have little discussion on the type of methods or functions inside a class. Those are instance methods, class methods and static methods. We will start with creating instance method.", "00:11:30", "https://www.youtube.com/watch?v=ffLWzihP7p0", "Creating Our First Class | [OOP in Python]", 3);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(32, "This is the lesson number 03 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
+VALUES(12, "This is the lesson number 03 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
 In this lesson we will talk about the class level attributes. We will see how different objects or instances can access class level attributes.", "00:04:53", "https://www.youtube.com/watch?v=BY79_hqVDEM", "Class Level Attributes | [OOP in Python]", 3);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(33, "This is the lesson number 04 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
+VALUES(13, "This is the lesson number 04 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
 In this lesson we will study about a special attribute names as __dict__ which is associated with each object we create from a class and with the class as well. It contains the information of different attributes of that object or class. 
 It is a Dictionary with keys as the names of the different attributes and dictionary values as values of those attributes. This attribute can be very helpful for debugging purposes. We will also see other help statements for class and object.", "00:10:53", "https://www.youtube.com/watch?v=Kg49m8OPRew", "Attribute __dict__ | [OOP in Python]", 3);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(34, "This is the lesson number 05 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
+VALUES(14, "This is the lesson number 05 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
 In this lesson we will have two tasks followed by their solution. The aim is that you use the skills learnt so far to solve these tasks.", "00:12:53", "https://www.youtube.com/watch?v=Gp39OACDOUs", "Task 1 & 2 | [OOP in Python]", 3);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(35, "This is the lesson number 06 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
+VALUES(15, "This is the lesson number 06 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
 In this lesson we will see the use of two special methods; __str__ and __repr__ to represent the object of the class.", "00:06:20", "https://www.youtube.com/watch?v=ePLiBhz7A38", "__str__ and __repr__ | [OOP in Python]", 3);
 
 
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(41, "This django database tutorial will show you how to create and use a SQLite3 database. We will create relationships between tables and learn how to add and remove items from the sqlite database", 
+VALUES(16, "This django database tutorial will show you how to create and use a SQLite3 database. We will create relationships between tables and learn how to add and remove items from the sqlite database", 
 "00:22:48", "https://www.youtube.com/watch?v=UxTwFMZ4r5k", "SQLite3 DataBase Tutorial", 4);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(42, "This django tutorial will cover the django admin dashboard. The admin page/dashbaord is a place where you can view valuable information about your site, specifically your database tables and models.", 
+VALUES(17, "This django tutorial will cover the django admin dashboard. The admin page/dashbaord is a place where you can view valuable information about your site, specifically your database tables and models.", 
 "00:09:18", "https://www.youtube.com/watch?v=dTXyCGVmjL8", "Admin Dashboard", 4);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(43, "This django template tutorial will talk about how to create scalable dynamic html to display on your web pages. I will discuss template inheritance, blocks and code embedded in your templates.", 
+VALUES(18, "This django template tutorial will talk about how to create scalable dynamic html to display on your web pages. I will discuss template inheritance, blocks and code embedded in your templates.", 
 "00:27:51", "https://www.youtube.com/watch?v=b0CgA_Ap_Mc", "Templates & Custom HTML", 4);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(44, "This python django tutorial covers how to create simple forms that can be used to update a database. It will also discuss the different kinds of form actions like POST and GET and when you should be using each.", 
+VALUES(19, "This python django tutorial covers how to create simple forms that can be used to update a database. It will also discuss the different kinds of form actions like POST and GET and when you should be using each.", 
 "00:21:55", "https://www.youtube.com/watch?v=vM9mcWr1RMg", "Simple Forms", 4);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(45, "This is a django forms tutorial that discusses how to create complex dynamic forms. In this tutorial we step away from djangos prebuilt form layout and create our own. We discuss the difference between POST and GET and how to get information from out HTML in our python code.", 
+VALUES(20, "This is a django forms tutorial that discusses how to create complex dynamic forms. In this tutorial we step away from djangos prebuilt form layout and create our own. We discuss the difference between POST and GET and how to get information from out HTML in our python code.", 
 "00:14:32", "https://www.youtube.com/watch?v=9jDEnSm4nt8", "Custom Forms", 4);
 
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(51, "In this Python Django Tutorial, we will be creating a blog application within our Django project. We will also learn how to create URL patterns that are handled by our application views. Let's get started...", 
+VALUES(21, "In this Python Django Tutorial, we will be creating a blog application within our Django project. We will also learn how to create URL patterns that are handled by our application views. Let's get started...", 
 "00:20:26", "https://www.youtube.com/watch?v=a48xeeo5Vnk", "Full-Featured Web App Part 2 - Applications and Routes", 5);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(52, "In this Python Django Tutorial, we will be learning how to use templates to return more complex HTML to the browser. We'll also see how we can pass variables to our templates as context. Let's get started...", 
+VALUES(22, "In this Python Django Tutorial, we will be learning how to use templates to return more complex HTML to the browser. We'll also see how we can pass variables to our templates as context. Let's get started...", 
 "00:45:44", "https://www.youtube.com/watch?v=qDwdMDQ8oX4", "Full-Featured Web App Part 3 - Templates", 5);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(53, "In this Python Django Tutorial, we will be learning how to access the Django Admin Page for our application. The Administration Page is a great way to see what data is currently in our application, and also gives us a nice GUI for creating or modifying that data. Let's get started...", 
+VALUES(23, "In this Python Django Tutorial, we will be learning how to access the Django Admin Page for our application. The Administration Page is a great way to see what data is currently in our application, and also gives us a nice GUI for creating or modifying that data. Let's get started...", 
 "00:08:59", "https://www.youtube.com/watch?v=1PkNiYlkkjo", "Full-Featured Web App Part 4 - Admin Page", 5);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(54, "In this Python Django Tutorial, we will be creating database tables for our application using Django models. We will also see how we can use the Django ORM to query the database and filter through results. Let's get started...", 
+VALUES(24, "In this Python Django Tutorial, we will be creating database tables for our application using Django models. We will also see how we can use the Django ORM to query the database and filter through results. Let's get started...", 
 "00:38:46", "https://www.youtube.com/watch?v=aHC3uTkT9r8", "Full-Featured Web App Part 5 - Database and Migrations", 5);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(55, "In this Python Django Tutorial, we will be learning how to use forms and validate user input by creating a user registration page. We will also learn how to install and use Crispy Form so that our forms match the modern style of our application. Let's get started...", 
+VALUES(25, "In this Python Django Tutorial, we will be learning how to use forms and validate user input by creating a user registration page. We will also learn how to install and use Crispy Form so that our forms match the modern style of our application. Let's get started...", 
 "00:45:55", "https://www.youtube.com/watch?v=q4jPR-M0TAQ", "Full-Featured Web App Part 6 - User Registration", 5);
 
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(61, "HTML tutorial for beginners! This is the first HTML tutorial in this series on learning HTML and CSS. Learn how to create a website using HTML and CSS, which are programming languages used to markup websites.", 
+VALUES(26, "HTML tutorial for beginners! This is the first HTML tutorial in this series on learning HTML and CSS. Learn how to create a website using HTML and CSS, which are programming languages used to markup websites.", 
 "00:08:43", "https://www.youtube.com/watch?v=pm5OVxpul48", "How to Get Started With HTML & CSS", 6);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(62, "Let's create our first HTML project and document - Learn HTML and CSS. In this HTML tutorial, we will be getting started with HTML, and create an HTML document which will end up becoming our front page. 
+VALUES(27, "Let's create our first HTML project and document - Learn HTML and CSS. In this HTML tutorial, we will be getting started with HTML, and create an HTML document which will end up becoming our front page. 
 The front page will be set up using HTML5, and will be the file we use in this course for most of our lessons.", 
 "00:10:59", "https://www.youtube.com/watch?v=bupWPZdXqIA", "Let's Create Our First HTML Project and Document", 6);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(63, "Learn about HTML elements and attributes - HTML and CSS tutorial. In this HTML tutorial you will learn about HTML elements and attributes, which are the HTML tags we used in the previous episode. 
+VALUES(28, "Learn about HTML elements and attributes - HTML and CSS tutorial. In this HTML tutorial you will learn about HTML elements and attributes, which are the HTML tags we used in the previous episode. 
 There are many HTML elements available which we will cover later in this HTML course, as we start building our first website.", 
 "00:05:38", "https://www.youtube.com/watch?v=XXrpsQqAlIQ", "Learn About HTML Elements and Attributes", 6);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(64, "Learn to create titles and text using HTML - HTML and CSS tutorial. In this lesson you will learn how to create titles and text using HTML. To do this we will learn about the HTML paragraph element, and the HTML header elements.", 
+VALUES(29, "Learn to create titles and text using HTML - HTML and CSS tutorial. In this lesson you will learn how to create titles and text using HTML. To do this we will learn about the HTML paragraph element, and the HTML header elements.", 
 "00:07:11", "https://www.youtube.com/watch?v=8bZ4RPjOPYE&t=8s", "Learn to Create Titles and Text Using HTML", 6);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(65, "We use boxes in websites | Learn HTML and CSS | HTML tutorial. In this HTML tutorial you will learn about the grouping of content inside websites. In HTML when we make layouts, we use boxes to help place the page content.", 
+VALUES(30, "We use boxes in websites | Learn HTML and CSS | HTML tutorial. In this HTML tutorial you will learn about the grouping of content inside websites. In HTML when we make layouts, we use boxes to help place the page content.", 
 "00:07:03", "https://www.youtube.com/watch?v=1YO_5jXC-bo", "We Use Boxes in Websites", 6);
 
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(71, "See how to install Node and Visual Studio Code, and learn why you need each. Watch as Bob writes a first tiny line of code to make sure that the installation is ready.", 
+VALUES(31, "See how to install Node and Visual Studio Code, and learn why you need each. Watch as Bob writes a first tiny line of code to make sure that the installation is ready.", 
 "00:12:18", "https://www.youtube.com/watch?v=sEGC-adSKXo&t=1s", "Development Environment Setting", 7);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(72, "See bob using some important basic JavaScript syntax for building a simple website. This is the basic for HTTP request, HTTP response and also applications that could also access file system", 
+VALUES(32, "See bob using some important basic JavaScript syntax for building a simple website. This is the basic for HTTP request, HTTP response and also applications that could also access file system", 
 "00:13:19", "https://www.youtube.com/watch?v=KXxXr0RxGDE", "Basic JavaScript Syntax", 7);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(73, "Learn what variables are and how to declare, initialize, set, and get values from them.
+VALUES(33, "Learn what variables are and how to declare, initialize, set, and get values from them.
 javascript variables - javascript variables & data types | javascript tutorial for beginners.", 
 "00:14:37", "https://www.youtube.com/watch?v=plOo5hNVQJU", "JavaScript Variables", 7);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(74, "JavaScript data types - JavaScript  data types tutorial.
+VALUES(34, "JavaScript data types - JavaScript  data types tutorial.
 In this chapter, you will learn about JavaScript  data types with examples
 Understanding JavaScript Data Types and Variables For a list of JavaScript data types check the MDN site here", 
 "00:05:44", "https://www.youtube.com/watch?v=yjE_xXL26qA", "JavaScript Data Types", 7);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(75, "Sometimes you need to explicitly convert the data type of a value into a different data type. Sometimes JavaScript will do this automatically for you. Bob explains how and why this happens.
+VALUES(35, "Sometimes you need to explicitly convert the data type of a value into a different data type. Sometimes JavaScript will do this automatically for you. Bob explains how and why this happens.
 javascript type conversion - javascript type conversion - hindi. How Does JavaScript Type Coercion Work", 
 "00:08:55", "https://www.youtube.com/watch?v=jfQyMPzPTjY", "JavaScript Type Conversion", 7);
 
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(91, "In this video we will see how to make a new React project and how to make a basic 'Hello World'  folder", 
+VALUES(36, "In this video we will see how to make a new React project and how to make a basic 'Hello World'  folder", 
 "00:04:53", "https://www.youtube.com/watch?v=9hb_0TZ_MVI", "Hello World", 9);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(92, "In this video we will se what kind of files that are usually used to make a new project, the structure of the folders, and what is inside each file", 
+VALUES(37, "In this video we will se what kind of files that are usually used to make a new project, the structure of the folders, and what is inside each file", 
 "00:05:34", "https://www.youtube.com/watch?v=9VIiLJL0H4Y&t=5s", "Folder Structure", 9);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(93, "In this video we will see what is the Components of a good react UI, and a simple explanation of each components", 
+VALUES(38, "In this video we will see what is the Components of a good react UI, and a simple explanation of each components", 
 "00:04:58", "https://www.youtube.com/watch?v=Y2hgEGPzTZY", "Components", 9);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(94, "In this video we will see Functional Components, which is a JavaScript function that accepts an input of properties and return HTML that describes the UI", 
+VALUES(39, "In this video we will see Functional Components, which is a JavaScript function that accepts an input of properties and return HTML that describes the UI", 
 "00:06:32", "https://www.youtube.com/watch?v=Cla1WwguArA", "Functional Components", 9);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(95, "In this video we will talk about Class Components, which is similiar to Functional Components but a Class Components can maintain a private internal state", 
+VALUES(40, "In this video we will talk about Class Components, which is similiar to Functional Components but a Class Components can maintain a private internal state", 
 "00:06:21", "youtube.com/watch?v=lnV34uLEzis", "Class Components", 9);
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(81, "In this tutorial, we'll understand the concept of Dependency Injection.", 
+VALUES(41, "In this tutorial, we'll understand the concept of Dependency Injection.", 
 "00:14:51", "https://www.youtube.com/watch?v=GB8k2-Egfv0", "Understanding Dependency Injection", 8);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(82, "In this tutorial, we'll learn how to set up our Eclipse development environment to write Spring code.", 
+VALUES(42, "In this tutorial, we'll learn how to set up our Eclipse development environment to write Spring code.", 
 "00:03:47", "https://www.youtube.com/watch?v=Z5gubdHLJIc", "Setting Up", 8);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(83, "In this tutorial, we'll discuss the role of Spring as a bean container. We'll also have a quick discussion on the Factory pattern, and I'll introduce you to the Spring Bean Factory object.", 
+VALUES(43, "In this tutorial, we'll discuss the role of Spring as a bean container. We'll also have a quick discussion on the Factory pattern, and I'll introduce you to the Spring Bean Factory object.", 
 "00:06:52", "https://www.youtube.com/watch?v=xlWwMSu5I70", "Understanding Spring Bean Factory", 8);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(84, "In this tutorial, we'll write code to implement the BeanFactory concept that we learnt in our previous tutorial. We'll write a Spring XML to configure a Spring bean. Then we'll use the BeanFactory to instantiate our bean in the Spring container.",
+VALUES(44, "In this tutorial, we'll write code to implement the BeanFactory concept that we learnt in our previous tutorial. We'll write a Spring XML to configure a Spring bean. Then we'll use the BeanFactory to instantiate our bean in the Spring container.",
 "00:11:21", "https://www.youtube.com/watch?v=7c6ZTF6cF88", "Writing Code Using the Bean Factory", 8);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
-VALUES(85, "We'll first replace the BeanFactory with the more powerful ApplicationContext. We'll then make Spring initialize a property of an object by specifying the value in the configuration XML.", 
+VALUES(45, "We'll first replace the BeanFactory with the more powerful ApplicationContext. We'll then make Spring initialize a property of an object by specifying the value in the configuration XML.", 
 "00:07:36", "https://www.youtube.com/watch?v=ZxLaEovze3M", "ApplicationContext and Property Initialization", 8);
+
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(46, "In this video we will see :
+- What is python
+- Why to learn it
+- Why it is so useful", "00:04:13", "https://www.youtube.com/watch?v=hEgO047GxaQ", "Introduction to Python", 10);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(47, "In this video we will see :
+- Download and install Python interpreter
+- Download and install PyCharm IDE
+- Simple code in command prompt
+- Create project in PyCharm", "00:08:32", "https://www.youtube.com/watch?v=mbryl4MZJms", "Python Installation | PyCharm", 10);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(48, "In this video we will see :
+- Why do we code
+- Arithmetic operations
+- Printing raw string", "00:14:48", "https://www.youtube.com/watch?v=DWgzHbglNIo&t=5s", "Getting Started with Python", 10);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(49, "In this video we will see :
+- What is variable
+- Why do we need them
+- How to assign value to variable
+- Fetching value 
+- String value to variable
+- Finding length of string", "00:10:21", "https://www.youtube.com/watch?v=TqPzwenhMj0", "Variables in Python", 10);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(50, "
+In this video we will see :
+- Working with List
+- What is list
+- How to use list
+- append, insert, remove, pop, delete, function
+- Inbuilt functions of List : min, max, sum
+- sort function", "00:10:41", "https://www.youtube.com/watch?v=6rHySk9Kcuo", "List in Python", 10);
+UPDATE course_lecture_sequence SET next_val = 51;

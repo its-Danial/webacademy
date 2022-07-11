@@ -7,6 +7,7 @@ import com.webacademy.course.feign.TeacherFeignClient;
 import com.webacademy.course.repository.CourseRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -37,7 +38,6 @@ public class CourseServiceImpl implements CourseService {
 
     //Handles Pagination
     @Override
-    @Cacheable(value = "courses", key = "{#page, #size}")
     public List<Course> findCoursesByPage(int page, int size) {
         Page<Course> pages = courseRepository.findAll(PageRequest.of(page, size));
         log.info("Fetch courses in page {} with size of {}", page, size);

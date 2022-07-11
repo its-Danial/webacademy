@@ -43,7 +43,7 @@ public class StudentServiceImpl implements StudentService {
 
 
     @Override
-    @Cacheable(value = "students", key = "#id")
+    @CachePut(value = "students", key = "#id")
     public List<Student> findStudentsByCourseId(Long id) {
 
         log.info("Fetch students in course id: {}", id);
