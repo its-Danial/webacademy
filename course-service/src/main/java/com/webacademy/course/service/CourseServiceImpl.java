@@ -1,12 +1,14 @@
 package com.webacademy.course.service;
 
 import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.CourseLecture;
 import com.webacademy.common.entities.Teacher;
 import com.webacademy.course.feign.LectureFeignClient;
 import com.webacademy.course.feign.TeacherFeignClient;
 import com.webacademy.course.repository.CourseRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
@@ -31,9 +33,62 @@ public class CourseServiceImpl implements CourseService {
     TeacherFeignClient teacherFeignClient;
 
     @Override
+    @CachePut(value = "courses")
     public List<Course> findAllCourse() {
         log.info("Fetch all courses");
         return courseRepository.findAll();
+    }
+
+    @Override
+    @CachePut(value = "courses", key="@courseRepository.findCoursesByTeacherId(#id).get(0).teacher.email")
+    public List<Course> findCoursesByTeacherId(Long id) {
+        log.info("Fetch courses by teacher: {}", id);
+        return courseRepository.findCoursesByTeacherId(id);
+    }
+
+    @Override
+    @CachePut(value = "courses", key="#id")
+    public Optional<Course> findCourseByCourseId(Long id) {
+        log.info("Fetch course {}", id);
+        return courseRepository.findById(id);
+    }
+
+    @Override
+    public List<Course> findCoursesByStudentId(Long id) {
+        log.info("Fetch courses by student {}", id);
+        return courseRepository.findCoursesByStudentId(id);
+    }
+
+    @Override
+    @CachePut(value = "courses", key = "#p1.courseId")
+    public void createCourse(Long teacherId, Course course) {
+        Teacher teacher = teacherFeignClient.getTeacherById(teacherId).
+                orElseThrow(() -> new IllegalArgumentException("Teacher not found"));
+
+        course.setTeacher(teacher);
+        courseRepository.save(course);
+        log.info("Teacher {} added course {}", teacher.getFullName(), course.getTitle());
+    }
+
+    @Override
+    @CacheEvict(value = "courses", key = "#courseId")
+    public void deleteCourse(Long teacherId, Long courseId) {
+        Course course = courseRepository.findById(courseId).
+                orElseThrow(() -> new IllegalArgumentException("Course not found"));
+
+        if (!teacherId.equals(course.getTeacher().getTeacherId())) {
+            log.error("The teacher doesn't own the course");
+            throw new IllegalStateException("The teacher doesn't own the course");
+        }
+
+        //Deletes the course as well as the lectures in it.
+        courseRepository.deleteById(courseId);
+        List<CourseLecture> lectures = lectureFeignClient.getLecturesByCourse(courseId);
+        for (CourseLecture lecture : lectures) {
+            lectureFeignClient.deleteLecture(teacherId, courseId, lecture.getCourseLectureId());
+        }
+
+        log.info("Teacher {} has deleted course {}", teacherId, courseId);
     }
 
     //Handles Pagination
@@ -78,13 +133,6 @@ public class CourseServiceImpl implements CourseService {
                 (topic, minRating, maxRating, PageRequest.of(page, 5));
     }
 
-
-    @Override
-    public List<Course> findCoursesByTeacherId(Long id) {
-        log.info("Fetch courses by teacher: {}", id);
-        return courseRepository.findCoursesByTeacherId(id);
-    }
-
     @Override
     public List<Course> findCoursesByCategory(String category) {
         log.info("Fetch courses by category: {}", category);
@@ -101,41 +149,6 @@ public class CourseServiceImpl implements CourseService {
     public List<Course> findCourseByRating(double minRating, double maxRating) {
         log.info("Fetch course by rating between min:{} and max:{}", minRating, maxRating);
         return courseRepository.findCourseByRating(minRating, maxRating);
-    }
-
-    @Override
-    public Optional<Course> findCourseByCourseId(Long id) {
-        log.info("Fetch course {}", id);
-        return courseRepository.findById(id);
-    }
-
-    @Override
-    public List<Course> findCoursesByStudentId(Long id) {
-        log.info("Fetch courses by student {}", id);
-        return courseRepository.findCoursesByStudentId(id);
-    }
-
-    @Override
-    public void createCourse(Long teacherId, Course course) {
-        Teacher teacher = teacherFeignClient.getTeacherById(teacherId).
-                orElseThrow(() -> new IllegalArgumentException("Teacher not found"));
-
-        course.setTeacher(teacher);
-        courseRepository.save(course);
-        log.info("Teacher {} added course {}", teacher.getFullName(), course.getTitle());
-    }
-
-    @Override
-    public void deleteCourse(Long teacherId, Long courseId) {
-        Course course = courseRepository.findById(courseId).
-                orElseThrow(() -> new IllegalArgumentException("Course not found"));
-
-        if (!teacherId.equals(course.getTeacher().getTeacherId())) {
-            log.error("The teacher doesn't own the course");
-            throw new IllegalStateException("The teacher doesn't own the course");
-        }
-        courseRepository.deleteById(courseId);
-        log.info("Teacher {} has deleted course {}", teacherId, courseId);
     }
 
     @Override

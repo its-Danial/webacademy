@@ -5,12 +5,9 @@ import com.webacademy.student.feign.CartFeignClient;
 import com.webacademy.student.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -113,6 +110,8 @@ public class StudentServiceImpl implements StudentService {
     public void addStudent(Student student) {
         studentRepository.save(student);
         log.info("Added student {}", student.getUsername());
+        cartFeignClient.createCart(student.getStudentId());
+        log.info("Cart {} created", student.getStudentId());
     }
 
     // save() method performs: adding an obejct, and updating existing object.
@@ -124,7 +123,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void deleteStudentByEmailId(String email) {
+    public void deleteStudentByEmail(String email) {
         Student student = studentRepository.findStudentByEmail(email);
         log.info("Deleted student {}", student.getUsername());
         studentRepository.deleteById(student.getStudentId());

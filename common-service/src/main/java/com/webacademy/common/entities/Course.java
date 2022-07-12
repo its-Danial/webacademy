@@ -16,7 +16,7 @@ import java.util.List;
 @Builder
 @Entity
 @JsonIgnoreProperties({"students"})
-public class Course {
+public class Course implements Serializable{
 
     @Id
     @SequenceGenerator(
