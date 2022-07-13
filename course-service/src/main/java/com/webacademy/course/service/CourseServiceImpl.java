@@ -82,12 +82,13 @@ public class CourseServiceImpl implements CourseService {
         }
 
         //Deletes the course as well as the lectures in it.
-        courseRepository.deleteById(courseId);
         List<CourseLecture> lectures = lectureFeignClient.getLecturesByCourse(courseId);
         for (CourseLecture lecture : lectures) {
             lectureFeignClient.deleteLecture(teacherId, courseId, lecture.getCourseLectureId());
+            log.info("Deleted lecture {}", lecture.getCourseLectureId());
         }
 
+        courseRepository.deleteById(courseId);
         log.info("Teacher {} has deleted course {}", teacherId, courseId);
     }
 

@@ -26,4 +26,6 @@ public class CourseInformation implements Serializable {
     private String coverImageUrl;
 
     private String previewVideoUrl;
+
+    private double totalDuration;
 }

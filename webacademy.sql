@@ -29,7 +29,13 @@ INSERT INTO student (student_id, email_address, full_name, `password`, username)
 INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (8, "marcus.tarzan@gmail.com", "Marcus Tarzan", "wTvGqz2o", "Tarzan");
 INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (9, "renborenbo1212@gmail.com", "Ronaldo Tsing", "6m9jJpRe", "Renbo");
 INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (10, "jake.kaiten@gmail.com", "Jake Kaiten", "fDELJ5vc", "Jack");
-UPDATE student_sequence SET next_val = 11; 
+INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (11, "willysusu12@gmail.com", "Willy Susu", "seatb341", "Willy");
+INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (12, "takataka17@gmail.com", "Takeshi Taka", "baw34s3Q", "Takeshi");
+INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (13, "kingsalmon@gmail.com", "Raja Salmonela", "B023tvhq", "Salmon");
+INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (14, "justinbaby48@gmail.com", "Justin Billy", "ieV043t3", "Justin");
+INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (15, "tonny.wong@gmail.com", "Wong Tonny", "JGq13043", "Wong");
+
+UPDATE student_sequence SET next_val = 16; 
 
 
 INSERT INTO shopping_cart VALUES(1);
@@ -42,9 +48,14 @@ INSERT INTO shopping_cart VALUES(7);
 INSERT INTO shopping_cart VALUES(8);
 INSERT INTO shopping_cart VALUES(9);
 INSERT INTO shopping_cart VALUES(10);
+INSERT INTO shopping_cart VALUES(11);
+INSERT INTO shopping_cart VALUES(12);
+INSERT INTO shopping_cart VALUES(13);
+INSERT INTO shopping_cart VALUES(14);
+INSERT INTO shopping_cart VALUES(15);
 
 INSERT INTO teacher (teacher_id, avatar_picture_url, bio_text, email_address, full_name, `password`, username) VALUES (10, "https://img-c.udemycdn.com/user/200_H/10260436_946b_6.jpg", "Avinash Jain is currently a senior at UC Berkeley majoring in Electrical Engineering and Computer Science. He's the CEO and Founder of TheCodex, an online educational platform focused on bringing the best programming content to hundreds of thousands of students around the world.", "avinash.jain@gmail.com", "Avinash Jain", "P23qOZ8H", "The Codex");
-INSERT INTO teacher (teacher_id, avatar_picture_url, bio_text, email_address, full_name, `password`, username) VALUES (1, "https://img-c.udemycdn.com/user/200_H/599932_71aa_5.jpg", "Tim's been a professional software developer for close to 40 years.  During his career, he has worked for major companies such as Fujitsu, Mitsubishi, and Saab. His video courses are used to train developers in major companies such as Mercedes-Benz, Paypal, VW, Pitney Bowes, IBM, and T-Mobile just to name a few (via the Udemy for Business program). What makes Tim unique is his professional programming career - many instructors have never programmed professionally, let alone had a distinguished professional development career like Tim.", "timbuchalka12@gmail.com", "Tim Buchalka", "SPd5wd8I", "Tim");
+INSERT INTO teacher (teacher_id, avatar_picture_url, bio_text, email_address, full_name, `password`, username) VALUES (1, "https://img-c.udemycdn.com/user/200_H/35642982_61b8.jpg", "Hey gang, my name's Shaun and since a young age I've had an obsession for nearly anything tech-related. I've been coding since about the age of 15 (half of my life, now...phew!) and work as a full-stack web developer and online instructor. I also run a well-known development tutorial YouTube channel called The Net Ninja with nearly 1 million subscribers. So feel free to browse some of my latest free tutorials on there if you want to check out my teaching style :).", "thenetninja@gmail.com", "Shaun Pelling", "SPd5wd8I", "The Net Ninja");
 INSERT INTO teacher (teacher_id, avatar_picture_url, bio_text, email_address, full_name, `password`, username) VALUES (2, "https://img-c.udemycdn.com/user/200_H/6772884_fcfc_2.jpg", "Edwin Diaz is a software and web technologies engineer, a life coach trainer who is also a serial entrepreneur with multiple online businesses, ranging from online jewelry shops, affiliate websites, application development and consultations services, personal online schools, etc. With over one million students, and clients growing by the thousands a day, Mr. Diaz lets the numbers speak for themselves.", "edwindiaz@gmail.com", "Edwin Diaz", "uWdjLaDs", "Coding Faculty Solutions");
 INSERT INTO teacher (teacher_id, avatar_picture_url, bio_text, email_address, full_name, `password`, username) VALUES (3, "https://img-c.udemycdn.com/user/200_H/8735380_e11b_4.jpg", "Bharath Thippireddy is an Entrepreneur, Software Architect and Public Speaker who has trained 500000 + students across the planet. He is Oracle Certified Developer, Web Component Developer, Business Component Developer, Web Services Developer.", "bharath.thippireddy@gmail.com", "Bharath Thippireddy", "6lLQS5Sy", "Bharath");
 INSERT INTO teacher (teacher_id, avatar_picture_url, bio_text, email_address, full_name, `password`, username) VALUES (4, "https://img-c.udemycdn.com/user/200_H/9685726_67e7_4.jpg", "Jose Marcial Portilla has a BS and MS in Mechanical Engineering from Santa Clara University and years of experience as a professional instructor and trainer for Data Science, Machine Learning and Python Programming. He has publications and patents in various fields such as microfluidics, materials science, and data science. Over the course of his career he has developed a skill set in analyzing data and he hopes to use his experience in teaching and data science to help other people learn the power of programming, the ability to analyze data, and the skills needed to present the data in clear and beautiful visualizations. ", "joseportilla43@gmail.com", "Jose Portilla", "TaNYjUDe", "Portilla");
@@ -55,7 +66,7 @@ INSERT INTO teacher (teacher_id, avatar_picture_url, bio_text, email_address, fu
 INSERT INTO teacher (teacher_id, avatar_picture_url, bio_text, email_address, full_name, `password`, username) VALUES (9, "https://img-c.udemycdn.com/user/200_H/5487312_0554.jpg", "Stephen Grider has been building complex Javascript front ends for top corporations in the San Francisco Bay Area.  With an innate ability to simplify complex topics, Stephen has been mentoring engineers beginning their careers in software development for years, and has now expanded that experience onto Udemy, authoring the highest rated React course. He teaches on Udemy to share the knowledge he has gained with other software engineers.  Invest in yourself by learning from Stephen's published courses.", "stephen.grider@gmail.com", "Stephen Grider", "g2CDpiMN", "Stephen");
 UPDATE teacher_sequence SET next_val = 11;
 
-INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(10, "https://i3.ytimg.com/vi/QXeEoD0pB3E/maxresdefault.jpg",
 "Do you want to become a programmer? Do you want to learn how to create games, automate your browser, visualize data, and much more?
 If you’re looking to learn Python for the very first time or need a quick brush-up, this is the course for you!
@@ -78,9 +89,9 @@ If you read the above list and are feeling a bit confused, don’t worry! As an 
  "https://www.youtube.com/watch?v=hEgO047GxaQ ", 20, 
  "Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!", 
  "Create their own Python Programs, Become an experienced Python Programmer, Parse the Web and Create their own Games", 3.5, 
- "2022-06-29 12:49:47.216000", "Learn Python: The Complete Python Programming Course", 10);
+ "2022-06-29 12:49:47.216000", "Learn Python: The Complete Python Programming Course", 3.2, 10);
 
-INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(1, "https://i3.ytimg.com/vi/nVOhOGBYHo0/maxresdefault.jpg", 
 "You’ve just stumbled upon the most complete, in-depth Java programming course online. With close to 600,000 students enrolled and over one hundred and forty thousand reviews (with tens of thousands of those 5-star) to date, 
 these comprehensive java tutorials cover everything you’ll ever need.Whether you want to:
@@ -117,9 +128,9 @@ As such, you want to learn the version of Java that your future employer will us
 The next LTS version of Java is Java 17, scheduled for release in September 2021.   The course will be updated, and the updates made available to you free once Java 17 is live.  The course will also be updated in the future as new LTS versions are announced by Oracle.
 BOTTOM LINE: You will learn the RIGHT VERSION of JAVA in this course!  Right meaning the right version to maximize your future Java potential with clients or Employers. ", "https://www.youtube.com/watch?v=nVOhOGBYHo0",
 20, "Learn OOP, SOLID principles with Java examples. Implement backend part for online store by the end of the course",
-"Setting up Java and Maven, Maven Fundamentals, and Maven Lifecycles", "3.5", "2019-12-11 14:59:07.216000", "Java Programming OOP Course", "3");
+"Setting up Java and Maven, Maven Fundamentals, and Maven Lifecycles", "3.5", "2019-12-11 14:59:07.216000", "Java Programming OOP Course", 6.5, 3);
  
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
+ INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(2, "https://i3.ytimg.com/vi/YYXdXT2l-Gg/maxresdefault.jpg",
 "This python for beginners course is geared to students who want to know how python works and also to those totally new to programming.
 The python language has very simple syntax(way to write it) to learn and it is one of the most powerful languages to learn since it can used for a variety of things.
@@ -136,9 +147,9 @@ Python is growing faster and faster everyday and it has surpassed many other lan
  "https://www.youtube.com/watch?v=YYXdXT2l-Gg", 20, 
  "How to become a Python 3 Developer and get hired! Build 12+ projects, learn Web Development, Machine Learning + more!", 
  "Core skill to understand any programming language, and phyton language.", 4.8, 
- "2020-04-11 01:00:12.216000", "Python for Beginners: Learn Programming from Scratch", "2");
+ "2020-04-11 01:00:12.216000", "Python for Beginners: Learn Programming from Scratch", 2.7, 2);
  
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
+ INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(3, "https://i3.ytimg.com/vi/CD6MJ9pEn2k/maxresdefault.jpg",
 "In this Python Beyond the Basics - Object-Oriented Programming training course, expert author David Blaikie will teach you how to design Python classes, and how to implement object-oriented programming concepts in Python. 
 This course is designed for users that already have a basic working knowledge of Python.
@@ -149,9 +160,9 @@ Once you have completed this computer based training course, you will be fully c
  "https://www.youtube.com/watch?v=CD6MJ9pEn2k", 39, 
  "Master the fundamentals of Python while working on various usecases in easy steps ", 
  "Design OOP with python, Apply OOP concepts to handle complexity, Handling errors", 3.9, 
- "2017-10-01 16:07:03.216000", "Python Programming: Object-Oriented Programming Python", "3");
+ "2017-10-01 16:07:03.216000", "Python Programming: Object-Oriented Programming Python", 5.2, 3);
  
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
+ INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(4, "https://i3.ytimg.com/vi/Z4D3M-NSN58/maxresdefault.jpg",
 "Welcome to the Python and Django Web Development Course! In this course we cover everything you need to know to build a website using Python, Django, and many more web technologies!
 Whether you want to change career paths, expand your current skill set, start your own entrepreneurial business, become a consultant, or just want to learn, this is the course for you!
@@ -182,9 +193,9 @@ Always keep learning!",
  "https://www.youtube.com/watch?v=Z4D3M-NSN58", 99, 
  "Learn to build websites with HTML , CSS , Bootstrap , Javascript , jQuery , Python 3 , and Django!", 
  "Create a website using Django, Learn HTML, Learn CSS, Understand basic Internet", 4.8, 
- "2018-12-21 15:04:56.216000", "Phyton and Django Web Development Course", "4");
+ "2018-12-21 15:04:56.216000", "Phyton and Django Web Development Course", 2.4, 4);
  
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
+ INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(5, "https://i3.ytimg.com/vi/UmljXZIypDc/maxresdefault.jpg",
 "Have you ever wanted to create a Web application but didn't know where to start? Have you previously tried to learn Django but got fed up with incomplete YouTube videos and poorly written tutorials? Or are you looking to move your code from Django 2 to Django 3?
 THEN THIS IS THE COURSE FOR YOU!
@@ -234,9 +245,9 @@ Don't waste your time scouring the internet and trying to piece together how to 
  "https://www.youtube.com/watch?v=UmljXZIypDc", 20, 
  "Learn the entire technology stack to create beautiful and responsive websites with Python and Django!", 
  "Understand Django framework, Build fully functional websites, Understand Django basics.", 4.2, 
- "2021-02-14 00:15:46.216000", "Django and Python Full-Stack Developer", "5");
+ "2021-02-14 00:15:46.216000", "Django and Python Full-Stack Developer", 8.5, 5);
  
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
+ INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(6, "https://i3.ytimg.com/vi/TKYsuU86-DQ/maxresdefault.jpg",
 "What if you knew exactly how to design and build a website like that, completely from scratch? How amazing would that be?
 Well, I'm here to teach you HTML, CSS, and web design, all by building the stunning website that you just saw, step-by-step.
@@ -254,9 +265,9 @@ Does this sound like fun? Then join me and 200,000+ other developers and start b
  "https://www.youtube.com/watch?v=TKYsuU86-DQ", 79, 
  "Learn modern HTML5, CSS3 and web design by building a stunning website for your portfolio! Includes flexbox and CSS Grid", 
  "Become a modern HTML and CSS developer, Design and build a real world project, A web design framework that easy to use and understand ", 4.5, 
- "2022-01-30 03:22:18.216000", "HTML and CSS for Beginner Course", "6");
+ "2022-01-30 03:22:18.216000", "HTML and CSS for Beginner Course", 4.5, 6);
  
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
+ INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(7, "https://i3.ytimg.com/vi/QXeEoD0pB3E/maxresdefault.jpg",
 "JavaScript is THE most important programming language you need to learn as a web developer - and with this course, you make sure that you will not miss a single thing you have to know as a JavaScript developer!
 This is the most comprehensive and modern course you can find on JavaScript - it's based on all my JavaScript knowledge AND teaching experience. 
@@ -287,9 +298,9 @@ This course is obviously packed with content - I therefore strongly recommend th
  "https://www.youtube.com/watch?v=hEgO047GxaQ", 49, 
  "The modern JavaScript course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!", 
  "Learn JavaScript from Scratch, All core JavaScript features and concepts, Object-Oriented Programming", 4.0, 
- "2021-07-26 04:56:29.216000", "Comple Java Script Course : From Zero to Hero !", "7");
+ "2021-07-26 04:56:29.216000", "Comple Java Script Course : From Zero to Hero !", 3, 7);
  
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
+ INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(8, "https://i3.ytimg.com/vi/gq4S-ovWVlM/maxresdefault.jpg",
 "In this course, you will learn the features of Spring, Spring Boot and Spring Modules - JDBC, AOP, Data JPA with hands-on step by step approach.
 You will get introduced to Spring Boot, Unit Testing with JUnit and Mockito, talking to the database with Spring JDBC and JPA, Maven (dependencies management), Eclipse (IDE) and Tomcat Embedded Web Server. 
@@ -306,16 +317,14 @@ You will learn about
  "https://www.youtube.com/watch?v=gq4S-ovWVlM", 119, 
  "Learn the magic of Java Spring Framework with Spring Boot, Spring JDBC, and Spring AOP!", 
  "Learn spring framework the modern way, Become a complete Spring Developer, Learn basic Spring Boot, Spring AOP, Spring JDBC, and JPA", 3.9, 
- "2017-05-15 12:30:17.216000", "Spring Framework Class", "8");
+ "2017-05-15 12:30:17.216000", "Spring Framework Class", 8, 8);
  
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, teacher_id) 
+ INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(9, "https://i3.ytimg.com/vi/QFaFIcGhPoM/maxresdefault.jpg",
 "Congratulations!  You've found the most popular, most complete, and most up-to-date resource online for learning React!
 Thousands of other engineers have learned React, and you can too.  This course uses a time-tested, battle-proven method to make sure you understand exactly how React work, and will get you a new job working as a software engineer or help you build that app you've always been dreaming about.
 The difference between this course and all the others: you will understand the design patterns used by top companies to build massively popular web apps.
 React is the most popular Javascript library of the last five years, and the job market is still hotter than ever.  Companies large and small can't hire engineers who understand React fast enough, and salaries for engineers are at an all time high.  It's a great time to learn React!
-
-----------------------
 
 What will you build?
 This course features hundreds of videos with dozens of custom diagrams to help you understand how React work.  No prior experience with either is necessary. 
@@ -338,33 +347,206 @@ This is the course I wanted to take when I first learned React: complete, up-to-
  "https://www.youtube.com/watch?v=QFaFIcGhPoM", 99, 
  "Updated! Become a Senior React Developer. Build a massive E-commerce app!", 
  "Create dynamic web apps using React, Master the fundamental behind React, Programming skill needed for a software engineering job", 4.7, 
- "2018-08-27 11:16:08.216000", "Modern React Course", "9");
-UPDATE course_sequence SET next_val = 11;
+ "2018-08-27 11:16:08.216000", "Modern React Course", 5.5, 9);
  
--- nama category kalau perlu inspirasi liat website udemy, trus ke categories
--- ambil nama bagian kedua, yang ada web development, data science, mobile development, dst
+ 
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (11, "https://s3.amazonaws.com/codementor_content/2016-Oct/vue.jpg", 
+"If you're looking to get started building full-stack applications with Vue 3 (or Vue 2) and Firebase, then look no further. In this course I'll take you from novice to ninja in Vue JS 3, starting out with the very basics and then moving on towards creating fully-fledged Vue applications. 
+
+We'll spend a whole chapter learning about the Vue Router - and how to create SPA's (single page applications) using it - as well as exploring how to use the Vue CLI to get up and running quickly when creating slightly larger Vue applications.
+
+We'll also dive deep into the newest features Vue 3 has to offer, including a lot about the Composition API & Composable Functions.
+
+I'll also teach you how to use Firebase - an online & free service provided by Google which will act as a feature-rich back-end to our Vue applications. We'll learn how to use Firebase to store and retrieve real-time data to and from a NoSQL database called Firestore, as well as authenticate our app's users with the Firebase Auth service, We'll also take a peak at Firebase Storage (which will enable us to allow users to upload images on our Vue sites), as well as deploying all of our applications to Firebase hosting.
+
+Along the way we'll create several full projects, including a reaction timer, project tracker, a blog, a real-time chatroom & a music playlist website.
+
+There's a crazy amount to cover, but by the end of this course you'll be in a position to create full-stack web applications (complete with user authentication) using Vue 3 and Firebase!
+
+I'm also know as The Net Ninja on YouTube
+
+...With around 600,000 subscribers and nearly 2000 free web development tutorials. So feel free to check out my teaching style and reviews before you buy my course :).",
+"https://www.youtube.com/watch?v=nhBVL41-_Cw", 50,
+"Learn Vue JS 3 & Firebase by creating & deploying dynamic web apps (including Authentication).", 
+"Learn how to create Vue 3 applications from the ground-up, Get hands-on & in-depth experience using the latest Vue 3 features, Build & deploy 4 real-world web apps with Vue & Firebase", 4.5,
+"2020-07-08 22:41:36.429000", "Build Web Apps with Vue JS 3 & Firebase", 4.5, 1);
+
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (12, "https://img.youtube.com/vi/Sklc_fQBmcs/maxresdefault.jpg",
+"I created the bestselling webacademy course on React, now I'm super excited to share this course on NextJS with you - an in-depth course about an amazing React framework that allows you to take the next step as a React developer and build real, production-ready projects with React and Next.js!
+
+Next.js is the production-ready, fullstack-capable framework for ReactJS - the most popular JavaScript library you can learn these days!
+
+Too many buzzwords for your taste?
+
+Fair enough - but indeed, NextJS is a great choice for growing as a React developer and for taking your React apps to the next level!
+
+Because NextJS is growing fast and therefore in high demand. And there are good reasons for that: NextJS allows you to build React apps with built-in server-side rendering and page pre-rendering. Building great user experiences and search engine friendly (SEO!) React apps has never been easier!
+
+In addition, NextJS makes building fullstack React apps (frontend + backend code combined in one project) extremely easy as well! Blend client-side and server-side code and build a NodeJS-based API side-by-side with your frontend React apps. It's a breeze with NextJS!",
+"https://www.youtube.com/watch?v=Sklc_fQBmcs", 15,
+"Learn NextJS from the ground up and build production-ready, fullstack ReactJS apps with the NextJS framework!",
+"Learn all key NextJS features like pre-rendering and file-based routing and authentication, Learn how to build client-side and fullstack ReactJS apps with NextJS, Build real projects and apply what you learned with hands-on projects and examples","4.5",
+"2021-02-16 18:24:30.387000", "Next.js & React - The Complete Guide (incl. Two Paths!)", 2.7, 2);
+
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (13, "https://img.youtube.com/vi/9kYUGMg_14s/maxresdefault.jpg", 
+"First of all, you will learn how to manipulate data in R, to prepare it for the analysis: how to filter your data frame, how to recode variables and compute new variables.
+
+Afterwards, we will take care about computing the main statistical figures in R: mean, median, standard deviation, skewness, kurtosis etc., both in the whole population and in subgroups of the population.
+
+Then you will learn how to visualize data using tables and charts. So we will build tables and cross-tables, as well as histograms, cumulative frequency charts, column and mean plot charts, scatterplot charts and boxplot charts.
+
+Since assumption checking is a very important part of any statistical analysis, we could not elude this topic. So we’ll learn how to check for normality and for the presence of outliers.
+
+Finally, we will perform some basic, one-sample statistical tests and interpret the results. I’m talking about the one-sample t test, the binomial test and the chi-square test for goodness-of-fit.
+
+So after graduating this course, you will know how to perform the essential statistical procedures in the R program. So… enroll today!",
+"https://www.youtube.com/watch?v=9kYUGMg_14s", 13,
+"Basic statistical analyses using the R program",
+"Manipulate data in R (filter and sort data sets and compute variables), Compute statistical indicators, Determine skewness and kurtosis","4.3",
+"2021-03-03 04:07:44.895000", "Statistics with R - Beginner Level", 9, 3);
+
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (14, "https://img.youtube.com/vi/Ata9cSC2WpM/maxresdefault.jpg", 
+"Join the most comprehensive, popular and bestselling Angular course on webacademy and benefit not just from a proven course concept but from a huge community as well! 
+
+From Setup to Deployment, this course covers it all! You'll learn all about Components, Directives, Services, Forms, Http Access, Authentication, Optimizing an Angular App with Modules and Offline Compilation and much more - and in the end: You'll learn how to deploy an application!
+
+But that's not all! This course will also show you how to use the Angular CLI and feature a complete project, which allows you to practice the things learned throughout the course!
+
+And if you do get stuck, you benefit from an extremely fast and friendly support - both via direct messaging or discussion. You have my word! ;-)
+
+Angular is one of the most modern, performance-efficient and powerful frontend frameworks you can learn as of today. It allows you to build great web apps which offer awesome user experiences! Learn all the fundamentals you need to know to get started developing Angular applications right away.",
+"https://www.youtube.com/watch?v=Ata9cSC2WpM", 13,
+"Master Angular 13 (formerly Angular 2) and build awesome, reactive web apps with the successor of Angular.js",
+"Develop responsive and scalable web applications with Angular 14, Fully understand the architecture behind an Angular application, Use the deep understanding of the Angular fundamentals to quickly establish yourself as a frontend developer","4.2",
+"2020-01-01 13:34:59.859000", "Angular - The Complete Guide (2022 Edition)", 3.3, 4);
+
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (15, "https://img.youtube.com/vi/ravLFzIguCM/maxresdefault.jpg", 
+"This is the BEST COURSE CHOICE for raw beginners — anybody who wants to write a little code — or a lot of it! And it’s especially right for anyone who dreams of becoming a software programmer but hasn’t the faintest idea of how to begin.
+
+Here’s great news: If you can type, install a program using a Wizard, and open the File Explorer, you’re ready to begin.
+
+It’s true. If you have a computer (or access to one), have typing ability, and know how to browse files, YOU can learn to program one of today’s most popular and fastest-growing computer platforms, C#. Yes, you could learn C# online and become a successful software programmer with our C# course, “Programming for Complete Beginners in C#.”",
+"https://www.youtube.com/watch?v=ravLFzIguCM", 15,
+"Learning to code C#? We have provided HD video lectures, live coding sessions, and nearly 100 exercises to learn on!",
+"Understand the foundations of the C# Programming language, Create applications that run in the console, Declare and manipulate variables", "3.9",
+"2020-11-12 05:56:51.589000", "Programming for Complete Beginners in C#", 6, 5);
+
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (16, "https://img.youtube.com/vi/zQnBQ4tB3ZA/maxresdefault.jpg", 
+"Do you want to build Angular, React JS, or Vue JS web and mobile applications? If that's your goal it's vital that you learn the TypeScript programming language, and that's exactly what we're going to walk through in this course. My name is Jordan Hudgens, and I'll be your instructor for the course. In addition to being the lead instructor for devCamp I've also been building web applications for over a decade for organizations such as Eventbrite and Quip.
+
+After you have completed this course you'll be ready to start learning how to work with the React, Vue and Angular application frameworks. Angular 2 was rebuilt from the ground up in order to take advantage of modern development practices, and the framework creators actually built the new version completely in the TypeScript programming language. This is the reason why TypeScript is so important to learn for aspiring Angular developers.
+
+In this course we're going to start with the basics and I'm going to show you how fun it is to build TypeScript programs. After you're familiar with the syntax, we're going to move onto more advanced TypeScript development techniques, such as: working with closures, object oriented programming, real time asynchronous development, and decorators.",
+"https://www.youtube.com/watch?v=zQnBQ4tB3ZA", 30,
+"Get ready to build React, Vue and Angular web and mobile applications by learning the TypeScript programming language.",
+"Be ready to move onto building React and Vue applications, Code with the TypeScript programming language, Work with TypeScript classes and object oriented programming concepts.", "4.6",
+"2020-07-12 04:02:01.471000", "Introduction to TypeScript Development", 3, 6);
+
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (17, "https://img.youtube.com/vi/a7_WFUlFS94/maxresdefault.jpg", 
+"Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi, and ending the course by building a CMS system similar to WordPress, Joomla, or Drupal.
+
+Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer can allow anyone to make really good money online and offline, developing dynamic applications.
+
+Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google.
+
+There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and knowing it, will give you SUPER POWERS in the web development world and job market place.",
+"https://www.youtube.com/watch?v=a7_WFUlFS94", 80,
+"PHP for Beginners: learn everything you need to become a professional PHP developer with practical exercises & projects.",
+"Learn React the right and learn best practices, Dive into the React engine, and learn how it works under the hood, See how React fits in the big picture of web development.", "4.7",
+"2020-05-24 01:12:19.257000", "PHP for Beginners - Become a PHP Master - CMS Project", 4, 7);
+
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (18, "https://img.youtube.com/vi/446E-r0rXHI/maxresdefault.jpg", 
+"This course is the ultimate comprehensive resource for learning the Go Programming Language.
+
+This course is perfect for both beginners and experienced developers. The course is full of examples, hands-on exercises, solutions to the hands-on exercises, and an amazing code repository.
+
+This course is taught by one of the world's leading Go Programming Trainers, Todd McLeod. Todd was the first university professor in America to teach Go at the university level. Todd has taught over 3.25 Million students how to use the Go Programming Language. This course is tried, tested, and proven to train beginners and experienced developers how to use Go. 
+
+This course has a tremendous amount of content and resources so that you can learn everything you need to know - whatever is appropriate for your ability level.
+
+When you enroll in this course, you will have lifetime access to the course. You will be able to learn at your own pace. You will always be able to come back to the content to review it, or learn additional concepts when you are ready for them.",
+"https://www.youtube.com/watch?v=446E-r0rXHI", 30,
+"The Ultimate Comprehensive Course - Perfect for Both Beginners and Experienced Developers",
+"The ultimate comprehensive course, For beginners and experienced devs, Taught by a university professor", "3.8",
+"2021-03-28 04:12:45.475000", "Learn How To Code: Google's Go (golang) Programming Language", 3.5, 8);
+
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (19, "https://img.youtube.com/vi/5We_HtLlAbs/maxresdefault.jpg", 
+"To be an expert C programmer you need to master the use of pointers. This course explains pointers in real depth. It explains pointer variables, pointer arithmetic, indirection, memory allocation, how to create and maintain linked lists and how to use function pointers. In fact, by the time you finish this course, you will know pointers inside out. You will understand what they are, how they work and how to make sure that they don’t make your programs crash!
+
+This is not a course for beginners. It is aimed at programmers who already have a good working knowledge of C programming and who need to take the next step in mastering C by gaining a deep understanding of pointers.",
+"https://www.youtube.com/watch?v=5We_HtLlAbs", 20,
+"Master pointers, addresses and memory allocation in C",
+"Pointers and addresses, Indirection and multiple indirection, Generic pointers and casts", "4.1",
+"2021-03-09 12:46:04.581000", "Advanced C Programming: Pointers", 4.5, 9);
+
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (20, "https://img.youtube.com/vi/UFDOY1wOOz0/maxresdefault.jpg", 
+"You've definitely heard of AI and Deep Learning. But when you ask yourself, what is my position with respect to this new industrial revolution, that might lead you to another fundamental question: am I a consumer or a creator? For most people nowadays, the answer would be, a consumer.
+
+But what if you could also become a creator?
+
+What if there was a way for you to easily break into the World of Artificial Intelligence and build amazing applications which leverage the latest technology to make the World a better place?
+
+Sounds too good to be true, doesn't it?
+
+But there actually is a way..
+
+Computer Vision is by far the easiest way of becoming a creator.
+
+And it's not only the easiest way, it's also the branch of AI where there is the most to create.",
+"https://www.youtube.com/watch?v=UFDOY1wOOz0", 40,
+"Become a Wizard of all the latest Computer Vision tools that exist out there. Detect anything and create powerful apps.",
+"Have a toolbox of the most powerful Computer Vision models, Understand the theory behind Computer Vision, Master OpenCV", "3.6",
+"2021-07-27 04:55:07.150000", "Deep Learning and Computer Vision A-Z™: OpenCV, SSD & GANs", 5, 10);
+UPDATE course_sequence SET next_val = 21;
+ 
+
 INSERT INTO category (category_id, category_name) VALUES (1, "Data Science");
 INSERT INTO category (category_id, category_name) VALUES (2, "Programming Language");
 INSERT INTO category (category_id, category_name) VALUES (3, "Web Development");
 UPDATE category_sequence SET next_val = 4;
 
--- satu category terdiri atas beberapa topic
--- topics juga liat dari udemy, contohnya kategori game development, topicnya ada unity, c#, dll
+
 INSERT INTO category_topics (category_category_id, topics) VALUES (1, "Python");
 INSERT INTO category_topics (category_category_id, topics) VALUES (1, "Django");
 INSERT INTO category_topics (category_category_id, topics) VALUES (2, "Python");
 INSERT INTO category_topics (category_category_id, topics) VALUES (2, "Java");
-INSERT INTO category_topics (category_category_id, topics) VALUES (2, "HTML5");
-INSERT INTO category_topics (category_category_id, topics) VALUES (2, "CSS");
 INSERT INTO category_topics (category_category_id, topics) VALUES (2, "JavaScript");
+INSERT INTO category_topics (category_category_id, topics) VALUES (2, "C");
 INSERT INTO category_topics (category_category_id, topics) VALUES (3, "Spring");
 INSERT INTO category_topics (category_category_id, topics) VALUES (3, "React");
 INSERT INTO category_topics (category_category_id, topics) VALUES (3, "HTML5");
 INSERT INTO category_topics (category_category_id, topics) VALUES (3, "CSS");
 INSERT INTO category_topics (category_category_id, topics) VALUES (3, "JavaScript");
 
--- buat cocokin course mana, categorynya apa
--- rata" satu course, satu category sih, tapi bisa jadi 1 course ada lebih dari 1 category
+
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (10, 1);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (10, 2);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (1, 2);
@@ -385,9 +567,21 @@ INSERT INTO course_category_mapping(course_id, category_id) VALUES (7, 3);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (8, 2);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (8, 3);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (9, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (11, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (12, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (13, 1);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (13, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (14, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (15, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (16, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (16, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (17, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (17, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (18, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (19, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (20, 1);
 
--- buat cocokin student mana masuk course mana, agak logika aja deh,
--- mungkin ad course yg ga ad student, beberapa ada student,
+
 INSERT INTO student_course_mapping(course_id, student_id) VALUES (1, 3);
 INSERT INTO student_course_mapping(course_id, student_id) VALUES (1, 6);
 INSERT INTO student_course_mapping(course_id, student_id) VALUES (1, 10);
@@ -408,6 +602,28 @@ INSERT INTO student_course_mapping(course_id, student_id) VALUES (8, 9);
 INSERT INTO student_course_mapping(course_id, student_id) VALUES (9, 7);
 INSERT INTO student_course_mapping(course_id, student_id) VALUES (10, 1);
 INSERT INTO student_course_mapping(course_id, student_id) VALUES (10, 8);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (11, 1);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (11, 9);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (11, 12);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (12, 4);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (12, 5);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (13, 3);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (14, 11);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (14, 14);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (14, 15);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (15, 6);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (16, 12);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (16, 13);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (17, 7);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (17, 11);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (17, 14);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (18, 1);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (18, 8);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (19, 5);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (19, 9);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (19, 10);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (20, 11);
+INSERT INTO student_course_mapping(course_id, student_id) VALUES (20, 15);
 
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (1,0,2,0,5,1);
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (2,0,10,0,5,1);
@@ -429,12 +645,31 @@ INSERT INTO student_progress (student_progress_id, completed_lectures, course_id
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (18,0,8,0,5,9);
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (19,0,1,0,5,10);
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (20,0,7,0,5,10);
-UPDATE progress_sequence SET next_val = 21;
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (21,0,4,0,5,7);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (22,0,9,0,5,7);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (23,0,17,0,5,7);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (24,0,10,0,5,8);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (25,0,18,0,5,8);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (26,0,6,0,5,9);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (27,0,8,0,5,9);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (28,0,11,0,5,9);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (29,0,19,0,5,9);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (30,0,1,0,5,10);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (31,0,7,0,5,10);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (32,0,19,0,5,10);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (33,0,14,0,5,11);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (34,0,17,0,5,11);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (35,0,20,0,5,11);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (36,0,11,0,5,12);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (37,0,16,0,5,12);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (38,0,16,0,5,13);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (39,0,14,0,5,14);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (40,0,17,0,5,14);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (41,0,14,0,5,15);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (42,0,20,0,5,15);
+UPDATE progress_sequence SET next_val = 43;
 
--- Buat 5 course lecture untuk masing" course. Jadi total ada 50
--- Course lecture itu kyk video ttg satu topik coursenya
--- misalnya Coursenya Java, lecture pertama, introduction, kedua, data types, dst..
--- is completed selalu false, duration sesuai video dan formatnya HH:MM:SS, urlnya harus video youtube asli dan masuk akal
+
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(1, "Java Programming: Introduction to Java Programming
 Topics discussed:
@@ -661,4 +896,174 @@ In this video we will see :
 - append, insert, remove, pop, delete, function
 - Inbuilt functions of List : min, max, sum
 - sort function", "00:10:41", "https://www.youtube.com/watch?v=6rHySk9Kcuo", "List in Python", 10);
-UPDATE course_lecture_sequence SET next_val = 51;
+
+
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(51, "In this course we will see : What is Vue?, Environment Setup, Course Files",
+"00:13:39", "https://www.youtube.com/watch?v=YrxBCBibVo0", "Vue JS 3 Tutorial for Beginners #1 - Introduction", 11);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(52, "In this course we will see : How to use Vue (CDN), Creating a Vue app, Data & templates, Click events, Conditional Rendering",
+"00:30:20", "https://www.youtube.com/watch?v=F7PLPJqVotk", "Vue JS 3 Tutorial for Beginners #2 - Vue.js Basics (part 1)", 11);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(53, "In this course we will see : Other mouse events, Outputting lists (v-for), Attribute binding, Dynamic classes, Challenge: toggling favs, Computed properties",
+"00:34:01", "https://www.youtube.com/watch?v=CYPZBK8zUik", "Vue JS 3 Tutorial for Beginners #3 - Vue.js Basics (part 2)", 11);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(54, "In this course we will see : Why use the Vue CLI?, Using the Vue CLI, New project walkthrough, Vue files & templates, Template refs, Multiple components",
+"00:39:02", "https://www.youtube.com/watch?v=GWRvrSqnFbM", "Vue JS 3 Tutorial for Beginners #4 - The Vue CLI & Bigger Projects (part 1)", 11);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(55, "In this course we will see : Scoped & global CSS, Props, Emitting custom events, Click event modifiers, Slots, Challenge: creating another modal, Using Teleport",
+"00:44:06", "https://www.youtube.com/watch?v=KM1U6DqZf8M", "Vue JS 3 Tutorial for Beginners #5 - The Vue CLI & Bigger Projects (part 2)", 11);
+
+
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(56, "In this course, We'll learn these things: What is React?, Why learn React?, Component Based Architecture",
+"00:09:33", "https://www.youtube.com/watch?v=QFaFIcGhPoM", "ReactJS Tutorial - 1 - Introduction", 12);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(57, "In this course, We'll learn How to print Hello World on ReactJS",
+"00:04:53", "https://www.youtube.com/watch?v=9hb_0TZ_MVI", "ReactJS Tutorial - 2 - Hello World", 12);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(58, "In this course, We'll learn How to make Folder Structure on ReactJS",
+"00:05:34", "https://www.youtube.com/watch?v=9VIiLJL0H4Y", "ReactJS Tutorial - 3 - Folder Structure", 12);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(59, "In this course, We'll learn How to make Compenents on ReactJS",
+"00:04:58", "https://www.youtube.com/watch?v=Y2hgEGPzTZY", "ReactJS Tutorial - 4 - Components", 12);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(60, "In this course, We'll learn How to make Function Components on ReactJS",
+"00:06:32", "https://www.youtube.com/watch?v=Cla1WwguArA", "ReactJS Tutorial - 5 - Functional Components", 12);
+
+
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(61, "In this video, we'll learn: What is RStudio, What does RStudio do?, How to create vectors and plots in R programming language using R console? ",
+"00:05:41", "https://www.youtube.com/watch?v=riONFzJdXcs", "What is RStudio and Why Should You Download It? | R Tutorial 1.1", 13);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(62, "In this video, we'll learn: How to download R from https://www.r-project.org, How to download R through one of the CRAN pages, How to select a mirror (location) to download R from.",
+"00:04:53", "https://www.youtube.com/watch?v=cX532N_XLIs", "Download and Install R and RStudio | R Tutorial 1.2", 13);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(63, "In this video, we'll learn: How to assign values to an object in R, How to see what is stored in R? We use ls function to see what is stored in R, How to remove an object in R?  We use rm functions to remove an object in R",
+"00:07:47", "https://www.youtube.com/watch?v=UYclmg1_KLk", "Getting started with R: Basic Arithmetic and Coding in R | R Tutorial 1.3", 13);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(64, "In this video, we'll learn: How to create vectors in R for both numbers or objects? By using the c or concatenate function, How to create a sequence of integer values in R? By using the colon (:), How to create sequences in R ? We will use seq function in R",
+"00:08:34", "https://www.youtube.com/watch?v=2TcPAZOyV0U", "Create and Work with Vectors and Matrices in R | R Tutorial 1.4", 13);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(65, "In this video, we'll learn: What are the two main file types for saving a data file (CSV and TXT), How to save an Excel file as a CSV file (comma-separated value), How to open a CSV data file in Excel",
+"00:06:58", "https://www.youtube.com/watch?v=qPk0YEKhqB8", "Import Data, Copy Data from Excel to R CSV & TXT Files | R Tutorial 1.5", 13);
+
+
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(66, "In this tutorial, we'll be learning: TypeScript-based open-source front-end web application, Framework for building client applications, Empowers developers to build applications",
+"00:06:15", "https://www.youtube.com/watch?v=0eWrpsCLMJQ", "Angular Tutorial - 1 - Introduction", 14);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(67, "In this tutorial, we'll be learning: Crash Course for a beginner, Covers all main concepts, Basics of Typescript",
+"00:04:14", "https://www.youtube.com/watch?v=FVPGJHinItI", "Angular Tutorial - 2 - Getting Started", 14);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(68, "In this tutorial, we'll be learning: How to setup Angular App, Import Export, Root Exponent",
+"00:07:52", "https://www.youtube.com/watch?v=mDoHtD1hI3I", "Angular Tutorial - 3 - Hello World App", 14);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(69, "In this tutorial, we'll be learning: Template View, Class Code, Metadata Information",
+"00:13:21", "https://www.youtube.com/watch?v=16rQyEQtpyQ", "Angular Tutorial - 4 - Components", 14);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(70, "In this tutorial, we'll be learning: Interpolation in Angular",
+"00:08:07", "https://www.youtube.com/watch?v=2a6OfacW_-I", "Angular Tutorial - 5 - Interpolation", 14);
+
+
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(71, "In this lecture, we'll be discussing: Writing Reliable Code, Defensive Programming, Call Stack Window",
+"00:31:41", "https://www.youtube.com/watch?v=u-HdLtqEOog", "Debugging C# Code in Visual Studio", 15);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(72, "In this lecture, we'll be discussing: What is class, Real-world example of classes, What is an object",
+"00:14:24", "https://www.youtube.com/watch?v=ZqDtPFrUonQ", "C# Classes Tutorial", 15);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(73, "In this lecture, we'll be discussing about: Constructor, Constructor Overloading",
+"00:23:23", "https://www.youtube.com/watch?v=q7aWkjH3UUI", "C# Constructors Tutorial", 15);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(74, "In this lecture, we'll be discussing about: what?, why?, and how?",
+"00:02:48", "https://www.youtube.com/watch?v=4_J_CLKwoto", "C# Object Initializers Tutorial", 15);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(75, "In this lecture, we'll be discussing about: Initialization, Read-only fields",
+"00:09:49", "https://www.youtube.com/watch?v=vpT4-7YdV7M", "C# Fields Tutorial", 15);
+
+
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(76, "In this TypeScript tutorial we'll talk about what TypeScript is and see how we can install the TypeScript compiler onto our computer.",
+"00:06:45", "https://www.youtube.com/watch?v=2pZmKW9-I_k", "TypeScript Tutorial #1 - Introduction & Setup", 16);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(77, "In this tutorial I'll show you how we can compile typescript files into JavaScript files.",
+"00:10:30", "https://www.youtube.com/watch?v=iTZ1-85I77c", "TypeScript Tutorial #2 - Compiling TypeScript", 16);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(78, "In this TypeScript tutorial we'll take a look at some of the basic types - strings, numbers & booleans.",
+"00:07:34", "https://www.youtube.com/watch?v=0DzDqtcxnz0", "TypeScript Tutorial #3 - Type Basics", 16);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(79, "In this TypeScript tutorial we'll learn about objects & arrays.",
+"00:07:35", "https://www.youtube.com/watch?v=157NopQ-chU", "TypeScript Tutorial #4 - Objects & Arrays", 16);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(80, "In this TypeScript tutorial we'll learn about Explicit and Union Types",
+"00:08:35", "https://www.youtube.com/watch?v=__92ek8Xh4o", "TypeScript Tutorial #5 - Explicit Types", 16);
+
+
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(81, "In this first PHP tutorial I'll explain exactly why I'm creating this series as well as what you'll be making / learning as we progress.",
+"00:07:04", "https://www.youtube.com/watch?v=pWG7ajC_OVo", "PHP Tutorial #1 - Why Learn PHP?", 17);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(82, "In this PHP tutorial I'll show you how to install all the tools you'll need to start coding with PHP.",
+"00:09:28", "https://www.youtube.com/watch?v=3B-CnezwEeo", "PHP Tutorial #2 - Installing PHP (XAMPP)", 17);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(83, "In this PHP tutorial we'll create our first PHP file and run it on our local server.",
+"00:07:54", "https://www.youtube.com/watch?v=ABcXbZLm5G8", "PHP Tutorial #3 - Your First PHP File", 17);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(84, "In this PHP tutorial I'll explain the difference between normal variables and constants, and show you how to use both of them.",
+"00:07:18", "https://www.youtube.com/watch?v=2CXme275t9k", "PHP Tutorial #4 - Variables & Constants", 17);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(85, "In this PHP tutorial I'll explain one of the many data types in PHP - strings. ",
+"00:11:57", "https://www.youtube.com/watch?v=U2EliFC9NrQ", "PHP Tutorial #5 - Strings", 17);
+
+
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(86, "In this Go tutorial series you'll learn what Go is (a statically typed programming language) & how to use it to create a simple program. ",
+"00:06:14", "https://www.youtube.com/watch?v=etSN4X_fCnM", "Go (Golang) Tutorial #1 - Introduction & Setup", 18);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(87, "In this Go tutorial we'll walk trough a simple Go file to explain the basics of how Go files & programs work.",
+"00:04:40", "https://www.youtube.com/watch?v=RI9ngRqn9N4", "Go (Golang) Tutorial #2 - Your First Go File", 18);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(88, "In this Go tutorial I'll talk about how to declare variables in Go as well as look at three types in detail - strings, ints & floats.",
+"00:13:54", "https://www.youtube.com/watch?v=98tQPM3R3qU", "Go (Golang) Tutorial #3 - Variables, Strings & Numbers", 18);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(89, "In this Go tutorial you'll learn how to use the fmt package to print out data to the console & format strings using variables with the Prinf / Sprintf methods.",
+"00:12:26", "https://www.youtube.com/watch?v=m1Uy0WQ2Xns", "Go (Golang) Tutorial #4 - Printing & Formatting Strings", 18);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(90, "In this Golang tutorial we'll talk about two more types - Arrays & Slices - and the differences between the two.",
+"00:10:57", "https://www.youtube.com/watch?v=Arb-LjPg7FA", "Go (Golang) Tutorial #5 - Arrays & Slices", 18);
+
+
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(91, "We will introduce you to the exciting world of C programming. We will see why C is a good choice for beginners to start their programming journey. Then, we will create our first C program.",
+"00:06:17", "https://www.youtube.com/watch?v=KnvbUiSxvbM", "#1: Getting Started with C Programming | C Programming for Beginners", 19);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(92, "We will learn about variables. More specifically, we will learn how to create variables and store data in them so that we can use them later in our program.",
+"00:09:35", "https://www.youtube.com/watch?v=h4VBpylsjJc", "#2: C Variables and Print Output | C Programming for Beginners", 19);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(93, "We will be learning about data types in C. More specifically, we will learn about the int, float, double, and char data types and how to use them.",
+"00:10:12", "https://www.youtube.com/watch?v=sARaqR0hRI4", "#3: Data Types in C Programming | C Programming for Beginners", 19);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(94, "We will learn to take input from users using the scanf() function and show output using the printf() function. In C programming, the scanf() function takes input from the user and stores it in a variable.",
+"00:07:22", "https://www.youtube.com/watch?v=17gp5DJEyiw", "#4: Get User Input in C Programming", 19);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(95, "We will learn about comments in C programming. Comments are hints that we add to our program to make our code easier to understand.",
+"00:07:59", "https://www.youtube.com/watch?v=L2H2rtCLB-0", "#5: Comments in C Programing | C Programming for Beginners", 19);
+
+
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(96, "In this course, We'll be learning about: Logistic regression, softmax classifier, cross entropy loss",
+"00:55:10", "https://www.youtube.com/watch?v=8XfwJgDAMKQ", "Tutorial 1: Linear Regression & Softmax Classifier", 20);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(97, "In this course, We'll be learning about: Tensor operations, MLP implementation, Backpropagation, Optimizers",
+"00:41:22", "https://www.youtube.com/watch?v=hQf6vvn6LGo", "Tutorial 2: Introduction to Pytorch", 20);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(98, "In this course, We'll be learning about: AlexNet, VGG, ResNet, EfficientNet",
+"00:51:55", "https://www.youtube.com/watch?v=P9N_rYVKibw", "Tutorial 3: CNN Architectures", 20);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(99, "In this course, We'll be learning about: Vectorization, Broadcasting, Tensor Multiplication, Gather, Fold/Unfold, Dataloaders",
+"00:44:56", "https://www.youtube.com/watch?v=Ak4vq2ER6qQ", "Tutorial 4: Advanced PyTorch", 20);
+INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
+VALUES(100, "In this course, We'll be learning about: Adversarial Examples, Perturbation Attack, PGD (Iterated-GSM), Black-box  Attacks, Adversarial Training",
+"00:46:28", "https://www.youtube.com/watch?v=tpcYM0JOZ4s", "Tutorial 5: Adversarial Examples", 20);
+UPDATE course_lecture_sequence SET next_val = 101;

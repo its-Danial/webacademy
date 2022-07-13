@@ -1,6 +1,8 @@
 package com.webacademy.teacher.service;
 
+import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.Teacher;
+import com.webacademy.teacher.feign.CourseFeignClient;
 import com.webacademy.teacher.repository.TeacherRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ public class TeacherServiceImpl implements TeacherService{
 
     @Autowired
     TeacherRepository teacherRepository;
+
+    @Autowired
+    CourseFeignClient courseFeignClient;
 
     @Override
     @CachePut(value = "teachers")
@@ -87,9 +92,18 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    public void updateTeacher(Teacher teacher) {
-        teacherRepository.save(teacher);
-        log.info("Updated teacher {}", teacher.getUsername());
+    public void updateTeacher(String email, String newEmail,
+                              String newUsername, String newFullname) {
+        if(teacherRepository.existsByEmail(email)){
+            Teacher teacher = teacherRepository.findTeacherByEmail(email);
+            teacher.setEmail(newEmail);
+            teacher.setUsername(newUsername);
+            teacher.setFullName(newFullname);
+            teacherRepository.save(teacher);
+            log.info("Updated teacher {}", teacher.getUsername());
+        } else{
+            throw new IllegalStateException("Email doesn't exist");
+        }
     }
 
     @Override
@@ -97,6 +111,13 @@ public class TeacherServiceImpl implements TeacherService{
         Teacher teacher = teacherRepository.findTeacherByEmail(email);
         log.info("Deleted teacher {}", teacher.getUsername());
         teacherRepository.deleteById(teacher.getTeacherId());
+
+        //Delete courses that the teacher has
+        List<Course> courses = courseFeignClient.getCoursesByTeacherId(teacher.getTeacherId());
+        for (Course course : courses) {
+            courseFeignClient.deleteCourse(teacher.getTeacherId(), course.getCourseId());
+        }
+
     }
 
 }

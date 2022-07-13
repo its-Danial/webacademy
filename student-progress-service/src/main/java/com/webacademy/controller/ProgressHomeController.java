@@ -89,4 +89,11 @@ public class ProgressHomeController {
                 .body("Updated total lectures for course " + courseId);
     }
 
+    @DeleteMapping("/delete/{courseId}")
+    public ResponseEntity<String> deleteProgressesByCourseId(@PathVariable("courseId") Long courseId){
+        studentProgressService.deleteProgressesByCourseId(courseId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Deleted progress by course " + courseId);
+    }
+
 }

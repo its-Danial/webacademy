@@ -99,6 +99,7 @@ public class CourseLectureServiceImpl implements CourseLectureService {
             throw new IllegalStateException("The lecture doesn't belong to the course");
         }
 
+        progressFeignClient.deleteProgressesByCourseId(courseId);
         courseLectureRepository.deleteById(lectureId);
         log.info("Teacher {} has deleted lecture {}", teacherId, lectureId);
     }

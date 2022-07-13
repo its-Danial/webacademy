@@ -82,4 +82,33 @@ public class TeacherHomeController {
                     "Email or username already exist", e);
         }
     }
+
+    /*Admin Controllers*/
+    @PutMapping("/update/{email}")
+    public ResponseEntity<String> updateTeacherByEmail(@PathVariable("email") String email,
+                                                      @RequestBody JSONObject identity){
+        try {
+            String newEmail = identity.getObject("email", String.class);
+            String newUsername = identity.getObject("username", String.class);
+            String newFullname = identity.getObject("fullname", String.class);
+            teacherService.updateTeacher(email,newEmail,newUsername,newFullname);
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body("Successfully updated teacher " + email + " to " + newEmail);
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("Email or username already exist");
+        }
+    }
+
+    @DeleteMapping("/delete/{email}")
+    public ResponseEntity<String> deleteTeacherByEmail(@PathVariable("email") String email){
+        try {
+            teacherService.deleteTeacherByEmail(email);
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body("Successfully deleted teacher " + email);
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Teacher not found");
+        }
+    }
 }

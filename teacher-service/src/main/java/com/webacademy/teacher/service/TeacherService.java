@@ -18,7 +18,8 @@ public interface TeacherService {
 
     void addTeacher(Teacher teacher);
 
-    void updateTeacher(Teacher teacher);
+    void updateTeacher(String email, String newEmail,
+                       String newUsername, String newFullname);
 
     void deleteTeacherByEmail(String email);
 
