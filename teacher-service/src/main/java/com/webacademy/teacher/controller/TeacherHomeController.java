@@ -75,7 +75,7 @@ public class TeacherHomeController {
             String username = teacher.getUsername();
             String fullname = teacher.getFullName();
             String password = teacher.getPassword();
-            return ResponseEntity.status(HttpStatus.OK)
+            return ResponseEntity.status(HttpStatus.CREATED)
                     .body(teacherService.register(email, username, fullname, password));
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.CONFLICT,
@@ -83,30 +83,41 @@ public class TeacherHomeController {
         }
     }
 
+    @PutMapping("/edit/{teacherId}")
+    public ResponseEntity<Teacher> editProfile(@PathVariable("teacherId") Long teacherId,
+                                               @RequestBody JSONObject profile) {
+
+        String bio = profile.getObject("bioText", String.class);
+        String avatarUrl = profile.getObject("avatarPictureUrl", String.class);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(teacherService.editProfile(teacherId, bio, avatarUrl));
+
+    }
+
     /*Admin Controllers*/
     @PutMapping("/update/{email}")
     public ResponseEntity<String> updateTeacherByEmail(@PathVariable("email") String email,
-                                                      @RequestBody JSONObject identity){
+                                                       @RequestBody JSONObject identity) {
         try {
             String newEmail = identity.getObject("email", String.class);
             String newUsername = identity.getObject("username", String.class);
             String newFullname = identity.getObject("fullname", String.class);
-            teacherService.updateTeacher(email,newEmail,newUsername,newFullname);
+            teacherService.updateTeacher(email, newEmail, newUsername, newFullname);
             return ResponseEntity.status(HttpStatus.OK)
                     .body("Successfully updated teacher " + email + " to " + newEmail);
-        } catch (Exception e){
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body("Email or username already exist");
         }
     }
 
     @DeleteMapping("/delete/{email}")
-    public ResponseEntity<String> deleteTeacherByEmail(@PathVariable("email") String email){
+    public ResponseEntity<String> deleteTeacherByEmail(@PathVariable("email") String email) {
         try {
             teacherService.deleteTeacherByEmail(email);
             return ResponseEntity.status(HttpStatus.OK)
                     .body("Successfully deleted teacher " + email);
-        } catch (Exception e){
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("Teacher not found");
         }

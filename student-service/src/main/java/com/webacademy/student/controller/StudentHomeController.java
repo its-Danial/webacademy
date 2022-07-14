@@ -74,7 +74,7 @@ public class StudentHomeController {
             String username = student.getUsername();
             String fullname = student.getFullName();
             String password = student.getPassword();
-            return ResponseEntity.status(HttpStatus.OK)
+            return ResponseEntity.status(HttpStatus.CREATED)
                     .body(studentService.register(email, username, fullname, password));
         }catch (Exception e){
             throw new ResponseStatusException(HttpStatus.CONFLICT,

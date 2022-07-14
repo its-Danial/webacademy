@@ -6,6 +6,7 @@ import com.webacademy.teacher.feign.CourseFeignClient;
 import com.webacademy.teacher.repository.TeacherRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -86,12 +87,24 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
+    public Teacher editProfile(Long teacherId, String bio, String avatarUrl) {
+        Teacher teacher = teacherRepository.findById(teacherId)
+                .orElseThrow(()-> new IllegalStateException("Teacher not found"));
+        teacher.setBioText(bio);
+        teacher.setAvatarPictureUrl(avatarUrl);
+        teacherRepository.save(teacher);
+        return teacherRepository.findTeacherByEmail(teacher.getEmail());
+    }
+
+
+    @Override
     public void addTeacher(Teacher teacher) {
         teacherRepository.save(teacher);
         log.info("Added teacher {}", teacher.getUsername());
     }
 
     @Override
+    @CachePut(value = "teachers", key = "#email")
     public void updateTeacher(String email, String newEmail,
                               String newUsername, String newFullname) {
         if(teacherRepository.existsByEmail(email)){
@@ -107,6 +120,7 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
+    @CacheEvict(value = "teachers", key = "#email")
     public void deleteTeacherByEmail(String email) {
         Teacher teacher = teacherRepository.findTeacherByEmail(email);
         log.info("Deleted teacher {}", teacher.getUsername());

@@ -24,4 +24,6 @@ public interface TeacherService {
     void deleteTeacherByEmail(String email);
 
     Teacher register(String email, String username, String fullname, String password);
+
+    Teacher editProfile(Long teacherId, String bio, String avatarUrl);
 }
