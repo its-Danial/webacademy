@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Embeddable
 public class CourseInformation implements Serializable {
 
-    private double price;
+    private Double price = 0.0;
 
     private String whatYouLearn;
 
@@ -27,5 +27,5 @@ public class CourseInformation implements Serializable {
 
     private String previewVideoUrl;
 
-    private double totalDuration;
+    private Double totalDuration;
 }

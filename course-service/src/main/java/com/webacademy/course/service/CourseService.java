@@ -1,6 +1,7 @@
 package com.webacademy.course.service;
 
 import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.CourseInformation;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +32,9 @@ public interface CourseService {
 
     List<Course> findCoursesByStudentId(Long id);
 
-    void createCourse(Long teacherId, Course course);
+    Course createCourse(Long teacherId, Course course);
+
+    void editCourseInformation(Long courseId, CourseInformation courseInformation);
 
     void deleteCourse(Long teacherId, Long courseId);
 

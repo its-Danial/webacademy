@@ -1,6 +1,7 @@
 package com.webacademy.course.service;
 
 import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.CourseInformation;
 import com.webacademy.common.entities.CourseLecture;
 import com.webacademy.common.entities.Teacher;
 import com.webacademy.course.feign.LectureFeignClient;
@@ -61,13 +62,25 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     @CachePut(value = "courses", key = "#p1.courseId")
-    public void createCourse(Long teacherId, Course course) {
+    public Course createCourse(Long teacherId, Course course) {
         Teacher teacher = teacherFeignClient.getTeacherById(teacherId).
                 orElseThrow(() -> new IllegalArgumentException("Teacher not found"));
 
         course.setTeacher(teacher);
         courseRepository.save(course);
         log.info("Teacher {} added course {}", teacher.getFullName(), course.getTitle());
+        return course;
+    }
+
+    @Override
+    @CachePut(value = "courses", key = "#courseId")
+    public void editCourseInformation(Long courseId, CourseInformation courseInformation) {
+        Course course = courseRepository.findById(courseId)
+                .orElseThrow(() -> new IllegalStateException("Course not found"));
+        course.setCourseInformation(courseInformation);
+        log.info("CourseInformation === {}", courseInformation);
+        courseRepository.save(course);
+        log.info("Updated course information on course {}", courseId);
     }
 
     @Override

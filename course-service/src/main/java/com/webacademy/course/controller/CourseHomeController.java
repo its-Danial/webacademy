@@ -1,6 +1,7 @@
 package com.webacademy.course.controller;
 
 import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.CourseInformation;
 import com.webacademy.course.service.CourseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -92,12 +93,19 @@ public class CourseHomeController {
     }
 
     @PostMapping("/create/{teacherId}")
-    public ResponseEntity<String> createCourse(@PathVariable("teacherId") Long teacherId,
+    public ResponseEntity<Course> createCourse(@PathVariable("teacherId") Long teacherId,
                                                @RequestBody Course course) {
-        courseService.createCourse(teacherId, course);
+
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body("Teacher " + teacherId + " has successfully created course "
-                        + course.getCourseId());
+                .body(courseService.createCourse(teacherId, course));
+    }
+
+    @PutMapping("/manage/{courseId}")
+    public ResponseEntity<String> manageCourseInformation(@PathVariable("courseId") Long courseId,
+                                               @RequestBody CourseInformation courseInformation){
+        courseService.editCourseInformation(courseId, courseInformation);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Updated course " + courseId + "'s information");
     }
 
     @DeleteMapping("/delete/{teacherId}/{courseId}")
