@@ -15,5 +15,7 @@ public interface CourseLectureService {
 
     void addMultipleLectures(Long teacherId, Long courseId, List<CourseLecture> courseLectures);
 
+    void updateLecture(Long teacherId, Long courseId, Long lectureId, CourseLecture newLecture);
+
     void deleteLecture(Long teacherId, Long courseId, Long lectureId);
 }

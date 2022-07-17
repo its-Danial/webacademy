@@ -1,6 +1,7 @@
 package com.webacademy.course.repository;
 
 import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.Teacher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -55,4 +56,7 @@ public interface CourseRepository extends JpaRepository<Course,Long> {
 
     @Query(value = "SELECT count(*) FROM student_course_mapping WHERE course_id = :courseId", nativeQuery = true)
     int countBoughtCourseByCourseId(@Param("courseId") Long courseId);
+
+    @Query(value = "SELECT IF(COUNT(*) > 0, 'true', 'false') FROM course WHERE teacher_id = 11", nativeQuery = true)
+    boolean existsCoursesByTeacherId(@Param("teacherId") Long teacherId);
 }

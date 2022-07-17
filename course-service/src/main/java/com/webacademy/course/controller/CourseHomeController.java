@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -64,7 +65,12 @@ public class CourseHomeController {
     @GetMapping("/get-by-teacher-id/{teacherId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Course> getCoursesByTeacherId(@PathVariable("teacherId") Long id) {
-        return courseService.findCoursesByTeacherId(id);
+        try {
+            return courseService.findCoursesByTeacherId(id);
+        } catch (Exception e){
+            return new ArrayList<>();
+        }
+
     }
 
     @GetMapping("/get-by-student-id/{studentId}")

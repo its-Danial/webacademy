@@ -34,7 +34,7 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    @Cacheable(value = "teachers", key = "@teacherRepository.findById(#id).get().email")
+    @CachePut(value = "teachers", key = "@teacherRepository.findById(#id).get().email")
     public Optional<Teacher> findTeacherById(Long id) {
         if(!teacherRepository.existsByTeacherId(id)){
             throw new IllegalStateException("No teacher found by id: " + id);
@@ -44,7 +44,7 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    @Cacheable(value = "teachers", key = "#username")
+    @CachePut(value = "teachers", key = "#username")
     public Teacher findTeacherByUsername(String username) {
         if(!teacherRepository.existsByUsername(username)){
             throw new IllegalStateException("No teacher found by username: " + username);
@@ -55,7 +55,7 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    @Cacheable(value = "teachers", key = "#email")
+    @CachePut(value = "teachers", key = "#email")
     public Teacher findTeacherByEmail(String email) {
         if(!teacherRepository.existsByEmail(email)){
             throw new IllegalStateException("No teacher found by email: " + email);
@@ -65,7 +65,7 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    @Cacheable(value = "teachers", key = "#email")
+    @CachePut(value = "teachers", key = "#email")
     public Teacher login(String email, String password) {
         if(teacherRepository.existsByEmailAndPassword(email, password)){
             return teacherRepository.findTeacherByEmail(email);
