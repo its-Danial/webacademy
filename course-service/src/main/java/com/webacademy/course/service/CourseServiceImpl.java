@@ -7,18 +7,17 @@ import com.webacademy.common.entities.Teacher;
 import com.webacademy.course.feign.LectureFeignClient;
 import com.webacademy.course.feign.TeacherFeignClient;
 import com.webacademy.course.repository.CourseRepository;
+import com.webacademy.model.TeacherEarning;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,7 +42,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    @CachePut(value = "courses", key="@courseRepository.findCoursesByTeacherId(#id).get(0).teacher.email")
+    @CachePut(value = "courses", key = "@courseRepository.findCoursesByTeacherId(#id).get(0).teacher.email")
     public List<Course> findCoursesByTeacherId(Long id) {
         log.info("Fetch courses by teacher: {}", id);
         return courseRepository.findCoursesByTeacherId(id);
@@ -51,7 +50,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    @CachePut(value = "courses", key="#id")
+    @CachePut(value = "courses", key = "#id")
     public Optional<Course> findCourseByCourseId(Long id) {
         log.info("Fetch course {}", id);
         return courseRepository.findById(id);
@@ -178,13 +177,37 @@ public class CourseServiceImpl implements CourseService {
     public double findTotalPriceEarned(Long teacherId) {
         List<Course> courses = courseRepository.findCoursesByTeacherId(teacherId);
         double totalPrice = 0;
+        double grandTotal = 0;
         for (Course course : courses) {
             int count = courseRepository.countBoughtCourseByCourseId(course.getCourseId());
             log.info("Course {} has been bought {} times", course.getCourseId(), count);
             double price = course.getCourseInformation().getPrice();
             totalPrice = price * count;
+            grandTotal += totalPrice;
         }
-        log.info("Total amount teacher {} has earned: ${}", teacherId, totalPrice);
-        return totalPrice;
+        log.info("Total amount teacher {} has earned: ${}", teacherId, grandTotal);
+        return grandTotal;
     }
+
+    @Override
+    public List<TeacherEarning> findTotalEarningPerCourse(Long teacherId) {
+        List<Course> courses = courseRepository.findCoursesByTeacherId(teacherId);
+        Double totalPrice;
+        List<TeacherEarning> resultList = new ArrayList<>();
+
+        for (Course course : courses) {
+            int count = courseRepository.countBoughtCourseByCourseId(course.getCourseId());
+            log.info("Course {} has been bought {} times", course.getCourseId(), count);
+            Double price = course.getCourseInformation().getPrice();
+            totalPrice = price * count;
+            log.info("Course {} has generated ${}", course.getCourseId(), totalPrice);
+            TeacherEarning teacherEarning = new TeacherEarning();
+            teacherEarning.setCourseId(course.getCourseId());
+            teacherEarning.setTotalEarnings(totalPrice);
+            resultList.add(teacherEarning);
+        }
+
+        return resultList;
+    }
+
 }

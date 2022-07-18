@@ -3,6 +3,7 @@ package com.webacademy.course.controller;
 import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseInformation;
 import com.webacademy.course.service.CourseServiceImpl;
+import com.webacademy.model.TeacherEarning;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,10 +35,10 @@ public class CourseHomeController {
                                                                               @RequestParam(defaultValue = "0") int page,
                                                                               @RequestParam(defaultValue = "5", required = false) int size) {
         try {
-            if(categoryName != null && minRating != null && maxRating != null){
+            if (categoryName != null && minRating != null && maxRating != null) {
                 return ResponseEntity.status(HttpStatus.OK)
-                        .body(courseService.paginationByCategoryAndRating(categoryName,minRating,maxRating,page));
-            } else if(topic != null && minRating != null && maxRating != null){
+                        .body(courseService.paginationByCategoryAndRating(categoryName, minRating, maxRating, page));
+            } else if (topic != null && minRating != null && maxRating != null) {
                 return ResponseEntity.status(HttpStatus.OK)
                         .body(courseService.paginationByTopicAndRating(topic, minRating, maxRating, page));
             } else if (categoryName != null) {
@@ -50,7 +51,7 @@ public class CourseHomeController {
                 return ResponseEntity.status(HttpStatus.OK)
                         .body(courseService.findCoursesByPage(page, size));
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "Please check your input");
         }
@@ -67,7 +68,7 @@ public class CourseHomeController {
     public List<Course> getCoursesByTeacherId(@PathVariable("teacherId") Long id) {
         try {
             return courseService.findCoursesByTeacherId(id);
-        } catch (Exception e){
+        } catch (Exception e) {
             return new ArrayList<>();
         }
 
@@ -108,7 +109,7 @@ public class CourseHomeController {
 
     @PutMapping("/manage/{courseId}")
     public ResponseEntity<String> manageCourseInformation(@PathVariable("courseId") Long courseId,
-                                               @RequestBody CourseInformation courseInformation){
+                                                          @RequestBody CourseInformation courseInformation) {
         courseService.editCourseInformation(courseId, courseInformation);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body("Updated course " + courseId + "'s information");
@@ -133,5 +134,10 @@ public class CourseHomeController {
     @ResponseStatus(HttpStatus.OK)
     public double getTotalPriceEarned(@PathVariable("teacherId") Long teacherId) {
         return courseService.findTotalPriceEarned(teacherId);
+    }
+
+    @GetMapping("/get-total-earning-per-course/{teacherId}")
+    public List<TeacherEarning> getTotalEarningPerCourse(@PathVariable("teacherId") Long teacherId) {
+        return courseService.findTotalEarningPerCourse(teacherId);
     }
 }

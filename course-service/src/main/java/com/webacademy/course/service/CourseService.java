@@ -2,6 +2,7 @@ package com.webacademy.course.service;
 
 import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseInformation;
+import com.webacademy.model.TeacherEarning;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,11 +17,11 @@ public interface CourseService {
 
     List<Course> paginationByTopic(String topic, int page);
 
-    List<Course> paginationByCategoryAndRating(String categoryName,double minRating, double maxRating, int page);
+    List<Course> paginationByCategoryAndRating(String categoryName, double minRating, double maxRating, int page);
 
-    List<Course> paginationByTopicAndRating(String topic,double minRating, double maxRating, int page);
+    List<Course> paginationByTopicAndRating(String topic, double minRating, double maxRating, int page);
 
-    List<Course>findCoursesByTeacherId(Long id);
+    List<Course> findCoursesByTeacherId(Long id);
 
     List<Course> findCoursesByCategory(String category);
 
@@ -41,4 +42,6 @@ public interface CourseService {
     List<Course> findCoursesInCartByStudentId(Long studentId);
 
     double findTotalPriceEarned(Long teacherId);
+
+    List<TeacherEarning> findTotalEarningPerCourse(Long teacherId);
 }
