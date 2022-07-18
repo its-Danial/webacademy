@@ -29,4 +29,6 @@ public interface StudentService {
     Student register(String email, String username, String fullname, String password);
 
     Set<Student> findStudentsByTeacherId(Long teacherId);
+
+    List<Student> searchStudentByEmailKeyword(String email);
 }

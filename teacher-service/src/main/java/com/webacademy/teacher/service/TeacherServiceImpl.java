@@ -96,6 +96,16 @@ public class TeacherServiceImpl implements TeacherService{
         return teacherRepository.findTeacherByEmail(teacher.getEmail());
     }
 
+    @Override
+    public List<Teacher> searchTeacherByEmailKeyword(String email) {
+        if(email == null || email.equals("")){
+            return teacherRepository.findAll();
+        } else{
+            log.info("Search teacher by email keyword: {}", email);
+            return teacherRepository.findTeachersByEmailContainingIgnoreCase(email);
+        }
+    }
+
 
     @Override
     public void addTeacher(Teacher teacher) {

@@ -152,5 +152,15 @@ public class StudentServiceImpl implements StudentService {
 
     }
 
+    @Override
+    public List<Student> searchStudentByEmailKeyword(String email) {
+        if(email == null || email.equals("")){
+            return studentRepository.findAll();
+        } else{
+            log.info("Search student by email keyword: {}", email);
+            return studentRepository.findStudentsByEmailContainingIgnoreCase(email);
+        }
+    }
+
 
 }

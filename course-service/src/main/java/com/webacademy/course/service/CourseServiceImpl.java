@@ -224,8 +224,15 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public List<Course> findByCourseTitle(String title) {
-        log.info("Found course by title: {}", title);
+        log.info("Fetch courses by title: {}", title);
         return courseRepository.findCoursesByTitleContainingIgnoreCase(title);
     }
+
+    @Override
+    public List<Course> findByCourseTitlePageable(String title, int page) {
+        log.info("Fetch courses by title: {} in page {}", title, page);
+        return courseRepository.findCoursesByTitleContainingIgnoreCase(title,  PageRequest.of(page, 5));
+    }
+
 
 }

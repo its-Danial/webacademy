@@ -1,6 +1,7 @@
 package com.webacademy.teacher.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.webacademy.common.entities.Student;
 import com.webacademy.common.entities.Teacher;
 import com.webacademy.teacher.service.TeacherServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -121,5 +122,10 @@ public class TeacherHomeController {
             return ResponseEntity.status(HttpStatus.OK)
                     .body("Successfully deleted teacher " + id);
         }
+    }
+
+    @GetMapping("/search")
+    public List<Teacher> searchTeacherByEmailKeyword(@RequestParam String email){
+        return teacherService.searchTeacherByEmailKeyword(email);
     }
 }

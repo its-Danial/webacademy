@@ -116,4 +116,9 @@ public class StudentHomeController {
                     .body("Successfully deleted student " + id);
         }
     }
+
+    @GetMapping("/search")
+    public List<Student> searchStudentByEmailKeyword(@RequestParam String email){
+         return studentService.searchStudentByEmailKeyword(email);
+    }
 }

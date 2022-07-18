@@ -50,4 +50,6 @@ public interface CourseService {
     List<TeacherEarning> findTotalEarningPerCourse(Long teacherId);
 
     List<Course> findByCourseTitle(String title);
+
+    List<Course> findByCourseTitlePageable(String title, int page);
 }

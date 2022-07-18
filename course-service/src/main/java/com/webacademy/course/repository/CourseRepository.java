@@ -70,4 +70,6 @@ public interface CourseRepository extends JpaRepository<Course,Long> {
     void deleteStudentCourse(@Param("studentId") Long studentId, @Param("courseId") Long courseId);
 
     List<Course> findCoursesByTitleContainingIgnoreCase(String title);
+
+    List<Course> findCoursesByTitleContainingIgnoreCase(String title, Pageable pageable);
 }

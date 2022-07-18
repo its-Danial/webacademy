@@ -156,8 +156,14 @@ public class CourseHomeController {
                 .body("Deleted course " + courseId + " from student " + studentId);
     }
 
-    @GetMapping("/search/{title}")
-    public List<Course> searchByCourseTitle(@PathVariable("title") String title){
-        return courseService.findByCourseTitle(title);
+
+    @GetMapping("/search")
+    public List<Course> searchByCourseTitlePageable(@RequestParam String title,
+                                                    @RequestParam(required = false) Integer page){
+        if(page != null){
+            return courseService.findByCourseTitlePageable(title, page);
+        } else {
+            return courseService.findByCourseTitle(title);
+        }
     }
 }
