@@ -139,5 +139,15 @@ public class StudentProgressServiceImpl implements StudentProgressService {
         }
     }
 
+    @Override
+    public void deleteProgressesByStudentId(Long studentId) {
+        List<StudentProgress> progresses = studentProgressRepository.findProgressesByStudentId(studentId);
+
+        for(StudentProgress progress : progresses){
+            studentProgressRepository.deleteById(progress.getStudentProgressId());
+            log.info("Deleted progress {}", progress.getStudentProgressId());
+        }
+    }
+
 
 }

@@ -14,4 +14,6 @@ public interface ShoppingCartService {
     void removeCourseFromCart(Long cartId, Long courseId);
 
     void buyAllCourseFromCart(Long studentId);
+
+    void deleteCart(Long studentId);
 }

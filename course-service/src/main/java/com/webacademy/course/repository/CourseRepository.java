@@ -5,6 +5,7 @@ import com.webacademy.common.entities.Teacher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -57,6 +58,16 @@ public interface CourseRepository extends JpaRepository<Course,Long> {
     @Query(value = "SELECT count(*) FROM student_course_mapping WHERE course_id = :courseId", nativeQuery = true)
     int countBoughtCourseByCourseId(@Param("courseId") Long courseId);
 
-    @Query(value = "SELECT IF(COUNT(*) > 0, 'true', 'false') FROM course WHERE teacher_id = 11", nativeQuery = true)
+    @Query(value = "SELECT IF(COUNT(*) > 0, 'true', 'false') FROM course WHERE teacher_id = :teacherId", nativeQuery = true)
     boolean existsCoursesByTeacherId(@Param("teacherId") Long teacherId);
+
+    @Modifying
+    @Query(value = "DELETE FROM student_course_mapping WHERE student_id = :studentId", nativeQuery = true)
+    void deleteAllStudentCourse(@Param("studentId") Long studentId);
+
+    @Modifying
+    @Query(value = "DELETE FROM student_course_mapping WHERE student_id = :studentId AND course_id = :courseId", nativeQuery = true)
+    void deleteStudentCourse(@Param("studentId") Long studentId, @Param("courseId") Long courseId);
+
+    List<Course> findCoursesByTitleContainingIgnoreCase(String title);
 }

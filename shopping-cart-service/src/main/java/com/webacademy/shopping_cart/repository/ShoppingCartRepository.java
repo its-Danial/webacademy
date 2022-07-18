@@ -32,11 +32,5 @@ public interface ShoppingCartRepository extends JpaRepository<ShoppingCart,Long>
 
     @Query(value = "SELECT IF(COUNT(*) > 0, 'true', 'false') FROM cart_course_mapping WHERE cart_id = :cartId", nativeQuery = true)
     boolean existsByCartId(@Param("cartId") Long cartId);
-//    @Query(value = "SELECT new web_academydb.course (c.* FROM course c LEFT OUTER JOIN " +
-//            "cart_course_mapping cc ON c.course_id = cc.course_id " +
-//            "LEFT OUTER JOIN shopping_cart sc ON cc.cart_id = sc.cart_id " +
-//            "WHERE cc.cart_id = :studentId)", nativeQuery = true)
-//    @Query(value = "SELECT c.* FROM course c JOIN cart_course_mapping cc ON c.course_id = cc.course_id WHERE cc.cart_id = :studentId", nativeQuery = true)
-//    List<Course> findCoursesInCartByStudentId(@Param("studentId") Long id);
 }
 

@@ -4,9 +4,11 @@ import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.Student;
 import com.webacademy.student.feign.CartFeignClient;
 import com.webacademy.student.feign.CourseFeignClient;
+import com.webacademy.student.feign.ProgressFeignClient;
 import com.webacademy.student.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Autowired
     CourseFeignClient courseFeignClient;
+
+    @Autowired
+    ProgressFeignClient progressFeignClient;
 
     @Override
     @CachePut(value = "students")
@@ -130,19 +135,21 @@ public class StudentServiceImpl implements StudentService {
         log.info("Cart {} created", student.getStudentId());
     }
 
-    // save() method performs: adding an obejct, and updating existing object.
-    // Which is why add and update has the same implementation.
     @Override
-    public void updateStudent(Student student) {
-        studentRepository.save(student);
-        log.info("Updated student {}", student.getUsername());
-    }
-
-    @Override
-    public void deleteStudentByEmail(String email) {
-        Student student = studentRepository.findStudentByEmail(email);
+    @CacheEvict(value = "students", key = "@studentRepository.findById(#id).get().email")
+    public void deleteStudentById(Long id) {
+        Student student = studentRepository.findById(id)
+                .orElseThrow(()-> new IllegalStateException("Student not found"));
         log.info("Deleted student {}", student.getUsername());
+
+        //Deletes the course mapping, progress, and cart table
+        courseFeignClient.deleteAllStudentCourse(id);
+        log.info("Delete student {}'s courses", id);
+        progressFeignClient.deleteProgressesByStudentId(id);
+        cartFeignClient.deleteCart(id);
+
         studentRepository.deleteById(student.getStudentId());
+
     }
 
 

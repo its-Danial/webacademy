@@ -25,4 +25,6 @@ public interface StudentProgressService {
     void updateTotalLectures(Long courseId);
 
     void deleteProgressesByCourseId(Long courseId);
+
+    void deleteProgressesByStudentId(Long studentId);
 }

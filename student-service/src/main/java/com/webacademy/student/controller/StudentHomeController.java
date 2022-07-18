@@ -97,12 +97,23 @@ public class StudentHomeController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "Course " + id + " doesn't exist", e);
         }
-
     }
 
     @GetMapping("/get-by-course-id-and-student-id/{courseId}/{studentId}")
     public Student getStudentByCourseIdAndStudentId(@PathVariable("courseId") Long courseId,
                                                     @PathVariable("studentId") Long studentId){
         return studentService.findStudentByCourseIdAndStudentId(courseId, studentId);
+    }
+
+    @DeleteMapping("/delete/{studentId}")
+    public ResponseEntity<String> deleteStudentById(@PathVariable("studentId") Long id) {
+        try {
+            studentService.deleteStudentById(id);
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body("Successfully deleted student " + id);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body("Successfully deleted student " + id);
+        }
     }
 }

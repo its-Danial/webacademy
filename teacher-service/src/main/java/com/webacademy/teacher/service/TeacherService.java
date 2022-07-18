@@ -21,7 +21,7 @@ public interface TeacherService {
     void updateTeacher(String email, String newEmail,
                        String newUsername, String newFullname);
 
-    void deleteTeacherByEmail(String email);
+    void deleteTeacherById(Long id);
 
     Teacher register(String email, String username, String fullname, String password);
 

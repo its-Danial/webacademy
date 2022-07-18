@@ -107,6 +107,18 @@ public class CourseServiceImpl implements CourseService {
         log.info("Teacher {} has deleted course {}", teacherId, courseId);
     }
 
+    @Override
+    public void deleteAllStudentCourse(Long studentId) {
+        courseRepository.deleteAllStudentCourse(studentId);
+        log.info("Removed all student {}'s course", studentId);
+    }
+
+    @Override
+    public void deleteStudentCourse(Long studentId, Long courseId) {
+        courseRepository.deleteStudentCourse(studentId, courseId);
+        log.info("Remove course {} from student {}'s account", courseId, studentId);
+    }
+
     //Handles Pagination
     @Override
     public List<Course> findCoursesByPage(int page, int size) {
@@ -208,6 +220,12 @@ public class CourseServiceImpl implements CourseService {
         }
 
         return resultList;
+    }
+
+    @Override
+    public List<Course> findByCourseTitle(String title) {
+        log.info("Found course by title: {}", title);
+        return courseRepository.findCoursesByTitleContainingIgnoreCase(title);
     }
 
 }

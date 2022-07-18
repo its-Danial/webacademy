@@ -2,6 +2,7 @@ package com.webacademy.student.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -10,4 +11,7 @@ public interface CartFeignClient {
 
     @PostMapping("/create/{studentId}")
     ResponseEntity<String> createCart(@PathVariable("studentId") Long studentId);
+
+    @DeleteMapping("/delete/{studentId}")
+    ResponseEntity<String> deleteCart(@PathVariable("studentId") Long studentId);
 }

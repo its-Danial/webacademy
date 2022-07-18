@@ -19,6 +19,7 @@ SELECT * FROM cart_course_mapping;
 SELECT * FROM student_progress;
 
 
+
 INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (1, "hardyhenritgb@gmail.com", "Hardy Henri", "ejTkOtKi", "Kaito");
 INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (2, "kenny1212@gmail.com", "Kenny Soeharto", "ed5jbc3K", "Kairi");
 INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (3, "marco.zhang@gmail.com", "Marco Zhang", "0ZH0PY86", "Marky");

@@ -140,4 +140,24 @@ public class CourseHomeController {
     public List<TeacherEarning> getTotalEarningPerCourse(@PathVariable("teacherId") Long teacherId) {
         return courseService.findTotalEarningPerCourse(teacherId);
     }
+
+    @DeleteMapping("/delete-all-student-course/{studentId}")
+    public ResponseEntity<String> deleteAllStudentCourse(@PathVariable("studentId")Long studentId) {
+        courseService.deleteAllStudentCourse(studentId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Deleted all courses from student " + studentId);
+    }
+
+    @DeleteMapping("/delete-student-course/{studentId}/{courseId}")
+    public ResponseEntity<String> deleteStudentCourse(@PathVariable("studentId")Long studentId,
+                                                      @PathVariable("courseId") Long courseId){
+        courseService.deleteStudentCourse(studentId, courseId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Deleted course " + courseId + " from student " + studentId);
+    }
+
+    @GetMapping("/search/{title}")
+    public List<Course> searchByCourseTitle(@PathVariable("title") String title){
+        return courseService.findByCourseTitle(title);
+    }
 }

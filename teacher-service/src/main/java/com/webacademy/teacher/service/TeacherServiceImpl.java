@@ -120,9 +120,10 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    @CacheEvict(value = "teachers", key = "#email")
-    public void deleteTeacherByEmail(String email) {
-        Teacher teacher = teacherRepository.findTeacherByEmail(email);
+    @CacheEvict(value = "teachers", key = "@teacherRepository.findById(#id).get().email")
+    public void deleteTeacherById(Long id) {
+        Teacher teacher = teacherRepository.findById(id)
+                .orElseThrow(()-> new IllegalStateException("Teacher not found"));
         log.info("Deleted teacher {}", teacher.getUsername());
         teacherRepository.deleteById(teacher.getTeacherId());
 

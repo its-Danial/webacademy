@@ -39,9 +39,15 @@ public interface CourseService {
 
     void deleteCourse(Long teacherId, Long courseId);
 
+    void deleteAllStudentCourse(Long studentId);
+
+    void deleteStudentCourse(Long studentId, Long courseId);
+
     List<Course> findCoursesInCartByStudentId(Long studentId);
 
     double findTotalPriceEarned(Long teacherId);
 
     List<TeacherEarning> findTotalEarningPerCourse(Long teacherId);
+
+    List<Course> findByCourseTitle(String title);
 }

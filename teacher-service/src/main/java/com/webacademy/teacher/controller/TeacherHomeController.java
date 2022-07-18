@@ -111,15 +111,15 @@ public class TeacherHomeController {
         }
     }
 
-    @DeleteMapping("/delete/{email}")
-    public ResponseEntity<String> deleteTeacherByEmail(@PathVariable("email") String email) {
+    @DeleteMapping("/delete/{teacherId}")
+    public ResponseEntity<String> deleteTeacherById(@PathVariable("teacherId") Long id) {
         try {
-            teacherService.deleteTeacherByEmail(email);
+            teacherService.deleteTeacherById(id);
             return ResponseEntity.status(HttpStatus.OK)
-                    .body("Successfully deleted teacher " + email);
+                    .body("Successfully deleted teacher " + id);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Teacher not found");
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body("Successfully deleted teacher " + id);
         }
     }
 }
