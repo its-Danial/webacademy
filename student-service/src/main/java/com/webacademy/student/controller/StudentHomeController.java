@@ -11,6 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/student")
@@ -80,6 +81,11 @@ public class StudentHomeController {
             throw new ResponseStatusException(HttpStatus.CONFLICT,
                     "Email or username already exist", e);
         }
+    }
+    @GetMapping("/get-all-by-teacher-id/{teacherId}")
+    public ResponseEntity<Set<Student>> getStudentsByTeacherId(@PathVariable("teacherId") Long id) {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(studentService.findStudentsByTeacherId(id));
     }
 
     @GetMapping("/get-all-by-course-id/{courseId}")
