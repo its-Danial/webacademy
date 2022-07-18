@@ -35,7 +35,6 @@ INSERT INTO student (student_id, email_address, full_name, `password`, username)
 INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (13, "kingsalmon@gmail.com", "Raja Salmonela", "B023tvhq", "Salmon");
 INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (14, "justinbaby48@gmail.com", "Justin Billy", "ieV043t3", "Justin");
 INSERT INTO student (student_id, email_address, full_name, `password`, username) VALUES (15, "tonny.wong@gmail.com", "Wong Tonny", "JGq13043", "Wong");
-
 UPDATE student_sequence SET next_val = 16; 
 
 
@@ -68,135 +67,84 @@ INSERT INTO teacher (teacher_id, avatar_picture_url, bio_text, email_address, fu
 UPDATE teacher_sequence SET next_val = 11;
 
 INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES(10, "https://i3.ytimg.com/vi/QXeEoD0pB3E/maxresdefault.jpg",
-"Do you want to become a programmer? Do you want to learn how to create games, automate your browser, visualize data, and much more?
-If you’re looking to learn Python for the very first time or need a quick brush-up, this is the course for you!
-Python has rapidly become one of the most popular programming languages around the world. Compared to other languages such as Java or C++, Python consistently outranks and outperforms these languages in demand from businesses and job availability. 
-The average Python developer makes over $100,000 - this number is only going to grow in the coming years.
-The best part? Python is one of the easiest coding languages to learn right now. It doesn’t matter if you have no programming experience or are unfamiliar with the syntax of Python. 
-By the time you finish this course, you'll be an absolute pro at programming!
-This course will cover all the basics and several advanced concepts of Python. We’ll go over:
-- The fundamentals of Python programming
-- Writing and Reading to Files
-- Automation of Word and Excel Files
-- Web scraping with BeautifulSoup4
-- Browser automation with Selenium
-- Data Analysis and Visualization with MatPlotLib
-- Regex parsing and Task Management
-- GUI and Gaming with Tkinter
-- And much more!
-If you read the above list and are feeling a bit confused, don’t worry! As an instructor and student on Udemy for almost 4 years, I know what it’s like to be overwhelmed with boring and mundane.
- I promise you’ll have a blast learning the ins and outs of python. I’ve successfully taught over 200,000+ students from over 200 countries jumpstart their programming journeys through my courses. ",
- "https://www.youtube.com/watch?v=hEgO047GxaQ ", 20, 
- "Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!", 
- "Create their own Python Programs, Become an experienced Python Programmer, Parse the Web and Create their own Games", 3.5, 
- "2022-06-29 12:49:47.216000", "Learn Python: The Complete Python Programming Course", 3.2, 10);
+VALUES (1, "https://s3.amazonaws.com/codementor_content/2016-Oct/vue.jpg", 
+"If you're looking to get started building full-stack applications with Vue 3 (or Vue 2) and Firebase, then look no further. In this course I'll take you from novice to ninja in Vue JS 3, starting out with the very basics and then moving on towards creating fully-fledged Vue applications. 
+
+We'll spend a whole chapter learning about the Vue Router - and how to create SPA's (single page applications) using it - as well as exploring how to use the Vue CLI to get up and running quickly when creating slightly larger Vue applications.
+
+We'll also dive deep into the newest features Vue 3 has to offer, including a lot about the Composition API & Composable Functions.
+
+I'll also teach you how to use Firebase - an online & free service provided by Google which will act as a feature-rich back-end to our Vue applications. We'll learn how to use Firebase to store and retrieve real-time data to and from a NoSQL database called Firestore, as well as authenticate our app's users with the Firebase Auth service, We'll also take a peak at Firebase Storage (which will enable us to allow users to upload images on our Vue sites), as well as deploying all of our applications to Firebase hosting.
+
+Along the way we'll create several full projects, including a reaction timer, project tracker, a blog, a real-time chatroom & a music playlist website.
+
+There's a crazy amount to cover, but by the end of this course you'll be in a position to create full-stack web applications (complete with user authentication) using Vue 3 and Firebase!
+
+I'm also know as The Net Ninja on YouTube
+
+...With around 600,000 subscribers and nearly 2000 free web development tutorials. So feel free to check out my teaching style and reviews before you buy my course :).",
+"https://www.youtube.com/watch?v=nhBVL41-_Cw", 50,
+"Learn Vue JS 3 & Firebase by creating & deploying dynamic web apps (including Authentication).", 
+"Learn how to create Vue 3 applications from the ground-up, Get hands-on & in-depth experience using the latest Vue 3 features, Build & deploy 4 real-world web apps with Vue & Firebase", 4.5,
+"2020-07-08 22:41:36.429000", "Build Web Apps with Vue JS 3 & Firebase", 4.5, 1);
+
 
 INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES(1, "https://i3.ytimg.com/vi/nVOhOGBYHo0/maxresdefault.jpg", 
-"You’ve just stumbled upon the most complete, in-depth Java programming course online. With close to 600,000 students enrolled and over one hundred and forty thousand reviews (with tens of thousands of those 5-star) to date, 
-these comprehensive java tutorials cover everything you’ll ever need.Whether you want to:
-- build the skills you need to get your first Java programming job
-- move to a more senior software developer position
-- pass the oracle java certification exam
-- or just learn java to be able to create your own java apps quickly.
-...this complete Java Masterclass is the course you need to do all of this, and more.
-N.B. Java 17 support coming soon, read on below...
-Are you aiming to get your first Java Programming job but struggling to find out what skills employers want and which course will give you those skills?
-This course is designed to give you the Java skills you need to get a job as a Java developer.  By the end of the course, you will understand Java extremely well and be able to build your own Java apps and be productive as a software developer.
-Lots of students have been successful in getting their first job or promotion after going through the course.
-Here is just one example of a student who lost her job and despite having never coded in her life previously, got a full-time software developer position in just a few months after starting this course.  
-She didn't even complete the course! 'Three months ago I lost my job, came to a turning point in my life, and finally made the drastic decision to completely change course.   I decided to switch career paths and go into coding. My husband found and gave me your Complete Java Masterclass at Udemy as a gift,
- and I wholeheartedly dove into it as a lifeline. Following your course has been absolutely enjoyable (still working on it, not yet finished), and has been a great way of keeping on course, dedicated and motivated.  Yesterday, three months after starting the course, and honestly to my surprise, I received (and accepted!) 
- a job offer as a full-time developer. I wanted to just drop you a line to say thank you for doing this work, for being such a dedicated teacher, and for putting all this knowledge available out there in such an approachable way. It has, literally, been life-changing. With gratitude,  Laura'
-The course is a whopping 80 hours long.  Perhaps you have looked at the size of the course and are feeling a little overwhelmed at the prospect of finding time to complete it.   Maybe you are wondering if you need to go through it all?
-Firstly, Laura's story above shows that you do not have to complete the entire course - she was yet to complete the course when she accepted her developer job offer.
-Secondly, the course is designed as a one-stop shop for Java.
-The core java material you need to learn java development is covered in the first seven sections (around 14 hours in total).  The Java Basics are covered in those sections. The rest of the course covers intermediate, advanced, and optional material you do not technically need to go through.
-For example section 13 is a whopping 10 hours just by itself and is aimed at those students who want to build desktop applications with graphical user interfaces.  JavaFX (which is the technology used in this section) is something that most java developers will rarely or never need to work on.  So you could skip that section entirely.  But if you are one of the few that need to build user interfaces, then the content is there and ready for you.   And there are other sections you can completely avoid if you wish.
-If you want to know absolutely everything about Java, then you can go through the entire course if you wish, but it's not necessary to do so if you are just looking to learn the essential information to get a java developer position.
-Why would you choose to learn Java?
-The reality is that there is a lot of computer languages out there.  It's in the hundreds.  Why would you choose the Java language?
-The number one reason is its popularity.  According to many official websites that track the popularity of languages, Java is either #1 or in the top 3.  Popularity means more companies and their staff are using it, so there are more career opportunities available for you if you are skilled in the language.
-The last thing you want to do is pick a language that is not in mainstream use.  Java came out in the 1990s and is still very popular today.
-What version of Java should you learn?
-Generally speaking, you would want to learn the very latest version of a computer programming language, but that's not the case with Java.
-Oracle, the owner of Java release many versions of Java.  Some are released and expire in six months, with no future updates or support.  Other versions have long-term support, for many years.
-You can probably see why learning a version of Java that has expired makes no sense, and is likely a waste of time.
-A company using Java technology (big or small) is not going to use a version of Java that has no updates or support.  They will stick to stable, well-supported versions of Java that get updates.
-Right now, in July 21 the version of Java that offers this long-term support (LTS) is Java 11 - It's being fully supported until at least 2025 and likely will be extended from there.
-As such, you want to learn the version of Java that your future employer will use, and that's Java 11.
-The next LTS version of Java is Java 17, scheduled for release in September 2021.   The course will be updated, and the updates made available to you free once Java 17 is live.  The course will also be updated in the future as new LTS versions are announced by Oracle.
-BOTTOM LINE: You will learn the RIGHT VERSION of JAVA in this course!  Right meaning the right version to maximize your future Java potential with clients or Employers. ", "https://www.youtube.com/watch?v=nVOhOGBYHo0",
-20, "Learn OOP, SOLID principles with Java examples. Implement backend part for online store by the end of the course",
-"Setting up Java and Maven, Maven Fundamentals, and Maven Lifecycles", "3.5", "2019-12-11 14:59:07.216000", "Java Programming OOP Course", 6.5, 3);
- 
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES(2, "https://i3.ytimg.com/vi/YYXdXT2l-Gg/maxresdefault.jpg",
-"This python for beginners course is geared to students who want to know how python works and also to those totally new to programming.
-The python language has very simple syntax(way to write it) to learn and it is one of the most powerful languages to learn since it can used for a variety of things.
-Here are some:
-- Data analysis
-- Game development
-- Visualization
-- Web development
-- Robotics
-- and more....
-Jobs in this field are really lucrative and knowing this language will give you an edge when finding a job and making a lot more money than other developers; python developers are not as many as in other languages since people think is hard. 
-Python is super easy to learn but very powerful since it contains many possibilities.
-Python is growing faster and faster everyday and it has surpassed many other languages over the years for a lot of reasons, which you will find out soon enough.",
- "https://www.youtube.com/watch?v=YYXdXT2l-Gg", 20, 
- "How to become a Python 3 Developer and get hired! Build 12+ projects, learn Web Development, Machine Learning + more!", 
- "Core skill to understand any programming language, and phyton language.", 4.8, 
- "2020-04-11 01:00:12.216000", "Python for Beginners: Learn Programming from Scratch", 2.7, 2);
- 
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES(3, "https://i3.ytimg.com/vi/CD6MJ9pEn2k/maxresdefault.jpg",
-"In this Python Beyond the Basics - Object-Oriented Programming training course, expert author David Blaikie will teach you how to design Python classes, and how to implement object-oriented programming concepts in Python. 
-This course is designed for users that already have a basic working knowledge of Python.
-You will start by learning about classes, including defining a class, class attributes, and working with class and instance data. From there, David will teach you about inheritance and polymorphism. 
-This video tutorial also covers advanced features, such as implementing core syntax, subclassing built-ins, and new style classes. You will also learn about exceptions and object serialization. 
-Finally, David will teach you about efficiency and testing, including debugging, logging, and benchmarking.
-Once you have completed this computer based training course, you will be fully capable of designing your own Python classes, as well as implementing object-oriented programming concepts in Python.",
- "https://www.youtube.com/watch?v=CD6MJ9pEn2k", 39, 
- "Master the fundamentals of Python while working on various usecases in easy steps ", 
- "Design OOP with python, Apply OOP concepts to handle complexity, Handling errors", 3.9, 
- "2017-10-01 16:07:03.216000", "Python Programming: Object-Oriented Programming Python", 5.2, 3);
- 
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES(4, "https://i3.ytimg.com/vi/Z4D3M-NSN58/maxresdefault.jpg",
-"Welcome to the Python and Django Web Development Course! In this course we cover everything you need to know to build a website using Python, Django, and many more web technologies!
-Whether you want to change career paths, expand your current skill set, start your own entrepreneurial business, become a consultant, or just want to learn, this is the course for you!
-We will teach you the latest technologies for building great web applications with Python 3 and Django! But we don't just teach that, we also teach the Front End technologies you need to know, including HTML, CSS, and Javascript. 
-This course can be your one stop shop for everything you need! It will serve as a useful reference for many of your questions as you begin your journey in becoming a web developer!
-This course is designed so that anyone can learn how to become a web developer. We teach you how to program by using HD Video Lectures, Walkthrough Code Projects, Exercises, Concept Presentation Slides, Downloadable Code Notes, Reading Assignments, and much more! 
-Here is just a small sampling of the topics included in this course:
-- HTML5
-- CSS3
-- Javascript
-- jQuery
-- Bootstrap 3 and 4
-- Document Object Model
-- Python
-- Django Basics
-- Django Templates
-- Django Forms
-- Django Admin Customization
-- ORM
-- Class Based Views
-- REST APIs
-- User Authentication
-- and much,much more!
-You will also get access to our online community of thousands of students, happy to help you out with any questions you may have! 
-Any questions, feel free to send me a message here on Udemy and connect with me on LinkedIn, check out my profile for other courses.
-We also have a 30-day money back guarantee, so you can try out the course for an entire month, risk-free!
-Always keep learning!",
- "https://www.youtube.com/watch?v=Z4D3M-NSN58", 99, 
- "Learn to build websites with HTML , CSS , Bootstrap , Javascript , jQuery , Python 3 , and Django!", 
- "Create a website using Django, Learn HTML, Learn CSS, Understand basic Internet", 4.8, 
- "2018-12-21 15:04:56.216000", "Phyton and Django Web Development Course", 2.4, 4);
- 
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (2, "https://img.youtube.com/vi/Sklc_fQBmcs/maxresdefault.jpg",
+"I created the bestselling webacademy course on React, now I'm super excited to share this course on NextJS with you - an in-depth course about an amazing React framework that allows you to take the next step as a React developer and build real, production-ready projects with React and Next.js!
+
+Next.js is the production-ready, fullstack-capable framework for ReactJS - the most popular JavaScript library you can learn these days!
+
+Too many buzzwords for your taste?
+
+Fair enough - but indeed, NextJS is a great choice for growing as a React developer and for taking your React apps to the next level!
+
+Because NextJS is growing fast and therefore in high demand. And there are good reasons for that: NextJS allows you to build React apps with built-in server-side rendering and page pre-rendering. Building great user experiences and search engine friendly (SEO!) React apps has never been easier!
+
+In addition, NextJS makes building fullstack React apps (frontend + backend code combined in one project) extremely easy as well! Blend client-side and server-side code and build a NodeJS-based API side-by-side with your frontend React apps. It's a breeze with NextJS!",
+"https://www.youtube.com/watch?v=Sklc_fQBmcs", 15,
+"Learn NextJS from the ground up and build production-ready, fullstack ReactJS apps with the NextJS framework!",
+"Learn all key NextJS features like pre-rendering and file-based routing and authentication, Learn how to build client-side and fullstack ReactJS apps with NextJS, Build real projects and apply what you learned with hands-on projects and examples","4.5",
+"2021-02-16 18:24:30.387000", "Next.js & React - The Complete Guide (incl. Two Paths!)", 2.7, 2);
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (3, "https://img.youtube.com/vi/9kYUGMg_14s/maxresdefault.jpg", 
+"First of all, you will learn how to manipulate data in R, to prepare it for the analysis: how to filter your data frame, how to recode variables and compute new variables.
+
+Afterwards, we will take care about computing the main statistical figures in R: mean, median, standard deviation, skewness, kurtosis etc., both in the whole population and in subgroups of the population.
+
+Then you will learn how to visualize data using tables and charts. So we will build tables and cross-tables, as well as histograms, cumulative frequency charts, column and mean plot charts, scatterplot charts and boxplot charts.
+
+Since assumption checking is a very important part of any statistical analysis, we could not elude this topic. So we’ll learn how to check for normality and for the presence of outliers.
+
+Finally, we will perform some basic, one-sample statistical tests and interpret the results. I’m talking about the one-sample t test, the binomial test and the chi-square test for goodness-of-fit.
+
+So after graduating this course, you will know how to perform the essential statistical procedures in the R program. So… enroll today!",
+"https://www.youtube.com/watch?v=9kYUGMg_14s", 13,
+"Basic statistical analyses using the R program",
+"Manipulate data in R (filter and sort data sets and compute variables), Compute statistical indicators, Determine skewness and kurtosis","4.3",
+"2021-03-03 04:07:44.895000", "Statistics with R - Beginner Level", 9, 3);
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES (4, "https://img.youtube.com/vi/Ata9cSC2WpM/maxresdefault.jpg", 
+"Join the most comprehensive, popular and bestselling Angular course on webacademy and benefit not just from a proven course concept but from a huge community as well! 
+
+From Setup to Deployment, this course covers it all! You'll learn all about Components, Directives, Services, Forms, Http Access, Authentication, Optimizing an Angular App with Modules and Offline Compilation and much more - and in the end: You'll learn how to deploy an application!
+
+But that's not all! This course will also show you how to use the Angular CLI and feature a complete project, which allows you to practice the things learned throughout the course!
+
+And if you do get stuck, you benefit from an extremely fast and friendly support - both via direct messaging or discussion. You have my word! ;-)
+
+Angular is one of the most modern, performance-efficient and powerful frontend frameworks you can learn as of today. It allows you to build great web apps which offer awesome user experiences! Learn all the fundamentals you need to know to get started developing Angular applications right away.",
+"https://www.youtube.com/watch?v=Ata9cSC2WpM", 13,
+"Master Angular 13 (formerly Angular 2) and build awesome, reactive web apps with the successor of Angular.js",
+"Develop responsive and scalable web applications with Angular 14, Fully understand the architecture behind an Angular application, Use the deep understanding of the Angular fundamentals to quickly establish yourself as a frontend developer","4.2",
+"2020-01-01 13:34:59.859000", "Angular - The Complete Guide (2022 Edition)", 3.3, 4);
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(5, "https://i3.ytimg.com/vi/UmljXZIypDc/maxresdefault.jpg",
 "Have you ever wanted to create a Web application but didn't know where to start? Have you previously tried to learn Django but got fed up with incomplete YouTube videos and poorly written tutorials? Or are you looking to move your code from Django 2 to Django 3?
 THEN THIS IS THE COURSE FOR YOU!
@@ -247,8 +195,9 @@ Don't waste your time scouring the internet and trying to piece together how to 
  "Learn the entire technology stack to create beautiful and responsive websites with Python and Django!", 
  "Understand Django framework, Build fully functional websites, Understand Django basics.", 4.2, 
  "2021-02-14 00:15:46.216000", "Django and Python Full-Stack Developer", 8.5, 5);
- 
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(6, "https://i3.ytimg.com/vi/TKYsuU86-DQ/maxresdefault.jpg",
 "What if you knew exactly how to design and build a website like that, completely from scratch? How amazing would that be?
 Well, I'm here to teach you HTML, CSS, and web design, all by building the stunning website that you just saw, step-by-step.
@@ -267,9 +216,10 @@ Does this sound like fun? Then join me and 200,000+ other developers and start b
  "Learn modern HTML5, CSS3 and web design by building a stunning website for your portfolio! Includes flexbox and CSS Grid", 
  "Become a modern HTML and CSS developer, Design and build a real world project, A web design framework that easy to use and understand ", 4.5, 
  "2022-01-30 03:22:18.216000", "HTML and CSS for Beginner Course", 4.5, 6);
- 
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES(7, "https://i3.ytimg.com/vi/QXeEoD0pB3E/maxresdefault.jpg",
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES(7, "https://i3.ytimg.com/vi/jS4aFq5-91M/maxresdefault.jpg",
 "JavaScript is THE most important programming language you need to learn as a web developer - and with this course, you make sure that you will not miss a single thing you have to know as a JavaScript developer!
 This is the most comprehensive and modern course you can find on JavaScript - it's based on all my JavaScript knowledge AND teaching experience. 
 It's both a complete guide, starting with the core basics of the language, as well as an extensive reference of the JavaScript language and environment, ensuring that both newcomers as well as experienced JavaScript developers get a lot out of this course!
@@ -296,12 +246,13 @@ This course is obviously packed with content - I therefore strongly recommend th
 - Node.js: Whilst focusing on the browser-side for the majority of the course (because the syntax is the same), we'll also have a dedicated section on Node.js to learn all about that JS host environment
 - Security & Performance Optimizations: Of course security matters, so does performance - no surprise that both is covered in the course!
 - Automated Testing: Testing manually is hard work and can be unreliable - in this course you'll also get an introduction into automated testing",
- "https://www.youtube.com/watch?v=hEgO047GxaQ", 49, 
+ "https://www.youtube.com/watch?v=zBPeGR48_vE", 49, 
  "The modern JavaScript course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!", 
  "Learn JavaScript from Scratch, All core JavaScript features and concepts, Object-Oriented Programming", 4.0, 
- "2021-07-26 04:56:29.216000", "Comple Java Script Course : From Zero to Hero !", 3, 7);
- 
- INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+ "2021-07-26 04:56:29.216000", "Complete Java Script Course : From Zero to Hero !", 3, 7);
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES(8, "https://i3.ytimg.com/vi/gq4S-ovWVlM/maxresdefault.jpg",
 "In this course, you will learn the features of Spring, Spring Boot and Spring Modules - JDBC, AOP, Data JPA with hands-on step by step approach.
 You will get introduced to Spring Boot, Unit Testing with JUnit and Mockito, talking to the database with Spring JDBC and JPA, Maven (dependencies management), Eclipse (IDE) and Tomcat Embedded Web Server. 
@@ -349,88 +300,119 @@ This is the course I wanted to take when I first learned React: complete, up-to-
  "Updated! Become a Senior React Developer. Build a massive E-commerce app!", 
  "Create dynamic web apps using React, Master the fundamental behind React, Programming skill needed for a software engineering job", 4.7, 
  "2018-08-27 11:16:08.216000", "Modern React Course", 5.5, 9);
+
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES(10, "https://i3.ytimg.com/vi/QXeEoD0pB3E/maxresdefault.jpg",
+"Do you want to become a programmer? Do you want to learn how to create games, automate your browser, visualize data, and much more?
+If you’re looking to learn Python for the very first time or need a quick brush-up, this is the course for you!
+Python has rapidly become one of the most popular programming languages around the world. Compared to other languages such as Java or C++, Python consistently outranks and outperforms these languages in demand from businesses and job availability. 
+The average Python developer makes over $100,000 - this number is only going to grow in the coming years.
+The best part? Python is one of the easiest coding languages to learn right now. It doesn’t matter if you have no programming experience or are unfamiliar with the syntax of Python. 
+By the time you finish this course, you'll be an absolute pro at programming!
+This course will cover all the basics and several advanced concepts of Python. We’ll go over:
+- The fundamentals of Python programming
+- Writing and Reading to Files
+- Automation of Word and Excel Files
+- Web scraping with BeautifulSoup4
+- Browser automation with Selenium
+- Data Analysis and Visualization with MatPlotLib
+- Regex parsing and Task Management
+- GUI and Gaming with Tkinter
+- And much more!
+If you read the above list and are feeling a bit confused, don’t worry! As an instructor and student on Udemy for almost 4 years, I know what it’s like to be overwhelmed with boring and mundane.
+ I promise you’ll have a blast learning the ins and outs of python. I’ve successfully taught over 200,000+ students from over 200 countries jumpstart their programming journeys through my courses. ",
+ "https://www.youtube.com/watch?v=hEgO047GxaQ ", 20, 
+ "Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!", 
+ "Create their own Python Programs, Become an experienced Python Programmer, Parse the Web and Create their own Games", 3.5, 
+ "2022-06-29 12:49:47.216000", "Learn Python: The Complete Python Programming Course", 3.2, 10);
+
+INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES(11, "https://i3.ytimg.com/vi/nVOhOGBYHo0/maxresdefault.jpg", 
+"You’ve just stumbled upon the most complete, in-depth Java programming course online. With close to 600,000 students enrolled and over one hundred and forty thousand reviews (with tens of thousands of those 5-star) to date, 
+these comprehensive java tutorials cover everything you’ll ever need.Whether you want to:
+- build the skills you need to get your first Java programming job
+- move to a more senior software developer position
+- pass the oracle java certification exam
+- or just learn java to be able to create your own java apps quickly.
+...this complete Java Masterclass is the course you need to do all of this, and more.
+N.B. Java 17 support coming soon, read on below...
+Are you aiming to get your first Java Programming job but struggling to find out what skills employers want and which course will give you those skills?
+This course is designed to give you the Java skills you need to get a job as a Java developer.  By the end of the course, you will understand Java extremely well and be able to build your own Java apps and be productive as a software developer.
+Lots of students have been successful in getting their first job or promotion after going through the course.
+Here is just one example of a student who lost her job and despite having never coded in her life previously, got a full-time software developer position in just a few months after starting this course.  
+She didn't even complete the course! 'Three months ago I lost my job, came to a turning point in my life, and finally made the drastic decision to completely change course.   I decided to switch career paths and go into coding. My husband found and gave me your Complete Java Masterclass at Udemy as a gift,
+ and I wholeheartedly dove into it as a lifeline. Following your course has been absolutely enjoyable (still working on it, not yet finished), and has been a great way of keeping on course, dedicated and motivated.  Yesterday, three months after starting the course, and honestly to my surprise, I received (and accepted!) 
+ a job offer as a full-time developer. I wanted to just drop you a line to say thank you for doing this work, for being such a dedicated teacher, and for putting all this knowledge available out there in such an approachable way. It has, literally, been life-changing. With gratitude,  Laura'
+The course is a whopping 80 hours long.  Perhaps you have looked at the size of the course and are feeling a little overwhelmed at the prospect of finding time to complete it.   Maybe you are wondering if you need to go through it all?
+Firstly, Laura's story above shows that you do not have to complete the entire course - she was yet to complete the course when she accepted her developer job offer.
+Secondly, the course is designed as a one-stop shop for Java.
+The core java material you need to learn java development is covered in the first seven sections (around 14 hours in total).  The Java Basics are covered in those sections. The rest of the course covers intermediate, advanced, and optional material you do not technically need to go through.
+For example section 13 is a whopping 10 hours just by itself and is aimed at those students who want to build desktop applications with graphical user interfaces.  JavaFX (which is the technology used in this section) is something that most java developers will rarely or never need to work on.  So you could skip that section entirely.  But if you are one of the few that need to build user interfaces, then the content is there and ready for you.   And there are other sections you can completely avoid if you wish.
+If you want to know absolutely everything about Java, then you can go through the entire course if you wish, but it's not necessary to do so if you are just looking to learn the essential information to get a java developer position.
+Why would you choose to learn Java?
+The reality is that there is a lot of computer languages out there.  It's in the hundreds.  Why would you choose the Java language?
+The number one reason is its popularity.  According to many official websites that track the popularity of languages, Java is either #1 or in the top 3.  Popularity means more companies and their staff are using it, so there are more career opportunities available for you if you are skilled in the language.
+The last thing you want to do is pick a language that is not in mainstream use.  Java came out in the 1990s and is still very popular today.
+What version of Java should you learn?
+Generally speaking, you would want to learn the very latest version of a computer programming language, but that's not the case with Java.
+Oracle, the owner of Java release many versions of Java.  Some are released and expire in six months, with no future updates or support.  Other versions have long-term support, for many years.
+You can probably see why learning a version of Java that has expired makes no sense, and is likely a waste of time.
+A company using Java technology (big or small) is not going to use a version of Java that has no updates or support.  They will stick to stable, well-supported versions of Java that get updates.
+Right now, in July 21 the version of Java that offers this long-term support (LTS) is Java 11 - It's being fully supported until at least 2025 and likely will be extended from there.
+As such, you want to learn the version of Java that your future employer will use, and that's Java 11.
+The next LTS version of Java is Java 17, scheduled for release in September 2021.   The course will be updated, and the updates made available to you free once Java 17 is live.  The course will also be updated in the future as new LTS versions are announced by Oracle.
+BOTTOM LINE: You will learn the RIGHT VERSION of JAVA in this course!  Right meaning the right version to maximize your future Java potential with clients or Employers. ", "https://www.youtube.com/watch?v=nVOhOGBYHo0",
+20, "Learn OOP, SOLID principles with Java examples. Implement backend part for online store by the end of the course",
+"Setting up Java and Maven, Maven Fundamentals, and Maven Lifecycles", "3.5", "2019-12-11 14:59:07.216000", "Java Programming OOP Course", 6.5, 3);
  
- 
+
 INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES (11, "https://s3.amazonaws.com/codementor_content/2016-Oct/vue.jpg", 
-"If you're looking to get started building full-stack applications with Vue 3 (or Vue 2) and Firebase, then look no further. In this course I'll take you from novice to ninja in Vue JS 3, starting out with the very basics and then moving on towards creating fully-fledged Vue applications. 
+VALUES (12, "https://img.youtube.com/vi/a7_WFUlFS94/maxresdefault.jpg", 
+"Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi, and ending the course by building a CMS system similar to WordPress, Joomla, or Drupal.
 
-We'll spend a whole chapter learning about the Vue Router - and how to create SPA's (single page applications) using it - as well as exploring how to use the Vue CLI to get up and running quickly when creating slightly larger Vue applications.
+Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer can allow anyone to make really good money online and offline, developing dynamic applications.
 
-We'll also dive deep into the newest features Vue 3 has to offer, including a lot about the Composition API & Composable Functions.
+Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google.
 
-I'll also teach you how to use Firebase - an online & free service provided by Google which will act as a feature-rich back-end to our Vue applications. We'll learn how to use Firebase to store and retrieve real-time data to and from a NoSQL database called Firestore, as well as authenticate our app's users with the Firebase Auth service, We'll also take a peak at Firebase Storage (which will enable us to allow users to upload images on our Vue sites), as well as deploying all of our applications to Firebase hosting.
-
-Along the way we'll create several full projects, including a reaction timer, project tracker, a blog, a real-time chatroom & a music playlist website.
-
-There's a crazy amount to cover, but by the end of this course you'll be in a position to create full-stack web applications (complete with user authentication) using Vue 3 and Firebase!
-
-I'm also know as The Net Ninja on YouTube
-
-...With around 600,000 subscribers and nearly 2000 free web development tutorials. So feel free to check out my teaching style and reviews before you buy my course :).",
-"https://www.youtube.com/watch?v=nhBVL41-_Cw", 50,
-"Learn Vue JS 3 & Firebase by creating & deploying dynamic web apps (including Authentication).", 
-"Learn how to create Vue 3 applications from the ground-up, Get hands-on & in-depth experience using the latest Vue 3 features, Build & deploy 4 real-world web apps with Vue & Firebase", 4.5,
-"2020-07-08 22:41:36.429000", "Build Web Apps with Vue JS 3 & Firebase", 4.5, 1);
-
+There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and knowing it, will give you SUPER POWERS in the web development world and job market place.",
+"https://www.youtube.com/watch?v=a7_WFUlFS94", 80,
+"PHP for Beginners: learn everything you need to become a professional PHP developer with practical exercises & projects.",
+"Learn React the right and learn best practices, Dive into the React engine, and learn how it works under the hood, See how React fits in the big picture of web development.", "4.7",
+"2020-05-24 01:12:19.257000", "PHP for Beginners - Become a PHP Master - CMS Project", 4, 7);
 
 
 INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES (12, "https://img.youtube.com/vi/Sklc_fQBmcs/maxresdefault.jpg",
-"I created the bestselling webacademy course on React, now I'm super excited to share this course on NextJS with you - an in-depth course about an amazing React framework that allows you to take the next step as a React developer and build real, production-ready projects with React and Next.js!
+VALUES (13, "https://img.youtube.com/vi/5We_HtLlAbs/maxresdefault.jpg", 
+"To be an expert C programmer you need to master the use of pointers. This course explains pointers in real depth. It explains pointer variables, pointer arithmetic, indirection, memory allocation, how to create and maintain linked lists and how to use function pointers. In fact, by the time you finish this course, you will know pointers inside out. You will understand what they are, how they work and how to make sure that they don’t make your programs crash!
 
-Next.js is the production-ready, fullstack-capable framework for ReactJS - the most popular JavaScript library you can learn these days!
-
-Too many buzzwords for your taste?
-
-Fair enough - but indeed, NextJS is a great choice for growing as a React developer and for taking your React apps to the next level!
-
-Because NextJS is growing fast and therefore in high demand. And there are good reasons for that: NextJS allows you to build React apps with built-in server-side rendering and page pre-rendering. Building great user experiences and search engine friendly (SEO!) React apps has never been easier!
-
-In addition, NextJS makes building fullstack React apps (frontend + backend code combined in one project) extremely easy as well! Blend client-side and server-side code and build a NodeJS-based API side-by-side with your frontend React apps. It's a breeze with NextJS!",
-"https://www.youtube.com/watch?v=Sklc_fQBmcs", 15,
-"Learn NextJS from the ground up and build production-ready, fullstack ReactJS apps with the NextJS framework!",
-"Learn all key NextJS features like pre-rendering and file-based routing and authentication, Learn how to build client-side and fullstack ReactJS apps with NextJS, Build real projects and apply what you learned with hands-on projects and examples","4.5",
-"2021-02-16 18:24:30.387000", "Next.js & React - The Complete Guide (incl. Two Paths!)", 2.7, 2);
+This is not a course for beginners. It is aimed at programmers who already have a good working knowledge of C programming and who need to take the next step in mastering C by gaining a deep understanding of pointers.",
+"https://www.youtube.com/watch?v=5We_HtLlAbs", 20,
+"Master pointers, addresses and memory allocation in C",
+"Pointers and addresses, Indirection and multiple indirection, Generic pointers and casts", "4.1",
+"2021-03-09 12:46:04.581000", "Advanced C Programming: Pointers", 4.5, 9);
 
 
 
 INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES (13, "https://img.youtube.com/vi/9kYUGMg_14s/maxresdefault.jpg", 
-"First of all, you will learn how to manipulate data in R, to prepare it for the analysis: how to filter your data frame, how to recode variables and compute new variables.
+VALUES (14, "https://img.youtube.com/vi/UFDOY1wOOz0/maxresdefault.jpg", 
+"You've definitely heard of AI and Deep Learning. But when you ask yourself, what is my position with respect to this new industrial revolution, that might lead you to another fundamental question: am I a consumer or a creator? For most people nowadays, the answer would be, a consumer.
 
-Afterwards, we will take care about computing the main statistical figures in R: mean, median, standard deviation, skewness, kurtosis etc., both in the whole population and in subgroups of the population.
+But what if you could also become a creator?
 
-Then you will learn how to visualize data using tables and charts. So we will build tables and cross-tables, as well as histograms, cumulative frequency charts, column and mean plot charts, scatterplot charts and boxplot charts.
+What if there was a way for you to easily break into the World of Artificial Intelligence and build amazing applications which leverage the latest technology to make the World a better place?
 
-Since assumption checking is a very important part of any statistical analysis, we could not elude this topic. So we’ll learn how to check for normality and for the presence of outliers.
+Sounds too good to be true, doesn't it?
 
-Finally, we will perform some basic, one-sample statistical tests and interpret the results. I’m talking about the one-sample t test, the binomial test and the chi-square test for goodness-of-fit.
+But there actually is a way..
 
-So after graduating this course, you will know how to perform the essential statistical procedures in the R program. So… enroll today!",
-"https://www.youtube.com/watch?v=9kYUGMg_14s", 13,
-"Basic statistical analyses using the R program",
-"Manipulate data in R (filter and sort data sets and compute variables), Compute statistical indicators, Determine skewness and kurtosis","4.3",
-"2021-03-03 04:07:44.895000", "Statistics with R - Beginner Level", 9, 3);
+Computer Vision is by far the easiest way of becoming a creator.
 
-
-
-INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES (14, "https://img.youtube.com/vi/Ata9cSC2WpM/maxresdefault.jpg", 
-"Join the most comprehensive, popular and bestselling Angular course on webacademy and benefit not just from a proven course concept but from a huge community as well! 
-
-From Setup to Deployment, this course covers it all! You'll learn all about Components, Directives, Services, Forms, Http Access, Authentication, Optimizing an Angular App with Modules and Offline Compilation and much more - and in the end: You'll learn how to deploy an application!
-
-But that's not all! This course will also show you how to use the Angular CLI and feature a complete project, which allows you to practice the things learned throughout the course!
-
-And if you do get stuck, you benefit from an extremely fast and friendly support - both via direct messaging or discussion. You have my word! ;-)
-
-Angular is one of the most modern, performance-efficient and powerful frontend frameworks you can learn as of today. It allows you to build great web apps which offer awesome user experiences! Learn all the fundamentals you need to know to get started developing Angular applications right away.",
-"https://www.youtube.com/watch?v=Ata9cSC2WpM", 13,
-"Master Angular 13 (formerly Angular 2) and build awesome, reactive web apps with the successor of Angular.js",
-"Develop responsive and scalable web applications with Angular 14, Fully understand the architecture behind an Angular application, Use the deep understanding of the Angular fundamentals to quickly establish yourself as a frontend developer","4.2",
-"2020-01-01 13:34:59.859000", "Angular - The Complete Guide (2022 Edition)", 3.3, 4);
-
+And it's not only the easiest way, it's also the branch of AI where there is the most to create.",
+"https://www.youtube.com/watch?v=UFDOY1wOOz0", 40,
+"Become a Wizard of all the latest Computer Vision tools that exist out there. Detect anything and create powerful apps.",
+"Have a toolbox of the most powerful Computer Vision models, Understand the theory behind Computer Vision, Master OpenCV", "3.6",
+"2021-07-27 04:55:07.150000", "Deep Learning and Computer Vision A-Z™: OpenCV, SSD & GANs", 5, 10);
 
 
 INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
@@ -459,25 +441,27 @@ In this course we're going to start with the basics and I'm going to show you ho
 "Be ready to move onto building React and Vue applications, Code with the TypeScript programming language, Work with TypeScript classes and object oriented programming concepts.", "4.6",
 "2020-07-12 04:02:01.471000", "Introduction to TypeScript Development", 3, 6);
 
-
-
 INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES (17, "https://img.youtube.com/vi/a7_WFUlFS94/maxresdefault.jpg", 
-"Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi, and ending the course by building a CMS system similar to WordPress, Joomla, or Drupal.
-
-Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer can allow anyone to make really good money online and offline, developing dynamic applications.
-
-Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google.
-
-There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and knowing it, will give you SUPER POWERS in the web development world and job market place.",
-"https://www.youtube.com/watch?v=a7_WFUlFS94", 80,
-"PHP for Beginners: learn everything you need to become a professional PHP developer with practical exercises & projects.",
-"Learn React the right and learn best practices, Dive into the React engine, and learn how it works under the hood, See how React fits in the big picture of web development.", "4.7",
-"2020-05-24 01:12:19.257000", "PHP for Beginners - Become a PHP Master - CMS Project", 4, 7);
-
-
-
-INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
+VALUES(17, "https://i3.ytimg.com/vi/YYXdXT2l-Gg/maxresdefault.jpg",
+"This python for beginners course is geared to students who want to know how python works and also to those totally new to programming.
+The python language has very simple syntax(way to write it) to learn and it is one of the most powerful languages to learn since it can used for a variety of things.
+Here are some:
+- Data analysis
+- Game development
+- Visualization
+- Web development
+- Robotics
+- and more....
+Jobs in this field are really lucrative and knowing this language will give you an edge when finding a job and making a lot more money than other developers; python developers are not as many as in other languages since people think is hard. 
+Python is super easy to learn but very powerful since it contains many possibilities.
+Python is growing faster and faster everyday and it has surpassed many other languages over the years for a lot of reasons, which you will find out soon enough.",
+ "https://www.youtube.com/watch?v=YYXdXT2l-Gg", 20, 
+ "How to become a Python 3 Developer and get hired! Build 12+ projects, learn Web Development, Machine Learning + more!", 
+ "Core skill to understand any programming language, and phyton language.", 4.8, 
+ "2020-04-11 01:00:12.216000", "Python for Beginners: Learn Programming from Scratch", 2.7, 2);
+ 
+ 
+ INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
 VALUES (18, "https://img.youtube.com/vi/446E-r0rXHI/maxresdefault.jpg", 
 "This course is the ultimate comprehensive resource for learning the Go Programming Language.
 
@@ -492,40 +476,53 @@ When you enroll in this course, you will have lifetime access to the course. You
 "The Ultimate Comprehensive Course - Perfect for Both Beginners and Experienced Developers",
 "The ultimate comprehensive course, For beginners and experienced devs, Taught by a university professor", "3.8",
 "2021-03-28 04:12:45.475000", "Learn How To Code: Google's Go (golang) Programming Language", 3.5, 8);
-
-
-
+ 
+ 
 INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES (19, "https://img.youtube.com/vi/5We_HtLlAbs/maxresdefault.jpg", 
-"To be an expert C programmer you need to master the use of pointers. This course explains pointers in real depth. It explains pointer variables, pointer arithmetic, indirection, memory allocation, how to create and maintain linked lists and how to use function pointers. In fact, by the time you finish this course, you will know pointers inside out. You will understand what they are, how they work and how to make sure that they don’t make your programs crash!
-
-This is not a course for beginners. It is aimed at programmers who already have a good working knowledge of C programming and who need to take the next step in mastering C by gaining a deep understanding of pointers.",
-"https://www.youtube.com/watch?v=5We_HtLlAbs", 20,
-"Master pointers, addresses and memory allocation in C",
-"Pointers and addresses, Indirection and multiple indirection, Generic pointers and casts", "4.1",
-"2021-03-09 12:46:04.581000", "Advanced C Programming: Pointers", 4.5, 9);
-
-
-
+VALUES(19, "https://i3.ytimg.com/vi/CD6MJ9pEn2k/maxresdefault.jpg",
+"In this Python Beyond the Basics - Object-Oriented Programming training course, expert author David Blaikie will teach you how to design Python classes, and how to implement object-oriented programming concepts in Python. 
+This course is designed for users that already have a basic working knowledge of Python.
+You will start by learning about classes, including defining a class, class attributes, and working with class and instance data. From there, David will teach you about inheritance and polymorphism. 
+This video tutorial also covers advanced features, such as implementing core syntax, subclassing built-ins, and new style classes. You will also learn about exceptions and object serialization. 
+Finally, David will teach you about efficiency and testing, including debugging, logging, and benchmarking.
+Once you have completed this computer based training course, you will be fully capable of designing your own Python classes, as well as implementing object-oriented programming concepts in Python.",
+ "https://www.youtube.com/watch?v=CD6MJ9pEn2k", 39, 
+ "Master the fundamentals of Python while working on various usecases in easy steps ", 
+ "Design OOP with python, Apply OOP concepts to handle complexity, Handling errors", 3.9, 
+ "2017-10-01 16:07:03.216000", "Python Programming: Object-Oriented Programming Python", 5.2, 3);
+ 
 INSERT INTO course (course_id, cover_image_url, `description`, preview_video_url, price, summary, what_you_learn, course_rating, created_at, title, total_duration, teacher_id) 
-VALUES (20, "https://img.youtube.com/vi/UFDOY1wOOz0/maxresdefault.jpg", 
-"You've definitely heard of AI and Deep Learning. But when you ask yourself, what is my position with respect to this new industrial revolution, that might lead you to another fundamental question: am I a consumer or a creator? For most people nowadays, the answer would be, a consumer.
-
-But what if you could also become a creator?
-
-What if there was a way for you to easily break into the World of Artificial Intelligence and build amazing applications which leverage the latest technology to make the World a better place?
-
-Sounds too good to be true, doesn't it?
-
-But there actually is a way..
-
-Computer Vision is by far the easiest way of becoming a creator.
-
-And it's not only the easiest way, it's also the branch of AI where there is the most to create.",
-"https://www.youtube.com/watch?v=UFDOY1wOOz0", 40,
-"Become a Wizard of all the latest Computer Vision tools that exist out there. Detect anything and create powerful apps.",
-"Have a toolbox of the most powerful Computer Vision models, Understand the theory behind Computer Vision, Master OpenCV", "3.6",
-"2021-07-27 04:55:07.150000", "Deep Learning and Computer Vision A-Z™: OpenCV, SSD & GANs", 5, 10);
+VALUES(20, "https://i3.ytimg.com/vi/Z4D3M-NSN58/maxresdefault.jpg",
+"Welcome to the Python and Django Web Development Course! In this course we cover everything you need to know to build a website using Python, Django, and many more web technologies!
+Whether you want to change career paths, expand your current skill set, start your own entrepreneurial business, become a consultant, or just want to learn, this is the course for you!
+We will teach you the latest technologies for building great web applications with Python 3 and Django! But we don't just teach that, we also teach the Front End technologies you need to know, including HTML, CSS, and Javascript. 
+This course can be your one stop shop for everything you need! It will serve as a useful reference for many of your questions as you begin your journey in becoming a web developer!
+This course is designed so that anyone can learn how to become a web developer. We teach you how to program by using HD Video Lectures, Walkthrough Code Projects, Exercises, Concept Presentation Slides, Downloadable Code Notes, Reading Assignments, and much more! 
+Here is just a small sampling of the topics included in this course:
+- HTML5
+- CSS3
+- Javascript
+- jQuery
+- Bootstrap 3 and 4
+- Document Object Model
+- Python
+- Django Basics
+- Django Templates
+- Django Forms
+- Django Admin Customization
+- ORM
+- Class Based Views
+- REST APIs
+- User Authentication
+- and much,much more!
+You will also get access to our online community of thousands of students, happy to help you out with any questions you may have! 
+Any questions, feel free to send me a message here on Udemy and connect with me on LinkedIn, check out my profile for other courses.
+We also have a 30-day money back guarantee, so you can try out the course for an entire month, risk-free!
+Always keep learning!",
+ "https://www.youtube.com/watch?v=Z4D3M-NSN58", 99, 
+ "Learn to build websites with HTML , CSS , Bootstrap , Javascript , jQuery , Python 3 , and Django!", 
+ "Create a website using Django, Learn HTML, Learn CSS, Understand basic Internet", 4.8, 
+ "2018-12-21 15:04:56.216000", "Python and Django Web Development Course", 2.4, 4);
 UPDATE course_sequence SET next_val = 21;
  
 
@@ -550,14 +547,14 @@ INSERT INTO category_topics (category_category_id, topics) VALUES (3, "JavaScrip
 
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (10, 1);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (10, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (1, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (2, 1);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (2, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (3, 1);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (3, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (4, 1);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (4, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (4, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (11, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (17, 1);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (17, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (19, 1);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (19, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (20, 1);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (20, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (20, 3);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (5, 1);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (5, 2);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (5, 3);
@@ -568,19 +565,19 @@ INSERT INTO course_category_mapping(course_id, category_id) VALUES (7, 3);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (8, 2);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (8, 3);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (9, 3);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (11, 3);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (12, 3);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (13, 1);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (13, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (14, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (1, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (2, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (3, 1);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (3, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (4, 3);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (15, 2);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (16, 2);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (16, 3);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (17, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (17, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (12, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (12, 3);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (18, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (19, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (20, 1);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (13, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (14, 1);
 
 
 INSERT INTO student_course_mapping(course_id, student_id) VALUES (1, 3);
@@ -628,24 +625,24 @@ INSERT INTO student_course_mapping(course_id, student_id) VALUES (20, 15);
 
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (1,0,2,0,5,1);
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (2,0,10,0,5,1);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (3,0,1,0,5,3);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (4,0,2,0,5,3);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (5,0,5,0,5,3);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (6,0,8,0,5,3);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (7,0,3,0,5,4);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (8,0,5,0,5,4);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (9,0,8,0,5,4);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (10,0,3,0,5,5);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (11,0,7,0,5,5);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (12,0,1,0,5,6);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (13,0,5,0,5,6);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (14,0,4,0,5,7);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (15,0,9,0,5,7);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (16,0,10,0,5,8);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (17,0,6,0,5,9);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (18,0,8,0,5,9);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (19,0,1,0,5,10);
-INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (20,0,7,0,5,10);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (3,0,11,0,5,1);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (4,0,18,0,5,1);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (5,0,1,0,5,3);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (6,0,2,0,5,3);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (7,0,5,0,5,3);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (8,0,8,0,5,3);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (9,0,13,0,5,3);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (10,0,3,0,5,4);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (11,0,5,0,5,4);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (12,0,8,0,5,4);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (13,0,12,0,5,4);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (14,0,3,0,5,5);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (15,0,7,0,5,5);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (16,0,12,0,5,5);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (17,0,19,0,5,5);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (18,0,1,0,5,6);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (19,0,5,0,5,6);
+INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (20,0,15,0,5,6);
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (21,0,4,0,5,7);
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (22,0,9,0,5,7);
 INSERT INTO student_progress (student_progress_id, completed_lectures, course_id, liked, total_lectures, student_id) VALUES (23,0,17,0,5,7);
@@ -678,7 +675,7 @@ Topics discussed:
 2. Java Language Specification.
 3. API.
 4. Editions of Java.
-5. IDE.", "00:06:03", "https://www.youtube.com/watch?v=mG4NLNZ37y4", "Introduction to Java Programming", 1);
+5. IDE.", "00:06:03", "https://www.youtube.com/watch?v=mG4NLNZ37y4", "Introduction to Java Programming", 11);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(2, "Java Programming: The Anatomy of Java Program
 Topics discussed:
@@ -686,26 +683,26 @@ Topics discussed:
 2. Methods.
 3. Naming Conventions.
 4. Java Program Structure.
-5. Packages.", "00:12:39", "https://www.youtube.com/watch?v=vsxYucdzimA", "Anatomy of Java Program", 1);
+5. Packages.", "00:12:39", "https://www.youtube.com/watch?v=vsxYucdzimA", "Anatomy of Java Program", 11);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(3, "Java Programming: Displaying Messages in Java
 Topics discussed:
 1. Strings in Java.
 2. println() & print() methods in Java.
-3. System Class in Java.", "00:08:37", "https://www.youtube.com/watch?v=ifirpBZLeCk", "Displaying Messages in Java", 1);
+3. System Class in Java.", "00:08:37", "https://www.youtube.com/watch?v=ifirpBZLeCk", "Displaying Messages in Java", 11);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(4, "Java Programming: Displaying Numbers in Java
 Topics discussed:
 1. Numbers in Java.
 2. Some Arithmetic Operators.
-3. Printing some values.", "00:02:50", "https://www.youtube.com/watch?v=UFMqdnUh4nI", "Displaying Numbers in Java", 1);
+3. Printing some values.", "00:02:50", "https://www.youtube.com/watch?v=UFMqdnUh4nI", "Displaying Numbers in Java", 11);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(5, "Java Programming: Creating, Compiling, and Executing a Java Program
 Topics discussed:
 1. Creating a Java program using a simple text editor.
 2. Compiling the Java program using the Command Window.
 3. Running the Java program using the Command Window.
-4. What happens exactly when we compile and run our Java program.", "00:10:24", "https://www.youtube.com/watch?v=6rHySk9Kcuo", "Creating, Compiling, & Executing a Java Program", 1);
+4. What happens exactly when we compile and run our Java program.", "00:10:24", "https://www.youtube.com/watch?v=6rHySk9Kcuo", "Creating, Compiling, & Executing a Java Program", 11);
 
 
 
@@ -713,61 +710,61 @@ INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lectur
 VALUES(6, "In this Python Beginner Tutorial, we will begin learning about the string data type. 
 Strings allow us to work with textual data in Python.
  We will be going over different ways to format strings, 
- and also a lot of useful string methods. Let's get started.", "00:21:11", "https://www.youtube.com/watch?v=k9TUPpGqYTo", "Strings-Working with Textual Data", 2);
+ and also a lot of useful string methods. Let's get started.", "00:21:11", "https://www.youtube.com/watch?v=k9TUPpGqYTo", "Strings-Working with Textual Data", 17);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(7, "In this Python Beginner Tutorial, we will begin learning about integers and floats. 
 Integers and Floats allow us to work with numeric data in Python. 
 We will be learning how to perform basic arithmetic, as well as how to compare numeric values. 
-Let's get started.", "00:11:54", "https://www.youtube.com/watch?v=khKv-8q7YmY", "Integers and Floats-Working with Numeric Data", 2);
+Let's get started.", "00:11:54", "https://www.youtube.com/watch?v=khKv-8q7YmY", "Integers and Floats-Working with Numeric Data", 17);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(8, "In this Python Beginner Tutorial, we will begin learning about Lists, Tuples, and Sets in Python. 
 Lists and Tuples allow us to work with sequential data, and Sets allow us to work with unordered unique values. 
-We will go over most of the methods, learn when to use which data type, and also the performance benefits of each type as well. Let's get started.", "00:29:04", "https://www.youtube.com/watch?v=W8KRzm-HUcc", "Lists, Tuples, and Sets", 2);
+We will go over most of the methods, learn when to use which data type, and also the performance benefits of each type as well. Let's get started.", "00:29:04", "https://www.youtube.com/watch?v=W8KRzm-HUcc", "Lists, Tuples, and Sets", 17);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(9, "In this Python Beginner Tutorial, we will begin learning about dictionaries. Dictionaries allow us to work with key-value pairs in Python.
- We will go over dictionary methods, how to add and remove values, and also how to loop through the key-value pairs. Let's get started.", "00:09:58", "https://www.youtube.com/watch?v=daefaLgNkw0", "Dictionaries-Working with Key-Value Pairs", 2);
+ We will go over dictionary methods, how to add and remove values, and also how to loop through the key-value pairs. Let's get started.", "00:09:58", "https://www.youtube.com/watch?v=daefaLgNkw0", "Dictionaries-Working with Key-Value Pairs", 17);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(10, "In this Python Beginner Tutorial, we will begin learning about if, elif, and else conditionals in Python. 
-We will also be learning about Booleans and what evaluates to True and False. Let's get started.", "00:09:24", "https://www.youtube.com/watch?v=DZwmZ8Usvnk", "Conditionals and Booleans - If, Else, and Elif Statements", 2);
+We will also be learning about Booleans and what evaluates to True and False. Let's get started.", "00:09:24", "https://www.youtube.com/watch?v=DZwmZ8Usvnk", "Conditionals and Booleans - If, Else, and Elif Statements", 17);
 
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(11, "This is the lesson number 0 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
 In this lesson we will create our fist class. We will study about the constructor in a class and will see the use of special method __init__. 
-We will have little discussion on the type of methods or functions inside a class. Those are instance methods, class methods and static methods. We will start with creating instance method.", "00:11:30", "https://www.youtube.com/watch?v=ffLWzihP7p0", "Creating Our First Class | [OOP in Python]", 3);
+We will have little discussion on the type of methods or functions inside a class. Those are instance methods, class methods and static methods. We will start with creating instance method.", "00:11:30", "https://www.youtube.com/watch?v=ffLWzihP7p0", "Creating Our First Class | [OOP in Python]", 19);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(12, "This is the lesson number 03 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
-In this lesson we will talk about the class level attributes. We will see how different objects or instances can access class level attributes.", "00:04:53", "https://www.youtube.com/watch?v=BY79_hqVDEM", "Class Level Attributes | [OOP in Python]", 3);
+In this lesson we will talk about the class level attributes. We will see how different objects or instances can access class level attributes.", "00:04:53", "https://www.youtube.com/watch?v=BY79_hqVDEM", "Class Level Attributes | [OOP in Python]", 19);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(13, "This is the lesson number 04 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
 In this lesson we will study about a special attribute names as __dict__ which is associated with each object we create from a class and with the class as well. It contains the information of different attributes of that object or class. 
-It is a Dictionary with keys as the names of the different attributes and dictionary values as values of those attributes. This attribute can be very helpful for debugging purposes. We will also see other help statements for class and object.", "00:10:53", "https://www.youtube.com/watch?v=Kg49m8OPRew", "Attribute __dict__ | [OOP in Python]", 3);
+It is a Dictionary with keys as the names of the different attributes and dictionary values as values of those attributes. This attribute can be very helpful for debugging purposes. We will also see other help statements for class and object.", "00:10:53", "https://www.youtube.com/watch?v=Kg49m8OPRew", "Attribute __dict__ | [OOP in Python]", 19);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(14, "This is the lesson number 05 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
-In this lesson we will have two tasks followed by their solution. The aim is that you use the skills learnt so far to solve these tasks.", "00:12:53", "https://www.youtube.com/watch?v=Gp39OACDOUs", "Task 1 & 2 | [OOP in Python]", 3);
+In this lesson we will have two tasks followed by their solution. The aim is that you use the skills learnt so far to solve these tasks.", "00:12:53", "https://www.youtube.com/watch?v=Gp39OACDOUs", "Task 1 & 2 | [OOP in Python]", 19);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(15, "This is the lesson number 06 of the lesson series on Object Oriented Programming (OOP) in Python. It will be a complete course with the aim is to cover almost everything needed in Object Oriented Programming.
-In this lesson we will see the use of two special methods; __str__ and __repr__ to represent the object of the class.", "00:06:20", "https://www.youtube.com/watch?v=ePLiBhz7A38", "__str__ and __repr__ | [OOP in Python]", 3);
+In this lesson we will see the use of two special methods; __str__ and __repr__ to represent the object of the class.", "00:06:20", "https://www.youtube.com/watch?v=ePLiBhz7A38", "__str__ and __repr__ | [OOP in Python]", 19);
 
 
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(16, "This django database tutorial will show you how to create and use a SQLite3 database. We will create relationships between tables and learn how to add and remove items from the sqlite database", 
-"00:22:48", "https://www.youtube.com/watch?v=UxTwFMZ4r5k", "SQLite3 DataBase Tutorial", 4);
+"00:22:48", "https://www.youtube.com/watch?v=UxTwFMZ4r5k", "SQLite3 DataBase Tutorial", 20);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(17, "This django tutorial will cover the django admin dashboard. The admin page/dashbaord is a place where you can view valuable information about your site, specifically your database tables and models.", 
-"00:09:18", "https://www.youtube.com/watch?v=dTXyCGVmjL8", "Admin Dashboard", 4);
+"00:09:18", "https://www.youtube.com/watch?v=dTXyCGVmjL8", "Admin Dashboard", 20);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(18, "This django template tutorial will talk about how to create scalable dynamic html to display on your web pages. I will discuss template inheritance, blocks and code embedded in your templates.", 
-"00:27:51", "https://www.youtube.com/watch?v=b0CgA_Ap_Mc", "Templates & Custom HTML", 4);
+"00:27:51", "https://www.youtube.com/watch?v=b0CgA_Ap_Mc", "Templates & Custom HTML", 20);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(19, "This python django tutorial covers how to create simple forms that can be used to update a database. It will also discuss the different kinds of form actions like POST and GET and when you should be using each.", 
-"00:21:55", "https://www.youtube.com/watch?v=vM9mcWr1RMg", "Simple Forms", 4);
+"00:21:55", "https://www.youtube.com/watch?v=vM9mcWr1RMg", "Simple Forms", 20);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(20, "This is a django forms tutorial that discusses how to create complex dynamic forms. In this tutorial we step away from djangos prebuilt form layout and create our own. We discuss the difference between POST and GET and how to get information from out HTML in our python code.", 
-"00:14:32", "https://www.youtube.com/watch?v=9jDEnSm4nt8", "Custom Forms", 4);
+"00:14:32", "https://www.youtube.com/watch?v=9jDEnSm4nt8", "Custom Forms", 20);
 
 
 
@@ -901,70 +898,70 @@ In this video we will see :
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(51, "In this course we will see : What is Vue?, Environment Setup, Course Files",
-"00:13:39", "https://www.youtube.com/watch?v=YrxBCBibVo0", "Vue JS 3 Tutorial for Beginners #1 - Introduction", 11);
+"00:13:39", "https://www.youtube.com/watch?v=YrxBCBibVo0", "Vue JS 3 Tutorial for Beginners #1 - Introduction", 1);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(52, "In this course we will see : How to use Vue (CDN), Creating a Vue app, Data & templates, Click events, Conditional Rendering",
-"00:30:20", "https://www.youtube.com/watch?v=F7PLPJqVotk", "Vue JS 3 Tutorial for Beginners #2 - Vue.js Basics (part 1)", 11);
+"00:30:20", "https://www.youtube.com/watch?v=F7PLPJqVotk", "Vue JS 3 Tutorial for Beginners #2 - Vue.js Basics (part 1)", 1);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(53, "In this course we will see : Other mouse events, Outputting lists (v-for), Attribute binding, Dynamic classes, Challenge: toggling favs, Computed properties",
-"00:34:01", "https://www.youtube.com/watch?v=CYPZBK8zUik", "Vue JS 3 Tutorial for Beginners #3 - Vue.js Basics (part 2)", 11);
+"00:34:01", "https://www.youtube.com/watch?v=CYPZBK8zUik", "Vue JS 3 Tutorial for Beginners #3 - Vue.js Basics (part 2)", 1);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(54, "In this course we will see : Why use the Vue CLI?, Using the Vue CLI, New project walkthrough, Vue files & templates, Template refs, Multiple components",
-"00:39:02", "https://www.youtube.com/watch?v=GWRvrSqnFbM", "Vue JS 3 Tutorial for Beginners #4 - The Vue CLI & Bigger Projects (part 1)", 11);
+"00:39:02", "https://www.youtube.com/watch?v=GWRvrSqnFbM", "Vue JS 3 Tutorial for Beginners #4 - The Vue CLI & Bigger Projects (part 1)", 1);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(55, "In this course we will see : Scoped & global CSS, Props, Emitting custom events, Click event modifiers, Slots, Challenge: creating another modal, Using Teleport",
-"00:44:06", "https://www.youtube.com/watch?v=KM1U6DqZf8M", "Vue JS 3 Tutorial for Beginners #5 - The Vue CLI & Bigger Projects (part 2)", 11);
+"00:44:06", "https://www.youtube.com/watch?v=KM1U6DqZf8M", "Vue JS 3 Tutorial for Beginners #5 - The Vue CLI & Bigger Projects (part 2)", 1);
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(56, "In this course, We'll learn these things: What is React?, Why learn React?, Component Based Architecture",
-"00:09:33", "https://www.youtube.com/watch?v=QFaFIcGhPoM", "ReactJS Tutorial - 1 - Introduction", 12);
+"00:09:33", "https://www.youtube.com/watch?v=QFaFIcGhPoM", "ReactJS Tutorial - 1 - Introduction", 2);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(57, "In this course, We'll learn How to print Hello World on ReactJS",
-"00:04:53", "https://www.youtube.com/watch?v=9hb_0TZ_MVI", "ReactJS Tutorial - 2 - Hello World", 12);
+"00:04:53", "https://www.youtube.com/watch?v=9hb_0TZ_MVI", "ReactJS Tutorial - 2 - Hello World", 2);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(58, "In this course, We'll learn How to make Folder Structure on ReactJS",
-"00:05:34", "https://www.youtube.com/watch?v=9VIiLJL0H4Y", "ReactJS Tutorial - 3 - Folder Structure", 12);
+"00:05:34", "https://www.youtube.com/watch?v=9VIiLJL0H4Y", "ReactJS Tutorial - 3 - Folder Structure", 2);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(59, "In this course, We'll learn How to make Compenents on ReactJS",
-"00:04:58", "https://www.youtube.com/watch?v=Y2hgEGPzTZY", "ReactJS Tutorial - 4 - Components", 12);
+"00:04:58", "https://www.youtube.com/watch?v=Y2hgEGPzTZY", "ReactJS Tutorial - 4 - Components", 2);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(60, "In this course, We'll learn How to make Function Components on ReactJS",
-"00:06:32", "https://www.youtube.com/watch?v=Cla1WwguArA", "ReactJS Tutorial - 5 - Functional Components", 12);
+"00:06:32", "https://www.youtube.com/watch?v=Cla1WwguArA", "ReactJS Tutorial - 5 - Functional Components", 2);
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(61, "In this video, we'll learn: What is RStudio, What does RStudio do?, How to create vectors and plots in R programming language using R console? ",
-"00:05:41", "https://www.youtube.com/watch?v=riONFzJdXcs", "What is RStudio and Why Should You Download It? | R Tutorial 1.1", 13);
+"00:05:41", "https://www.youtube.com/watch?v=riONFzJdXcs", "What is RStudio and Why Should You Download It? | R Tutorial 1.1", 3);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(62, "In this video, we'll learn: How to download R from https://www.r-project.org, How to download R through one of the CRAN pages, How to select a mirror (location) to download R from.",
-"00:04:53", "https://www.youtube.com/watch?v=cX532N_XLIs", "Download and Install R and RStudio | R Tutorial 1.2", 13);
+"00:04:53", "https://www.youtube.com/watch?v=cX532N_XLIs", "Download and Install R and RStudio | R Tutorial 1.2", 3);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(63, "In this video, we'll learn: How to assign values to an object in R, How to see what is stored in R? We use ls function to see what is stored in R, How to remove an object in R?  We use rm functions to remove an object in R",
-"00:07:47", "https://www.youtube.com/watch?v=UYclmg1_KLk", "Getting started with R: Basic Arithmetic and Coding in R | R Tutorial 1.3", 13);
+"00:07:47", "https://www.youtube.com/watch?v=UYclmg1_KLk", "Getting started with R: Basic Arithmetic and Coding in R | R Tutorial 1.3", 3);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(64, "In this video, we'll learn: How to create vectors in R for both numbers or objects? By using the c or concatenate function, How to create a sequence of integer values in R? By using the colon (:), How to create sequences in R ? We will use seq function in R",
-"00:08:34", "https://www.youtube.com/watch?v=2TcPAZOyV0U", "Create and Work with Vectors and Matrices in R | R Tutorial 1.4", 13);
+"00:08:34", "https://www.youtube.com/watch?v=2TcPAZOyV0U", "Create and Work with Vectors and Matrices in R | R Tutorial 1.4", 3);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(65, "In this video, we'll learn: What are the two main file types for saving a data file (CSV and TXT), How to save an Excel file as a CSV file (comma-separated value), How to open a CSV data file in Excel",
-"00:06:58", "https://www.youtube.com/watch?v=qPk0YEKhqB8", "Import Data, Copy Data from Excel to R CSV & TXT Files | R Tutorial 1.5", 13);
+"00:06:58", "https://www.youtube.com/watch?v=qPk0YEKhqB8", "Import Data, Copy Data from Excel to R CSV & TXT Files | R Tutorial 1.5", 3);
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(66, "In this tutorial, we'll be learning: TypeScript-based open-source front-end web application, Framework for building client applications, Empowers developers to build applications",
-"00:06:15", "https://www.youtube.com/watch?v=0eWrpsCLMJQ", "Angular Tutorial - 1 - Introduction", 14);
+"00:06:15", "https://www.youtube.com/watch?v=0eWrpsCLMJQ", "Angular Tutorial - 1 - Introduction", 4);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(67, "In this tutorial, we'll be learning: Crash Course for a beginner, Covers all main concepts, Basics of Typescript",
-"00:04:14", "https://www.youtube.com/watch?v=FVPGJHinItI", "Angular Tutorial - 2 - Getting Started", 14);
+"00:04:14", "https://www.youtube.com/watch?v=FVPGJHinItI", "Angular Tutorial - 2 - Getting Started", 4);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(68, "In this tutorial, we'll be learning: How to setup Angular App, Import Export, Root Exponent",
-"00:07:52", "https://www.youtube.com/watch?v=mDoHtD1hI3I", "Angular Tutorial - 3 - Hello World App", 14);
+"00:07:52", "https://www.youtube.com/watch?v=mDoHtD1hI3I", "Angular Tutorial - 3 - Hello World App", 4);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(69, "In this tutorial, we'll be learning: Template View, Class Code, Metadata Information",
-"00:13:21", "https://www.youtube.com/watch?v=16rQyEQtpyQ", "Angular Tutorial - 4 - Components", 14);
+"00:13:21", "https://www.youtube.com/watch?v=16rQyEQtpyQ", "Angular Tutorial - 4 - Components", 4);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(70, "In this tutorial, we'll be learning: Interpolation in Angular",
-"00:08:07", "https://www.youtube.com/watch?v=2a6OfacW_-I", "Angular Tutorial - 5 - Interpolation", 14);
+"00:08:07", "https://www.youtube.com/watch?v=2a6OfacW_-I", "Angular Tutorial - 5 - Interpolation", 4);
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
@@ -1003,19 +1000,19 @@ VALUES(80, "In this TypeScript tutorial we'll learn about Explicit and Union Typ
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(81, "In this first PHP tutorial I'll explain exactly why I'm creating this series as well as what you'll be making / learning as we progress.",
-"00:07:04", "https://www.youtube.com/watch?v=pWG7ajC_OVo", "PHP Tutorial #1 - Why Learn PHP?", 17);
+"00:07:04", "https://www.youtube.com/watch?v=pWG7ajC_OVo", "PHP Tutorial #1 - Why Learn PHP?", 12);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(82, "In this PHP tutorial I'll show you how to install all the tools you'll need to start coding with PHP.",
-"00:09:28", "https://www.youtube.com/watch?v=3B-CnezwEeo", "PHP Tutorial #2 - Installing PHP (XAMPP)", 17);
+"00:09:28", "https://www.youtube.com/watch?v=3B-CnezwEeo", "PHP Tutorial #2 - Installing PHP (XAMPP)", 12);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(83, "In this PHP tutorial we'll create our first PHP file and run it on our local server.",
-"00:07:54", "https://www.youtube.com/watch?v=ABcXbZLm5G8", "PHP Tutorial #3 - Your First PHP File", 17);
+"00:07:54", "https://www.youtube.com/watch?v=ABcXbZLm5G8", "PHP Tutorial #3 - Your First PHP File", 12);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(84, "In this PHP tutorial I'll explain the difference between normal variables and constants, and show you how to use both of them.",
-"00:07:18", "https://www.youtube.com/watch?v=2CXme275t9k", "PHP Tutorial #4 - Variables & Constants", 17);
+"00:07:18", "https://www.youtube.com/watch?v=2CXme275t9k", "PHP Tutorial #4 - Variables & Constants", 12);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(85, "In this PHP tutorial I'll explain one of the many data types in PHP - strings. ",
-"00:11:57", "https://www.youtube.com/watch?v=U2EliFC9NrQ", "PHP Tutorial #5 - Strings", 17);
+"00:11:57", "https://www.youtube.com/watch?v=U2EliFC9NrQ", "PHP Tutorial #5 - Strings", 12);
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
@@ -1037,34 +1034,34 @@ VALUES(90, "In this Golang tutorial we'll talk about two more types - Arrays & S
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(91, "We will introduce you to the exciting world of C programming. We will see why C is a good choice for beginners to start their programming journey. Then, we will create our first C program.",
-"00:06:17", "https://www.youtube.com/watch?v=KnvbUiSxvbM", "#1: Getting Started with C Programming | C Programming for Beginners", 19);
+"00:06:17", "https://www.youtube.com/watch?v=KnvbUiSxvbM", "#1: Getting Started with C Programming | C Programming for Beginners", 13);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(92, "We will learn about variables. More specifically, we will learn how to create variables and store data in them so that we can use them later in our program.",
-"00:09:35", "https://www.youtube.com/watch?v=h4VBpylsjJc", "#2: C Variables and Print Output | C Programming for Beginners", 19);
+"00:09:35", "https://www.youtube.com/watch?v=h4VBpylsjJc", "#2: C Variables and Print Output | C Programming for Beginners", 13);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(93, "We will be learning about data types in C. More specifically, we will learn about the int, float, double, and char data types and how to use them.",
-"00:10:12", "https://www.youtube.com/watch?v=sARaqR0hRI4", "#3: Data Types in C Programming | C Programming for Beginners", 19);
+"00:10:12", "https://www.youtube.com/watch?v=sARaqR0hRI4", "#3: Data Types in C Programming | C Programming for Beginners", 13);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(94, "We will learn to take input from users using the scanf() function and show output using the printf() function. In C programming, the scanf() function takes input from the user and stores it in a variable.",
-"00:07:22", "https://www.youtube.com/watch?v=17gp5DJEyiw", "#4: Get User Input in C Programming", 19);
+"00:07:22", "https://www.youtube.com/watch?v=17gp5DJEyiw", "#4: Get User Input in C Programming", 13);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(95, "We will learn about comments in C programming. Comments are hints that we add to our program to make our code easier to understand.",
-"00:07:59", "https://www.youtube.com/watch?v=L2H2rtCLB-0", "#5: Comments in C Programing | C Programming for Beginners", 19);
+"00:07:59", "https://www.youtube.com/watch?v=L2H2rtCLB-0", "#5: Comments in C Programing | C Programming for Beginners", 13);
 
 
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(96, "In this course, We'll be learning about: Logistic regression, softmax classifier, cross entropy loss",
-"00:55:10", "https://www.youtube.com/watch?v=8XfwJgDAMKQ", "Tutorial 1: Linear Regression & Softmax Classifier", 20);
+"00:55:10", "https://www.youtube.com/watch?v=8XfwJgDAMKQ", "Tutorial 1: Linear Regression & Softmax Classifier", 14);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(97, "In this course, We'll be learning about: Tensor operations, MLP implementation, Backpropagation, Optimizers",
-"00:41:22", "https://www.youtube.com/watch?v=hQf6vvn6LGo", "Tutorial 2: Introduction to Pytorch", 20);
+"00:41:22", "https://www.youtube.com/watch?v=hQf6vvn6LGo", "Tutorial 2: Introduction to Pytorch", 14);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(98, "In this course, We'll be learning about: AlexNet, VGG, ResNet, EfficientNet",
-"00:51:55", "https://www.youtube.com/watch?v=P9N_rYVKibw", "Tutorial 3: CNN Architectures", 20);
+"00:51:55", "https://www.youtube.com/watch?v=P9N_rYVKibw", "Tutorial 3: CNN Architectures", 14);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(99, "In this course, We'll be learning about: Vectorization, Broadcasting, Tensor Multiplication, Gather, Fold/Unfold, Dataloaders",
-"00:44:56", "https://www.youtube.com/watch?v=Ak4vq2ER6qQ", "Tutorial 4: Advanced PyTorch", 20);
+"00:44:56", "https://www.youtube.com/watch?v=Ak4vq2ER6qQ", "Tutorial 4: Advanced PyTorch", 14);
 INSERT INTO course_lecture(course_lecture_id, course_lecture_description, lecture_duration, lecture_url, title, course_id)
 VALUES(100, "In this course, We'll be learning about: Adversarial Examples, Perturbation Attack, PGD (Iterated-GSM), Black-box  Attacks, Adversarial Training",
-"00:46:28", "https://www.youtube.com/watch?v=tpcYM0JOZ4s", "Tutorial 5: Adversarial Examples", 20);
+"00:46:28", "https://www.youtube.com/watch?v=tpcYM0JOZ4s", "Tutorial 5: Adversarial Examples", 14);
 UPDATE course_lecture_sequence SET next_val = 101;
