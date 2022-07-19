@@ -34,7 +34,7 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    @CachePut(value = "teachers", key = "@teacherRepository.findById(#id).get().email")
+    @CachePut(value = "teachers", key = "#id")
     public Optional<Teacher> findTeacherById(Long id) {
         if(!teacherRepository.existsByTeacherId(id)){
             throw new IllegalStateException("No teacher found by id: " + id);
@@ -130,19 +130,17 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    @CacheEvict(value = "teachers", key = "@teacherRepository.findById(#id).get().email")
+    @CacheEvict(value = "teachers", key = "#id")
     public void deleteTeacherById(Long id) {
         Teacher teacher = teacherRepository.findById(id)
                 .orElseThrow(()-> new IllegalStateException("Teacher not found"));
-        log.info("Deleted teacher {}", teacher.getUsername());
-        teacherRepository.deleteById(teacher.getTeacherId());
-
         //Delete courses that the teacher has
         List<Course> courses = courseFeignClient.getCoursesByTeacherId(teacher.getTeacherId());
         for (Course course : courses) {
             courseFeignClient.deleteCourse(teacher.getTeacherId(), course.getCourseId());
         }
-
+        teacherRepository.deleteById(id);
+        log.info("Deleted teacher {}", teacher.getUsername());
     }
 
 }

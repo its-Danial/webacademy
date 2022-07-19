@@ -114,14 +114,11 @@ public class TeacherHomeController {
 
     @DeleteMapping("/delete/{teacherId}")
     public ResponseEntity<String> deleteTeacherById(@PathVariable("teacherId") Long id) {
-        try {
-            teacherService.deleteTeacherById(id);
-            return ResponseEntity.status(HttpStatus.OK)
-                    .body("Successfully deleted teacher " + id);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.OK)
-                    .body("Successfully deleted teacher " + id);
-        }
+
+        teacherService.deleteTeacherById(id);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Successfully deleted teacher " + id);
+
     }
 
     @GetMapping("/search")

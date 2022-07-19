@@ -42,14 +42,6 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    @CachePut(value = "courses", key = "@courseRepository.findCoursesByTeacherId(#id).get(0).teacher.email")
-    public List<Course> findCoursesByTeacherId(Long id) {
-        log.info("Fetch courses by teacher: {}", id);
-        return courseRepository.findCoursesByTeacherId(id);
-
-    }
-
-    @Override
     @CachePut(value = "courses", key = "#id")
     public Optional<Course> findCourseByCourseId(Long id) {
         log.info("Fetch course {}", id);
@@ -60,6 +52,13 @@ public class CourseServiceImpl implements CourseService {
     public List<Course> findCoursesByStudentId(Long id) {
         log.info("Fetch courses by student {}", id);
         return courseRepository.findCoursesByStudentId(id);
+    }
+
+    @Override
+    public List<Course> findCoursesByTeacherId(Long id) {
+        log.info("Fetch courses by teacher: {}", id);
+        return courseRepository.findCoursesByTeacherId(id);
+
     }
 
     @Override

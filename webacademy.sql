@@ -545,16 +545,11 @@ INSERT INTO category_topics (category_category_id, topics) VALUES (3, "CSS");
 INSERT INTO category_topics (category_category_id, topics) VALUES (3, "JavaScript");
 
 
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (10, 1);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (10, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (11, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (17, 1);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (17, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (19, 1);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (19, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (20, 1);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (20, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (20, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (1, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (2, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (3, 1);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (3, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (4, 3);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (5, 1);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (5, 2);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (5, 3);
@@ -565,19 +560,25 @@ INSERT INTO course_category_mapping(course_id, category_id) VALUES (7, 3);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (8, 2);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (8, 3);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (9, 3);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (1, 3);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (2, 3);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (3, 1);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (3, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (4, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (10, 1);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (10, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (11, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (12, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (12, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (13, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (14, 1);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (15, 2);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (16, 2);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (16, 3);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (12, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (12, 3);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (17, 1);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (17, 2);
 INSERT INTO course_category_mapping(course_id, category_id) VALUES (18, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (13, 2);
-INSERT INTO course_category_mapping(course_id, category_id) VALUES (14, 1);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (19, 1);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (19, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (20, 1);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (20, 2);
+INSERT INTO course_category_mapping(course_id, category_id) VALUES (20, 3);
+
 
 
 INSERT INTO student_course_mapping(course_id, student_id) VALUES (1, 3);

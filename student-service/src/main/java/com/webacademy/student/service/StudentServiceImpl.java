@@ -38,7 +38,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    @Cacheable(value = "students", key = "@studentRepository.findById(#id).get().email")
+    @Cacheable(value = "students", key = "#id")
     public Optional<Student> findStudentById(Long id) {
         if(!studentRepository.existsByStudentId(id)){
             throw new IllegalStateException("No student found by id: " + id);
@@ -49,7 +49,6 @@ public class StudentServiceImpl implements StudentService {
 
 
     @Override
-    @CachePut(value = "students", key = "#id")
     public List<Student> findStudentsByCourseId(Long id) {
 
         log.info("Fetch students in course id: {}", id);
@@ -57,14 +56,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    @Cacheable(value = "students", key = "@studentRepository.findById(#studentId).get().email")
-    public Student findStudentByCourseIdAndStudentId(Long courseId, Long studentId) {
-        log.info("Fetch student id: {} in course id: {}", studentId, courseId);
-        return studentRepository.findStudentByCourseIdAndStudentId(courseId, studentId);
-    }
-
-    @Override
-    @Cacheable(value= "students", key = "#email")
+    @CachePut(value= "students", key = "#email")
     public Student login(String email, String password) {
 
         if(studentRepository.existsByEmailAndPassword(email, password)){
@@ -91,18 +83,6 @@ public class StudentServiceImpl implements StudentService {
             cartFeignClient.createCart(student.getStudentId());
             log.info("Cart {} created", student.getStudentId());
             return studentRepository.findStudentByEmail(email);
-    }
-
-    @Override
-    public Set<Student> findStudentsByTeacherId(Long teacherId) {
-        List<Course> courses = courseFeignClient.getCoursesByTeacherId(teacherId);
-        Set<Student> allStudents = new HashSet<>();
-        for(Course course : courses){
-            List<Student> students = studentRepository.findStudentsByCourseId(course.getCourseId());
-                allStudents.addAll(students);
-
-        }
-        return allStudents;
     }
 
     @Override
@@ -136,7 +116,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    @CacheEvict(value = "students", key = "@studentRepository.findById(#id).get().email")
+    @CacheEvict(value = "students", key = "#id")
     public void deleteStudentById(Long id) {
         Student student = studentRepository.findById(id)
                 .orElseThrow(()-> new IllegalStateException("Student not found"));
@@ -153,6 +133,18 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public Set<Student> findStudentsByTeacherId(Long teacherId) {
+        List<Course> courses = courseFeignClient.getCoursesByTeacherId(teacherId);
+        Set<Student> allStudents = new HashSet<>();
+        for(Course course : courses){
+            List<Student> students = studentRepository.findStudentsByCourseId(course.getCourseId());
+                allStudents.addAll(students);
+
+        }
+        return allStudents;
+    }
+
+    @Override
     public List<Student> searchStudentByEmailKeyword(String email) {
         if(email == null || email.equals("")){
             return studentRepository.findAll();
@@ -162,5 +154,10 @@ public class StudentServiceImpl implements StudentService {
         }
     }
 
+    @Override
+    public Student findStudentByCourseIdAndStudentId(Long courseId, Long studentId) {
+        log.info("Fetch student id: {} in course id: {}", studentId, courseId);
+        return studentRepository.findStudentByCourseIdAndStudentId(courseId, studentId);
+    }
 
 }

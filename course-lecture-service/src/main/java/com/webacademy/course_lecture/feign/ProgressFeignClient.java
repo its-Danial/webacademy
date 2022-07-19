@@ -12,6 +12,6 @@ public interface ProgressFeignClient {
     @PutMapping("/update-total-lectures/{courseId}")
     void updateTotalLectures(@PathVariable("courseId") Long courseId);
 
-    @DeleteMapping("/delete/{courseId}")
+    @DeleteMapping("/delete-by-course/{courseId}")
     ResponseEntity<String> deleteProgressesByCourseId(@PathVariable("courseId") Long courseId);
 }
