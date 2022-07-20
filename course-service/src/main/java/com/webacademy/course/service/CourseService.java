@@ -47,6 +47,8 @@ public interface CourseService {
 
     double findTotalPriceEarned(Long teacherId);
 
+    double findTotalEarnedInPlatform();
+
     List<TeacherEarning> findTotalEarningPerCourse(Long teacherId);
 
     List<Course> findByCourseTitle(String title);

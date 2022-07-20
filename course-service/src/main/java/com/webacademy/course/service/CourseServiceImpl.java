@@ -201,6 +201,18 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    public double findTotalEarnedInPlatform() {
+        List<Teacher> teachers = teacherFeignClient.getAllTeacher();
+        double totalPrice = 0;
+        for (Teacher teacher : teachers) {
+            double price = findTotalPriceEarned(teacher.getTeacherId());
+            totalPrice += price;
+        }
+        log.info("Total earned from all teachers in the platform: ${}", totalPrice);
+        return totalPrice;
+    }
+
+    @Override
     public List<TeacherEarning> findTotalEarningPerCourse(Long teacherId) {
         List<Course> courses = courseRepository.findCoursesByTeacherId(teacherId);
         Double totalPrice;

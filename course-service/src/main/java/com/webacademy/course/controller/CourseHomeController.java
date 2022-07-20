@@ -136,6 +136,11 @@ public class CourseHomeController {
         return courseService.findTotalPriceEarned(teacherId);
     }
 
+    @GetMapping("/get-total-earned-in-platform")
+    public double getTotalEarnedInPlatform(){
+        return courseService.findTotalEarnedInPlatform();
+    }
+
     @GetMapping("/get-total-earning-per-course/{teacherId}")
     public List<TeacherEarning> getTotalEarningPerCourse(@PathVariable("teacherId") Long teacherId) {
         return courseService.findTotalEarningPerCourse(teacherId);

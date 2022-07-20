@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.00dfe55a.css",
-    "main.js": "/static/js/main.f4b489e4.js",
+    "main.css": "/static/css/main.3ccfda34.css",
+    "main.js": "/static/js/main.8a1eb9ad.js",
     "static/media/teacher-billboard.jpeg": "/static/media/teacher-billboard.e4af08ec7833e05a60c3.jpeg",
     "static/media/billboard-girl2.jpg": "/static/media/billboard-girl2.348bff37d9126f93093f.jpg",
     "static/media/billboard-girl.jpeg": "/static/media/billboard-girl.b7225ab39be08db87639.jpeg",
     "static/media/billboard-guy.jpg": "/static/media/billboard-guy.8fc26af3af87b6f8fe66.jpg",
     "static/media/not-found-svg.svg": "/static/media/not-found-svg.bdf1c60c297dc6528f56fe6a382dacdf.svg",
+    "static/media/empty-search.svg": "/static/media/empty-search.19bf405fba366376b5c12b6c26081399.svg",
     "static/media/emptycart.svg": "/static/media/emptycart.2cf7f6852fdcfef3d68943e5c5c268c9.svg",
     "index.html": "/index.html",
-    "main.00dfe55a.css.map": "/static/css/main.00dfe55a.css.map",
-    "main.f4b489e4.js.map": "/static/js/main.f4b489e4.js.map"
+    "main.3ccfda34.css.map": "/static/css/main.3ccfda34.css.map",
+    "main.8a1eb9ad.js.map": "/static/js/main.8a1eb9ad.js.map"
   },
   "entrypoints": [
-    "static/css/main.00dfe55a.css",
-    "static/js/main.f4b489e4.js"
+    "static/css/main.3ccfda34.css",
+    "static/js/main.8a1eb9ad.js"
   ]
 }
