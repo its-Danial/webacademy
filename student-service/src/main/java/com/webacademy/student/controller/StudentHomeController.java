@@ -11,6 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/student")
@@ -74,12 +75,17 @@ public class StudentHomeController {
             String username = student.getUsername();
             String fullname = student.getFullName();
             String password = student.getPassword();
-            return ResponseEntity.status(HttpStatus.OK)
+            return ResponseEntity.status(HttpStatus.CREATED)
                     .body(studentService.register(email, username, fullname, password));
         }catch (Exception e){
             throw new ResponseStatusException(HttpStatus.CONFLICT,
                     "Email or username already exist", e);
         }
+    }
+    @GetMapping("/get-all-by-teacher-id/{teacherId}")
+    public ResponseEntity<Set<Student>> getStudentsByTeacherId(@PathVariable("teacherId") Long id) {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(studentService.findStudentsByTeacherId(id));
     }
 
     @GetMapping("/get-all-by-course-id/{courseId}")
@@ -91,12 +97,25 @@ public class StudentHomeController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "Course " + id + " doesn't exist", e);
         }
-
     }
 
     @GetMapping("/get-by-course-id-and-student-id/{courseId}/{studentId}")
     public Student getStudentByCourseIdAndStudentId(@PathVariable("courseId") Long courseId,
                                                     @PathVariable("studentId") Long studentId){
         return studentService.findStudentByCourseIdAndStudentId(courseId, studentId);
+    }
+
+    @DeleteMapping("/delete/{studentId}")
+    public ResponseEntity<String> deleteStudentById(@PathVariable("studentId") Long id) {
+
+        studentService.deleteStudentById(id);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Successfully deleted student " + id);
+
+    }
+
+    @GetMapping("/search")
+    public List<Student> searchStudentByEmailKeyword(@RequestParam String email){
+         return studentService.searchStudentByEmailKeyword(email);
     }
 }

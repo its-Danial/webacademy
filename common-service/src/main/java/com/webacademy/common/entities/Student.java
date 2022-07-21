@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
@@ -15,7 +16,7 @@ import javax.persistence.*;
         @UniqueConstraint(name = "uc_student_email_address", columnNames = {"email_address"}),
         @UniqueConstraint(name="uc_student_username", columnNames = {"username"})
 })
-public class Student {
+public class Student implements Serializable{
 
     @Id
     @SequenceGenerator(

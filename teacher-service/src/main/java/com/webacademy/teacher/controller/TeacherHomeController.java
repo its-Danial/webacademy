@@ -1,6 +1,7 @@
 package com.webacademy.teacher.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.webacademy.common.entities.Student;
 import com.webacademy.common.entities.Teacher;
 import com.webacademy.teacher.service.TeacherServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,11 +76,53 @@ public class TeacherHomeController {
             String username = teacher.getUsername();
             String fullname = teacher.getFullName();
             String password = teacher.getPassword();
-            return ResponseEntity.status(HttpStatus.OK)
+            return ResponseEntity.status(HttpStatus.CREATED)
                     .body(teacherService.register(email, username, fullname, password));
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.CONFLICT,
                     "Email or username already exist", e);
         }
+    }
+
+    @PutMapping("/edit/{teacherId}")
+    public ResponseEntity<Teacher> editProfile(@PathVariable("teacherId") Long teacherId,
+                                               @RequestBody JSONObject profile) {
+
+        String bio = profile.getObject("bioText", String.class);
+        String avatarUrl = profile.getObject("avatarPictureUrl", String.class);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(teacherService.editProfile(teacherId, bio, avatarUrl));
+
+    }
+
+    /*Admin Controllers*/
+    @PutMapping("/update/{email}")
+    public ResponseEntity<String> updateTeacherByEmail(@PathVariable("email") String email,
+                                                       @RequestBody JSONObject identity) {
+        try {
+            String newEmail = identity.getObject("email", String.class);
+            String newUsername = identity.getObject("username", String.class);
+            String newFullname = identity.getObject("fullname", String.class);
+            teacherService.updateTeacher(email, newEmail, newUsername, newFullname);
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body("Successfully updated teacher " + email + " to " + newEmail);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("Email or username already exist");
+        }
+    }
+
+    @DeleteMapping("/delete/{teacherId}")
+    public ResponseEntity<String> deleteTeacherById(@PathVariable("teacherId") Long id) {
+
+        teacherService.deleteTeacherById(id);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Successfully deleted teacher " + id);
+
+    }
+
+    @GetMapping("/search")
+    public List<Teacher> searchTeacherByEmailKeyword(@RequestParam String email){
+        return teacherService.searchTeacherByEmailKeyword(email);
     }
 }

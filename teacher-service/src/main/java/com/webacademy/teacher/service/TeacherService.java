@@ -1,5 +1,6 @@
 package com.webacademy.teacher.service;
 
+import com.webacademy.common.entities.Student;
 import com.webacademy.common.entities.Teacher;
 
 import java.util.List;
@@ -18,9 +19,14 @@ public interface TeacherService {
 
     void addTeacher(Teacher teacher);
 
-    void updateTeacher(Teacher teacher);
+    void updateTeacher(String email, String newEmail,
+                       String newUsername, String newFullname);
 
-    void deleteTeacherByEmail(String email);
+    void deleteTeacherById(Long id);
 
     Teacher register(String email, String username, String fullname, String password);
+
+    Teacher editProfile(Long teacherId, String bio, String avatarUrl);
+
+    List<Teacher> searchTeacherByEmailKeyword(String email);
 }

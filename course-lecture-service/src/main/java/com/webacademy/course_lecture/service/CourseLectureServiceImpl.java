@@ -82,6 +82,25 @@ public class CourseLectureServiceImpl implements CourseLectureService {
     }
 
     @Override
+    public void updateLecture(Long teacherId, Long courseId, Long lectureId, CourseLecture newLecture) {
+        Course course = courseFeignClient.getCourseByCourseId(courseId).
+                orElseThrow(()-> new IllegalStateException("Course not found"));
+        CourseLecture currentLecture = courseLectureRepository.findCourseLectureById(lectureId)
+                        .orElseThrow(()-> new IllegalStateException("Lecture not found"));
+
+        if(!teacherId.equals(course.getTeacher().getTeacherId())){
+            log.error("The teacher doesn't own the course");
+            throw new IllegalStateException("The teacher doesn't own the course");
+        } else{
+            currentLecture.setTitle(newLecture.getTitle());
+            currentLecture.setCourseLectureDescription(newLecture.getCourseLectureDescription());
+            currentLecture.setLectureDuration(newLecture.getLectureDuration());
+            currentLecture.setLectureUrl(newLecture.getLectureUrl());
+            courseLectureRepository.save(currentLecture);
+        }
+    }
+
+    @Override
     public void deleteLecture(Long teacherId, Long courseId, Long lectureId) {
         Course course = courseFeignClient.getCourseByCourseId(courseId).
                 orElseThrow(() -> new IllegalStateException("Course not found"));
@@ -99,6 +118,7 @@ public class CourseLectureServiceImpl implements CourseLectureService {
             throw new IllegalStateException("The lecture doesn't belong to the course");
         }
 
+        progressFeignClient.deleteProgressesByCourseId(courseId);
         courseLectureRepository.deleteById(lectureId);
         log.info("Teacher {} has deleted lecture {}", teacherId, lectureId);
     }

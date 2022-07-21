@@ -24,6 +24,13 @@ public class CartHomeController {
                 .body("Created cart " + studentId + " successfully");
     }
 
+    @DeleteMapping("/delete/{studentId}")
+    public ResponseEntity<String> deleteCart(@PathVariable("studentId") Long studentId){
+        shoppingCartService.deleteCart(studentId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Deleted cart " + studentId + " successfully");
+    }
+
     @GetMapping("/get-by-id/{cartId}")
     @ResponseStatus(HttpStatus.OK)
     public ShoppingCart getCartById(@PathVariable("cartId") Long cartId){

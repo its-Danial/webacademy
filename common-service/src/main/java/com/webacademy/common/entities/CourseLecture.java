@@ -1,5 +1,6 @@
 package com.webacademy.common.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -38,5 +39,6 @@ public class CourseLecture {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "course_id", referencedColumnName = "courseId")
     @ToString.Exclude
+    @JsonIgnore
     public Course course;
 }

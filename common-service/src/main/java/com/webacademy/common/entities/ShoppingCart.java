@@ -1,6 +1,7 @@
 package com.webacademy.common.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class ShoppingCart {
     @OneToOne
     @MapsId
     @JoinColumn(name = "cart_id", referencedColumnName = "studentId")
+    @JsonIgnore
     private Student student;
 
     @ManyToMany(cascade = CascadeType.MERGE)

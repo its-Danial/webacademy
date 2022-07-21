@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 
 @Data
@@ -20,7 +21,7 @@ import javax.persistence.*;
         @UniqueConstraint(name = "uc_teacher_email_address", columnNames = {"email_address"}),
         @UniqueConstraint(name="uc_teacher_username", columnNames = {"username"})
 })
-public class Teacher {
+public class Teacher implements Serializable {
 
     @Id
     @SequenceGenerator(

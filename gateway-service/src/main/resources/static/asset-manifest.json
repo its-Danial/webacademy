@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b03ee6a8.css",
+    "main.js": "/static/js/main.043ab3f2.js",
+    "static/media/teacher-billboard.jpeg": "/static/media/teacher-billboard.e4af08ec7833e05a60c3.jpeg",
+    "static/media/billboard-girl2.jpg": "/static/media/billboard-girl2.348bff37d9126f93093f.jpg",
+    "static/media/billboard-girl.jpeg": "/static/media/billboard-girl.b7225ab39be08db87639.jpeg",
+    "static/media/billboard-girl3.jpg": "/static/media/billboard-girl3.8de6db9a28e0173b82f4.jpg",
+    "static/media/billboard-guy.jpg": "/static/media/billboard-guy.8fc26af3af87b6f8fe66.jpg",
+    "static/media/not-found-svg.svg": "/static/media/not-found-svg.bdf1c60c297dc6528f56fe6a382dacdf.svg",
+    "static/media/empty-search.svg": "/static/media/empty-search.19bf405fba366376b5c12b6c26081399.svg",
+    "static/media/emptycart.svg": "/static/media/emptycart.2cf7f6852fdcfef3d68943e5c5c268c9.svg",
+    "index.html": "/index.html",
+    "main.b03ee6a8.css.map": "/static/css/main.b03ee6a8.css.map",
+    "main.043ab3f2.js.map": "/static/js/main.043ab3f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b03ee6a8.css",
+    "static/js/main.043ab3f2.js"
+  ]
+}

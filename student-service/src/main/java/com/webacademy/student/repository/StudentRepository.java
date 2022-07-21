@@ -37,4 +37,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
    boolean existsByStudentId(Long studentId);
 
    boolean existsByEmailAndPassword(String email, String password);
+
+   List<Student> findStudentsByEmailContainingIgnoreCase(String email);
 }

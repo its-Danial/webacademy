@@ -103,4 +103,10 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         }
 
     }
+
+    @Override
+    public void deleteCart(Long studentId) {
+        shoppingCartRepository.deleteById(studentId);
+        log.info("Cart {} deleted", studentId);
+    }
 }

@@ -62,6 +62,13 @@
             <version>3.0.0</version>
         </dependency>
 
+        <!-- Redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+
         <!-- Testing -->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->

@@ -1,5 +1,6 @@
 package com.webacademy.course_lecture.controller;
 
+import com.webacademy.common.entities.Course;
 import com.webacademy.common.entities.CourseLecture;
 import com.webacademy.course_lecture.feign.ProgressFeignClient;
 import com.webacademy.course_lecture.service.CourseLectureServiceImpl;
@@ -55,6 +56,21 @@ public class LectureHomeController {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body("Teacher " + teacherId + " has successfully added " +
                         "multiple lectures to course " + courseId);
+    }
+
+    @PutMapping("/update/{teacherId}/{courseId}")
+    public ResponseEntity<String> updateLectures(@PathVariable("teacherId") Long teacherId,
+                                                 @PathVariable("courseId") Long courseId,
+                                                 @RequestBody List<CourseLecture> newCourseLectures){
+        for (CourseLecture courseLecture : newCourseLectures) {
+            if(courseLecture.getCourseLectureId() == null) {
+            courseLectureService.addLecture(teacherId, courseId, courseLecture);
+            }
+            courseLectureService.updateLecture(teacherId, courseId, courseLecture.getCourseLectureId() ,courseLecture);
+        }
+        progressFeignClient.updateTotalLectures(courseId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Lectures for course " + courseId + " has been updated");
     }
 
     @DeleteMapping("/delete/{teacherId}/{courseId}/{lectureId}")

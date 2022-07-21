@@ -1,13 +1,16 @@
 package com.webacademy.course.controller;
 
 import com.webacademy.common.entities.Course;
+import com.webacademy.common.entities.CourseInformation;
 import com.webacademy.course.service.CourseServiceImpl;
+import com.webacademy.model.TeacherEarning;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,10 +30,18 @@ public class CourseHomeController {
     @GetMapping("/filter")
     public ResponseEntity<List<Course>> getCoursesByCategoryOrTopicPagination(@RequestParam(required = false) String categoryName,
                                                                               @RequestParam(required = false) String topic,
+                                                                              @RequestParam(required = false) Double minRating,
+                                                                              @RequestParam(required = false) Double maxRating,
                                                                               @RequestParam(defaultValue = "0") int page,
                                                                               @RequestParam(defaultValue = "5", required = false) int size) {
         try {
-            if (categoryName != null) {
+            if (categoryName != null && minRating != null && maxRating != null) {
+                return ResponseEntity.status(HttpStatus.OK)
+                        .body(courseService.paginationByCategoryAndRating(categoryName, minRating, maxRating, page));
+            } else if (topic != null && minRating != null && maxRating != null) {
+                return ResponseEntity.status(HttpStatus.OK)
+                        .body(courseService.paginationByTopicAndRating(topic, minRating, maxRating, page));
+            } else if (categoryName != null) {
                 return ResponseEntity.status(HttpStatus.OK)
                         .body(courseService.paginationByCategory(categoryName, page));
             } else if (topic != null) {
@@ -40,7 +51,7 @@ public class CourseHomeController {
                 return ResponseEntity.status(HttpStatus.OK)
                         .body(courseService.findCoursesByPage(page, size));
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "Please check your input");
         }
@@ -55,7 +66,12 @@ public class CourseHomeController {
     @GetMapping("/get-by-teacher-id/{teacherId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Course> getCoursesByTeacherId(@PathVariable("teacherId") Long id) {
-        return courseService.findCoursesByTeacherId(id);
+        try {
+            return courseService.findCoursesByTeacherId(id);
+        } catch (Exception e) {
+            return new ArrayList<>();
+        }
+
     }
 
     @GetMapping("/get-by-student-id/{studentId}")
@@ -84,12 +100,19 @@ public class CourseHomeController {
     }
 
     @PostMapping("/create/{teacherId}")
-    public ResponseEntity<String> createCourse(@PathVariable("teacherId") Long teacherId,
+    public ResponseEntity<Course> createCourse(@PathVariable("teacherId") Long teacherId,
                                                @RequestBody Course course) {
-        courseService.createCourse(teacherId, course);
+
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body("Teacher " + teacherId + " has successfully created course "
-                        + course.getCourseId());
+                .body(courseService.createCourse(teacherId, course));
+    }
+
+    @PutMapping("/manage/{courseId}")
+    public ResponseEntity<String> manageCourseInformation(@PathVariable("courseId") Long courseId,
+                                                          @RequestBody CourseInformation courseInformation) {
+        courseService.editCourseInformation(courseId, courseInformation);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Updated course " + courseId + "'s information");
     }
 
     @DeleteMapping("/delete/{teacherId}/{courseId}")
@@ -111,5 +134,41 @@ public class CourseHomeController {
     @ResponseStatus(HttpStatus.OK)
     public double getTotalPriceEarned(@PathVariable("teacherId") Long teacherId) {
         return courseService.findTotalPriceEarned(teacherId);
+    }
+
+    @GetMapping("/get-total-earned-in-platform")
+    public double getTotalEarnedInPlatform(){
+        return courseService.findTotalEarnedInPlatform();
+    }
+
+    @GetMapping("/get-total-earning-per-course/{teacherId}")
+    public List<TeacherEarning> getTotalEarningPerCourse(@PathVariable("teacherId") Long teacherId) {
+        return courseService.findTotalEarningPerCourse(teacherId);
+    }
+
+    @DeleteMapping("/delete-all-student-course/{studentId}")
+    public ResponseEntity<String> deleteAllStudentCourse(@PathVariable("studentId")Long studentId) {
+        courseService.deleteAllStudentCourse(studentId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Deleted all courses from student " + studentId);
+    }
+
+    @DeleteMapping("/delete-student-course/{studentId}/{courseId}")
+    public ResponseEntity<String> deleteStudentCourse(@PathVariable("studentId")Long studentId,
+                                                      @PathVariable("courseId") Long courseId){
+        courseService.deleteStudentCourse(studentId, courseId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Deleted course " + courseId + " from student " + studentId);
+    }
+
+
+    @GetMapping("/search")
+    public List<Course> searchByCourseTitlePageable(@RequestParam String title,
+                                                    @RequestParam(required = false) Integer page){
+        if(page != null){
+            return courseService.findByCourseTitlePageable(title, page);
+        } else {
+            return courseService.findByCourseTitle(title);
+        }
     }
 }

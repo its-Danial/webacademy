@@ -4,6 +4,7 @@ import com.webacademy.common.entities.Student;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public interface StudentService {
 
@@ -15,9 +16,7 @@ public interface StudentService {
 
     void addStudent(Student student);
 
-    void updateStudent(Student student);
-
-    void deleteStudentByEmailId(String email);
+    void deleteStudentById(Long id);
 
     Optional<Student> findStudentById(Long id);
 
@@ -28,4 +27,8 @@ public interface StudentService {
     Student login(String email, String password);
 
     Student register(String email, String username, String fullname, String password);
+
+    Set<Student> findStudentsByTeacherId(Long teacherId);
+
+    List<Student> searchStudentByEmailKeyword(String email);
 }
